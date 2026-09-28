@@ -1,7 +1,7 @@
 ---
 status: REVIEWED
 last_verified: 2026-09-28
-truth_level: REFERENCE_ARCHITECTURE_AND_WATCH
+truth_level: MIXED
 primary_sources:
   - ecb-payments-strategy-2026
   - ecb-digital-euro-pilot-page-2026
