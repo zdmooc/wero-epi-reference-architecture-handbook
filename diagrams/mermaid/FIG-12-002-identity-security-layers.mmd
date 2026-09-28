@@ -1,0 +1,13 @@
+%% title: Identity and security layers
+%% truth_level: REFERENCE_ARCHITECTURE
+%% last_verified: 2026-09-28
+flowchart TB
+  U[Customer] --> CIAM[Customer IAM / SCA]
+  M[Merchant] --> MIAM[Merchant Identity]
+  S[Service] --> WI[Workload Identity]
+  O[Operator] --> PAM[Privileged Access / MFA]
+  CIAM --> API[Payment API]
+  MIAM --> API
+  WI --> API
+  PAM --> ADMIN[Admin Plane]
+  API --> HSM[PKI / HSM]
