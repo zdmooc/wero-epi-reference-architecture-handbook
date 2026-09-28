@@ -229,6 +229,51 @@ sources:
     topics: [digital-euro, innovation, ai-agents, micropayments]
     status: ACTIVE_EXPLORATION
 
+  - id: ecb-tips-facts-2026
+    authority: European Central Bank / Eurosystem
+    title: "TIPS facts and figures"
+    url: "https://www.ecb.europa.eu/paym/target/tips/facts/html/index.en.html"
+    topics: [tips, settlement, currencies, reachability, performance]
+    status: CURRENT
+
+  - id: ecb-tips-udfs-2026
+    authority: European Central Bank / Eurosystem
+    title: "TIPS User Detailed Functional Specifications R2026.JUN"
+    version: "R2026.JUN"
+    url: "https://www.ecb.europa.eu/paym/target/target-professional-use-documents-links/tips/shared/pdf/TIPS_UDFS_R2026.JUN_20251124_clean.pdf"
+    topics: [tips, liquidity-transfer, continuous-processing, functional-specification]
+    status: CURRENT
+
+  - id: ecb-target-infoguide-2025
+    authority: European Central Bank / Eurosystem
+    title: "TARGET Services Infoguide R2025.OCT - Part 1 Fundamentals"
+    version: "R2025.OCT"
+    url: "https://www.ecb.europa.eu/paym/target/consolidation/profuse/shared/pdf/Infoguide-R2025.OCT-Part-1-Fundamentals.pdf"
+    topics: [target, tips, dca, asta, liquidity, settlement]
+    status: CURRENT
+
+  - id: ecb-t2-hours-roadmap-2026
+    authority: European Central Bank / Eurosystem
+    title: "Eurosystem moves toward extending T2 operating hours"
+    published: 2026-05-28
+    url: "https://www.ecb.europa.eu/press/intro/news/html/ecb.mipnews260528.en.html"
+    topics: [t2, operating-hours, liquidity, instant-payments]
+    status: ROADMAP
+
+  - id: eba-clearing-rt1-access
+    authority: EBA CLEARING
+    title: "RT1 access models"
+    url: "https://www.ebaclearing.eu/services-instant-payments/rt1/access-models/"
+    topics: [rt1, access, participant, addressable-psp, technical-provider, liquidity-provider]
+    status: CURRENT
+
+  - id: eba-clearing-rt1-pfmi
+    authority: EBA CLEARING
+    title: "RT1 PFMI Disclosure Report"
+    url: "https://www.ebaclearing.eu/wp-content/uploads/2024/12/ebacl_rt1-pfmi-disclosure-report_v10.pdf"
+    topics: [rt1, pfmi, settlement, central-bank-funds, participant-position, tips-asta]
+    status: CURRENT_REFERENCE
+
 rules:
   - "Recheck CURRENT and political-process sources before every release."
   - "Do not treat a press release as a substitute for a rulebook or legal text."
