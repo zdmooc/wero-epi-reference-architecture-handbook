@@ -1,0 +1,11 @@
+%% title: Site failover with fencing
+%% truth_level: REFERENCE_ARCHITECTURE
+%% last_verified: 2026-09-28
+flowchart LR
+  DET[Detect Site A Failure] --> DEC[Declare Incident]
+  DEC --> F[Fence Site A Writes]
+  F --> P[Promote Site B Data]
+  P --> N[Enable App and Network]
+  N --> R[Route Traffic to Site B]
+  R --> V[Validate Financial Path]
+  V --> REC[Reconcile In-flight Payments]
