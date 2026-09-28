@@ -132,7 +132,7 @@ Le nombre de pages restera une **conséquence du contenu**, pas une contrainte.
 
 ## État
 
-**V1.0 — premier manuscrit de référence complet ; publication numérique automatisée par GitHub Actions.**
+**V1.0 MANUSCRIPT — contenu I1→I16 terminé dans GitHub ; PDF/EPUB/print volontairement différés après le freeze éditorial.**
 
 Premiers éléments créés :
 
@@ -176,42 +176,28 @@ Le cycle **I1→I16** est terminé au niveau manuscrit :
 - tests et evidence ;
 - réglementation ;
 - annexes professionnelles ;
-- pipeline PDF/EPUB.
+- chaîne de publication préparée mais non exécutée avant le freeze du manuscrit.
 
 Voir :
 - `AUDIT_V1.0.md`
 - `governance/COVERAGE_MATRIX.md`
 - `governance/V1_QUALITY_GATE.md`
 
-La seule étape non revendiquée comme terminée est le **physical print proof**, qui nécessite par définition un exemplaire imprimé réel.
+Les artefacts **PDF, EPUB et print ne font pas partie de cette étape**. Ils seront produits uniquement après validation/freeze du manuscrit GitHub.
 
 
-## Release candidate v1.0.0-rc1
 
-La chaîne éditoriale I1→I16 est maintenant couverte :
+## État du manuscrit V1.0
 
-- sources officielles ;
-- Wero/EPI ;
-- parcours P2P/C2B/e-commerce/POS ;
-- architecture fonctionnelle ;
-- ISO 20022 ;
-- SCT Inst ;
-- rails / TIPS / RT1 / CSM ;
-- settlement / liquidité ;
-- réseaux / flux ;
-- API / event-driven / data ;
-- cloud / Kubernetes / OpenShift ;
-- sécurité / IAM / fraude / VoP ;
-- résilience / DORA ;
-- SRE / exploitation ;
-- Digital Euro / prospective ;
-- checklists / scénarios de panne ;
-- audit V1 et pipeline Quarto.
+Le programme I1→I16 est terminé au niveau **contenu GitHub**.
 
-Voir :
-- `ITERATION_STATUS.md`
-- `COVERAGE_MATRIX.md`
-- `governance/V1_RELEASE_AUDIT.md`
-- `RELEASE_NOTES_V1_RC1.md`
+État vérifié au 28 septembre 2026 :
+- 87 fichiers de chapitres canoniques ;
+- 94 fichiers dans l'ordre canonique avec annexes/baseline ;
+- 34 diagrammes Mermaid maintenables ;
+- aucun chemin manquant dans `publishing/book-order.txt` ;
+- sources primaires 2026 versionnées ;
+- PDF/EPUB non générés à ce stade, conformément à la stratégie éditoriale.
 
-La prochaine étape n'est plus une nouvelle itération d'architecture : c'est le rendu PDF/EPUB, l'inspection visuelle, la densification graphique et le proof print.
+Prochaine phase après le freeze éditorial :
+`relecture globale → figures finales → index → PDF → EPUB → proof papier → publication`.
