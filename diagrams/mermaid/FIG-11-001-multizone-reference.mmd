@@ -1,0 +1,30 @@
+%% title: Multi-zone payment platform reference
+%% view: physical
+%% truth_level: REFERENCE_ARCHITECTURE
+%% last_verified: 2026-09-28
+
+flowchart TB
+    EDGE[Global or Regional Edge]
+    subgraph R1[Region or Site A]
+      subgraph Z1[Zone 1]
+        A1[App replicas]
+        D1[Data replica]
+      end
+      subgraph Z2[Zone 2]
+        A2[App replicas]
+        D2[Data replica]
+      end
+      subgraph Z3[Zone 3]
+        A3[App replicas]
+        D3[Data replica]
+      end
+    end
+    subgraph R2[Region or Site B]
+      DR[Recovery Capacity]
+    end
+    EDGE --> A1
+    EDGE --> A2
+    EDGE --> A3
+    D1 <--> D2
+    D2 <--> D3
+    R1 -. controlled DR replication .-> DR
