@@ -11,7 +11,7 @@ echo "Rendering Mermaid figures..."
 for f in diagrams/mermaid/*.mmd; do
   [ -e "$f" ] || continue
   base="$(basename "$f" .mmd)"
-  npx -y @mermaid-js/mermaid-cli -i "$f" -o "build/figures/$base.svg" -b white
+  npx -y @mermaid-js/mermaid-cli -p publishing/puppeteer-config.json -i "$f" -o "build/figures/$base.svg" -b white
 done
 
 cp publishing/metadata.yaml build/manuscript.md
