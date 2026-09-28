@@ -2,15 +2,6 @@ name: book-build
 
 on:
   workflow_dispatch:
-  push:
-    branches: [main]
-    paths:
-      - "book/**"
-      - "appendices/**"
-      - "diagrams/**"
-      - "GLOSSARY.md"
-      - "_quarto.yml"
-      - ".github/workflows/book-build.yml"
 
 permissions:
   contents: read
@@ -36,6 +27,6 @@ jobs:
 
       - uses: actions/upload-artifact@v4
         with:
-          name: wero-epi-handbook-build
+          name: wero-epi-handbook-quarto-build
           path: _book/
           if-no-files-found: error
