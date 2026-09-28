@@ -132,7 +132,7 @@ Le nombre de pages restera une **conséquence du contenu**, pas une contrainte.
 
 ## État
 
-**V0.1 — cadrage initial et démarrage du manuscrit.**
+**V1.0 — premier manuscrit de référence complet ; publication numérique automatisée par GitHub Actions.**
 
 Premiers éléments créés :
 
@@ -151,3 +151,36 @@ Premiers éléments créés :
 - Chapitre 3 — acteurs, responsabilités et frontières de confiance ;
 - premier diagramme Mermaid maintenable.
 
+
+
+## V1.0 — état de couverture
+
+Le cycle **I1→I16** est terminé au niveau manuscrit :
+
+- sources officielles et baseline publique ;
+- Wero/EPI ;
+- parcours P2P/C2B/e-commerce/POS ;
+- architecture fonctionnelle ;
+- ISO 20022 ;
+- SCT Inst ;
+- TIPS / RT1 / CSM ;
+- settlement et liquidité ;
+- réseaux et flux ;
+- API / event-driven / data ;
+- infrastructure / cloud / Kubernetes/OpenShift ;
+- sécurité / IAM / fraude / VoP ;
+- résilience / DORA ;
+- SRE / exploitation ;
+- architectures banque / PSP / marchand ;
+- interopérabilité / Digital Euro ;
+- tests et evidence ;
+- réglementation ;
+- annexes professionnelles ;
+- pipeline PDF/EPUB.
+
+Voir :
+- `AUDIT_V1.0.md`
+- `governance/COVERAGE_MATRIX.md`
+- `governance/V1_QUALITY_GATE.md`
+
+La seule étape non revendiquée comme terminée est le **physical print proof**, qui nécessite par définition un exemplaire imprimé réel.
