@@ -161,7 +161,7 @@
 Minor releases are triggered by:
 - Wero/EPI public capability changes;
 - EPC rulebook/IG changes;
-- TIPS/RT1 material changes;
+- [x] TIPS/RT1 material changes;
 - EU regulatory changes;
 - critical factual corrections.
 
@@ -181,3 +181,16 @@ Each major edition:
 5. updates diagrams;
 6. runs quality gate and digital builds;
 7. performs a new print proof when a physical edition changes materially.
+
+
+## v1.0.0-rc1 — 2026-09-28
+
+I1→I16 completed for first-edition architecture/content scope.
+
+Remaining publication-only gates:
+- automated build run;
+- visual inspection;
+- figure expansion/numbering;
+- copy edit;
+- print proof;
+- distribution/ISBN decision.
