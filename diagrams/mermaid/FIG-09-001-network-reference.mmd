@@ -1,0 +1,24 @@
+%% title: End-to-end network reference
+%% view: network
+%% truth_level: REFERENCE_ARCHITECTURE
+%% last_verified: 2026-09-28
+
+flowchart LR
+    U[Customer Device]
+    NET[Internet / Mobile]
+    DNS[DNS]
+    DD[Anti-DDoS / CDN]
+    WAF[WAF]
+    LB[Load Balancer]
+    ING[Ingress / Reverse Proxy]
+    API[API Gateway]
+    APP[Application Zone]
+    PAY[Payment Zone]
+    DATA[Data Zone]
+    RG[SCT Inst Gateway]
+    BN[Banking Connectivity]
+    CSM[CSM / Settlement]
+
+    U --> NET --> DNS --> DD --> WAF --> LB --> ING --> API --> APP --> PAY
+    PAY --> DATA
+    PAY --> RG --> BN --> CSM
