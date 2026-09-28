@@ -184,3 +184,34 @@ Voir :
 - `governance/V1_QUALITY_GATE.md`
 
 La seule étape non revendiquée comme terminée est le **physical print proof**, qui nécessite par définition un exemplaire imprimé réel.
+
+
+## Release candidate v1.0.0-rc1
+
+La chaîne éditoriale I1→I16 est maintenant couverte :
+
+- sources officielles ;
+- Wero/EPI ;
+- parcours P2P/C2B/e-commerce/POS ;
+- architecture fonctionnelle ;
+- ISO 20022 ;
+- SCT Inst ;
+- rails / TIPS / RT1 / CSM ;
+- settlement / liquidité ;
+- réseaux / flux ;
+- API / event-driven / data ;
+- cloud / Kubernetes / OpenShift ;
+- sécurité / IAM / fraude / VoP ;
+- résilience / DORA ;
+- SRE / exploitation ;
+- Digital Euro / prospective ;
+- checklists / scénarios de panne ;
+- audit V1 et pipeline Quarto.
+
+Voir :
+- `ITERATION_STATUS.md`
+- `COVERAGE_MATRIX.md`
+- `governance/V1_RELEASE_AUDIT.md`
+- `RELEASE_NOTES_V1_RC1.md`
+
+La prochaine étape n'est plus une nouvelle itération d'architecture : c'est le rendu PDF/EPUB, l'inspection visuelle, la densification graphique et le proof print.
