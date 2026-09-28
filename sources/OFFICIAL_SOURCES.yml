@@ -1,0 +1,190 @@
+version: 1
+checked_date: 2026-09-28
+policy: "Primary sources first; recheck before each major release."
+
+sources:
+  - id: epi-wero-launch-germany-2024
+    authority: EPI Company
+    title: "EPI launches Wero, its innovative digital payment wallet in Germany"
+    published: 2024-07-02
+    url: "https://epicompany.eu/media-insights/epi-ceo-says-europe-ready-for-one-digital-wallet-2"
+    topics: [wero, epi, p2p, launch]
+    status: PUBLIC_VERIFIED
+
+  - id: epi-wero-launch-france-2024
+    authority: EPI Company
+    title: "EPI launches Wero, its European digital payment wallet in France"
+    published: 2024-09-30
+    url: "https://epicompany.eu/media-insights/epi-launches-wero-in-france"
+    topics: [wero, france, p2p, account-to-account]
+    status: PUBLIC_VERIFIED
+
+  - id: epi-wero-ecommerce-belgium-2026
+    authority: EPI Company
+    title: "Wero announces the launch of its ecommerce solution in Belgium"
+    published: 2026-03-03
+    url: "https://epicompany.eu/media-insights/wero-announces-launch-ecommerce-in-belgium/"
+    topics: [wero, ecommerce, merchant]
+    status: PUBLIC_VERIFIED
+
+  - id: epi-wero-commerce-2026-09
+    authority: EPI Company
+    title: "Wero's Next, Now: E-commerce accelerates as In-store takes its first steps"
+    published: 2026-09-16
+    url: "https://epicompany.eu/media-insights/wero-next-now-e-commerce-accelerates-as-in-store-takes-its-first-steps/"
+    topics: [wero, ecommerce, instore, merchants]
+    status: PUBLIC_VERIFIED
+
+  - id: wero-merchants
+    authority: Wero
+    title: "Wero for professionals / e-m-commerce"
+    url: "https://wero-wallet.eu/fr/e-m-commerce"
+    topics: [merchant, four-corner, sct-inst, ecommerce]
+    status: PUBLIC_VERIFIED
+
+  - id: wero-faq-overview
+    authority: Wero
+    title: "What is Wero?"
+    url: "https://support.wero-wallet.eu/hc/en-us/articles/46739121212177-What-is-Wero"
+    topics: [p2p, instore, ecommerce, subscriptions, countries]
+    status: PUBLIC_VERIFIED
+
+  - id: wero-faq-desktop
+    authority: Wero
+    title: "How can I pay online with Wero using a desktop browser?"
+    url: "https://support.wero-wallet.eu/hc/en-us/articles/39377927747601-How-can-I-pay-online-with-Wero-using-a-desktop-browser"
+    topics: [ecommerce, qr, redirect]
+    status: PUBLIC_VERIFIED
+
+  - id: wero-faq-instore
+    authority: Wero
+    title: "Comment puis-je payer en magasin avec Wero ?"
+    url: "https://support.wero-wallet.eu/hc/fr/articles/46458759358481-Comment-puis-je-payer-en-magasin-avec-Wero"
+    topics: [instore, qr, wallet]
+    status: PUBLIC_VERIFIED
+
+  - id: epc-sct-inst-2025-v1.1
+    authority: European Payments Council
+    title: "2025 SEPA Instant Credit Transfer rulebook version 1.1"
+    version: "1.1"
+    effective: "2025-10-05T03:30:00+02:00"
+    url: "https://www.europeanpaymentscouncil.eu/document-library/rulebooks/2025-sepa-instant-credit-transfer-rulebook-version-11"
+    topics: [sct-inst, scheme]
+    status: CURRENT
+
+  - id: epc-sct-inst-igs-2025-v1.0
+    authority: European Payments Council
+    title: "SEPA Instant Credit Transfer Inter-PSP Implementation Guidelines 2025 version 1.0"
+    version: "1.0"
+    url: "https://www.europeanpaymentscouncil.eu/document-library/implementation-guidelines/sepa-instant-credit-transfer-inter-psp-implementation-2"
+    topics: [iso20022, pacs008, pacs002, camt056, camt029, pacs004, pacs028]
+    status: CURRENT
+
+  - id: epc-vop-2026-v1.1
+    authority: European Payments Council
+    title: "Verification Of Payee Scheme Rulebook"
+    version: "1.1"
+    effective: 2026-09-20
+    url: "https://www.europeanpaymentscouncil.eu/document-library/rulebooks/verification-payee-scheme-rulebook-0"
+    topics: [vop, fraud, beneficiary]
+    status: CURRENT
+
+  - id: epc-sct-inst-reason-codes-2025-v7
+    authority: European Payments Council
+    title: "Guidance on reason codes for SEPA Instant Credit Transfer R-transactions"
+    version: "7.0"
+    url: "https://www.europeanpaymentscouncil.eu/document-library/guidance-documents/guidance-reason-codes-sepa-instant-credit-transfer-r"
+    topics: [sct-inst, reject, recall, reason-codes]
+    status: CURRENT
+
+  - id: ecb-tips-overview
+    authority: European Central Bank / Eurosystem
+    title: "What is TIPS?"
+    url: "https://www.ecb.europa.eu/paym/target/tips/html/index.en.html"
+    topics: [tips, settlement, central-bank-money, dca]
+    status: CURRENT
+
+  - id: ecb-target-shared-features
+    authority: European Central Bank / Eurosystem
+    title: "TARGET Services shared features"
+    url: "https://www.ecb.europa.eu/paym/target/coco/html/index.en.html"
+    topics: [target, clm, liquidity, mca, dca]
+    status: CURRENT
+
+  - id: ecb-target-services-annual-report-2025
+    authority: European Central Bank / Eurosystem
+    title: "TARGET Services Annual Report 2025"
+    published: 2026
+    url: "https://www.ecb.europa.eu/press/targetservar/html/ecb.targetservar2025.en.html"
+    topics: [tips, t2, liquidity, prefunding, asta]
+    status: CURRENT
+
+  - id: eba-clearing-rt1
+    authority: EBA CLEARING
+    title: "RT1 System"
+    url: "https://www.ebaclearing.eu/services-instant-payments/rt1/"
+    topics: [rt1, sct-inst, settlement, central-bank-funds, tips]
+    status: CURRENT
+
+  - id: eu-ipr-2024-886
+    authority: European Union
+    title: "Regulation (EU) 2024/886 as regards instant credit transfers in euro"
+    version: "2024/886"
+    url: "https://eur-lex.europa.eu/eli/reg/2024/886/oj"
+    topics: [instant-payments, vop, pricing, availability]
+    status: IN_FORCE
+
+  - id: eu-dora-2022-2554
+    authority: European Union
+    title: "Regulation (EU) 2022/2554 on digital operational resilience"
+    version: "2022/2554"
+    applicable_from: 2025-01-17
+    url: "https://eur-lex.europa.eu/eli/reg/2022/2554/oj"
+    topics: [dora, resilience, ict-risk, testing, third-party]
+    status: IN_FORCE
+
+  - id: eu-gdpr-2016-679
+    authority: European Union
+    title: "Regulation (EU) 2016/679 General Data Protection Regulation"
+    version: "2016/679"
+    url: "https://eur-lex.europa.eu/eli/reg/2016/679/oj"
+    topics: [gdpr, personal-data]
+    status: IN_FORCE
+
+  - id: eu-eidas2-2024-1183
+    authority: European Union
+    title: "Regulation (EU) 2024/1183 establishing the European Digital Identity Framework"
+    version: "2024/1183"
+    url: "https://eur-lex.europa.eu/eli/reg/2024/1183/oj"
+    topics: [eidas2, digital-identity]
+    status: IN_FORCE
+
+  - id: eu-nis2-2022-2555
+    authority: European Union
+    title: "Directive (EU) 2022/2555 (NIS2)"
+    version: "2022/2555"
+    url: "https://eur-lex.europa.eu/eli/dir/2022/2555/oj"
+    topics: [nis2, cybersecurity]
+    status: IN_FORCE
+
+  - id: eu-psd3-psr-political-agreement
+    authority: Council of the European Union
+    title: "Payment services: Council and Parliament agree to step up the fight against fraud and increase transparency"
+    published: 2025-11-27
+    url: "https://www.consilium.europa.eu/en/press/press-releases/2025/11/27/payment-services-council-and-parliament-agree-to-step-up-the-fight-against-fraud-and-increase-transparency/"
+    topics: [psd3, psr, fraud]
+    status: PROVISIONAL_POLITICAL_AGREEMENT
+
+  - id: ecb-digital-euro-pilot-2026
+    authority: European Central Bank
+    title: "ECB selects 36 payment service providers to join digital euro pilot"
+    published: 2026-07-14
+    url: "https://www.ecb.europa.eu/press/pr/date/2026/html/ecb.pr260714~8cd07d9d45.en.html"
+    topics: [digital-euro, pilot, psp]
+    status: ACTIVE_PREPARATION
+
+rules:
+  - "Recheck CURRENT and political-process sources before every release."
+  - "Do not treat a press release as a substitute for a rulebook or legal text."
+  - "Do not use internal portfolio repositories as primary evidence for public claims."
+  - "Version-sensitive statements must carry a checked_date or last_verified date."
