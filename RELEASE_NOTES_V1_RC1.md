@@ -28,7 +28,7 @@ First end-to-end editorial release candidate of the Wero/EPI Reference Architect
 - SRE/capacity/runbooks;
 - Digital Euro/interoperability watch;
 - checklists;
-- 55 failure scenarios.
+- 50 failure scenarios.
 
 ## Source baseline
 
