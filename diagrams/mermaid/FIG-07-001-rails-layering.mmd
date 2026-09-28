@@ -1,0 +1,23 @@
+%% title: Payment rails layering
+%% view: payment-rail
+%% truth_level: MIXED
+%% last_verified: 2026-09-28
+%% sources: EPC, ECB TIPS, EBA CLEARING RT1
+
+flowchart TB
+    W[Wero Experience]
+    S[SCT Inst Scheme]
+    ISO[ISO 20022]
+    R[Routing / CSM]
+    T[TIPS]
+    RT[RT1]
+    O[Other relevant SCT Inst CSM]
+    CB[Central-bank liquidity / settlement accounts]
+
+    W --> S --> ISO --> R
+    R --> T
+    R --> RT
+    R --> O
+    T --> CB
+    RT --> CB
+    O -. settlement arrangement depends on infrastructure .-> CB
