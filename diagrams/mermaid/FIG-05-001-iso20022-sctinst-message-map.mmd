@@ -1,0 +1,19 @@
+%% title: SCT Inst ISO 20022 message map — 2025 IG
+%% view: message-map
+%% truth_level: PUBLIC_VERIFIED
+%% last_verified: 2026-09-28
+%% sources: EPC SCT Inst Inter-PSP IG 2025 V1.0
+
+flowchart LR
+    P8[pacs.008.001.08<br/>Payment]
+    P2[pacs.002.001.10<br/>Positive / Negative Confirmation]
+    P28[pacs.028.001.03<br/>Status Investigation]
+    C56[camt.056.001.08<br/>Recall / Request for Recall]
+    C29[camt.029.001.09<br/>Negative Response]
+    P4[pacs.004.001.09<br/>Return / Positive Response]
+
+    P8 --> P2
+    P8 -. status inquiry .-> P28
+    P8 -. recall .-> C56
+    C56 --> C29
+    C56 --> P4
