@@ -1,0 +1,47 @@
+name: Publish Book
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - "book/**"
+      - "annexes/**"
+      - "sources/**"
+      - "publishing/**"
+      - "GLOSSARY.md"
+      - ".github/workflows/publish-book.yml"
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install publishing dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y pandoc texlive-xetex texlive-lang-french texlive-fonts-recommended fonts-dejavu-core
+
+      - name: Build PDF and EPUB
+        run: bash publishing/build-book.sh
+
+      - name: Basic artifact checks
+        run: |
+          test -s build/wero-epi-reference-architecture-handbook-v1.0.pdf
+          test -s build/wero-epi-reference-architecture-handbook-v1.0.epub
+          file build/wero-epi-reference-architecture-handbook-v1.0.pdf
+          file build/wero-epi-reference-architecture-handbook-v1.0.epub
+
+      - name: Upload publication artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: wero-epi-handbook-v1.0
+          path: |
+            build/wero-epi-reference-architecture-handbook-v1.0.pdf
+            build/wero-epi-reference-architecture-handbook-v1.0.epub
+          retention-days: 30
