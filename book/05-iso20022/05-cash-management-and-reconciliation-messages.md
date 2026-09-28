@@ -1,7 +1,7 @@
 ---
 status: REVIEWED
 last_verified: 2026-09-28
-truth_level: REFERENCE_WITH_ISO_CONTEXT
+truth_level: MIXED
 primary_sources: []
 related_internal_repos:
   - zdmooc/payment-hub-iso20022-opf-reference
