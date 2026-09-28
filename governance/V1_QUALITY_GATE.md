@@ -60,17 +60,28 @@
 - [x] third-party/exit
 - [x] evidence model
 
-## Publication
-- [x] reproducible Pandoc build defined
-- [x] PDF target defined
-- [x] EPUB target defined
-- [x] CI artifact workflow defined
-- [ ] physical print proof - requires a physical/professional printer proof and is not claimable from CI
+## Manuscript structure
+- [x] I1→I16 detailed
+- [x] canonical order complete
+- [x] no missing canonical file
+- [x] source registry current at baseline date
+- [x] 34 maintainable Mermaid source diagrams
+- [x] claim/evidence governance normalized
+
+## Publication — deliberately deferred
+- [ ] final visual/copy-edit pass
+- [ ] final figure placement and numbering
+- [ ] PDF render
+- [ ] EPUB render
+- [ ] physical print proof
+- [ ] ISBN/distribution decision
 
 ## Gate decision
 
-**V1.0 MANUSCRIPT: PASS**
+**V1.0 GITHUB MANUSCRIPT: PASS**
 
-**V1.0 DIGITAL BUILD: PASS when CI build artifact succeeds.**
+**PDF/EPUB: NOT STARTED BY EDITORIAL DECISION**
 
-**PRINT-PRODUCTION APPROVAL: intentionally pending physical proof.**
+**PRINT-PRODUCTION APPROVAL: NOT STARTED**
+
+The next action after this gate is manuscript freeze/review, not automatic publication.
