@@ -1,0 +1,18 @@
+%% title: P2P alias resolution and payment
+%% truth_level: REFERENCE_ARCHITECTURE
+%% last_verified: 2026-09-28
+sequenceDiagram
+  participant U as Payer
+  participant A as App/Wallet
+  participant D as Directory
+  participant P as Payment Domain
+  participant R as Rail
+  U->>A: Select alias + amount
+  A->>D: Resolve alias
+  D-->>A: Beneficiary context
+  A->>U: Display beneficiary
+  U->>A: Approve / SCA
+  A->>P: Stable payment intent
+  P->>R: Financial submission
+  R-->>P: Authoritative result
+  P-->>A: Final state
