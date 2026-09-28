@@ -6,31 +6,38 @@ book:
   title: "Wero & EPI — Architecture de Référence des Paiements Européens"
   subtitle: "Paiements instantanés, ISO 20022, SCT Inst, TIPS, RT1, réseaux, cloud, sécurité, résilience et réglementation européenne"
   author: "Djamal Zidane"
-  date: today
+  date: "2026-09-28"
   chapters:
+    - index.md
     - book/00-front-matter/00-preface.md
     - book/01-foundations/01-layered-reading-of-wero-epi.md
     - book/01-foundations/02-end-to-end-payment-anatomy.md
     - book/01-foundations/03-actors-and-trust-boundaries.md
-    - book/02-wero-epi/01-public-ecosystem-and-roadmap.md
-    - book/03-payment-journeys/01-end-to-end-journeys.md
-    - book/04-functional-architecture/01-capabilities-domains-and-states.md
-    - book/05-iso20022/01-iso20022-end-to-end.md
-    - book/06-sct-inst/01-sct-inst-lifecycle-and-exceptions.md
-    - book/07-rails/01-tips-rt1-csm-and-reachability.md
-    - book/08-settlement-liquidity/01-settlement-liquidity-24x7.md
-    - book/09-network-flows/01-network-and-flow-architecture.md
+    - book/02-wero-epi/01-ecosystem-public-baseline.md
+    - book/03-journeys/01-end-to-end-wero-journeys.md
+    - book/04-functional/01-functional-reference-architecture.md
+    - book/05-iso20022/01-iso20022-reference.md
+    - book/06-sct-inst/01-sct-inst-lifecycle-exceptions.md
+    - book/07-rails/01-rails-clearing-settlement.md
+    - book/08-liquidity/01-settlement-liquidity-24x7.md
+    - book/09-network/01-network-and-flow-reference.md
     - book/10-api-event-data/01-api-event-data-architecture.md
-    - book/11-platform/01-cloud-kubernetes-openshift-reference.md
+    - book/11-infrastructure/01-infrastructure-cloud-platform.md
     - book/12-security/01-security-identity-fraud-vop.md
-    - book/13-resilience-dora/01-resilience-dora-and-testing.md
-    - book/14-operations-sre/01-payment-sre-operating-model.md
-    - book/15-future-annexes/01-interoperability-digital-euro-and-2030.md
+    - book/13-resilience/01-operational-resilience-dora.md
+    - book/14-operations/01-sre-observability-operations.md
+    - book/14-operations/02-bank-reference-architecture.md
+    - book/14-operations/03-psp-merchant-reference-architecture.md
+    - book/15-future-annexes/01-interoperability-digital-euro-future.md
+    - book/16-testing/01-testing-and-evidence-strategy.md
+    - book/17-regulation/01-european-regulatory-map.md
     - GLOSSARY.md
-    - appendices/CHECKLISTS.md
-    - appendices/FAILURE_SCENARIOS.md
-
-bibliography: []
+    - annexes/ISO20022_MESSAGE_CATALOG.md
+    - annexes/FAILURE_SCENARIOS.md
+    - annexes/RTO_RPO_MATRIX.md
+    - annexes/RACI_REFERENCE.md
+    - annexes/CHECKLISTS.md
+    - sources/VERIFIED_BASELINE_2026-09-28.md
 
 format:
   html:
