@@ -139,9 +139,15 @@ Premiers éléments créés :
 - cadrage éditorial ;
 - sommaire maître ;
 - gouvernance et règles de vérité ;
+- modèle de travail GitHub + Drive ;
 - cartographie des dépôts sources ;
 - roadmap de mise à jour sur cinq ans ;
+- stratégie de publication ;
+- glossaire initial ;
+- système de diagrammes ;
 - préface ;
 - Chapitre 1 — lecture en couches de Wero/EPI ;
-- Chapitre 2 — anatomie de bout en bout d'un paiement.
+- Chapitre 2 — anatomie de bout en bout d'un paiement ;
+- Chapitre 3 — acteurs, responsabilités et frontières de confiance ;
+- premier diagramme Mermaid maintenable.
 
