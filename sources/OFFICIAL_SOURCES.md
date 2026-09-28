@@ -202,3 +202,36 @@ Every source entry in a published chapter should include:
 7. secondary sources
 
 Internal GitHub repositories are **knowledge inputs**, never primary evidence for public or regulatory claims.
+
+
+## 9. PSD3 / PSR legislative trajectory
+
+### PSD3 / Payment Services Regulation
+- Authorities: European Commission / European Parliament / Council
+- Commission overview: https://finance.ec.europa.eu/consumer-finance-and-payments/payment-services/payment-services_en
+- European Parliament legislative train: https://www.europarl.europa.eu/legislative-train/theme-economic-and-monetary-affairs-econ/file-revision-of-eu-rules-on-payment-services
+- Council final-compromise references: ST 8220/2026 and ST 8221/2026
+- Verified: 2026-09-28
+- Status: CLOSE TO ADOPTION / LEGISLATIVE TRAJECTORY, NOT YET TREATED AS GENERALLY APPLICABLE FINAL LAW IN THIS HANDBOOK
+- Facts used:
+  - Parliament and Council reached a provisional political agreement on 2025-11-27.
+  - ECON approved the early-second-reading agreed text on 2026-05-05.
+- Editorial rule: recheck final adoption, Official Journal publication, entry into force and application dates before changing this status.
+
+## 10. DORA implementation material
+
+### EBA/ESA — DORA Incident Reporting Operational Instructions
+- Published: 2026-09-16
+- Source: https://www.eba.europa.eu/
+- Verified: 2026-09-28
+- Status: OPERATIONAL GUIDANCE
+- Notes:
+  - supports competent authorities and financial entities on major ICT-related incident reporting;
+  - references Commission Implementing Regulation (EU) 2025/302;
+  - explicitly does not replace legal interpretation of DORA/ITS.
+
+### ECB — TIBER-EU framework aligned with DORA
+- Source: https://www.ecb.europa.eu/paym/cyber-resilience/tiber-eu/html/index.en.html
+- Verified: 2026-09-28
+- Status: CURRENT
+- Use: TLPT architecture/testing chapter.
