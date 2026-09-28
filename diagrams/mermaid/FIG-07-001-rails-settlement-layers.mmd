@@ -1,0 +1,17 @@
+%% title: Scheme, CSM, settlement and liquidity layers
+%% view: payment-rails
+%% truth_level: REFERENCE_ARCHITECTURE
+%% last_verified: 2026-09-28
+flowchart TB
+  A[Wero / payment experience]
+  B[SCT Inst scheme]
+  C[ISO 20022 messages]
+  D[CSM / routing layer]
+  E1[TIPS]
+  E2[RT1]
+  F[Central-bank settlement asset / liquidity]
+  A --> B --> C --> D
+  D --> E1
+  D --> E2
+  E1 --> F
+  E2 --> F
