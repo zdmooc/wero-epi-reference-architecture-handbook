@@ -274,6 +274,30 @@ sources:
     topics: [rt1, pfmi, settlement, central-bank-funds, participant-position, tips-asta]
     status: CURRENT_REFERENCE
 
+  - id: eba-dora-incident-reporting-2026
+    authority: European Banking Authority / ESAs
+    title: "DORA Incident Reporting – Operational Instructions"
+    published: 2026-09-16
+    url: "https://eba.europa.eu/sites/default/files/2026-09/3039fc09-0b6e-4468-99bb-e27ae88bcf85/DORA%20IR%20-%20Operational%20Instructions_for%20publication%20%281%29.pdf"
+    topics: [dora, incident-reporting, ict-incidents, operations]
+    status: OPERATIONAL_GUIDANCE
+
+  - id: ecb-tiber-eu-2025
+    authority: European Central Bank / Eurosystem
+    title: "TIBER-EU Framework"
+    version: "2025"
+    url: "https://www.ecb.europa.eu/pub/pdf/other/ecb.tiber_eu_framework_2025~b32eff9a10.en.pdf"
+    topics: [tiber-eu, tlpt, dora, cyber-resilience, red-team]
+    status: CURRENT
+
+  - id: ecb-tiber-dora-alignment-2025
+    authority: European Central Bank / Eurosystem
+    title: "TIBER-EU Framework updated to align with DORA"
+    published: 2025-02-11
+    url: "https://www.ecb.europa.eu/press/intro/news/html/ecb.mipnews250211.en.html"
+    topics: [tiber-eu, dora, tlpt, purple-team]
+    status: CURRENT_REFERENCE
+
 rules:
   - "Recheck CURRENT and political-process sources before every release."
   - "Do not treat a press release as a substitute for a rulebook or legal text."
