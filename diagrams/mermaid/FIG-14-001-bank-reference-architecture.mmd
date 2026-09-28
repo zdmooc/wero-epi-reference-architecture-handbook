@@ -1,0 +1,27 @@
+%% title: Bank reference architecture for Wero / instant payments
+%% view: application
+%% truth_level: REFERENCE_ARCHITECTURE
+%% last_verified: 2026-09-28
+
+flowchart LR
+    CH[Mobile / Web / Wallet]
+    API[API Management]
+    IAM[IAM / SCA]
+    ORCH[Payment Orchestrator]
+    RISK[Fraud / AML / Sanctions / VoP]
+    HUB[Payment Hub / Core Adapter]
+    CORE[Core / Ledger]
+    SCT[SCT Inst Gateway]
+    ROUTE[Routing / CSM Connectivity]
+    RAIL[TIPS / RT1 / Relevant Route]
+    REC[Reconciliation / Investigation]
+    EVT[Events / Observability]
+
+    CH --> API --> IAM --> ORCH
+    ORCH --> RISK
+    ORCH --> HUB --> CORE
+    HUB --> SCT --> ROUTE --> RAIL
+    RAIL --> REC
+    ORCH --> REC
+    ORCH --> EVT
+    HUB --> EVT
