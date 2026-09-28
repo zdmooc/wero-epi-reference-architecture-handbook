@@ -1,7 +1,7 @@
 ---
 status: REVIEWED
 last_verified: 2026-09-28
-truth_level: PUBLIC_VERIFIED_AND_REFERENCE
+truth_level: MIXED
 primary_sources:
   - ecb-tips-overview
   - ecb-tips-facts-2026
