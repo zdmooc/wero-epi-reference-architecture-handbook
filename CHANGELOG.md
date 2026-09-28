@@ -19,7 +19,7 @@
 - SRE/operations/runbooks;
 - Digital Euro/interoperability watch;
 - professional checklists;
-- 55 failure scenarios;
+- 50 failure scenarios;
 - core Mermaid figure set;
 - Quarto build configuration;
 - GitHub Actions build workflow;
