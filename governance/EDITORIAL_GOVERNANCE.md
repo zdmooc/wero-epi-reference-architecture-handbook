@@ -24,6 +24,19 @@ Chaque claim sensible reçoit un statut :
 - `RUNTIME_PROVEN`
 - `TO_BE_VERIFIED`
 
+## 2bis. Chapter-level metadata
+
+The claim labels above remain the only truth labels used for individual assertions.
+
+For the front matter of a chapter, the field `truth_level` may use:
+- `PUBLIC_VERIFIED` — chapter is essentially factual/public;
+- `REFERENCE_ARCHITECTURE` — chapter is essentially authored design;
+- `MIXED` — chapter intentionally combines sourced facts and clearly separated reference design;
+- `EVIDENCE` — chapter governs or maps evidence;
+- `EDITORIAL` — chapter describes publishing/update methodology.
+
+A `MIXED` chapter must still label sensitive claims inside the prose as public fact, inference or reference architecture where ambiguity could arise.
+
 ## 3. Mandatory metadata per chapter
 
 Chaque chapitre évolutif doit contenir :
@@ -31,7 +44,7 @@ Chaque chapitre évolutif doit contenir :
 ```yaml
 status: DRAFT | REVIEWED | PUBLISHABLE
 last_verified: YYYY-MM-DD
-truth_level: PUBLIC_VERIFIED | MIXED | REFERENCE_ARCHITECTURE
+truth_level: PUBLIC_VERIFIED | REFERENCE_ARCHITECTURE | MIXED | EVIDENCE | EDITORIAL
 primary_sources:
   - ...
 related_internal_repos:
