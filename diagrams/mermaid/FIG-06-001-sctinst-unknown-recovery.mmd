@@ -1,0 +1,15 @@
+%% title: UNKNOWN recovery
+%% view: state
+%% truth_level: REFERENCE_ARCHITECTURE
+%% last_verified: 2026-09-28
+%% sources: EPC status investigation capability + handbook recovery model
+
+stateDiagram-v2
+    [*] --> Submitted
+    Submitted --> Settled: authoritative positive result
+    Submitted --> Rejected: authoritative rejection
+    Submitted --> Unknown: response lost / ambiguous timeout
+    Unknown --> Investigating: inquiry / pacs.028 / reconciliation
+    Investigating --> Settled: external evidence confirms effect
+    Investigating --> Failed: external evidence confirms no effect
+    Investigating --> Investigating: still unresolved
