@@ -1,7 +1,7 @@
 ---
 status: REVIEWED
 last_verified: 2026-09-28
-truth_level: EVIDENCE_MAP
+truth_level: EVIDENCE
 primary_sources: []
 related_internal_repos:
   - zdmooc/mayabank-instant-payments-resilience-platform
