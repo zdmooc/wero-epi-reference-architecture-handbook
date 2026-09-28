@@ -2,7 +2,7 @@
 
 Date: 2026-09-28
 
-The original master TOC deliberately enumerates hundreds of subtopics. V1.0 consolidates them into larger professional chapters rather than producing hundreds of shallow files.
+The master TOC deliberately enumerates hundreds of subtopics. V1.0 now implements them through 87 canonical chapter files, grouping closely related topics while keeping detailed subchapters for the high-value architecture domains.
 
 | Master TOC domain | V1 source |
 |---|---|
@@ -50,3 +50,14 @@ V1 links rather than copies:
 - companion runtime evidence.
 
 This is deliberate: the handbook is the editorial reference layer, not a monorepo dump.
+
+
+## Verified structure — 2026-09-28
+
+- chapter files: 87
+- canonical files including annexes/baseline: 94
+- Mermaid diagram sources: 34
+- missing canonical paths: 0
+- canonical order: `publishing/book-order.txt`
+
+This matrix validates **content coverage**, not PDF/EPUB layout.
