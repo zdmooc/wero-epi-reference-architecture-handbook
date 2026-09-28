@@ -298,6 +298,15 @@ sources:
     topics: [tiber-eu, dora, tlpt, purple-team]
     status: CURRENT_REFERENCE
 
+  - id: epc-oct-inst-2025-v1.1
+    authority: European Payments Council
+    title: "2025 One-Leg Out Instant Credit Transfer rulebook version 1.1"
+    version: "1.1"
+    effective: "2025-10-05T03:30:00+02:00"
+    url: "https://www.europeanpaymentscouncil.eu/document-library/rulebooks/2025-one-leg-out-instant-credit-transfer-rulebook-version-11"
+    topics: [oct-inst, cross-border, one-leg-out, instant-payments]
+    status: CURRENT
+
 rules:
   - "Recheck CURRENT and political-process sources before every release."
   - "Do not treat a press release as a substitute for a rulebook or legal text."
