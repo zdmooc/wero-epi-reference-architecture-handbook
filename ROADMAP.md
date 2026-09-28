@@ -1,125 +1,171 @@
 # Roadmap 2026→2031
 
-## V0.1 — Foundation
+## V1.0 — First reference manuscript — 2026-09-28
 
-Objectif : poser le système éditorial.
-
-- [x] README / mission
-- [x] scope
+### I0 — Foundation
+- [x] mission / scope
 - [x] master TOC
 - [x] editorial governance
-- [x] internal repositories map
-- [x] changelog
-- [x] preface
-- [x] Chapter 1 — layered architecture
-- [x] Chapter 2 — end-to-end payment anatomy
-- [ ] official sources registry
-- [ ] diagram catalogue
-- [ ] glossary seed
-- [ ] publication toolchain
+- [x] internal repository map
+- [x] GitHub + Drive operating model
+- [x] publishing strategy
+- [x] diagram system
+- [x] preface and foundations
 
-## V0.2 — Payments foundations
+### I1 — Official sources
+- [x] EPI/Wero
+- [x] EPC SCT Inst
+- [x] EPC VoP
+- [x] ECB TIPS/TARGET
+- [x] EBA CLEARING RT1
+- [x] EU regulations
+- [x] dated verified baseline
 
-- Wero/EPI public context
-- actors and trust boundaries
-- wallet vs scheme vs rail vs CSM vs settlement
-- full payment lifecycle
-- state machine
+### I2 — Wero/EPI ecosystem
+- [x] public baseline
+- [x] roles / four-corner merchant model
+- [x] staged service evolution
+- [x] volatile capability rule
 
-## V0.3 — ISO 20022 / SCT Inst
+### I3 — End-to-end journeys
+- [x] P2P
+- [x] e-commerce
+- [x] mobile/app-to-app
+- [x] POS/QR
+- [x] recurring
+- [x] refund / return / recall
+- [x] payment state model
 
-- pacs.008 / pacs.002
-- pacs.004 / pacs.028
-- camt.029 / camt.056
-- camt.052/053/054
-- reason codes
-- annotated XML
-- status / timeout / UNKNOWN / reconciliation
+### I4 — Functional architecture
+- [x] capability map
+- [x] domains
+- [x] orchestration
+- [x] merchant / consumer boundaries
+- [x] reconciliation
 
-## V0.4 — Rails / settlement / liquidity
+### I5 — ISO 20022
+- [x] message model
+- [x] pacs.008 / pacs.002
+- [x] pacs.004 / pacs.028
+- [x] camt.029 / camt.056
+- [x] cash-management context
+- [x] identifiers / correlation
+- [x] versioning
 
-- T2
-- TIPS
-- RT1
-- STET
-- reachability
-- Central Bank Money
-- prefunding
-- liquidity 24/7/365
-- stress scenarios
+### I6 — SCT Inst
+- [x] lifecycle
+- [x] time budget
+- [x] reject / timeout
+- [x] UNKNOWN
+- [x] investigation
+- [x] duplicate protection
+- [x] recall / return
+- [x] 24/7 operations
 
-## V0.5 — Network & flows
+### I7 — Rails
+- [x] CSM / reachability
+- [x] T2 / TARGET
+- [x] TIPS
+- [x] RT1
+- [x] multi-rail routing
+- [x] settlement finality
 
-- edge
-- zones
-- WAF/LB/API Gateway
-- internal and banking networks
-- TLS/mTLS
-- PKI/HSM
-- flow matrix
-- latency budgets
-- failure modes
+### I8 — Settlement / liquidity
+- [x] central-bank money
+- [x] MCA / DCA / CLM
+- [x] prefunding
+- [x] 24/7 liquidity
+- [x] stress scenarios
 
-## V0.6 — Application / event / data
+### I9 — Networks / flows
+- [x] zones
+- [x] DNS / DDoS / WAF
+- [x] LB / ingress / gateway
+- [x] firewalls / flow matrix
+- [x] banking connectivity
+- [x] TLS/mTLS / PKI / HSM
+- [x] latency / TCP / MTU
+- [x] failure catalogue
 
-- API
-- payment orchestration
-- Kafka
-- outbox/inbox
-- idempotency
-- ledger
-- reconciliation
-- consistency
+### I10 — API / Event / Data
+- [x] REST contracts
+- [x] idempotency
+- [x] durable intent
+- [x] Outbox / Inbox
+- [x] Kafka / MQ patterns
+- [x] ledger
+- [x] reconciliation
+- [x] consistency / RPO
 
-## V0.7 — Security
+### I11 — Infrastructure / Cloud
+- [x] failure domains
+- [x] Kubernetes/OpenShift
+- [x] DB/broker HA
+- [x] multi-AZ / multi-site
+- [x] GitOps
+- [x] backup/PITR
+- [x] supply chain
+- [x] capacity
 
-- IAM
-- SCA
-- OAuth2/OIDC
-- workload identity
-- fraud
-- AML/CFT
-- sanctions
-- VoP
+### I12 — Security
+- [x] IAM / SCA
+- [x] OAuth2/OIDC
+- [x] workload identity
+- [x] TLS/mTLS / PKI / HSM
+- [x] VoP
+- [x] fraud / AML / sanctions
+- [x] GDPR context
+- [x] threat model
 
-## V0.8 — Infrastructure / cloud / OpenShift
+### I13 — Resilience / DORA
+- [x] BIA
+- [x] RTO / RPO
+- [x] active/passive / active/active
+- [x] fencing / split brain
+- [x] degraded modes
+- [x] chaos
+- [x] third-party / exit
+- [x] DORA evidence
 
-- DC/cloud
-- multi-AZ/region
-- K8s/OpenShift
-- database HA
-- Kafka HA
-- GitOps
-- backup/PITR
+### I14 — Operations / Reference architectures
+- [x] SRE / OTel
+- [x] logs / metrics / traces
+- [x] SLI / SLO / capacity
+- [x] runbooks
+- [x] bank reference architecture
+- [x] PSP/acquirer/merchant reference architecture
 
-## V0.9 — Resilience / DORA
+### I15 — Future / Annexes / Tests / Regulation
+- [x] interoperability
+- [x] digital euro
+- [x] cross-border / FX
+- [x] 50 failure scenarios
+- [x] checklists
+- [x] RTO/RPO matrix
+- [x] ISO catalog
+- [x] RACI
+- [x] testing/evidence strategy
+- [x] regulatory map
+- [x] expanded glossary
 
-- BIA
-- RTO/RPO
-- HA/PRA
-- split brain/fencing
-- degraded modes
-- chaos
-- DORA
-- TLPT
-- third-party risk
-- exit strategy
+### I16 — Publication / Quality
+- [x] coverage matrix
+- [x] V1 quality gate
+- [x] final audit
+- [x] reproducible PDF/EPUB pipeline
+- [x] GitHub Actions artifact workflow
+- [ ] physical print proof — external physical step
 
-## V1.0 — First publishable edition
+## V1.x — Maintenance
 
-Criteria:
+Minor releases are triggered by:
+- Wero/EPI public capability changes;
+- EPC rulebook/IG changes;
+- TIPS/RT1 material changes;
+- EU regulatory changes;
+- critical factual corrections.
 
-- end-to-end completeness ;
-- source register ;
-- no unresolved high-risk TO_BE_VERIFIED claims ;
-- diagrams classified ;
-- glossary ;
-- index ;
-- PDF print proof ;
-- technical review ;
-- regulatory review.
-
-## Annual major editions
+## Annual editions
 
 - V2 — 2027
 - V3 — 2028
@@ -128,17 +174,10 @@ Criteria:
 - V6 — 2031
 
 Each major edition:
-- revalidates official sources ;
-- records scheme/regulatory changes ;
-- updates public Wero/EPI capabilities ;
-- refreshes diagrams ;
-- preserves historical changelog.
-
-## Minor releases
-
-Used when:
-- EPC Rulebook changes ;
-- EPI/Wero launches a material capability ;
-- settlement / CSM documentation changes ;
-- EU regulation materially changes ;
-- factual correction is required.
+1. revalidates all current primary sources;
+2. refreshes volatile Wero/EPI information;
+3. rechecks message/rulebook versions;
+4. rechecks legal status;
+5. updates diagrams;
+6. runs quality gate and digital builds;
+7. performs a new print proof when a physical edition changes materially.
