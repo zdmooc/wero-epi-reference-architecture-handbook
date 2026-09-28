@@ -45,3 +45,14 @@ sources:
     status: ACTIVE_WATCH
     checked: 2026-09-28
     url: https://www.ecb.europa.eu/euro/digital_euro/pilot/html/index.en.html
+
+  psd3_psr_2026_trajectory:
+    authority: EU co-legislators
+    status: CLOSE_TO_ADOPTION
+    checked: 2026-09-28
+    note: Provisional political agreement 2025-11-27; ECON approval 2026-05-05; verify OJ/adoption/applicability before treating as final applicable law.
+  dora_incident_reporting_2026:
+    authority: European Supervisory Authorities / EBA
+    status: OPERATIONAL_GUIDANCE
+    checked: 2026-09-28
+    note: Operational instructions published 2026-09-16; not a substitute for DORA/ITS legal text.
