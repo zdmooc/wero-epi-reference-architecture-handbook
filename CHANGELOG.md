@@ -1,5 +1,34 @@
 # Changelog
 
+## 1.0.0-rc1 — 2026-09-28
+
+### Added
+- official-source registry;
+- public Wero/EPI baseline and 2026 roadmap context;
+- payment journeys and three-state model;
+- functional capability/domain architecture;
+- ISO 20022 end-to-end chapter;
+- SCT Inst lifecycle and exception model;
+- TIPS/RT1/CSM architecture;
+- settlement and liquidity 24/7/365;
+- network/flow architecture;
+- API/event/data architecture;
+- Kubernetes/OpenShift/cloud reference;
+- security/IAM/fraud/VoP;
+- resilience/DORA/testing;
+- SRE/operations/runbooks;
+- Digital Euro/interoperability watch;
+- professional checklists;
+- 55 failure scenarios;
+- core Mermaid figure set;
+- Quarto build configuration;
+- GitHub Actions build workflow;
+- release audit and coverage matrix.
+
+### Status
+Architecture/content scope is release-candidate complete. Physical/digital rendering still requires output validation.
+
+
 ## 1.0.0 — 2026-09-28
 
 ### First reference manuscript
