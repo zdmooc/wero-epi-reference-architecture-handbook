@@ -148,13 +148,16 @@
 - [x] regulatory map
 - [x] expanded glossary
 
-### I16 — Publication / Quality
+### I16 — Content Quality / Manuscript Freeze
 - [x] coverage matrix
 - [x] V1 quality gate
 - [x] final audit
-- [x] reproducible PDF/EPUB pipeline
-- [x] GitHub Actions artifact workflow
-- [ ] physical print proof — external physical step
+- [x] canonical manuscript order
+- [x] repository content audit
+- [x] claim/evidence gate
+- [x] detailed I1→I16 coverage
+- [ ] PDF/EPUB render — intentionally deferred until manuscript freeze
+- [ ] physical print proof — after digital layout
 
 ## V1.x — Maintenance
 
@@ -183,14 +186,16 @@ Each major edition:
 7. performs a new print proof when a physical edition changes materially.
 
 
-## v1.0.0-rc1 — 2026-09-28
 
-I1→I16 completed for first-edition architecture/content scope.
+## V1.0 MANUSCRIPT — 2026-09-28
 
-Remaining publication-only gates:
-- automated build run;
-- visual inspection;
-- figure expansion/numbering;
-- copy edit;
-- print proof;
-- distribution/ISBN decision.
+I1→I16 are complete at GitHub manuscript level.
+
+Next phase, deliberately separate from content work:
+1. editorial reread;
+2. figure placement/caption pass;
+3. index/cross-reference pass;
+4. freeze/tag manuscript;
+5. generate PDF;
+6. generate EPUB;
+7. physical proof if print edition is selected.
