@@ -1,7 +1,7 @@
 ---
 status: REVIEWED
 last_verified: 2026-09-28
-truth_level: PUBLIC_VERIFIED_AND_REFERENCE
+truth_level: MIXED
 primary_sources:
   - epc-sct-inst-igs-2025-v1.0
 related_internal_repos:
