@@ -1,0 +1,14 @@
+%% title: RT1 access models
+%% truth_level: REFERENCE_ARCHITECTURE
+%% last_verified: 2026-09-28
+flowchart TB
+  PSP[PSP]
+  PSP --> D[Direct Participant]
+  PSP --> S[Serviced Participant]
+  PSP --> A[Addressable PSP]
+  S --> TP[Technical Provider]
+  S --> LP[Liquidity Provider]
+  D --> RT1[RT1]
+  TP --> RT1
+  LP --> RT1
+  A --> D
