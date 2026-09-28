@@ -1,0 +1,12 @@
+%% title: Wero participant four-corner reference
+%% truth_level: REFERENCE_ARCHITECTURE
+%% last_verified: 2026-09-28
+flowchart LR
+  C[Consumer] --> CPSP[Consumer PSP]
+  M[Merchant] --> APSP[Acceptor PSP]
+  CPSP --> W[Wero / EPI service layer]
+  APSP --> W
+  CPSP --> F[Financial execution / Payment Hub]
+  F --> R[SCT Inst / CSM / Settlement]
+  R --> B[Beneficiary PSP]
+  B --> APSP
