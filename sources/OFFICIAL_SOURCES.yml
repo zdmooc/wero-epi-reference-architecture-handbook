@@ -188,3 +188,26 @@ rules:
   - "Do not treat a press release as a substitute for a rulebook or legal text."
   - "Do not use internal portfolio repositories as primary evidence for public claims."
   - "Version-sensitive statements must carry a checked_date or last_verified date."
+
+  - id: ecb-digital-euro-fit-2026
+    authority: European Central Bank
+    title: "The digital euro: preparing for a potential launch"
+    published: 2026-03-24
+    url: "https://www.ecb.europa.eu/press/key/date/2026/html/ecb.sp260324~66f71f7577.en.html"
+    topics: [digital-euro, private-payment-schemes, standards, co-badging]
+    status: ACTIVE_PREPARATION
+
+  - id: ecb-digital-euro-pilot-page-2026
+    authority: European Central Bank
+    title: "Digital euro pilot"
+    url: "https://www.ecb.europa.eu/euro/digital_euro/pilot/html/index.en.html"
+    topics: [digital-euro, pilot, 2027, 2029]
+    status: ACTIVE_PREPARATION
+
+  - id: ecb-payments-strategy-2026
+    authority: European Central Bank
+    title: "Eurosystem comprehensive payments strategy"
+    published: 2026-03
+    url: "https://www.ecb.europa.eu/press/pubbydate/2026/html/ecb.eurosystemcomprehensivepaymentsstrategy202603.en.html"
+    topics: [payments-strategy, digital-euro, private-solutions, interoperability]
+    status: CURRENT
