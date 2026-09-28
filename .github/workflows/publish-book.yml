@@ -1,16 +1,6 @@
 name: Publish Book
 
 on:
-  push:
-    branches: [ main ]
-    paths:
-      - "book/**"
-      - "annexes/**"
-      - "sources/**"
-      - "diagrams/**"
-      - "publishing/**"
-      - "GLOSSARY.md"
-      - ".github/workflows/publish-book.yml"
   workflow_dispatch:
 
 concurrency:
