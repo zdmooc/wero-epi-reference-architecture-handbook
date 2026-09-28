@@ -1,6 +1,6 @@
-version: 1
+version: 2
 checked_date: 2026-09-28
-policy: "Primary sources first; recheck before each major release."
+policy: "Primary sources first; recheck current/version-sensitive sources before every release."
 
 sources:
   - id: epi-wero-launch-germany-2024
@@ -24,7 +24,7 @@ sources:
     title: "Wero announces the launch of its ecommerce solution in Belgium"
     published: 2026-03-03
     url: "https://epicompany.eu/media-insights/wero-announces-launch-ecommerce-in-belgium/"
-    topics: [wero, ecommerce, merchant]
+    topics: [wero, ecommerce, merchant, belgium]
     status: PUBLIC_VERIFIED
 
   - id: epi-wero-commerce-2026-09
@@ -33,6 +33,21 @@ sources:
     published: 2026-09-16
     url: "https://epicompany.eu/media-insights/wero-next-now-e-commerce-accelerates-as-in-store-takes-its-first-steps/"
     topics: [wero, ecommerce, instore, merchants]
+    status: PUBLIC_VERIFIED
+
+  - id: epi-wero-luxembourg-2026
+    authority: EPI Company
+    title: "EPI initiates Wero in Luxembourg"
+    published: 2026-09
+    url: "https://epicompany.eu/media-insights/epi-initiates-wero-in-luxembourg/"
+    topics: [wero, luxembourg, payconiq, migration]
+    status: PUBLIC_VERIFIED
+
+  - id: epi-members-2026
+    authority: EPI Company
+    title: "Members and participants"
+    url: "https://epicompany.eu/members/"
+    topics: [epi, members, consumer-psp, acceptor-psp]
     status: PUBLIC_VERIFIED
 
   - id: wero-merchants
@@ -116,7 +131,7 @@ sources:
     title: "TARGET Services Annual Report 2025"
     published: 2026
     url: "https://www.ecb.europa.eu/press/targetservar/html/ecb.targetservar2025.en.html"
-    topics: [tips, t2, liquidity, prefunding, asta]
+    topics: [tips, t2, liquidity, prefunding]
     status: CURRENT
 
   - id: eba-clearing-rt1
@@ -183,12 +198,6 @@ sources:
     topics: [digital-euro, pilot, psp]
     status: ACTIVE_PREPARATION
 
-rules:
-  - "Recheck CURRENT and political-process sources before every release."
-  - "Do not treat a press release as a substitute for a rulebook or legal text."
-  - "Do not use internal portfolio repositories as primary evidence for public claims."
-  - "Version-sensitive statements must carry a checked_date or last_verified date."
-
   - id: ecb-digital-euro-fit-2026
     authority: European Central Bank
     title: "The digital euro: preparing for a potential launch"
@@ -211,3 +220,18 @@ rules:
     url: "https://www.ecb.europa.eu/press/pubbydate/2026/html/ecb.eurosystemcomprehensivepaymentsstrategy202603.en.html"
     topics: [payments-strategy, digital-euro, private-solutions, interoperability]
     status: CURRENT
+
+  - id: ecb-digital-euro-innovation-call-2026-09
+    authority: European Central Bank
+    title: "Digital euro innovation platform call"
+    published: 2026-09-28
+    url: "https://www.ecb.europa.eu/press/intro/news/html/ecb.mipnews260928.en.html"
+    topics: [digital-euro, innovation, ai-agents, micropayments]
+    status: ACTIVE_EXPLORATION
+
+rules:
+  - "Recheck CURRENT and political-process sources before every release."
+  - "Do not treat a press release as a substitute for a rulebook or legal text."
+  - "Do not use internal portfolio repositories as primary evidence for public claims."
+  - "Version-sensitive statements must carry a checked_date or last_verified date."
+  - "ROADMAP and ACTIVE_EXPLORATION capabilities must never be described as generally live."
