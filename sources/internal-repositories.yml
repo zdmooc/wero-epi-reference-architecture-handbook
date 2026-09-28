@@ -1,0 +1,50 @@
+version: 1
+last_reviewed: 2026-09-28
+
+repositories:
+  wero_reference:
+    repository: zdmooc/wero-organisme-poc
+    role: Wero/EPI Consumer-Acceptor architecture, mission reference, resilience and historical lab
+    reuse_policy: extract concepts, diagrams and evidence after independent editorial verification
+
+  payment_hub:
+    repository: zdmooc/payment-hub-iso20022-opf-reference
+    role: ISO 20022, SCT/SDD/SCT Inst, TIPS, RT1, STET, T2, SWIFT/CBPR+, payment architecture
+    reuse_policy: principal internal knowledge source for payment rails and ISO 20022
+
+  instant_payments_lab:
+    repository: zdmooc/mayabank-instant-payments-resilience-platform
+    role: executable Consumer/Acceptor/C2B resilience reference platform
+    evidence_classes:
+      - RUNTIME_PROVEN
+      - CI_RENDER_PROVEN
+      - REFERENCE_DESIGN
+      - DISCOVERY_REQUIRED
+    reuse_policy: companion lab and runtime evidence source
+
+  dora_masterbook:
+    repository: zdmooc/dora-operational-resilience-architecture-masterbook
+    role: DORA, BIA, RTO/RPO, resilience testing, ICT third-party risk, exit strategy
+    reuse_policy: architecture interpretation source; primary legal sources must still be cited
+
+  openshift:
+    repository: zdmooc/openshift-platform-blueprints
+    role: OpenShift architecture patterns
+
+  mq:
+    repository: zdmooc/mayabank-ibm-mq-native-ha-openshift-eda-platform
+    role: MQ, HA, EDA and OpenShift integration patterns
+
+  kafka:
+    repository: zdmooc/mayabank-kafka-ddd-openshift
+    role: Kafka, DDD and OpenShift event-driven patterns
+
+  archimate:
+    repository: zdmooc/archimate-3-2-foundation-practitioner-masterbook
+    role: enterprise architecture notation and viewpoints
+
+rules:
+  - Internal repositories are not primary evidence for public Wero/EPI claims.
+  - Public or regulatory claims must be revalidated against official external sources.
+  - Runtime lab evidence must preserve environment and limitations.
+  - No client-confidential implementation is to be copied into the book.
