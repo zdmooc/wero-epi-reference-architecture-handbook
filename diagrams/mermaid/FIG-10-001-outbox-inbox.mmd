@@ -1,0 +1,26 @@
+%% title: Transactional Outbox / Inbox
+%% view: event
+%% truth_level: REFERENCE_ARCHITECTURE
+%% last_verified: 2026-09-28
+
+sequenceDiagram
+    participant API
+    participant DB
+    participant PUB as Outbox Publisher
+    participant K as Event Broker
+    participant CON as Consumer
+    participant IN as Inbox
+
+    API->>DB: TX payment update + Outbox insert
+    DB-->>API: Commit
+    PUB->>DB: Claim pending event
+    PUB->>K: Publish eventId
+    K-->>PUB: Ack
+    PUB->>DB: Mark published
+    K->>CON: Deliver event
+    CON->>IN: Claim eventId
+    alt New event
+        CON->>CON: Apply business effect
+    else Duplicate
+        CON->>CON: No second effect
+    end
