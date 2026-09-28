@@ -69,12 +69,24 @@ All entries in that file were checked on 2026-09-28 and resolve to existing file
 
 `MASTER_TOC.md` is a topic-level reference index. The first edition groups related topics into larger chapters instead of creating hundreds of artificially short chapter files.
 
-## Remaining publication gates
+## Verified manuscript structure
 
-Architecture/content coverage is complete for RC1. The remaining gates are output-specific:
-- successful PDF/EPUB render;
-- final page-break and overflow review;
-- final figure numbering/captions;
-- copy-edit pass;
+As of 2026-09-28:
+- 87 canonical chapter files;
+- 94 canonical files including annexes and verified baseline;
+- 34 Mermaid source diagrams;
+- 0 missing paths in `publishing/book-order.txt`.
+
+## Publication is intentionally deferred
+
+Content coverage I1→I16 is complete at GitHub manuscript level.
+
+The following are deliberately **not started yet**:
+- final figure placement/numbering;
+- final copy-edit/layout pass;
+- PDF render;
+- EPUB render;
 - print proof;
-- ISBN/distribution decision if commercial print is selected.
+- ISBN/distribution decision.
+
+Those steps start only after manuscript freeze.
