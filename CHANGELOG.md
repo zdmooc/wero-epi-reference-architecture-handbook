@@ -1,56 +1,30 @@
 # Changelog
 
-## 1.0.0-rc1 — 2026-09-28
+## 1.0.0-manuscript — 2026-09-28
 
-### Added
-- official-source registry;
-- public Wero/EPI baseline and 2026 roadmap context;
-- payment journeys and three-state model;
-- functional capability/domain architecture;
-- ISO 20022 end-to-end chapter;
-- SCT Inst lifecycle and exception model;
-- TIPS/RT1/CSM architecture;
-- settlement and liquidity 24/7/365;
-- network/flow architecture;
-- API/event/data architecture;
-- Kubernetes/OpenShift/cloud reference;
-- security/IAM/fraud/VoP;
-- resilience/DORA/testing;
-- SRE/operations/runbooks;
-- Digital Euro/interoperability watch;
-- professional checklists;
-- 50 failure scenarios;
-- core Mermaid figure set;
-- Quarto build configuration;
-- GitHub Actions build workflow;
-- release audit and coverage matrix.
+### Content completed
+- completed the I1→I16 manuscript programme;
+- expanded the handbook to 87 canonical chapter files;
+- maintained 94 canonical files including annexes and verified public baseline;
+- expanded the diagram catalogue to 34 maintainable Mermaid sources;
+- added dated primary-source registry for Wero/EPI, EPC SCT Inst/VoP/OCT Inst, ECB TARGET/TIPS, EBA CLEARING RT1, EU regulations and DORA/TIBER material;
+- deepened Wero/EPI participants, migrations and merchant acceptance;
+- deepened P2P, e-commerce, POS, recurring, refund, return, recall and dispute journeys;
+- deepened ISO 20022, identifiers, pacs/camt flows, validation and reconciliation;
+- deepened SCT Inst timing, UNKNOWN, duplicates, investigation and VoP intersection;
+- deepened TIPS, RT1, reachability, multi-CSM routing and rail adapter semantics;
+- deepened TARGET accounts, RT1 positions, 24/7 liquidity forecasting and operations;
+- deepened edge/network segmentation, banking connectivity, PKI/HSM and latency budgets;
+- deepened API, Kafka/MQ, Outbox/Inbox, ledger, saga and consistency;
+- deepened OpenShift/Kubernetes, DB/broker HA, multi-site and GitOps;
+- deepened IAM/SCA, crypto, fraud/AML/sanctions, VoP and threat model;
+- deepened BIA/RTO/RPO, fencing, degraded modes, DORA/TLPT, third-party exit and cyber recovery;
+- deepened SRE, capacity, incident/runbook, on-call and reconciliation operations;
+- deepened Digital Euro comparison, OCT Inst/cross-border, 2030 architecture and five-year update method;
+- added end-to-end test matrix, claim-evidence governance and companion-lab evidence map.
 
-### Status
-Architecture/content scope is release-candidate complete. Physical/digital rendering still requires output validation.
-
-
-## 1.0.0 — 2026-09-28
-
-### First reference manuscript
-- completed I1→I16 editorial programme;
-- added official-source registry and dated public baseline;
-- covered Wero/EPI ecosystem and payment journeys;
-- covered ISO 20022 and SCT Inst lifecycle/exceptions;
-- covered TIPS, RT1, CSM, settlement and 24/7 liquidity;
-- made networks and flow matrices first-class architecture domains;
-- added API/event/data architecture, idempotency, Outbox/Inbox and reconciliation;
-- added cloud/Kubernetes/OpenShift reference architecture;
-- added security, IAM, SCA, PKI/HSM, fraud and VoP;
-- added operational resilience/DORA;
-- added SRE, bank, PSP/acquirer and merchant reference architectures;
-- added Digital Euro/interoperability future section;
-- added testing strategy, regulatory map and professional annexes;
-- added 15+ maintainable Mermaid source diagrams;
-- added reproducible PDF/EPUB build in GitHub Actions.
-
-### Quality boundary
-- V1.0 manuscript passes the editorial quality gate.
-- Physical print approval remains pending a real printed proof.
+### Editorial boundary
+PDF, EPUB and print artifacts are intentionally **not generated yet**. Publication starts only after final manuscript freeze.
 
 ## 0.1.0 — 2026-09-28
 
@@ -64,4 +38,4 @@ Architecture/content scope is release-candidate complete. Physical/digital rende
 - initial chapters and diagram system.
 
 ### Editorial decision
-The book is not constrained to 299 pages. Completeness, evidence quality and maintainability take priority over page count.
+The book is not constrained to a fixed page count. Completeness, evidence quality and maintainability take priority.
