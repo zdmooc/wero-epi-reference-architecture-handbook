@@ -1,7 +1,7 @@
 ---
 status: REVIEWED
 last_verified: 2026-09-28
-truth_level: EDITORIAL_METHOD
+truth_level: EDITORIAL
 primary_sources: []
 related_internal_repos: []
 ---
