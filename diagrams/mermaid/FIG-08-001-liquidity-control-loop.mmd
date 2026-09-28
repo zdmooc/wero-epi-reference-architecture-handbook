@@ -1,0 +1,18 @@
+%% title: 24/7 liquidity control loop
+%% view: liquidity
+%% truth_level: REFERENCE_ARCHITECTURE
+%% last_verified: 2026-09-28
+%% sources: ECB TARGET/TIPS public liquidity model
+
+flowchart LR
+    OBS[Observe balances & positions]
+    FC[Forecast flows]
+    BUF[Compute safety buffer]
+    ACT[Fund / defund / rebalance]
+    SET[Settlement]
+    MON[Monitor outcome]
+    AL[Alert / Escalate]
+
+    OBS --> FC --> BUF --> ACT --> SET --> MON --> OBS
+    BUF --> AL
+    MON --> AL
