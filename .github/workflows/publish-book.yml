@@ -13,6 +13,10 @@ on:
       - ".github/workflows/publish-book.yml"
   workflow_dispatch:
 
+concurrency:
+  group: publish-book-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   build:
     runs-on: ubuntu-latest
