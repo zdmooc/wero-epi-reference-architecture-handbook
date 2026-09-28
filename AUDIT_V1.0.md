@@ -1,7 +1,7 @@
 # Audit V1.0 — Wero & EPI Reference Architecture Handbook
 
 Date: 2026-09-28  
-Scope: manuscript V1.0
+Scope: GitHub manuscript V1.0 — content audit
 
 ## Executive conclusion
 
@@ -46,13 +46,14 @@ The repository now contains a complete first-edition architecture manuscript spa
 
 ## Known boundaries
 
-V1.0 does not claim:
+The manuscript does not claim:
 - EPI internal architecture;
 - a real participant bank's network/topology;
 - production performance figures;
 - production multi-AZ/site proof;
 - legal advice;
-- a physical print proof.
+- a physical print proof;
+- that PDF/EPUB layout has already been validated.
 
 ## Delegated references
 
@@ -62,12 +63,21 @@ Detailed specialist depth remains in:
 - OpenShift/Kafka/MQ specialists;
 - instant-payments executable lab.
 
-## Publication decision
+## Manuscript decision
 
-- Manuscript: **PASS**
-- Digital PDF/EPUB pipeline: **READY**
-- Physical print approval: **PENDING PHYSICAL PROOF**
+- GitHub manuscript content: **PASS**
+- Canonical chapter paths: **PASS — 0 missing**
+- Detailed I1→I16 coverage: **PASS**
+- Source/evidence governance: **PASS**
+- Diagram source catalogue: **PASS**
+- PDF/EPUB generation: **DEFERRED BY EDITORIAL DECISION**
+- Physical print approval: **NOT STARTED**
 - Long-term maintenance: **ACTIVE 2026→2031**
+
+Verified structure on 2026-09-28:
+- 87 chapter files;
+- 94 canonical files including annexes/baseline;
+- 34 Mermaid diagram sources.
 
 ## Next maintenance triggers
 
