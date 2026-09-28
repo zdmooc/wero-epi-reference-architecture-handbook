@@ -1,0 +1,51 @@
+project:
+  type: book
+  output-dir: _book
+
+book:
+  title: "Wero & EPI — Architecture de Référence des Paiements Européens"
+  subtitle: "Paiements instantanés, ISO 20022, SCT Inst, TIPS, RT1, réseaux, cloud, sécurité, résilience et réglementation européenne"
+  author: "Djamal Zidane"
+  date: today
+  chapters:
+    - book/00-front-matter/00-preface.md
+    - book/01-foundations/01-layered-reading-of-wero-epi.md
+    - book/01-foundations/02-end-to-end-payment-anatomy.md
+    - book/01-foundations/03-actors-and-trust-boundaries.md
+    - book/02-wero-epi/01-public-ecosystem-and-roadmap.md
+    - book/03-payment-journeys/01-end-to-end-journeys.md
+    - book/04-functional-architecture/01-capabilities-domains-and-states.md
+    - book/05-iso20022/01-iso20022-end-to-end.md
+    - book/06-sct-inst/01-sct-inst-lifecycle-and-exceptions.md
+    - book/07-rails/01-tips-rt1-csm-and-reachability.md
+    - book/08-settlement-liquidity/01-settlement-liquidity-24x7.md
+    - book/09-network-flows/01-network-and-flow-architecture.md
+    - book/10-api-event-data/01-api-event-data-architecture.md
+    - book/11-platform/01-cloud-kubernetes-openshift-reference.md
+    - book/12-security/01-security-identity-fraud-vop.md
+    - book/13-resilience-dora/01-resilience-dora-and-testing.md
+    - book/14-operations-sre/01-payment-sre-operating-model.md
+    - book/15-future-annexes/01-interoperability-digital-euro-and-2030.md
+    - GLOSSARY.md
+    - appendices/CHECKLISTS.md
+    - appendices/FAILURE_SCENARIOS.md
+
+bibliography: []
+
+format:
+  html:
+    toc: true
+    number-sections: true
+  epub:
+    toc: true
+  pdf:
+    documentclass: scrbook
+    toc: true
+    number-sections: true
+    papersize: a4
+    geometry:
+      - margin=20mm
+    keep-tex: true
+
+execute:
+  freeze: auto
