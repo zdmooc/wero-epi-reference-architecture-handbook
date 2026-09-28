@@ -1,0 +1,22 @@
+%% title: European retail payments coexistence — future reference
+%% view: future
+%% truth_level: MIXED
+%% last_verified: 2026-09-28
+%% sources: ECB digital euro strategy; handbook reference architecture
+
+flowchart TB
+    C[Customer / Merchant]
+    W[Wallet / Bank App / Checkout]
+    P[Payment Choice / Policy]
+    PR[Private European Solutions<br/>Wero and other schemes]
+    DE[Digital Euro<br/>potential public digital money]
+    ST[Common Standards / Acceptance<br/>where applicable]
+    PSP[PSP / Bank / Acquirer]
+    SET[Settlement Infrastructure / Central Bank Context]
+
+    C --> W --> P
+    P --> PR
+    P --> DE
+    PR --> ST
+    DE --> ST
+    ST --> PSP --> SET
