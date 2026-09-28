@@ -1,0 +1,29 @@
+%% title: Functional capability map
+%% view: functional
+%% truth_level: REFERENCE_ARCHITECTURE
+%% last_verified: 2026-09-28
+%% sources: handbook reference architecture
+
+flowchart TB
+    CH[Channels / Wallet / Merchant]
+    API[API & Experience]
+    ORCH[Payment Orchestrator]
+    IAM[IAM / Consent / SCA]
+    DIR[Directory / Alias / VoP]
+    RISK[Fraud / AML / Sanctions]
+    FIN[Payment Hub / Core / Ledger]
+    RAIL[SCT Inst Adapter / Rail]
+    REC[Reconciliation / Investigation]
+    MER[Acceptor / Merchant Integration]
+    EVT[Event Bus / Audit / Observability]
+
+    CH --> API --> ORCH
+    ORCH --> IAM
+    ORCH --> DIR
+    ORCH --> RISK
+    ORCH --> FIN --> RAIL
+    ORCH --> REC
+    ORCH --> MER
+    ORCH --> EVT
+    FIN --> EVT
+    RAIL --> REC
