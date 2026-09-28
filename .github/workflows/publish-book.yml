@@ -7,6 +7,7 @@ on:
       - "book/**"
       - "annexes/**"
       - "sources/**"
+      - "diagrams/**"
       - "publishing/**"
       - "GLOSSARY.md"
       - ".github/workflows/publish-book.yml"
@@ -25,15 +26,16 @@ jobs:
       - name: Install publishing dependencies
         run: |
           sudo apt-get update
-          sudo apt-get install -y pandoc texlive-xetex texlive-lang-french texlive-fonts-recommended fonts-dejavu-core
+          sudo apt-get install -y pandoc texlive-xetex texlive-lang-french texlive-fonts-recommended fonts-dejavu-core librsvg2-bin
 
-      - name: Build PDF and EPUB
+      - name: Build PDF, EPUB and figures
         run: bash publishing/build-book.sh
 
       - name: Basic artifact checks
         run: |
           test -s build/wero-epi-reference-architecture-handbook-v1.0.pdf
           test -s build/wero-epi-reference-architecture-handbook-v1.0.epub
+          test "$(find build/figures -type f -name '*.svg' | wc -l)" -ge 15
           file build/wero-epi-reference-architecture-handbook-v1.0.pdf
           file build/wero-epi-reference-architecture-handbook-v1.0.epub
 
@@ -44,4 +46,5 @@ jobs:
           path: |
             build/wero-epi-reference-architecture-handbook-v1.0.pdf
             build/wero-epi-reference-architecture-handbook-v1.0.epub
+            build/figures/*.svg
           retention-days: 30
