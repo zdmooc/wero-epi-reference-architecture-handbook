@@ -1,0 +1,10 @@
+%% title: TARGET liquidity account reference
+%% truth_level: REFERENCE_ARCHITECTURE
+%% last_verified: 2026-09-28
+flowchart TB
+  MCA[Main Cash Account] --> CLM[Central Liquidity Management]
+  CLM --> RTGS[RTGS DCA]
+  CLM --> TIPS[TIPS DCA]
+  CLM --> ASTA[TIPS AS Technical Account]
+  TIPS --> PAY[Instant Payments]
+  ASTA --> CSM[Ancillary System / CSM]
