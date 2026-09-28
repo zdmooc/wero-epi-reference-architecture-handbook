@@ -1,0 +1,20 @@
+%% title: Commercial scheme and financial state separation
+%% view: state
+%% truth_level: REFERENCE_ARCHITECTURE
+%% last_verified: 2026-09-28
+flowchart LR
+  subgraph Commercial
+    C1[CREATED] --> C2[PAYMENT_PENDING] --> C3[PAID] --> C4[REFUND_PENDING] --> C5[REFUNDED]
+  end
+  subgraph Scheme
+    S1[REQUEST_CREATED] --> S2[AUTH_PENDING] --> S3[AUTHORIZED] --> S4[COMPLETED]
+    S2 --> SX[EXPIRED / REJECTED]
+  end
+  subgraph Financial
+    F1[SUBMITTED] --> F2[SETTLED]
+    F1 --> F3[REJECTED]
+    F1 --> F4[UNKNOWN] --> F5[RECONCILING]
+    F5 --> F2
+    F5 --> F3
+    F5 --> F6[RECOVERY_REQUIRED]
+  end
