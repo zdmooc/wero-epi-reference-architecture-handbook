@@ -132,7 +132,7 @@ Le nombre de pages restera une **conséquence du contenu**, pas une contrainte.
 
 ## État
 
-**V1.0 MANUSCRIPT — READY_FOR_MANUSCRIPT_FREEZE ; contenu I1→I16 terminé ; Design System V1 défini ; 36/36 figures = FIGURE_CHAPTER_INTEGRATION_PASS ; PDF/EPUB/print différés.**
+**V1.0 MANUSCRIPT — LAYOUT_PROOF_PASS / READY_FOR_FINAL_MANUSCRIPT_FREEZE ; contenu I1→I16 terminé ; Design System V1 défini ; 36/36 figures = FIGURE_CHAPTER_INTEGRATION_PASS ; PDF/EPUB/print différés.**
 
 Premiers éléments créés :
 
@@ -221,3 +221,19 @@ Figure integration status — 2026-09-29:
 - 0 missing figure/chapter path;
 - status: **FIGURE_CHAPTER_INTEGRATION_PASS**;
 - next: Quarto page-layout proof before any PDF/EPUB release.
+
+
+Layout proof status — 2026-09-29:
+- complete Quarto HTML render: PASS;
+- complete A4 PDF proof render: PASS;
+- 87 chapters / 36 figure IDs / 36 references / 36 embedded SVGs;
+- 98 rendered HTML files;
+- 0 unresolved figure references;
+- 0 missing images;
+- current proof: 446 pages A4;
+- 0 TeX overfull boxes;
+- 36 figure-bearing pages visually reviewed;
+- FIG-13-004 corrected and revalidated;
+- status: **LAYOUT_PROOF_PASS**.
+
+The proof PDF is temporary QA evidence, not the publication PDF. EPUB remains ungenerated.
