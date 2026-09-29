@@ -217,3 +217,18 @@ PASS:
 Decision: **LAYOUT_PROOF_PASS / READY_FOR_FINAL_MANUSCRIPT_FREEZE**.
 
 The rendered PDF is a temporary layout proof and is not a publication artifact.
+
+
+## Final manuscript freeze — 2026-09-29
+
+PASS:
+- successful layout proof basis preserved;
+- post-proof diff checked;
+- 0 changes under `book/**`;
+- 0 changes to `_quarto.yml`;
+- 0 changes under `diagrams/svg/**`;
+- only governance/status documentation changed after proof.
+
+Decision: **FINAL_MANUSCRIPT_FREEZE**.
+
+Publication remains a separate subsequent build.
