@@ -1,6 +1,6 @@
 ---
 status: REVIEWED
-last_verified: 2026-09-28
+last_verified: 2026-09-29
 truth_level: MIXED
 primary_sources:
   - wero-faq-overview
@@ -279,7 +279,7 @@ SUBMITTED
   |      INVESTIGATING
   |       /       \
   |      v         v
-  |   SETTLED    FAILED
+  |   SETTLED    REJECTED / NO_EFFECT_CONFIRMED
   |
   v
 SETTLED
