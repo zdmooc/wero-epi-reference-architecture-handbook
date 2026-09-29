@@ -3,7 +3,7 @@
 **Editorial review:** 2026-09-29  
 **Final source count:** 36 Mermaid diagrams  
 **Numbering:** unique — no duplicate figure IDs  
-**Status:** READY_FOR_VISUAL_LAYOUT
+**Status:** 36/36 FIGURES — SVG_SOURCE_QA_PASS
 
 ## Editorial decisions
 
@@ -68,6 +68,29 @@ Status: **HERO_SVG_QA_PASS**
 
 8/8 hero SVG artifacts are rendered and have passed visual QA. No PDF/EPUB generation is triggered by this status.
 
+## Secondary SVG status
+
+The remaining 28 figures have also been migrated to Visual System V1 and rendered under `diagrams/svg/secondary/`.
+
+Status: **SECONDARY_SVG_QA_PASS**
+
+QA result:
+- 28/28 valid SVG artifacts;
+- 28/28 with explicit vector viewBox;
+- 28/28 with Visual System V1 signature;
+- 28/28 checked on 2026-09-29;
+- 0 out-of-bounds semantic boxes;
+- 0 semantic node overlaps after one correction to FIG-13-004.
+
+Combined corpus:
+- 8 Hero SVGs;
+- 28 Secondary SVGs;
+- **36/36 FIGURES — SVG_SOURCE_QA_PASS**.
+
+See:
+- `diagrams/HERO_SVG_QA_V1.md`
+- `diagrams/SECONDARY_SVG_QA_V1.md`
+
 ## Hero figures
 
 The following figures should receive the strongest visual treatment in the final book:
@@ -110,5 +133,7 @@ Before PDF/print rendering:
 
 The architectural meaning and placement of the figures are now reviewed.
 
-Remaining visual-production work is deliberately deferred to the publication phase:
-`Mermaid → SVG → typography/branding → page placement → PDF/EPUB/print proof`.
+SVG production is complete for all 36 figures.
+
+Remaining visual-production work is now page-level publication proof:
+`36 SVG → captions/source notes → chapter placement → typography/layout proof → PDF/EPUB/print proof`.
