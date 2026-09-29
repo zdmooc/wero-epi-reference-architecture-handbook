@@ -77,7 +77,7 @@ Detailed specialist depth remains in:
 Verified structure on 2026-09-28:
 - 87 chapter files;
 - 97 canonical files including annexes/baseline;
-- 34 Mermaid diagram sources.
+- 36 Mermaid diagram sources.
 
 ## Next maintenance triggers
 
@@ -100,9 +100,24 @@ PASS:
 - acronym annex added;
 - subject index added;
 - architecture cross-reference map added;
-- all 34 Mermaid diagrams contain truth-level and verification metadata;
+- all 36 Mermaid diagrams contain truth-level and verification metadata;
 - critical public baseline revalidated against current EPC, ECB, EBA CLEARING and EPI pages.
 
 Decision: **READY_FOR_MANUSCRIPT_FREEZE**.
 
 This means the GitHub content has no identified architecture/editorial blocker. It does not mean PDF/EPUB layout has been produced.
+
+
+## Diagram review pass — 2026-09-29
+
+PASS:
+- 36 final Mermaid figures;
+- 0 duplicate figure IDs;
+- 2 redundant figures removed;
+- Parts 03, 09 and 13 renumbered coherently;
+- payment-state figure moved to functional architecture Part 04;
+- UNKNOWN recovery wording corrected to avoid ambiguous FAILED state;
+- POS/QR, recall-return, SCT Inst timing and resilience-testing figures added;
+- final placement/layout plan recorded in `diagrams/DIAGRAM_CATALOG.md`.
+
+The manuscript is now ready for SVG rendering and visual production after freeze.
