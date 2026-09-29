@@ -259,3 +259,12 @@ Publication RC1 — 2026-09-29:
 - status: **PUBLICATION_RC1_PASS**.
 
 No public release or distribution has been performed.
+
+
+Final release readiness — 2026-09-29:
+- RC1 PDF/EPUB QA complete;
+- canonical publication metadata aligned in `publishing/metadata.yaml`;
+- release-readiness matrix: `governance/FINAL_RELEASE_READINESS_V1.md`;
+- print-proof checklist: `publishing/PRINT_PROOF_CHECKLIST_V1.md`;
+- ISBN / publisher / imprint / distribution / cover remain deliberately TBD;
+- public release remains blocked pending explicit decision.
