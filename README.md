@@ -194,10 +194,10 @@ Le programme I1→I16 est terminé au niveau **contenu GitHub**.
 État éditorial vérifié au 29 septembre 2026 :
 - 87 fichiers de chapitres canoniques ;
 - 97 fichiers dans l'ordre canonique avec annexes/baseline ;
-- 34 diagrammes Mermaid maintenables ;
+- 36 diagrammes Mermaid maintenables ;
 - aucun chemin manquant dans `publishing/book-order.txt` ;
 - sources primaires 2026 versionnées ;
 - PDF/EPUB non générés à ce stade, conformément à la stratégie éditoriale.
 
 Prochaine phase après le freeze éditorial :
-`relecture globale → figures finales → index → PDF → EPUB → proof papier → publication`.
+`render SVG des 36 figures → mise en page/typographie → PDF → EPUB → proof papier → publication`.
