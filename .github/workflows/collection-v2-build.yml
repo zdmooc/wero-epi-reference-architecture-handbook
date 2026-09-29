@@ -4,6 +4,11 @@ on:
   push:
     branches:
       - collection-v2-four-volumes
+    paths:
+      - .github/workflows/collection-v2-build.yml
+      - volumes/**
+      - diagrams/**
+      - sources/**
   workflow_dispatch:
 
 permissions:
