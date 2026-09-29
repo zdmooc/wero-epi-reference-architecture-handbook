@@ -132,7 +132,7 @@ Le nombre de pages restera une **conséquence du contenu**, pas une contrainte.
 
 ## État
 
-**V1.0 MANUSCRIPT — READY_FOR_MANUSCRIPT_FREEZE ; contenu I1→I16 terminé, relecture structure/terminologie passée ; PDF/EPUB/print différés.**
+**V1.0 MANUSCRIPT — READY_FOR_MANUSCRIPT_FREEZE ; contenu I1→I16 terminé ; Design System V1 défini ; 8 Hero Figures = HERO_SOURCE_PREPARED ; PDF/EPUB/print différés.**
 
 Premiers éléments créés :
 
