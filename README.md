@@ -132,7 +132,7 @@ Le nombre de pages restera une **conséquence du contenu**, pas une contrainte.
 
 ## État
 
-**V1.0 MANUSCRIPT — contenu I1→I16 terminé dans GitHub ; PDF/EPUB/print volontairement différés après le freeze éditorial.**
+**V1.0 MANUSCRIPT — READY_FOR_MANUSCRIPT_FREEZE ; contenu I1→I16 terminé, relecture structure/terminologie passée ; PDF/EPUB/print différés.**
 
 Premiers éléments créés :
 
@@ -191,9 +191,9 @@ Les artefacts **PDF, EPUB et print ne font pas partie de cette étape**. Ils ser
 
 Le programme I1→I16 est terminé au niveau **contenu GitHub**.
 
-État vérifié au 28 septembre 2026 :
+État éditorial vérifié au 29 septembre 2026 :
 - 87 fichiers de chapitres canoniques ;
-- 94 fichiers dans l'ordre canonique avec annexes/baseline ;
+- 97 fichiers dans l'ordre canonique avec annexes/baseline ;
 - 34 diagrammes Mermaid maintenables ;
 - aucun chemin manquant dans `publishing/book-order.txt` ;
 - sources primaires 2026 versionnées ;
