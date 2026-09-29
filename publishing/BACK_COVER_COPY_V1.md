@@ -1,6 +1,6 @@
 # Back Cover Copy — V1.0
 
-**Status:** DRAFT_READY / APPROVAL_REQUIRED  
+**Status:** APPROVED  
 **Language:** French  
 **Publication state:** PUBLICATION_RC1_PASS / NOT PUBLICLY RELEASED
 
@@ -53,4 +53,4 @@ Do not add:
 - [ ] final publisher/imprint
 - [ ] ISBN/barcode area if chosen
 - [ ] retail price if printed/sold
-- [ ] final approval of this copy
+- [x] final approval of this copy
