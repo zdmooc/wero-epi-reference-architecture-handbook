@@ -13,9 +13,9 @@ Branch: `collection-v2-four-volumes`
 | I7 | Volume II deepening/review | COMPLETE |
 | I8 | Volume III migration | COMPLETE |
 | I9 | Volume III technical deepening | COMPLETE |
-| I10 | Volume IV migration | NEXT |
-| I11 | Volume IV deepening/review | PLANNED |
-| I12 | duplicate elimination / canonical ownership | PLANNED |
+| I10 | Volume IV migration | COMPLETE |
+| I11 | Volume IV deepening/review | COMPLETE |
+| I12 | duplicate elimination / canonical ownership | NEXT |
 | I13 | cross-volume thread consistency | PLANNED |
 | I14 | diagrams and visual corpus | PLANNED |
 | I15 | source/evidence gate | PLANNED |
@@ -83,3 +83,16 @@ No V1.0 release artifact has been modified.
 - durable payment-submission pattern added;
 - runtime evidence/failure-test ladder added;
 - Volume III manifest updated.
+
+
+## I10 acceptance
+- 23 canonical security/resilience/operations/testing/regulation chapters migrated;
+- V1.0 release-gate chapter intentionally excluded from reader corpus;
+- dedicated Volume IV landing page and Quarto manifest created.
+
+## I11 acceptance
+- resilience architecture decision framework added;
+- transaction-safe failover/failback runbook added;
+- payment incident command model added;
+- resilience evidence chain added;
+- Volume IV manifest updated.
