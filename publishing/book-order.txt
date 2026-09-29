@@ -1,4 +1,5 @@
 book/00-front-matter/00-preface.md
+book/00-front-matter/01-publication-note.md
 book/01-foundations/01-layered-reading-of-wero-epi.md
 book/01-foundations/02-end-to-end-payment-anatomy.md
 book/01-foundations/03-actors-and-trust-boundaries.md

@@ -80,7 +80,6 @@
 | Webhook | Callback HTTP asynchrone, généralement signé/authentifié selon contrat. |
 | Wero | Solution européenne de paiement portée par EPI. |
 | Zero Trust | Modèle de sécurité où réseau/localisation ne suffisent pas à établir la confiance. |
-
 | WAF | Web Application Firewall. |
 | TIBER-EU | Threat Intelligence-based Ethical Red Teaming framework européen. |
 | T2S | TARGET2-Securities. |

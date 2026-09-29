@@ -6,10 +6,11 @@ book:
   title: "Wero & EPI — Architecture de Référence des Paiements Européens"
   subtitle: "Paiements instantanés, ISO 20022, SCT Inst, TIPS, RT1, réseaux, cloud, sécurité, résilience et réglementation européenne"
   author: "Djamal Zidane"
-  date: "2026-09-28"
+  date: "2026-09-29"
   chapters:
     - index.md
     - book/00-front-matter/00-preface.md
+    - book/00-front-matter/01-publication-note.md
     - book/01-foundations/01-layered-reading-of-wero-epi.md
     - book/01-foundations/02-end-to-end-payment-anatomy.md
     - book/01-foundations/03-actors-and-trust-boundaries.md
