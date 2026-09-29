@@ -1,0 +1,49 @@
+project:
+  type: book
+  output-dir: _book-volume-2
+
+book:
+  title: "Wero & EPI — Volume II"
+  subtitle: "Instant Payments: ISO 20022, SCT Inst, TIPS, RT1 & Liquidity"
+  author: "Djamal Zidane"
+  chapters:
+    - index.md
+    - book/05-iso20022/01-iso20022-reference.md
+    - book/05-iso20022/02-business-application-header-and-identifiers.md
+    - book/05-iso20022/03-pacs008-pacs002-annotated.md
+    - book/05-iso20022/04-rtransactions-and-investigations.md
+    - book/05-iso20022/05-cash-management-and-reconciliation-messages.md
+    - book/05-iso20022/06-validation-mapping-and-versioning.md
+    - book/06-sct-inst/01-sct-inst-lifecycle-exceptions.md
+    - book/06-sct-inst/02-timing-timeout-and-reason-codes.md
+    - book/06-sct-inst/03-recall-return-and-investigation-process.md
+    - book/06-sct-inst/04-idempotency-duplicates-and-reconciliation.md
+    - book/06-sct-inst/05-vop-and-sct-inst-intersection.md
+    - book/07-rails/01-rails-clearing-settlement.md
+    - book/07-rails/02-tips-service-model.md
+    - book/07-rails/03-rt1-service-model.md
+    - book/07-rails/04-reachability-routing-and-multi-csm.md
+    - book/07-rails/05-rail-adapter-contract-and-failure-semantics.md
+    - book/08-liquidity/01-settlement-liquidity-24x7.md
+    - book/08-liquidity/02-target-accounts-and-liquidity-transfers.md
+    - book/08-liquidity/03-rt1-liquidity-position-model.md
+    - book/08-liquidity/04-liquidity-forecasting-and-stress.md
+    - book/08-liquidity/05-liquidity-operations-runbook.md
+    - book/15-future-annexes/03-cross-border-oct-inst-and-interoperability.md
+
+format:
+  html:
+    toc: true
+    number-sections: true
+  epub:
+    toc: true
+  pdf:
+    documentclass: scrbook
+    toc: true
+    number-sections: true
+    papersize: a4
+    geometry:
+      - margin=20mm
+
+execute:
+  freeze: auto
