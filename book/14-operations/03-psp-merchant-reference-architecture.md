@@ -1,6 +1,6 @@
 ---
 status: REVIEWED
-last_verified: 2026-09-28
+last_verified: 2026-09-29
 truth_level: REFERENCE_ARCHITECTURE
 primary_sources:
   - wero-merchants
@@ -11,6 +11,12 @@ related_internal_repos:
 ---
 
 # Architecture de référence PSP / Acquéreur / Marchand
+
+La @fig-14-002 complète la lecture de ce chapitre avec la vue de référence correspondante.
+
+![Architecture marchand / Acceptor PSP — séparation entre état commercial, coordination et exécution financière.](../../diagrams/svg/secondary/FIG-14-002-merchant-psp-reference.svg){#fig-14-002}
+
+*Statut : **REFERENCE_ARCHITECTURE** · Source(s) : Handbook reference architecture · Vérifié : 2026-09-29.*
 
 ## 1. Objectif
 
