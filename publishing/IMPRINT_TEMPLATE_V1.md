@@ -1,6 +1,6 @@
 # Imprint / Legal Page Template — V1.0
 
-**Status:** TEMPLATE ONLY — NOT YET INSERTED INTO FROZEN MANUSCRIPT
+**Status:** EDITORIAL DRAFT READY — NOT YET INSERTED INTO FROZEN MANUSCRIPT
 
 > This template is not legal advice. Final wording should be reviewed before commercial publication.
 
@@ -34,11 +34,15 @@ It is not official documentation of European Payments Initiative (EPI), Wero, th
 
 ## Trademarks
 
-Wero, EPI and other product, organisation and service names referenced in the book may be trademarks or registered marks of their respective owners.
+Editorial draft based on official Wero/EPI public terms checked on 2026-09-29:
 
-Use of such names is for identification, architecture analysis and educational/reference purposes.
+> Wero is a trademark of EPI Company SE. EPI and the names of other organisations, schemes, services and products referenced in this publication may be trademarks or registered marks of their respective owners. Their use in this independent publication is solely for identification, architecture analysis and reference purposes.
 
-Final trademark wording: **REVIEW_REQUIRED**
+Primary editorial references:
+- https://wero-wallet.eu/nl/wero-wallet-app-terms-and-conditions-v1-en
+- https://wero-wallet.eu/de/bedingungen-aktion-2026
+
+Final trademark wording: **LEGAL_REVIEW_PENDING**
 
 ## Technical / regulatory disclaimer
 
@@ -78,5 +82,6 @@ EPUB RC1 SHA-256:
 - [ ] publisher/imprint
 - [ ] ISBN decision
 - [ ] publication/contact details
-- [ ] trademark wording review
+- [x] trademark/independence editorial draft prepared
+- [ ] trademark/legal wording review
 - [ ] legal disclaimer review

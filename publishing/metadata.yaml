@@ -24,12 +24,14 @@ epub:
   svg_assets: 36
   sha256: "aa4d61048820381bbcc219325bab43afa30dcb78e557e7c6fd725ecefe535331"
   qa: "PASS"
+release_readiness: "DECISION_GATE"
+back_cover_copy_status: "DRAFT_READY"
+trademark_notice_status: "EDITORIAL_DRAFT_READY_LEGAL_REVIEW_PENDING"
 isbn: null
 publisher: null
 imprint: null
 distribution_channels: []
 print_format: null
-cover_status: "TBD"
-trademark_notice_status: "REVIEW_REQUIRED"
+cover_status: "BRIEF_READY_ARTWORK_TBD"
 public_release: false
 ---
