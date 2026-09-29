@@ -60,6 +60,14 @@
 | FIG-15-001 | European payments coexistence 2030 | 15.4 European payments 2030 | full page | MIXED |
 | FIG-16-001 | claim-evidence ladder | 16.3 Claim-evidence matrix | full width | EDITORIAL |
 
+## V1 hero preparation status
+
+The eight hero figures have completed source-level visual preparation under `diagrams/VISUAL_DESIGN_SYSTEM_V1.md`.
+
+Status: **HERO_SOURCE_PREPARED**
+
+They are ready for SVG rendering and visual QA. No PDF/EPUB generation is triggered by this status.
+
 ## Hero figures
 
 The following figures should receive the strongest visual treatment in the final book:
@@ -73,7 +81,7 @@ The following figures should receive the strongest visual treatment in the final
 7. **FIG-14-001** — bank reference architecture;
 8. **FIG-15-001** — future European payments architecture.
 
-These should not be reduced to small inline illustrations.
+These should not be reduced to small inline illustrations. Their source-level design system preparation is complete.
 
 ## Figures that may be half-page
 
