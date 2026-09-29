@@ -26,7 +26,8 @@
 - revalidated critical EPC/ECB/EBA CLEARING/EPI sources on 2026-09-29;
 - completed final manuscript editorial review and preserved a freeze-candidate snapshot branch;
 - removed two redundant figures, normalized duplicate numbering and added four missing high-value figures;
-- finalized canonical figure placement/layout guidance for all 36 figures.
+- finalized canonical figure placement/layout guidance for all 36 figures;
+- created Visual Design System V1 and prepared the 8 hero figures for SVG rendering.
 
 ### Editorial boundary
 PDF, EPUB and print artifacts are intentionally **not generated yet**. Publication starts only after final manuscript freeze.
