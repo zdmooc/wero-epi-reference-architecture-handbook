@@ -1,7 +1,7 @@
 # Iteration Status — I0 to I16
 
 **Baseline:** 2026-09-28  
-**Editorial state:** V1.0 MANUSCRIPT — READY_FOR_MANUSCRIPT_FREEZE
+**Editorial state:** V1.0 — PUBLICATION_RC1_PASS
 
 | Iteration | Scope | Status |
 |---|---|---|
@@ -39,16 +39,19 @@ It does not mean the subject stops evolving. Wero, EPC rulebooks, TARGET/TIPS, R
 
 ## Publication state
 
-Publication is intentionally **DEFERRED** until after manuscript freeze.
+The manuscript freeze is complete and the **PDF/EPUB RC1 publication artifacts have passed QA**.
 
-Not executed yet:
-- final visual copy-edit;
-- final figure placement/numbering;
-- index layout;
-- PDF render;
-- EPUB render;
-- physical print proof;
-- ISBN/distribution decisions.
+Completed before RC1:
+- visual copy-edit / figure placement;
+- index/cross-reference integration;
+- PDF RC1 render and QA;
+- EPUB RC1 render and structural QA.
+
+Still pending:
+- physical print proof if retained;
+- final cover/imprint/legal-publication metadata;
+- ISBN/distribution decisions;
+- explicit promotion from RC1 to final V1.0.
 
 This separation is deliberate: first finish the book in GitHub, then manufacture publication artifacts.
 
