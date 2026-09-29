@@ -7,7 +7,7 @@ Decision: **READY_FOR_MANUSCRIPT_FREEZE**
 
 - 87 chapter files in the canonical manuscript;
 - 97 canonical files including annexes and verified baseline;
-- 34 Mermaid source diagrams;
+- 36 Mermaid source diagrams;
 - 0 missing paths in publishing/book-order.txt;
 - no duplicate manuscript tree in the canonical order.
 
@@ -24,9 +24,14 @@ Decision: **READY_FOR_MANUSCRIPT_FREEZE**
 
 ## Diagram checks
 
-- 34/34 Mermaid files include truth_level metadata;
-- 34/34 Mermaid files include last_verified metadata;
-- diagram rendering/placement is intentionally a publication-phase activity.
+- duplicate figure IDs: 0;
+- two redundant diagrams removed;
+- four high-value diagrams added (POS/QR, recall-return, SCT Inst timing, resilience testing);
+
+- 36/36 Mermaid files include truth_level metadata;
+- 36/36 Mermaid files include last_verified metadata;
+- figure source selection, numbering and canonical placement are complete;
+- SVG rendering, typography and physical-page proof remain publication-phase activities.
 
 ## Factual revalidation — 2026-09-29
 
