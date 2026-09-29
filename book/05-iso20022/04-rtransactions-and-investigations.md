@@ -1,6 +1,6 @@
 ---
 status: REVIEWED
-last_verified: 2026-09-28
+last_verified: 2026-09-29
 truth_level: MIXED
 primary_sources:
   - epc-sct-inst-igs-2025-v1.0
@@ -10,6 +10,12 @@ related_internal_repos:
 ---
 
 # R-transactions, recall, return et investigation ISO 20022
+
+La @fig-05-003 fournit la vue de référence utilisée dans ce chapitre.
+
+![Recall, réponse négative, return et investigation de statut SCT Inst.](../../diagrams/svg/secondary/FIG-05-003-recall-return-investigation.svg){#fig-05-003}
+
+*Statut : **PUBLIC_VERIFIED** · Source(s) : EPC SCT Inst Inter-PSP IG 2025 v1.0 · Vérifié : 2026-09-29.*
 
 ## 1. Les exceptions sont le vrai test d'une architecture paiement
 
