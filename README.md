@@ -131,7 +131,7 @@ Le nombre de pages restera une **conséquence du contenu**, pas une contrainte.
 
 ## État
 
-**V1.0 — PUBLICATION_RC1_PASS ; manuscrit gelé, 36/36 figures intégrées, PDF RC1 + EPUB RC1 validés ; aucune release publique effectuée.**
+**V1.0 — FINAL DIGITAL BUILD PASS ; 87 chapitres techniques + note d’édition, 36/36 figures intégrées, PDF V1.0 + EPUB V1.0 validés ; aucune release publique effectuée.**
 
 Premiers éléments créés :
 
@@ -198,8 +198,10 @@ Le programme I1→I16 est terminé au niveau **contenu GitHub**.
 - sources primaires 2026 versionnées ;
 - PDF RC1 et EPUB RC1 générés et validés depuis le SHA gelé ; aucune release publique.
 
-Prochaine phase :
-`RC1 validée → cover/imprint/legal metadata → print proof si retenu → décision ISBN/distribution → promotion V1.0 finale`.
+État final numérique :
+`relecture complète → front matter final → layout proof → freeze final → PDF/EPUB V1.0 → QA + checksums = PASS`.
+
+La publication publique reste une action explicite distincte.
 
 
 Visual status — 2026-09-29:
@@ -282,18 +284,26 @@ Release-readiness decision gate — 2026-09-29:
 - state: **DECISION_GATE — NOT PUBLICLY RELEASED**.
 
 
-## Finalisation numérique V1.0 — 2026-09-29
+## V1.0 numérique finale — 2026-09-29
 
-Après relecture intégrale du manuscrit et revalidation des sources volatiles critiques :
+La finalisation est terminée :
 
-- les **87 chapitres techniques** restent gelés sur leur contenu d'architecture ;
-- une note d'édition / indépendance / droits est ajoutée au front matter ;
-- le traitement numérique retient la page de titre Quarto comme couverture de l'édition digitale V1.0 ;
-- l'artwork retail/print, le format papier, le dos et le proof physique sont séparés de la V1.0 numérique ;
-- l'imprint est **Djamal Zidane — publication indépendante** ;
-- aucun ISBN n'est attribué à cette première édition numérique ;
-- le canal de distribution préparé est **GitHub Release** ;
-- une nouvelle preuve de layout et un nouveau build PDF/EPUB sont requis après l'ajout du front matter ;
-- aucune publication publique n'est déclenchée sans autorisation explicite.
+- **87 chapitres techniques** relus de bout en bout ;
+- **1 note d’édition / indépendance / droits** intégrée au front matter ;
+- **36 figures** maintenables et intégrées ;
+- proof final : run `36593144021` ;
+- source finale gelée : `freeze/v1.0-digital-final-2026-09-29` ;
+- SHA final : `705b13664d9c3783d3d05fae72269648c80bcee8` ;
+- PDF final : **448 pages A4**, 0 xref non résolue, 0 overfull box ;
+- EPUB final : **102 XHTML**, 36 SVG, 0 lien interne cassé, 0 ressource de manifest manquante ;
+- build final : run `36593794049` — **PASS** ;
+- PDF SHA-256 : `df2f77e93e10c73edf9331063976a1892d1bacb12c94e61be64bd2ac7c508bb0` ;
+- EPUB SHA-256 : `3cf31e01b332c8601327cef9744cdf08c847ae109ae4236331cbda5fb9ac0fd6` ;
+- imprint : **Djamal Zidane — publication indépendante** ;
+- ISBN : **non attribué** pour cette première édition numérique ;
+- canal cible : **GitHub Release** ;
+- édition papier : **filière séparée et différée**.
 
-État de transition : **PUBLICATION_RC1_PASS → DIGITAL_V1_FINALIZATION**.
+Statut : **V1.0 FINAL DIGITAL BUILD PASS — NOT PUBLICLY RELEASED**.
+
+Le seul acte restant est la création explicite de la release publique lorsque sa diffusion est autorisée.
