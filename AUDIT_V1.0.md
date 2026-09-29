@@ -1,6 +1,6 @@
 # Audit V1.0 — Wero & EPI Reference Architecture Handbook
 
-Date: 2026-09-28  
+Date: 2026-09-29  
 Scope: GitHub manuscript V1.0 — content audit
 
 ## Executive conclusion
@@ -76,7 +76,7 @@ Detailed specialist depth remains in:
 
 Verified structure on 2026-09-28:
 - 87 chapter files;
-- 94 canonical files including annexes/baseline;
+- 97 canonical files including annexes/baseline;
 - 34 Mermaid diagram sources.
 
 ## Next maintenance triggers
@@ -88,3 +88,21 @@ Verified structure on 2026-09-28:
 - PSD3/PSR finalisation/application;
 - DORA Level 2 updates;
 - factual corrections from technical review.
+
+
+## Editorial review pass — 2026-09-29
+
+PASS:
+- no missing canonical paths;
+- no TODO/TBD/FIXME markers;
+- 4 remaining DRAFT foundation chapters reviewed and promoted to REVIEWED;
+- glossary expanded;
+- acronym annex added;
+- subject index added;
+- architecture cross-reference map added;
+- all 34 Mermaid diagrams contain truth-level and verification metadata;
+- critical public baseline revalidated against current EPC, ECB, EBA CLEARING and EPI pages.
+
+Decision: **READY_FOR_MANUSCRIPT_FREEZE**.
+
+This means the GitHub content has no identified architecture/editorial blocker. It does not mean PDF/EPUB layout has been produced.
