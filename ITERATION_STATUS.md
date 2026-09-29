@@ -116,3 +116,22 @@ Status: **FINAL_MANUSCRIPT_FREEZE**.
 Status: **PUBLICATION_RC1_PASS**.
 
 Next gate: print/release metadata/distribution decision before final V1.0 public release.
+
+
+## Final release readiness — 2026-09-29
+
+Prepared:
+- canonical RC1 publication metadata;
+- final release-readiness gate;
+- physical print-proof checklist.
+
+Pending explicit decisions:
+- cover;
+- imprint/legal metadata;
+- publisher;
+- ISBN;
+- distribution;
+- physical print proof;
+- final V1.0 promotion/public release.
+
+Status: **PUBLICATION_RC1_PASS — RELEASE_DECISION_PENDING**.
