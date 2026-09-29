@@ -1,0 +1,162 @@
+name: collection-v2-build
+
+on:
+  push:
+    branches:
+      - collection-v2-four-volumes
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build-volume:
+    strategy:
+      fail-fast: false
+      matrix:
+        volume: [1, 2, 3, 4]
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: volumes/volume-${{ matrix.volume }}
+    steps:
+      - name: Checkout collection branch
+        uses: actions/checkout@v4
+
+      - name: Setup Quarto + TinyTeX
+        uses: quarto-dev/quarto-actions/setup@v2
+        with:
+          tinytex: true
+
+      - name: Install QA tools
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y poppler-utils unzip libxml2-utils
+
+      - name: Render HTML
+        run: |
+          set -euo pipefail
+          quarto render --to html 2>&1 | tee quarto-html.log
+
+      - name: Render PDF
+        run: |
+          set -euo pipefail
+          quarto render --to pdf 2>&1 | tee quarto-pdf.log
+
+      - name: QA PDF
+        run: |
+          set -euo pipefail
+          PDF="$(find _book-volume-${{ matrix.volume }} -maxdepth 1 -type f -name '*.pdf' | head -n1)"
+          test -n "$PDF"
+          test -s "$PDF"
+          pdfinfo "$PDF" | tee pdfinfo.txt
+          pdftotext -layout "$PDF" book-pdf.txt
+
+          if grep -Eq '@fig-[0-9]{2}-[0-9]{3}|@tbl-[A-Za-z0-9_-]+|\?\?' book-pdf.txt; then
+            echo "Unresolved reference marker detected" >&2
+            exit 1
+          fi
+
+          if grep -E 'Overfull \\hbox|Overfull \\vbox' quarto-pdf.log > pdf-overfull.txt; then
+            echo "Overfull TeX box detected" >&2
+            cat pdf-overfull.txt
+            exit 1
+          else
+            : > pdf-overfull.txt
+          fi
+
+          mkdir -p visual-proof
+          pdftoppm -png -f 1 -singlefile -r 120 "$PDF" visual-proof/cover
+          PAGES="$(pdfinfo "$PDF" | awk '/^Pages:/ {print $2}')"
+          MID="$(( (PAGES + 1) / 2 ))"
+          pdftoppm -png -f "$MID" -singlefile -r 120 "$PDF" visual-proof/middle
+          pdftoppm -png -f "$PAGES" -singlefile -r 120 "$PDF" visual-proof/last
+
+          {
+            echo "volume=${{ matrix.volume }}"
+            echo "pages=$PAGES"
+            echo "pdf=$(basename "$PDF")"
+            echo "unresolved_xrefs=0"
+            echo "overfull_boxes=0"
+          } | tee qa-summary.txt
+
+      - name: Render EPUB
+        run: |
+          set -euo pipefail
+          quarto render --to epub 2>&1 | tee quarto-epub.log
+
+      - name: QA EPUB
+        run: |
+          set -euo pipefail
+          EPUB="$(find _book-volume-${{ matrix.volume }} -maxdepth 1 -type f -name '*.epub' | head -n1)"
+          test -n "$EPUB"
+          test -s "$EPUB"
+          unzip -t "$EPUB" > epub-unzip-test.txt
+          rm -rf epub-unpacked
+          mkdir epub-unpacked
+          unzip -q "$EPUB" -d epub-unpacked
+          test "$(cat epub-unpacked/mimetype)" = "application/epub+zip"
+
+          python3 - <<'PY'
+          from pathlib import Path
+          from html.parser import HTMLParser
+          from urllib.parse import unquote
+
+          root = Path("epub-unpacked")
+          docs = list(root.rglob("*.xhtml")) + list(root.rglob("*.html"))
+          unresolved = []
+          broken = []
+
+          class Parser(HTMLParser):
+              def __init__(self):
+                  super().__init__()
+                  self.refs=[]
+              def handle_starttag(self, tag, attrs):
+                  d=dict(attrs)
+                  for k in ("src","href"):
+                      if k in d:
+                          self.refs.append(d[k])
+
+          for p in docs:
+              text=p.read_text(encoding="utf-8", errors="ignore")
+              if "@fig-" in text or "??" in text:
+                  unresolved.append(str(p))
+              parser=Parser()
+              parser.feed(text)
+              for ref in parser.refs:
+                  if not ref or ref.startswith(("#","http:","https:","mailto:","data:")):
+                      continue
+                  target=ref.split("#",1)[0]
+                  if not target:
+                      continue
+                  candidate=(p.parent/unquote(target)).resolve()
+                  try:
+                      candidate.relative_to(root.resolve())
+                  except ValueError:
+                      continue
+                  if not candidate.exists():
+                      broken.append((str(p),ref))
+
+          if unresolved:
+              raise SystemExit(f"unresolved refs: {unresolved[:10]}")
+          if broken:
+              raise SystemExit(f"broken internal refs: {broken[:10]}")
+          print(f"xhtml={len(docs)} broken=0 unresolved=0")
+          PY
+
+      - name: Checksums
+        run: |
+          set -euo pipefail
+          find _book-volume-${{ matrix.volume }} -maxdepth 1 -type f \( -name '*.pdf' -o -name '*.epub' \) -print0 | sort -z | xargs -0 sha256sum | tee SHA256SUMS.txt
+
+      - name: Upload volume artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: wero-epi-collection-v2-volume-${{ matrix.volume }}
+          path: |
+            volumes/volume-${{ matrix.volume }}/_book-volume-${{ matrix.volume }}/*.pdf
+            volumes/volume-${{ matrix.volume }}/_book-volume-${{ matrix.volume }}/*.epub
+            volumes/volume-${{ matrix.volume }}/SHA256SUMS.txt
+            volumes/volume-${{ matrix.volume }}/qa-summary.txt
+            volumes/volume-${{ matrix.volume }}/pdfinfo.txt
+            volumes/volume-${{ matrix.volume }}/visual-proof/*.png
