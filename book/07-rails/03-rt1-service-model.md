@@ -1,6 +1,6 @@
 ---
 status: REVIEWED
-last_verified: 2026-09-28
+last_verified: 2026-09-29
 truth_level: MIXED
 primary_sources:
   - eba-clearing-rt1
@@ -11,6 +11,12 @@ related_internal_repos:
 ---
 
 # RT1 — service, participation et settlement
+
+La @fig-07-003 synthétise le modèle utilisé dans ce chapitre.
+
+![Modèles d’accès RT1 — participant direct, serviced participant et addressable PSP.](../../diagrams/svg/secondary/FIG-07-003-rt1-access-model.svg){#fig-07-003}
+
+*Statut : **REFERENCE_ARCHITECTURE** · Source(s) : Handbook reference view based on EBA CLEARING RT1 public model · Vérifié : 2026-09-29.*
 
 ## 1. Rôle
 
