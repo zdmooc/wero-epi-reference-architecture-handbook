@@ -169,3 +169,25 @@ Combined decision:
 **36/36 FIGURES — SVG_SOURCE_QA_PASS**.
 
 Remaining validation belongs to page-layout proof, not source-figure production.
+
+
+## Figure-to-chapter integration — 2026-09-29
+
+PASS:
+- 36/36 SVG figures embedded in canonical chapters;
+- 34 canonical target chapters;
+- 36 unique Quarto `#fig-xx-xxx` identifiers;
+- 36 prose cross-references;
+- 36 captions;
+- 36 truth/source/date notes;
+- 0 missing SVG paths;
+- 0 missing chapter paths;
+- 0 duplicate figure IDs.
+
+Intentional double-figure chapters:
+- SCT Inst timing: FIG-06-001 + FIG-06-002;
+- BIA/RTO/RPO: FIG-13-001 + FIG-13-002.
+
+Decision: **FIGURE_CHAPTER_INTEGRATION_PASS**.
+
+Remaining proof is page-level rendering/layout, not content or figure-source completion.
