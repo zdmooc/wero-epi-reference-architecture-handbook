@@ -1,6 +1,6 @@
 ---
 status: REVIEWED
-last_verified: 2026-09-28
+last_verified: 2026-09-29
 truth_level: MIXED
 primary_sources:
   - ecb-target-shared-features
@@ -11,6 +11,12 @@ related_internal_repos:
 ---
 
 # TARGET accounts et transferts de liquidité
+
+La @fig-08-002 synthétise le modèle utilisé dans ce chapitre.
+
+![Référence des comptes de liquidité TARGET/TIPS et relations de gestion.](../../diagrams/svg/secondary/FIG-08-002-target-liquidity-accounts.svg){#fig-08-002}
+
+*Statut : **REFERENCE_ARCHITECTURE** · Source(s) : Handbook reference view based on ECB TARGET/TIPS public model · Vérifié : 2026-09-29.*
 
 ## 1. Le settlement instantané dépend d'un compte
 
