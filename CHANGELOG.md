@@ -33,7 +33,10 @@
 - migrated the remaining 28 Mermaid figures to Visual System V1 metadata;
 - rendered the remaining 28 secondary SVG artifacts;
 - completed secondary SVG vector/geometry QA and corrected FIG-13-004 overlap;
-- reached 36/36 SVG_SOURCE_QA_PASS with zero missing or duplicate figure IDs.
+- reached 36/36 SVG_SOURCE_QA_PASS with zero missing or duplicate figure IDs;
+- embedded all 36 SVG figures into 34 canonical chapters;
+- added Quarto figure IDs, prose cross-references, captions and truth/source/date notes;
+- reached FIGURE_CHAPTER_INTEGRATION_PASS.
 
 ### Editorial boundary
 PDF, EPUB and print artifacts are intentionally **not generated yet**. Publication starts only after final manuscript freeze.
