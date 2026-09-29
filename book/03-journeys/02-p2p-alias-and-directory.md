@@ -1,6 +1,6 @@
 ---
 status: REVIEWED
-last_verified: 2026-09-28
+last_verified: 2026-09-29
 truth_level: MIXED
 primary_sources:
   - epi-wero-launch-germany-2024
@@ -11,6 +11,12 @@ related_internal_repos:
 ---
 
 # P2P, alias et résolution de bénéficiaire
+
+La @fig-03-003 fournit la vue de référence utilisée dans ce chapitre.
+
+![Résolution d’alias P2P et exécution du paiement — annuaire et rail restent distincts.](../../diagrams/svg/secondary/FIG-03-003-p2p-alias-resolution.svg){#fig-03-003}
+
+*Statut : **REFERENCE_ARCHITECTURE** · Source(s) : Handbook reference architecture · Vérifié : 2026-09-29.*
 
 ## 1. Le problème d'architecture
 
