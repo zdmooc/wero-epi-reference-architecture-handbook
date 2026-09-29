@@ -5,7 +5,7 @@ Scope: GitHub manuscript V1.0 — content audit
 
 ## Executive conclusion
 
-The repository now contains a complete first-edition architecture manuscript spanning the end-to-end payment path from customer experience to interbank settlement, liquidity, network, infrastructure, security, resilience, operations and European regulatory context. The technical manuscript, final publication front matter, final layout proof and final digital PDF/EPUB build have passed QA. No public distribution has been executed.
+The repository now contains a complete first-edition architecture manuscript spanning the end-to-end payment path from customer experience to interbank settlement, liquidity, network, infrastructure, security, resilience, operations and European regulatory context. The technical manuscript, final publication front matter, final layout proof and final digital PDF/EPUB build have passed QA. Public distribution has been executed through GitHub Release `v1.0`.
 
 ## Strongest characteristics
 
@@ -286,4 +286,19 @@ Final publication build:
 
 Decision: **V1.0 FINAL DIGITAL BUILD PASS**.
 
-The digital book is technically complete. Physical print production is a separate future gate. Public GitHub Release creation remains an explicit distribution action and has not been performed.
+The digital book is technically complete. Physical print production is a separate future gate. Public GitHub Release `v1.0` has been created with the final PDF, EPUB and SHA256SUMS assets.
+
+
+## Public release V1.0 — 2026-09-29
+
+PASS:
+- tag: `v1.0`;
+- release id: `399390644`;
+- target SHA: `705b13664d9c3783d3d05fae72269648c80bcee8`;
+- published at: `2026-09-29T17:50:50Z`;
+- PDF attached;
+- EPUB attached;
+- SHA256SUMS attached;
+- release URL: `https://github.com/zdmooc/wero-epi-reference-architecture-handbook/releases/tag/v1.0`.
+
+Decision: **V1.0 PUBLISHED**.
