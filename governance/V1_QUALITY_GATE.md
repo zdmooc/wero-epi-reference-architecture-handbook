@@ -112,6 +112,8 @@ The manuscript, figures, integration, layout proof and final freeze are complete
 - [x] EPUB RC1 archive / manifest / links QA
 - [x] publication artifact checksums generated
 - [x] final release-readiness matrix prepared
+- [x] back-cover copy draft prepared
+- [x] trademark/independence editorial wording prepared
 - [x] print-proof checklist prepared
 - [ ] physical print proof
 - [ ] final cover / imprint / legal-publication metadata
@@ -119,4 +121,4 @@ The manuscript, figures, integration, layout proof and final freeze are complete
 - [ ] distribution decision
 - [ ] public GitHub/publication release
 
-Current state: **PUBLICATION_RC1_PASS — NOT PUBLICLY RELEASED**.
+Current state: **PUBLICATION_RC1_PASS — DECISION_GATE — NOT PUBLICLY RELEASED**.
