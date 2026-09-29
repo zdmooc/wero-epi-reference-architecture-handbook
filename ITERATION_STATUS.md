@@ -66,6 +66,9 @@ This separation is deliberate: first finish the book in GitHub, then manufacture
 - no TODO/TBD/FIXME content markers found;
 - figure numbering and placement review completed;
 - 2 redundant diagrams removed and 4 high-value diagrams added;
-- final figure source set = 36.
+- final figure source set = 36;
+- 8 Hero SVGs = QA PASS;
+- 28 Secondary SVGs = QA PASS;
+- 36/36 figure SVG corpus = SVG_SOURCE_QA_PASS.
 
-Status: **READY_FOR_MANUSCRIPT_FREEZE**.
+Status: **READY_FOR_MANUSCRIPT_FREEZE — 36/36 SVG_SOURCE_QA_PASS**.
