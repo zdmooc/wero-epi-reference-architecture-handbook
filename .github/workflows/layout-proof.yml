@@ -1,0 +1,165 @@
+name: layout-proof
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - .github/workflows/layout-proof.yml
+
+permissions:
+  contents: read
+
+jobs:
+  proof:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Quarto + TinyTeX
+        uses: quarto-dev/quarto-actions/setup@v2
+        with:
+          tinytex: true
+
+      - name: Install proof utilities
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y poppler-utils
+
+      - name: Pre-render manuscript checks
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import re, sys
+
+          root = Path(".")
+          chapters = list((root / "book").rglob("*.md"))
+          ids = []
+          refs = []
+          images = []
+          for p in chapters:
+              text = p.read_text(encoding="utf-8")
+              ids += [(m.group(1), str(p)) for m in re.finditer(r"\{#(fig-\d{2}-\d{3})\}", text)]
+              refs += [(m.group(1), str(p)) for m in re.finditer(r"@(fig-\d{2}-\d{3})", text)]
+              for m in re.finditer(r"!\[[^\]]*\]\((\.\./\.\./diagrams/svg/[^)]+\.svg)\)\{#(fig-\d{2}-\d{3})\}", text):
+                  target = (p.parent / m.group(1)).resolve()
+                  images.append((m.group(2), str(p), target))
+
+          problems = []
+          id_names = [x[0] for x in ids]
+          if len(ids) != 36:
+              problems.append(f"expected 36 figure IDs, got {len(ids)}")
+          if len(set(id_names)) != 36:
+              problems.append("duplicate figure IDs detected")
+          if len(refs) < 36:
+              problems.append(f"expected at least 36 figure references, got {len(refs)}")
+          for fig_id, chapter, target in images:
+              if not target.exists():
+                  problems.append(f"missing SVG for {fig_id}: {target} (from {chapter})")
+
+          print(f"chapters={len(chapters)} figure_ids={len(ids)} figure_refs={len(refs)} embedded_svgs={len(images)}")
+          if problems:
+              print("\n".join(problems), file=sys.stderr)
+              sys.exit(1)
+          PY
+
+      - name: Render HTML proof
+        run: |
+          mkdir -p _proof
+          set -o pipefail
+          quarto render --to html 2>&1 | tee _proof/quarto-html.log
+          cp -a _book _proof/html
+
+      - name: Validate HTML proof
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          from html.parser import HTMLParser
+          import re, sys, urllib.parse
+
+          root = Path("_proof/html")
+          htmls = list(root.rglob("*.html"))
+          unresolved = []
+          missing_images = []
+
+          class ImgParser(HTMLParser):
+              def __init__(self):
+                  super().__init__()
+                  self.srcs=[]
+              def handle_starttag(self, tag, attrs):
+                  if tag.lower()=="img":
+                      d=dict(attrs)
+                      if "src" in d:
+                          self.srcs.append(d["src"])
+
+          for p in htmls:
+              text=p.read_text(encoding="utf-8", errors="ignore")
+              if re.search(r"@fig-\d{2}-\d{3}", text):
+                  unresolved.append(str(p))
+              parser=ImgParser()
+              parser.feed(text)
+              for src in parser.srcs:
+                  src=urllib.parse.unquote(src.split("#")[0].split("?")[0])
+                  if src.startswith(("http://","https://","data:")):
+                      continue
+                  target=(p.parent/src).resolve()
+                  if not target.exists():
+                      missing_images.append((str(p),src))
+
+          print(f"html_files={len(htmls)} unresolved_xrefs={len(unresolved)} missing_images={len(missing_images)}")
+          if unresolved or missing_images:
+              print("UNRESOLVED", unresolved[:20], file=sys.stderr)
+              print("MISSING_IMAGES", missing_images[:20], file=sys.stderr)
+              sys.exit(1)
+          PY
+
+      - name: Render PDF layout proof
+        run: |
+          set -o pipefail
+          quarto render --to pdf 2>&1 | tee _proof/quarto-pdf.log
+          mkdir -p _proof/pdf
+          find _book -maxdepth 1 -type f \( -name '*.pdf' -o -name '*.tex' \) -exec cp {} _proof/pdf/ \;
+
+      - name: Validate PDF layout proof
+        run: |
+          set -euo pipefail
+          PDF="$(find _proof/pdf -maxdepth 1 -name '*.pdf' | head -n1)"
+          test -n "$PDF"
+          pdfinfo "$PDF" | tee _proof/pdfinfo.txt
+          pdftotext -layout "$PDF" _proof/book.txt
+
+          if grep -Eq '@fig-[0-9]{2}-[0-9]{3}|\?\?' _proof/book.txt; then
+            echo "Unresolved cross-reference marker detected in PDF text" >&2
+            grep -En '@fig-[0-9]{2}-[0-9]{3}|\?\?' _proof/book.txt | head -n 30 >&2
+            exit 1
+          fi
+
+          OVERFULL=0
+          if grep -E 'Overfull \\hbox|Overfull \\vbox' _proof/quarto-pdf.log > _proof/overfull.txt; then
+            OVERFULL="$(wc -l < _proof/overfull.txt)"
+          else
+            : > _proof/overfull.txt
+          fi
+
+          PAGES="$(pdfinfo "$PDF" | awk '/^Pages:/ {print $2}')"
+          SIZE="$(stat -c%s "$PDF")"
+          echo "pages=$PAGES" | tee _proof/layout-summary.txt
+          echo "pdf_bytes=$SIZE" | tee -a _proof/layout-summary.txt
+          echo "overfull_boxes=$OVERFULL" | tee -a _proof/layout-summary.txt
+
+          if [ "$OVERFULL" -gt 0 ]; then
+            echo "Overfull TeX boxes detected; review required" >&2
+            cat _proof/overfull.txt >&2
+            exit 1
+          fi
+
+      - name: Upload layout proof
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: wero-epi-layout-proof
+          path: _proof/
+          retention-days: 7
+          if-no-files-found: error
