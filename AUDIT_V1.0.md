@@ -121,3 +121,18 @@ PASS:
 - final placement/layout plan recorded in `diagrams/DIAGRAM_CATALOG.md`.
 
 The manuscript is now ready for SVG rendering and visual production after freeze.
+
+
+## Hero-figure source preparation — 2026-09-29
+
+PASS:
+- Visual Design System V1 created;
+- 8/8 hero figures migrated to the common visual grammar;
+- 8/8 hero figures declare layout, truth level, verification date and canonical chapter;
+- FIG-14-001 established as the master visual vocabulary;
+- Digital Euro future semantics remain explicitly separated from current payment rails;
+- no PDF/EPUB generation performed.
+
+Status: **HERO_SOURCE_PREPARED**.
+
+Next step: SVG rendering and visual QA of the 8 hero figures.
