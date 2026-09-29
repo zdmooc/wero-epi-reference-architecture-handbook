@@ -1,0 +1,11 @@
+%% id: COL-002
+%% title: Scenario T2 — UNKNOWN across four volumes
+%% truth_level: REFERENCE_ARCHITECTURE
+%% last_verified: 2026-09-29
+flowchart LR
+  A["V1<br/>Order PAYMENT_PENDING<br/>No false failure<br/>No duplicate checkout effect"]
+  B["V2<br/>SUBMITTED → UNKNOWN<br/>Investigate / reconcile<br/>No replacement payment"]
+  C["V3<br/>Durable submit claim<br/>paymentId preserved<br/>Outbox / reconciliation worker"]
+  D["V4<br/>UNKNOWN alert<br/>Incident runbook<br/>Evidence + customer state repair"]
+
+  A --> B --> C --> D
