@@ -1,9 +1,35 @@
 ---
-title: "Wero & EPI - Architecture de référence des paiements européens"
+title: "Wero & EPI — Architecture de Référence des Paiements Européens"
 subtitle: "Paiements instantanés, ISO 20022, SCT Inst, TIPS, RT1, réseaux, cloud, sécurité, résilience et réglementation européenne"
 author: "Djamal Zidane"
-date: "2026-09-28"
+date: "2026-09-29"
 lang: "fr-FR"
+edition: "V1.0"
+release_candidate: "RC1"
+publication_status: "PUBLICATION_RC1_PASS"
 rights: "Copyright (c) 2026 Djamal Zidane. Manuscrit de référence."
 description: "Ouvrage d'architecture de référence vivant 2026-2031."
+source_freeze_ref: "freeze/v1.0-final-manuscript-2026-09-29"
+source_freeze_sha: "357399fc7bc5dbaf48ae06d3b7e207a47c70193c"
+publication_build_run: "36558924392"
+pdf:
+  filename: "wero-epi-reference-architecture-handbook-v1.0-rc1.pdf"
+  pages: 446
+  format: "A4"
+  sha256: "51a6ceee2bc51b33c833510a58ac8bbe8d1e83ea24000109c2ffe12a269c5e23"
+  qa: "PASS"
+epub:
+  filename: "wero-epi-reference-architecture-handbook-v1.0-rc1.epub"
+  xhtml_files: 101
+  svg_assets: 36
+  sha256: "aa4d61048820381bbcc219325bab43afa30dcb78e557e7c6fd725ecefe535331"
+  qa: "PASS"
+isbn: null
+publisher: null
+imprint: null
+distribution_channels: []
+print_format: null
+cover_status: "TBD"
+trademark_notice_status: "REVIEW_REQUIRED"
+public_release: false
 ---
