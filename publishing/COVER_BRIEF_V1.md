@@ -1,6 +1,6 @@
 # Cover Brief — V1.0
 
-**Status:** CONCEPT_APPROVED / ARTWORK_PENDING
+**Status:** DIGITAL_TITLE_PAGE_APPROVED / PRINT_RETAIL_ARTWORK_DEFERRED
 
 ## Product
 
@@ -13,6 +13,14 @@ Paiements instantanés, ISO 20022, SCT Inst, TIPS, RT1, réseaux, cloud, sécuri
 **Author**  
 Djamal Zidane
 
+## Digital V1.0 decision
+
+The initial digital V1.0 uses the Quarto title page as its publication cover treatment.
+
+A standalone retail/print cover is deliberately deferred. It is not a blocker for the PDF/EPUB reference edition distributed from GitHub.
+
+This keeps the approved technical interior and visual system independent from a future printer-specific wrap, spine and barcode layout.
+
 ## Positioning
 
 Professional architecture handbook for:
@@ -22,14 +30,7 @@ Professional architecture handbook for:
 - security/resilience/SRE practitioners;
 - consultants working on European instant payments.
 
-The cover must communicate:
-- European payments;
-- architecture depth;
-- professional reference;
-- resilience / infrastructure / rails;
-- technical seriousness without looking like vendor marketing.
-
-## Visual direction
+## Future print / retail visual direction
 
 Preferred:
 - clean professional grid;
@@ -42,68 +43,40 @@ Preferred:
 - no bank/client logos;
 - no suggestion of official EPI/Wero sponsorship.
 
-## Front cover hierarchy
-
-1. title;
-2. subtitle;
-3. author;
-4. optional small edition marker: `V1.0 — 2026`.
-
-Do not put:
-- internal project names;
-- client brands;
-- unverified marketing claims;
-- certification/compliance claims.
-
 ## Back cover
 
-Draft copy is prepared in:
-
-`publishing/BACK_COVER_COPY_V1.md`
-
-Recommended structure:
-- 2–3 sentence value proposition;
-- 6–8 coverage themes;
-- independent-publication disclaimer;
-- optional author biography only after explicit approval;
-- ISBN/barcode area only if ISBN is chosen.
+The copy in `publishing/BACK_COVER_COPY_V1.md` is **APPROVED** and retained for a future physical/retail edition.
 
 ## Spine
 
-Pending:
+Deferred until a physical edition is selected:
 - trim size;
 - paper stock;
-- final page count for chosen printer;
+- printer template;
 - resulting spine width.
 
 Suggested spine content:
 `Wero & EPI — Architecture de Référence des Paiements Européens · Djamal Zidane`
 
-## Trademark / independence note
+## Trademark / independence
 
-Editorial wording is prepared in:
+The publication:
+- does not use official Wero/EPI logos as its identity;
+- does not reproduce their brand identity;
+- uses organisation/product names only for identification and architecture analysis;
+- does not imply publication, sponsorship or endorsement by EPI/Wero, ECB, EPC, EBA CLEARING or any bank.
 
-`publishing/TRADEMARK_INDEPENDENCE_NOTE_V1.md`
+The manuscript-level wording is carried by `book/00-front-matter/01-publication-note.md`.
 
-The visual identity must not imply that the book is:
-- published by EPI;
-- official Wero documentation;
-- sponsored by ECB, EPC, EBA CLEARING or any bank.
-
-Until explicit licensing exists:
-- do not use official Wero/EPI logos;
-- do not reproduce their brand identity;
-- use names typographically for identification only.
-
-## Required final decisions
+## Decisions
 
 - [x] front-cover concept approved
-- [ ] final front-cover artwork approved
-- [x] back-cover copy draft prepared
-- [ ] back-cover copy approved
-- [ ] print trim selected
-- [ ] printer template acquired
-- [ ] spine dimensions calculated
-- [ ] ISBN/barcode decision
-- [x] trademark/independence editorial wording prepared
-- [ ] final trademark/legal review
+- [x] digital title-page treatment approved
+- [x] back-cover copy approved
+- [x] initial digital ISBN decision — no ISBN assigned
+- [x] independent imprint selected
+- [x] digital distribution target selected — GitHub Release
+- [ ] final print/retail artwork — deferred
+- [ ] print trim / printer template / spine — deferred
+- [ ] physical print proof — deferred
+- [ ] commercial/retail legal review — recommended before a commercial print/retail edition
