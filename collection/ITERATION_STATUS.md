@@ -9,9 +9,9 @@ Branch: `collection-v2-four-volumes`
 | I3 | four master journeys | COMPLETE |
 | I4 | Volume I migration | COMPLETE |
 | I5 | Volume I enrichment/review | COMPLETE |
-| I6 | Volume II migration | NEXT |
-| I7 | Volume II deepening/review | PLANNED |
-| I8 | Volume III migration | PLANNED |
+| I6 | Volume II migration | COMPLETE |
+| I7 | Volume II deepening/review | COMPLETE |
+| I8 | Volume III migration | NEXT |
 | I9 | Volume III technical deepening | PLANNED |
 | I10 | Volume IV migration | PLANNED |
 | I11 | Volume IV deepening/review | PLANNED |
@@ -57,3 +57,16 @@ No V1.0 release artifact has been modified.
 - recurring/subscription separated from post-payment;
 - Refund / Return / Recall / Investigation / Dispute given a canonical taxonomy;
 - Volume I Quarto order updated to the recomposed journey structure.
+
+
+## I6 acceptance
+- 22 canonical V1.0 chapters migrated to `volumes/volume-2/`;
+- ISO 20022, SCT Inst, rails and liquidity kept together;
+- dedicated Volume II landing page and Quarto manifest created.
+
+## I7 acceptance
+- financial-correctness synthesis added;
+- UNKNOWN / retry / idempotency boundaries made explicit;
+- deterministic multi-rail routing decision model added;
+- liquidity resilience model added;
+- Volume II manifest updated.
