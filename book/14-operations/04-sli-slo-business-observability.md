@@ -1,6 +1,6 @@
 ---
 status: REVIEWED
-last_verified: 2026-09-28
+last_verified: 2026-09-29
 truth_level: REFERENCE_ARCHITECTURE
 primary_sources: []
 related_internal_repos:
@@ -8,6 +8,12 @@ related_internal_repos:
 ---
 
 # SLI, SLO et observabilité métier
+
+La @fig-14-003 complète la lecture de ce chapitre avec la vue de référence correspondante.
+
+![Corrélation métier et technique — paiement, ISO 20022, événements, settlement et reconciliation.](../../diagrams/svg/secondary/FIG-14-003-observability-correlation.svg){#fig-14-003}
+
+*Statut : **REFERENCE_ARCHITECTURE** · Source(s) : Handbook reference architecture · Vérifié : 2026-09-29.*
 
 ## 1. HTTP 200 n'est pas un SLI paiement suffisant
 
