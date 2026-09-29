@@ -1,6 +1,6 @@
 ---
 status: REVIEWED
-last_verified: 2026-09-28
+last_verified: 2026-09-29
 truth_level: REFERENCE_ARCHITECTURE
 primary_sources:
   - ecb-tips-overview
@@ -10,6 +10,12 @@ related_internal_repos:
 ---
 
 # Connectivité bancaire, dual links et chemins vers les CSM
+
+La @fig-09-003 matérialise la vue de référence de ce chapitre.
+
+![Double connectivité bancaire — deux chemins externes vers le CSM ou endpoint de règlement.](../../diagrams/svg/secondary/FIG-09-003-dual-banking-connectivity.svg){#fig-09-003}
+
+*Statut : **REFERENCE_ARCHITECTURE** · Source(s) : Handbook reference architecture · Vérifié : 2026-09-29.*
 
 ## 1. Le chemin externe financier est un service critique
 
