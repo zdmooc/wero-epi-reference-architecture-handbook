@@ -1,0 +1,47 @@
+project:
+  type: book
+  output-dir: _book-volume-3
+
+book:
+  title: "Wero & EPI — Volume III"
+  subtitle: "Payment Platform Architecture: API, Event, Data, Network & OpenShift"
+  author: "Djamal Zidane"
+  chapters:
+    - index.md
+    - book/09-network/01-network-and-flow-reference.md
+    - book/09-network/02-edge-dns-ddos-waf-lb.md
+    - book/09-network/03-internal-segmentation-east-west.md
+    - book/09-network/04-banking-connectivity-dual-links.md
+    - book/09-network/05-pki-hsm-network-dependencies.md
+    - book/09-network/06-flow-matrix-latency-and-failure-budget.md
+    - book/10-api-event-data/01-api-event-data-architecture.md
+    - book/10-api-event-data/02-api-contracts-idempotency-webhooks.md
+    - book/10-api-event-data/03-event-driven-outbox-inbox-kafka-mq.md
+    - book/10-api-event-data/04-payment-ledger-data-model.md
+    - book/10-api-event-data/05-saga-replay-dlq-and-compensation.md
+    - book/10-api-event-data/06-consistency-concurrency-and-cap.md
+    - book/11-infrastructure/01-infrastructure-cloud-platform.md
+    - book/11-infrastructure/02-openshift-kubernetes-runtime-patterns.md
+    - book/11-infrastructure/03-database-ha-backup-pitr.md
+    - book/11-infrastructure/04-broker-ha-kafka-mq.md
+    - book/11-infrastructure/05-multiaz-multisite-dr-patterns.md
+    - book/11-infrastructure/06-gitops-release-and-supply-chain.md
+    - book/14-operations/02-bank-reference-architecture.md
+    - book/14-operations/03-psp-merchant-reference-architecture.md
+
+format:
+  html:
+    toc: true
+    number-sections: true
+  epub:
+    toc: true
+  pdf:
+    documentclass: scrbook
+    toc: true
+    number-sections: true
+    papersize: a4
+    geometry:
+      - margin=20mm
+
+execute:
+  freeze: auto
