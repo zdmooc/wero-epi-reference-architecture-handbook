@@ -26,7 +26,7 @@ jobs:
       - name: Install proof utilities
         run: |
           sudo apt-get update
-          sudo apt-get install -y poppler-utils
+          sudo apt-get install -y poppler-utils librsvg2-bin
 
       - name: Pre-render manuscript checks
         run: |
