@@ -75,20 +75,31 @@ All entries in that file were checked on 2026-09-29 and resolve to existing file
 ## Verified manuscript structure
 
 As of 2026-09-29:
-- 87 canonical chapter files;
-- 97 canonical files including annexes and verified baseline;
-- 36 Mermaid source diagrams;
+- 87 canonical technical chapter files;
+- 1 publication-note front-matter file added for final digital packaging;
+- 98 files in the canonical publication order after that addition;
+- 36 Mermaid source diagrams and 36 validated SVG artifacts;
 - 0 missing paths in `publishing/book-order.txt`.
 
-## Publication is intentionally deferred
+## Publication status
 
-Content coverage I1→I16 is complete at GitHub manuscript level.
+Content coverage I1→I16 is complete.
 
-The following are deliberately **not started yet**:
-- SVG rendering + final visual/layout pass;
-- PDF render;
-- EPUB render;
-- print proof;
-- ISBN/distribution decision.
+Completed:
+- 36/36 SVG rendering and visual QA;
+- figure-to-chapter integration;
+- Quarto HTML/PDF layout proof;
+- final manuscript freeze;
+- PDF RC1 render + QA;
+- EPUB RC1 render + QA;
+- checksums and release-readiness pack.
 
-Those steps start only after manuscript freeze.
+Digital V1.0 finalization:
+- publication note added to front matter;
+- imprint selected: **Djamal Zidane — publication indépendante**;
+- no ISBN for the initial digital edition;
+- digital cover treatment: Quarto title page;
+- target distribution: GitHub Release;
+- fresh layout proof and final PDF/EPUB build required after the front-matter addition.
+
+The physical print proof, print trim, spine and retail/print cover artwork are a separate print gate and do not block the digital V1.0.
