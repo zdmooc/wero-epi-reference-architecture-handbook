@@ -1,6 +1,6 @@
 ---
 status: REVIEWED
-last_verified: 2026-09-28
+last_verified: 2026-09-29
 truth_level: REFERENCE_ARCHITECTURE
 primary_sources: []
 related_internal_repos:
@@ -9,6 +9,12 @@ related_internal_repos:
 ---
 
 # Active/passive, active/active, fencing et split-brain
+
+La @fig-13-003 complète la lecture de ce chapitre avec la vue de référence correspondante.
+
+![Failover de site avec fencing — aucune promotion avant suppression de l’autorité d’écriture du site défaillant.](../../diagrams/svg/secondary/FIG-13-003-fencing-failover.svg){#fig-13-003}
+
+*Statut : **REFERENCE_ARCHITECTURE** · Source(s) : Handbook reference architecture · Vérifié : 2026-09-29.*
 
 ## 1. Availability is not correctness
 
