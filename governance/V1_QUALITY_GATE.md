@@ -77,7 +77,8 @@
 - [x] figure source selection / numbering / canonical placement
 - [x] Visual Design System V1
 - [x] 8 hero figures source-prepared
-- [ ] SVG rendering / visual proof / final typography
+- [x] 8 hero SVGs rendered and visually QA-passed
+- [ ] remaining 28 figures: Visual System V1 + SVG visual QA
 - [ ] PDF render
 - [ ] EPUB render
 - [ ] physical print proof
