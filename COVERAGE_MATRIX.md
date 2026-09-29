@@ -94,12 +94,19 @@ Completed:
 - EPUB RC1 render + QA;
 - checksums and release-readiness pack.
 
-Digital V1.0 finalization:
+Digital V1.0 finalization: **COMPLETE**.
 - publication note added to front matter;
 - imprint selected: **Djamal Zidane — publication indépendante**;
 - no ISBN for the initial digital edition;
 - digital cover treatment: Quarto title page;
 - target distribution: GitHub Release;
-- fresh layout proof and final PDF/EPUB build required after the front-matter addition.
+- final layout proof run `36593144021`: PASS;
+- final frozen source SHA `705b13664d9c3783d3d05fae72269648c80bcee8`;
+- final PDF/EPUB build run `36593794049`: PASS;
+- PDF final: 448 A4 pages;
+- EPUB final: 102 XHTML / 36 SVG / 0 broken internal refs;
+- final checksums recorded.
 
-The physical print proof, print trim, spine and retail/print cover artwork are a separate print gate and do not block the digital V1.0.
+Status: **V1.0 FINAL DIGITAL BUILD PASS — NOT PUBLICLY RELEASED**.
+
+The physical print proof, print trim, spine and retail/print cover artwork are a separate future print gate and do not block the completed digital V1.0.
