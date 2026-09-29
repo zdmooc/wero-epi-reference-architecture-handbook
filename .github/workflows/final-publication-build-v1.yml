@@ -13,7 +13,7 @@ permissions:
 
 env:
   FREEZE_REF: freeze/v1.0-digital-final-2026-09-29
-  EXPECTED_FREEZE_SHA: 265363756c044fb34efac898dfb1e6e99a5a54b0
+  EXPECTED_FREEZE_SHA: 705b13664d9c3783d3d05fae72269648c80bcee8
 
 jobs:
   build:
