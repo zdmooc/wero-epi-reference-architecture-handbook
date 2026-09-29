@@ -45,8 +45,8 @@
 - verified zero render-sensitive changes after the successful proof;
 - entered FINAL_MANUSCRIPT_FREEZE.
 
-### Editorial boundary
-PDF, EPUB and print artifacts are intentionally **not generated yet**. Publication starts only after final manuscript freeze.
+### Editorial / publication boundary
+The manuscript is frozen. PDF RC1 and EPUB RC1 have been generated from the frozen SHA and passed QA. No public release, ISBN/distribution action or physical print approval has been performed.
 
 ## 0.1.0 — 2026-09-28
 
