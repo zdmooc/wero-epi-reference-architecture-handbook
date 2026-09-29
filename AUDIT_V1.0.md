@@ -136,3 +136,17 @@ PASS:
 Status: **HERO_SOURCE_PREPARED**.
 
 Next step: SVG rendering and visual QA of the 8 hero figures.
+
+
+## Hero SVG visual QA — 2026-09-29
+
+PASS:
+- 8/8 hero SVG artifacts rendered;
+- 8/8 structurally valid with width/height/viewBox;
+- 8/8 visually inspected;
+- FIG-11 routing corrected;
+- FIG-14 line-crossing density corrected;
+- FIG-15 current/future routing corrected;
+- footer signatures normalized to Visual System V1.
+
+Decision: **HERO_SVG_QA_PASS**.
