@@ -83,8 +83,11 @@
 - [x] 36 figures embedded in 34 canonical chapters
 - [x] Quarto figure IDs / captions / source notes / cross-references
 - [x] remaining 28 figures: Visual System V1 + SVG vector/geometry QA
-- [ ] Quarto page-layout render proof
-- [ ] portrait/landscape sizing + page-break QA
+- [x] Quarto page-layout render proof
+- [x] 0 unresolved figure references / 0 missing images / 0 overfull boxes
+- [x] 36 figure-bearing pages reviewed
+- [x] FIG-13-004 page-layout issue corrected and revalidated
+- [x] figure-page visual QA / page-layout proof
 - [ ] PDF render
 - [ ] EPUB render
 - [ ] physical print proof
@@ -92,10 +95,10 @@
 
 ## Gate decision
 
-**V1.0 GITHUB MANUSCRIPT: PASS — READY_FOR_MANUSCRIPT_FREEZE**
+**V1.0 GITHUB MANUSCRIPT: PASS — LAYOUT_PROOF_PASS / READY_FOR_FINAL_MANUSCRIPT_FREEZE**
 
 **PDF/EPUB: NOT STARTED BY EDITORIAL DECISION**
 
 **PRINT-PRODUCTION APPROVAL: NOT STARTED**
 
-The manuscript and all 36 SVG source artifacts are complete. The next production action is chapter placement, captions/source notes and page-layout proof, not automatic PDF/EPUB publication.
+The manuscript, 36 SVG artifacts, chapter integration and Quarto layout proof are complete. The next action is FINAL_MANUSCRIPT_FREEZE, then a separate publication build.
