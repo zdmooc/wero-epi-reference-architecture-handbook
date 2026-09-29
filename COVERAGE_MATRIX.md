@@ -56,6 +56,9 @@ Canonical annexes:
 - `annexes/RTO_RPO_MATRIX.md`
 - `annexes/RACI_REFERENCE.md`
 - `annexes/CHECKLISTS.md`
+- `annexes/ACRONYMS.md`
+- `annexes/SUBJECT_INDEX.md`
+- `annexes/ARCHITECTURE_CROSS_REFERENCE.md`
 - `GLOSSARY.md`
 - `sources/VERIFIED_BASELINE_2026-09-28.md`
 
@@ -63,7 +66,7 @@ Canonical annexes:
 
 The publication source of truth is `publishing/book-order.txt`.
 
-All entries in that file were checked on 2026-09-28 and resolve to existing files.
+All entries in that file were checked on 2026-09-29 and resolve to existing files.
 
 ## Master TOC interpretation
 
@@ -73,7 +76,7 @@ All entries in that file were checked on 2026-09-28 and resolve to existing file
 
 As of 2026-09-28:
 - 87 canonical chapter files;
-- 94 canonical files including annexes and verified baseline;
+- 97 canonical files including annexes and verified baseline;
 - 34 Mermaid source diagrams;
 - 0 missing paths in `publishing/book-order.txt`.
 
