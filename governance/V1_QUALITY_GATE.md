@@ -78,7 +78,9 @@
 - [x] Visual Design System V1
 - [x] 8 hero figures source-prepared
 - [x] 8 hero SVGs rendered and visually QA-passed
-- [ ] remaining 28 figures: Visual System V1 + SVG visual QA
+- [x] 28 secondary SVGs rendered and vector/geometry QA-passed
+- [x] 36/36 SVG figure artifacts complete
+- [x] remaining 28 figures: Visual System V1 + SVG vector/geometry QA
 - [ ] PDF render
 - [ ] EPUB render
 - [ ] physical print proof
@@ -92,4 +94,4 @@
 
 **PRINT-PRODUCTION APPROVAL: NOT STARTED**
 
-The manuscript/figure-source review is complete. The next production action is SVG rendering and layout after the freeze snapshot, not automatic PDF/EPUB publication.
+The manuscript and all 36 SVG source artifacts are complete. The next production action is chapter placement, captions/source notes and page-layout proof, not automatic PDF/EPUB publication.
