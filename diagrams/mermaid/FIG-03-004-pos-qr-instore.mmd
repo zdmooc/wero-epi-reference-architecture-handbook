@@ -1,0 +1,28 @@
+%% title: In-store QR payment reference journey
+%% view: sequence
+%% truth_level: MIXED
+%% last_verified: 2026-09-29
+%% sources: Wero public in-store/QR capability + handbook reference backend
+%% related_chapter: book/03-journeys/04-pos-qr-instore.md
+
+sequenceDiagram
+  actor C as Consumer
+  participant POS as Merchant POS
+  participant A as Acceptor PSP
+  participant W as Wero Context
+  participant APP as Wallet / Bank App
+  participant P as Consumer PSP
+  participant R as SCT Inst / Rail
+
+  POS->>A: Create payment request(amount, order)
+  A-->>POS: paymentRequestId + QR context
+  POS-->>C: Display QR
+  C->>APP: Scan QR
+  APP->>C: Display merchant + amount
+  C->>APP: Approve / SCA
+  APP->>P: Stable payment intent
+  P->>R: Financial submission
+  R-->>P: Authoritative result
+  P-->>A: Payment result
+  A-->>POS: Signed status / callback
+  POS-->>C: Close sale only on backend status
