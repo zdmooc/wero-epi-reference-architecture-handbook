@@ -11,6 +11,12 @@ related_internal_repos:
 
 # Partie IV — ISO 20022 de bout en bout
 
+La @fig-05-001 fournit la vue de référence utilisée dans ce chapitre.
+
+![Carte des messages ISO 20022 utilisés dans les principaux flux SCT Inst 2025.](../../diagrams/svg/hero/FIG-05-001-iso20022-sctinst-message-map.svg){#fig-05-001}
+
+*Statut : **PUBLIC_VERIFIED** · Source(s) : EPC SCT Inst Inter-PSP IG 2025 v1.0 · Vérifié : 2026-09-29.*
+
 ## 1. ISO 20022 n'est pas un rail
 
 ISO 20022 fournit un modèle de messages financiers. Il ne décide pas à lui seul :
