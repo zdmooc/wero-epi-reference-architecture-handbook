@@ -3,7 +3,26 @@
 **Editorial review:** 2026-09-29  
 **Final source count:** 36 Mermaid diagrams  
 **Numbering:** unique — no duplicate figure IDs  
-**Status:** 36/36 FIGURES — SVG_SOURCE_QA_PASS
+**Status:** 36/36 FIGURES — FIGURE_CHAPTER_INTEGRATION_PASS
+
+## Chapter integration status
+
+All 36 SVG artifacts are now embedded in their canonical chapters.
+
+Integration result:
+- 36/36 figures placed;
+- 34 target chapters;
+- unique Quarto IDs `#fig-xx-xxx`;
+- prose cross-references `@fig-xx-xxx`;
+- captions present;
+- truth level/source/date notes present;
+- 0 missing SVG path;
+- 0 missing chapter path;
+- 0 duplicate figure ID.
+
+Manifest: `diagrams/FIGURE_PLACEMENT_V1.md`.
+
+Status: **FIGURE_CHAPTER_INTEGRATION_PASS**
 
 ## Editorial decisions
 
@@ -136,4 +155,4 @@ The architectural meaning and placement of the figures are now reviewed.
 SVG production is complete for all 36 figures.
 
 Remaining visual-production work is now page-level publication proof:
-`36 SVG → captions/source notes → chapter placement → typography/layout proof → PDF/EPUB/print proof`.
+`Quarto render proof → portrait/landscape sizing → page breaks → typography → PDF/EPUB/print proof`.
