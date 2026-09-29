@@ -150,3 +150,22 @@ PASS:
 - footer signatures normalized to Visual System V1.
 
 Decision: **HERO_SVG_QA_PASS**.
+
+
+## Secondary SVG QA — 2026-09-29
+
+PASS:
+- 28/28 secondary Mermaid figures migrated to Visual System V1 metadata;
+- 28/28 secondary SVG artifacts rendered;
+- 28/28 SVGs structurally valid with width/height/viewBox;
+- minimum text size >= 12 px equivalent;
+- 0 out-of-bounds semantic boxes;
+- 0 semantic overlaps after correction;
+- FIG-13-004 evidence block repositioned after geometry QA;
+- 0 missing SVG figure IDs;
+- 0 duplicate SVG figure IDs.
+
+Combined decision:
+**36/36 FIGURES — SVG_SOURCE_QA_PASS**.
+
+Remaining validation belongs to page-layout proof, not source-figure production.
