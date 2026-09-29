@@ -81,6 +81,25 @@
 | Wero | Solution européenne de paiement portée par EPI. |
 | Zero Trust | Modèle de sécurité où réseau/localisation ne suffisent pas à établir la confiance. |
 
+| WAF | Web Application Firewall. |
+| TIBER-EU | Threat Intelligence-based Ethical Red Teaming framework européen. |
+| T2S | TARGET2-Securities. |
+| SRE | Site Reliability Engineering. |
+| SBOM | Software Bill of Materials. |
+| RTGS | Real-Time Gross Settlement. |
+| RBAC | Role-Based Access Control. |
+| PSD3 | Projet de troisième directive européenne sur les services de paiement ; statut législatif à vérifier selon édition. |
+| PSR | Projet/règlement européen Payment Services Regulation ; statut législatif à vérifier selon édition. |
+| PITR | Point-In-Time Recovery. |
+| PFMI | Principles for Financial Market Infrastructures. |
+| PDB | PodDisruptionBudget Kubernetes. |
+| OCT Inst | One-Leg Out Instant Credit Transfer scheme de l'EPC. |
+| ISR | In-Sync Replicas dans Kafka. |
+| HPA | Horizontal Pod Autoscaler Kubernetes/OpenShift. |
+| EUDI | European Digital Identity Wallet / écosystème d'identité numérique européenne selon eIDAS2. |
+| DDoS | Distributed Denial of Service. |
+| DLQ | Dead Letter Queue : file de messages nécessitant traitement/revue après échecs répétés. |
+| AStA | Ancillary System technical account dans le contexte TARGET/TIPS. |
 ## Relations à retenir
 
 ```text
