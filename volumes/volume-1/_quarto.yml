@@ -1,0 +1,46 @@
+project:
+  type: book
+  output-dir: _book-volume-1
+
+book:
+  title: "Wero & EPI — Volume I"
+  subtitle: "Business & Functional Architecture"
+  author: "Djamal Zidane"
+  chapters:
+    - index.md
+    - book/01-foundations/01-layered-reading-of-wero-epi.md
+    - book/01-foundations/02-end-to-end-payment-anatomy.md
+    - book/01-foundations/03-actors-and-trust-boundaries.md
+    - book/02-wero-epi/01-ecosystem-public-baseline.md
+    - book/02-wero-epi/02-participant-responsibility-model.md
+    - book/02-wero-epi/03-country-rollout-and-migrations.md
+    - book/02-wero-epi/04-merchant-acceptance-model.md
+    - book/03-journeys/01-end-to-end-wero-journeys.md
+    - book/03-journeys/02-p2p-alias-and-directory.md
+    - book/03-journeys/03-ecommerce-desktop-mobile.md
+    - book/03-journeys/04-pos-qr-instore.md
+    - book/03-journeys/05-recurring-refund-return-recall-dispute.md
+    - book/04-functional/01-functional-reference-architecture.md
+    - book/04-functional/02-domain-driven-payment-model.md
+    - book/04-functional/03-state-machines-and-invariants.md
+    - book/04-functional/04-sources-of-truth-and-ownership.md
+    - book/15-future-annexes/01-interoperability-digital-euro-future.md
+    - book/15-future-annexes/02-wero-vs-digital-euro-architecture.md
+    - book/15-future-annexes/04-european-payments-2030-reference.md
+
+format:
+  html:
+    toc: true
+    number-sections: true
+  epub:
+    toc: true
+  pdf:
+    documentclass: scrbook
+    toc: true
+    number-sections: true
+    papersize: a4
+    geometry:
+      - margin=20mm
+
+execute:
+  freeze: auto
