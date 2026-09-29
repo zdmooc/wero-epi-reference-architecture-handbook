@@ -43,7 +43,10 @@
 - found and corrected the FIG-13-004 page-layout overlap;
 - reached LAYOUT_PROOF_PASS;
 - verified zero render-sensitive changes after the successful proof;
-- entered FINAL_MANUSCRIPT_FREEZE.
+- entered FINAL_MANUSCRIPT_FREEZE;
+- produced and validated PDF/EPUB RC1 from the frozen SHA;
+- prepared the final release-decision pack: cover brief, back-cover copy, imprint template, trademark/independence note, print checklist and release matrix;
+- entered DECISION_GATE without public release.
 
 ### Editorial / publication boundary
 The manuscript is frozen. PDF RC1 and EPUB RC1 have been generated from the frozen SHA and passed QA. No public release, ISBN/distribution action or physical print approval has been performed.
