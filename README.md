@@ -132,7 +132,7 @@ Le nombre de pages restera une **conséquence du contenu**, pas une contrainte.
 
 ## État
 
-**V1.0 MANUSCRIPT — LAYOUT_PROOF_PASS / READY_FOR_FINAL_MANUSCRIPT_FREEZE ; contenu I1→I16 terminé ; Design System V1 défini ; 36/36 figures = FIGURE_CHAPTER_INTEGRATION_PASS ; PDF/EPUB/print différés.**
+**V1.0 MANUSCRIPT — FINAL_MANUSCRIPT_FREEZE ; contenu I1→I16 terminé ; Design System V1 défini ; 36/36 figures = FIGURE_CHAPTER_INTEGRATION_PASS ; PDF/EPUB/print différés.**
 
 Premiers éléments créés :
 
@@ -237,3 +237,13 @@ Layout proof status — 2026-09-29:
 - status: **LAYOUT_PROOF_PASS**.
 
 The proof PDF is temporary QA evidence, not the publication PDF. EPUB remains ungenerated.
+
+
+Final manuscript freeze — 2026-09-29:
+- successful proof basis: GitHub Actions run `36551667995`;
+- proof commit: `ca07815e51f708701f769265801edd99513c1174`;
+- 0 render-sensitive changes after proof;
+- freeze report: `governance/FINAL_MANUSCRIPT_FREEZE_V1_2026-09-29.md`;
+- status: **FINAL_MANUSCRIPT_FREEZE**.
+
+Publication PDF/EPUB are still not released.
