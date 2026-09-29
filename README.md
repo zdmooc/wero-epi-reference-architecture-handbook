@@ -131,7 +131,7 @@ Le nombre de pages restera une **conséquence du contenu**, pas une contrainte.
 
 ## État
 
-**V1.0 — FINAL DIGITAL BUILD PASS ; 87 chapitres techniques + note d’édition, 36/36 figures intégrées, PDF V1.0 + EPUB V1.0 validés ; aucune release publique effectuée.**
+**V1.0 — PUBLISHED ; 87 chapitres techniques + note d’édition, 36/36 figures intégrées, PDF V1.0 + EPUB V1.0 validés et publiés dans la GitHub Release `v1.0`.**
 
 Premiers éléments créés :
 
@@ -196,12 +196,12 @@ Le programme I1→I16 est terminé au niveau **contenu GitHub**.
 - 36 diagrammes Mermaid maintenables ;
 - aucun chemin manquant dans `publishing/book-order.txt` ;
 - sources primaires 2026 versionnées ;
-- PDF RC1 et EPUB RC1 générés et validés depuis le SHA gelé ; aucune release publique.
+- PDF RC1 et EPUB RC1 générés et validés depuis le SHA gelé ; la V1.0 finale est désormais publiée.
 
 État final numérique :
 `relecture complète → front matter final → layout proof → freeze final → PDF/EPUB V1.0 → QA + checksums = PASS`.
 
-La publication publique reste une action explicite distincte.
+Publication publique effectuée via GitHub Release `v1.0`.
 
 
 Visual status — 2026-09-29:
@@ -247,7 +247,7 @@ Final manuscript freeze — 2026-09-29:
 - freeze report: `governance/FINAL_MANUSCRIPT_FREEZE_V1_2026-09-29.md`;
 - status: **FINAL_MANUSCRIPT_FREEZE**.
 
-Publication PDF/EPUB are still not released.
+Publication PDF/EPUB V1.0 is now released.
 
 
 Publication RC1 — 2026-09-29:
@@ -259,7 +259,7 @@ Publication RC1 — 2026-09-29:
 - successful publication build run: `36558924392`;
 - status: **PUBLICATION_RC1_PASS**.
 
-No public release or distribution has been performed.
+The final V1.0 public GitHub Release has now been performed.
 
 
 Final release readiness — 2026-09-29:
