@@ -74,7 +74,7 @@ This separation is deliberate: first finish the book in GitHub, then manufacture
 - captions/source notes/cross-references = PASS;
 - figure-to-chapter integration = FIGURE_CHAPTER_INTEGRATION_PASS.
 
-Status: **LAYOUT_PROOF_PASS — READY_FOR_FINAL_MANUSCRIPT_FREEZE**.
+Status: **FINAL_MANUSCRIPT_FREEZE**.
 
 
 ## Layout proof pass — 2026-09-29
@@ -90,3 +90,13 @@ Status: **LAYOUT_PROOF_PASS — READY_FOR_FINAL_MANUSCRIPT_FREEZE**.
 - FIG-13-004 corrected and revalidated.
 
 Status: **LAYOUT_PROOF_PASS — READY_FOR_FINAL_MANUSCRIPT_FREEZE**.
+
+
+## Final manuscript freeze — 2026-09-29
+
+- proof basis: PASS;
+- post-proof render-sensitive diff: 0;
+- manuscript baseline frozen;
+- publication artifacts still deferred.
+
+Status: **FINAL_MANUSCRIPT_FREEZE**.
