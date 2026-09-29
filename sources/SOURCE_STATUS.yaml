@@ -1,23 +1,24 @@
 baseline_date: 2026-09-28
+last_revalidated: 2026-09-29
 sources:
   wero_epi_commerce_2026_09:
     authority: EPI Company
     status: CURRENT_PUBLIC
-    checked: 2026-09-28
+    checked: 2026-09-29
     url: https://epicompany.eu/media-insights/wero-next-now-e-commerce-accelerates-as-in-store-takes-its-first-steps/
   epc_sct_inst_2025_v1_1:
     authority: European Payments Council
     version: "2025 v1.1"
     effective: 2025-10-05
     status: CURRENT
-    checked: 2026-09-28
+    checked: 2026-09-29
     url: https://www.europeanpaymentscouncil.eu/document-library/rulebooks/2025-sepa-instant-credit-transfer-rulebook-version-11
   epc_vop_2026_v1_1:
     authority: European Payments Council
     version: "1.1"
     effective: 2026-09-20
     status: CURRENT
-    checked: 2026-09-28
+    checked: 2026-09-29
     url: https://www.europeanpaymentscouncil.eu/document-library/rulebooks/verification-payee-scheme-rulebook-0
   eu_ipr_2024_886:
     authority: European Union
@@ -27,12 +28,12 @@ sources:
   tips:
     authority: European Central Bank
     status: CURRENT
-    checked: 2026-09-28
+    checked: 2026-09-29
     url: https://www.ecb.europa.eu/paym/target/tips/html/index.en.html
   rt1:
     authority: EBA CLEARING
     status: CURRENT
-    checked: 2026-09-28
+    checked: 2026-09-29
     url: https://www.ebaclearing.eu/services-instant-payments/rt1/
   dora_2022_2554:
     authority: European Union
@@ -43,7 +44,7 @@ sources:
   digital_euro_pilot:
     authority: European Central Bank
     status: ACTIVE_WATCH
-    checked: 2026-09-28
+    checked: 2026-09-29
     url: https://www.ecb.europa.eu/euro/digital_euro/pilot/html/index.en.html
 
   psd3_psr_2026_trajectory:
