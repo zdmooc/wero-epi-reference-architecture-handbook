@@ -100,3 +100,16 @@ Status: **LAYOUT_PROOF_PASS — READY_FOR_FINAL_MANUSCRIPT_FREEZE**.
 - publication artifacts still deferred.
 
 Status: **FINAL_MANUSCRIPT_FREEZE**.
+
+
+## Publication RC1 — 2026-09-29
+
+- frozen-source build = PASS;
+- PDF RC1 = PASS;
+- EPUB RC1 = PASS;
+- checksum validation = PASS;
+- independent PDF visual regression = PASS.
+
+Status: **PUBLICATION_RC1_PASS**.
+
+Next gate: print/release metadata/distribution decision before final V1.0 public release.
