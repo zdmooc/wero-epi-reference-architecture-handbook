@@ -6,7 +6,7 @@
 - completed the I1→I16 manuscript programme;
 - expanded the handbook to 87 canonical chapter files;
 - maintained 97 canonical files including annexes, indexes and verified public baseline;
-- expanded the diagram catalogue to 34 maintainable Mermaid sources;
+- finalized the diagram catalogue at 36 maintainable Mermaid sources;
 - added dated primary-source registry for Wero/EPI, EPC SCT Inst/VoP/OCT Inst, ECB TARGET/TIPS, EBA CLEARING RT1, EU regulations and DORA/TIBER material;
 - deepened Wero/EPI participants, migrations and merchant acceptance;
 - deepened P2P, e-commerce, POS, recurring, refund, return, recall and dispute journeys;
@@ -24,7 +24,9 @@
 - added end-to-end test matrix, claim-evidence governance and companion-lab evidence map;
 - added terminology/style guide, acronym index, subject index and architecture cross-reference map;
 - revalidated critical EPC/ECB/EBA CLEARING/EPI sources on 2026-09-29;
-- completed final manuscript editorial review and preserved a freeze-candidate snapshot branch.
+- completed final manuscript editorial review and preserved a freeze-candidate snapshot branch;
+- removed two redundant figures, normalized duplicate numbering and added four missing high-value figures;
+- finalized canonical figure placement/layout guidance for all 36 figures.
 
 ### Editorial boundary
 PDF, EPUB and print artifacts are intentionally **not generated yet**. Publication starts only after final manuscript freeze.
