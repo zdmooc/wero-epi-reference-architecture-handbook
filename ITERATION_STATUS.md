@@ -1,8 +1,8 @@
 # Iteration Status — I0 to I16
 
 **Baseline:** 2026-09-29  
-**Editorial state:** V1.0 — FINAL_DIGITAL_BUILD_PASS  
-**Public release:** NOT YET PUBLISHED
+**Editorial state:** V1.0 — PUBLISHED  
+**Public release:** PUBLISHED — `v1.0`
 
 | Iteration | Scope | Status |
 |---|---|---|
@@ -111,8 +111,14 @@ Separated from digital V1.0:
 - physical print proof;
 - print ISBN/barcode/price/distribution.
 
-## Remaining action
+## Public release
 
-The book is technically final.
+The book is technically final and publicly released.
 
-The only release action intentionally not executed is the **public GitHub Release**, which remains an explicit publication authorization step.
+GitHub Release:
+- tag: `v1.0`;
+- target SHA: `705b13664d9c3783d3d05fae72269648c80bcee8`;
+- release URL: `https://github.com/zdmooc/wero-epi-reference-architecture-handbook/releases/tag/v1.0`;
+- PDF, EPUB and SHA256SUMS attached.
+
+Status: **V1.0 PUBLISHED**.
