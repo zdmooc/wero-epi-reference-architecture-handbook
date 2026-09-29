@@ -1,8 +1,8 @@
 # Final Release Decision Matrix — V1.0
 
 **Date:** 2026-09-29  
-**Technical state:** V1.0_FINAL_BUILD_PASS  
-**Public release:** NOT YET AUTHORIZED
+**Technical state:** V1.0_PUBLISHED  
+**Public release:** PUBLISHED — `v1.0`
 
 | Decision | V1.0 digital decision | State |
 |---|---|---|
@@ -16,7 +16,7 @@
 | Final immutable source | freeze branch + SHA | DONE |
 | Final PDF/EPUB QA | run 36593794049 | PASS |
 | Final checksums | SHA-256 | DONE |
-| Public GitHub Release | explicit user-controlled action | PENDING |
+| Public GitHub Release | `v1.0` | DONE |
 | Print / retail edition | separate future stream | DEFERRED |
 
 ## Final technical gates
@@ -39,9 +39,12 @@ Final build:
 
 ## Public release action
 
-- [ ] explicit authorization to create a public GitHub Release
+- [x] public GitHub Release `v1.0` created
+- [x] PDF attached
+- [x] EPUB attached
+- [x] SHA256SUMS attached
 
-A successful final build does not automatically distribute the book.
+Release: `https://github.com/zdmooc/wero-epi-reference-architecture-handbook/releases/tag/v1.0`.
 
 ## Separate print gate
 
