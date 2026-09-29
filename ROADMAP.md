@@ -156,8 +156,8 @@
 - [x] repository content audit
 - [x] claim/evidence gate
 - [x] detailed I1→I16 coverage
-- [ ] PDF/EPUB render — intentionally deferred until manuscript freeze
-- [ ] physical print proof — after digital layout
+- [x] PDF/EPUB RC1 render + QA
+- [ ] physical print proof — deferred to the separate print edition; not a blocker for digital V1.0
 
 ## V1.x — Maintenance
 
@@ -187,15 +187,34 @@ Each major edition:
 
 
 
-## V1.0 MANUSCRIPT — 2026-09-28
+## V1.0 — finalisation de publication numérique — 2026-09-29
 
-I1→I16 are complete at GitHub manuscript level.
+Le contenu I1→I16 est terminé et les 87 chapitres techniques restent gelés.
 
-Next phase, deliberately separate from content work:
-1. editorial reread;
-2. figure placement/caption pass;
-3. index/cross-reference pass;
-4. freeze/tag manuscript;
-5. generate PDF;
-6. generate EPUB;
-7. physical proof if print edition is selected.
+Déjà réalisé :
+1. relecture éditoriale ;
+2. placement/caption des 36 figures ;
+3. index et références croisées ;
+4. layout proof Quarto ;
+5. gel du manuscrit ;
+6. PDF RC1 ;
+7. EPUB RC1 ;
+8. QA et checksums RC1.
+
+Décisions prises pour la première édition numérique :
+- imprint : **Djamal Zidane — publication indépendante** ;
+- ISBN : **non attribué** pour cette édition numérique ;
+- couverture digitale : **page de titre Quarto** ;
+- distribution cible : **GitHub Release** ;
+- prix commercial : **non défini / hors périmètre de cette release** ;
+- édition papier : **flux séparé et différé**.
+
+Derniers gates techniques :
+1. intégrer la note d'édition au front matter ;
+2. rerun layout proof ;
+3. geler la source finale de publication ;
+4. générer PDF + EPUB V1.0 finaux ;
+5. vérifier checksums et structure ;
+6. promouvoir en `V1.0 FINAL`.
+
+La création d'une release publique reste une action explicite distincte.
