@@ -1,6 +1,6 @@
 ---
 status: REVIEWED
-last_verified: 2026-09-28
+last_verified: 2026-09-29
 truth_level: REFERENCE_ARCHITECTURE
 primary_sources: []
 related_internal_repos:
@@ -9,6 +9,12 @@ related_internal_repos:
 ---
 
 # Multi-AZ, multi-site et patterns DR
+
+La @fig-11-001 matérialise la vue de référence de ce chapitre.
+
+![Référence multi-zone / multi-site — quorum, writer authority, fencing et connectivité bancaire indépendante.](../../diagrams/svg/hero/FIG-11-001-multizone-reference.svg){#fig-11-001}
+
+*Statut : **REFERENCE_ARCHITECTURE** · Source(s) : Handbook reference architecture · Vérifié : 2026-09-29.*
 
 ## 1. Failure domains
 
