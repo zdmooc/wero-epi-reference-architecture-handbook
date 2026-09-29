@@ -36,7 +36,12 @@
 - reached 36/36 SVG_SOURCE_QA_PASS with zero missing or duplicate figure IDs;
 - embedded all 36 SVG figures into 34 canonical chapters;
 - added Quarto figure IDs, prose cross-references, captions and truth/source/date notes;
-- reached FIGURE_CHAPTER_INTEGRATION_PASS.
+- reached FIGURE_CHAPTER_INTEGRATION_PASS;
+- added a dedicated non-publishing Quarto layout-proof workflow;
+- completed a full Quarto layout proof: 87 chapters, 36 figures, 98 HTML files and 446 A4 proof pages;
+- validated 0 unresolved figure references, 0 missing images and 0 TeX overfull boxes;
+- found and corrected the FIG-13-004 page-layout overlap;
+- reached LAYOUT_PROOF_PASS.
 
 ### Editorial boundary
 PDF, EPUB and print artifacts are intentionally **not generated yet**. Publication starts only after final manuscript freeze.
