@@ -1,6 +1,6 @@
 ---
 status: REVIEWED
-last_verified: 2026-09-28
+last_verified: 2026-09-29
 truth_level: REFERENCE_ARCHITECTURE
 primary_sources: []
 related_internal_repos:
@@ -10,6 +10,12 @@ related_internal_repos:
 ---
 
 # Event-driven architecture, Outbox, Inbox, Kafka et MQ
+
+La @fig-10-001 matérialise la vue de référence de ce chapitre.
+
+![Pattern Outbox/Inbox transactionnel — transport at-least-once et effet métier idempotent.](../../diagrams/svg/secondary/FIG-10-001-outbox-inbox.svg){#fig-10-001}
+
+*Statut : **REFERENCE_ARCHITECTURE** · Source(s) : Handbook reference architecture · Vérifié : 2026-09-29.*
 
 ## 1. Event ≠ command
 
