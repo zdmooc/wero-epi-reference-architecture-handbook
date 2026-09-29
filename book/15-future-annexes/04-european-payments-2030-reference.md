@@ -1,6 +1,6 @@
 ---
 status: REVIEWED
-last_verified: 2026-09-28
+last_verified: 2026-09-29
 truth_level: MIXED
 primary_sources:
   - ecb-payments-strategy-2026
@@ -10,6 +10,12 @@ related_internal_repos: []
 ---
 
 # Architecture européenne des paiements 2030 — vue de référence
+
+La @fig-15-001 complète la lecture de ce chapitre avec la vue de référence correspondante.
+
+![Coexistence des paiements européens à horizon 2030 — méthodes actuelles et futur potentiel de l’euro numérique.](../../diagrams/svg/hero/FIG-15-001-european-payments-2030.svg){#fig-15-001}
+
+*Statut : **MIXED** · Source(s) : ECB digital euro preparation + EPI/Wero public roadmap context + EPC schemes + handbook reference architecture · Vérifié : 2026-09-29.*
 
 ## 1. Objective
 
