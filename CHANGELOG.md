@@ -41,7 +41,9 @@
 - completed a full Quarto layout proof: 87 chapters, 36 figures, 98 HTML files and 446 A4 proof pages;
 - validated 0 unresolved figure references, 0 missing images and 0 TeX overfull boxes;
 - found and corrected the FIG-13-004 page-layout overlap;
-- reached LAYOUT_PROOF_PASS.
+- reached LAYOUT_PROOF_PASS;
+- verified zero render-sensitive changes after the successful proof;
+- entered FINAL_MANUSCRIPT_FREEZE.
 
 ### Editorial boundary
 PDF, EPUB and print artifacts are intentionally **not generated yet**. Publication starts only after final manuscript freeze.
