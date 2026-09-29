@@ -1,7 +1,7 @@
 # Iteration Status — I0 to I16
 
 **Baseline:** 2026-09-28  
-**Editorial state:** V1.0 MANUSCRIPT — CONTENT COMPLETE IN GITHUB
+**Editorial state:** V1.0 MANUSCRIPT — READY_FOR_MANUSCRIPT_FREEZE
 
 | Iteration | Scope | Status |
 |---|---|---|
@@ -26,7 +26,7 @@
 ## Verified manuscript structure
 
 - 87 canonical chapter files;
-- 94 canonical files including annexes and verified baseline;
+- 97 canonical files including annexes and verified baseline;
 - 34 Mermaid diagram sources;
 - 0 missing paths in `publishing/book-order.txt`;
 - official-source registry maintained with dated/current status.
@@ -51,3 +51,18 @@ Not executed yet:
 - ISBN/distribution decisions.
 
 This separation is deliberate: first finish the book in GitHub, then manufacture publication artifacts.
+
+
+## Editorial finishing pass — 2026-09-29
+
+- terminology/style guide added;
+- glossary expanded;
+- acronym index added;
+- subject index added;
+- cross-reference map added;
+- all foundation DRAFT chapters reviewed;
+- 34/34 Mermaid sources contain truth metadata and verification date;
+- critical official sources revalidated;
+- no TODO/TBD/FIXME content markers found.
+
+Status: **READY_FOR_MANUSCRIPT_FREEZE**.
