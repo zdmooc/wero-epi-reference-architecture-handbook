@@ -27,7 +27,7 @@
 
 - 87 canonical chapter files;
 - 97 canonical files including annexes and verified baseline;
-- 34 Mermaid diagram sources;
+- 36 Mermaid diagram sources;
 - 0 missing paths in `publishing/book-order.txt`;
 - official-source registry maintained with dated/current status.
 
@@ -61,8 +61,11 @@ This separation is deliberate: first finish the book in GitHub, then manufacture
 - subject index added;
 - cross-reference map added;
 - all foundation DRAFT chapters reviewed;
-- 34/34 Mermaid sources contain truth metadata and verification date;
+- 36/36 Mermaid sources contain truth metadata and verification date;
 - critical official sources revalidated;
-- no TODO/TBD/FIXME content markers found.
+- no TODO/TBD/FIXME content markers found;
+- figure numbering and placement review completed;
+- 2 redundant diagrams removed and 4 high-value diagrams added;
+- final figure source set = 36.
 
 Status: **READY_FOR_MANUSCRIPT_FREEZE**.
