@@ -5,7 +5,7 @@ Scope: GitHub manuscript V1.0 — content audit
 
 ## Executive conclusion
 
-The repository now contains a complete first-edition architecture manuscript spanning the end-to-end payment path from customer experience to interbank settlement, liquidity, network, infrastructure, security, resilience, operations and European regulatory context. The technical manuscript and RC1 digital artifacts have passed QA; final digital publication packaging is the remaining work.
+The repository now contains a complete first-edition architecture manuscript spanning the end-to-end payment path from customer experience to interbank settlement, liquidity, network, infrastructure, security, resilience, operations and European regulatory context. The technical manuscript, final publication front matter, final layout proof and final digital PDF/EPUB build have passed QA. No public distribution has been executed.
 
 ## Strongest characteristics
 
@@ -253,3 +253,37 @@ PASS:
 Decision: **PUBLICATION_RC1_PASS**.
 
 Public release remains blocked on explicit final release/print/distribution decisions.
+
+
+## Final digital V1.0 build — 2026-09-29
+
+Final source:
+- ref: `freeze/v1.0-digital-final-2026-09-29`;
+- SHA: `705b13664d9c3783d3d05fae72269648c80bcee8`.
+
+Final layout proof:
+- run `36593144021`;
+- 88 rendered Markdown files;
+- 36 figures;
+- 99 HTML files;
+- 448 A4 pages;
+- unresolved xrefs: 0;
+- missing images: 0;
+- TeX overfull boxes: 0.
+
+Final publication build:
+- run `36593794049`;
+- artifact `wero-epi-handbook-v1.0-final`;
+- PDF `wero-epi-reference-architecture-handbook-v1.0.pdf`: PASS;
+- PDF pages: 448;
+- PDF SHA-256: `df2f77e93e10c73edf9331063976a1892d1bacb12c94e61be64bd2ac7c508bb0`;
+- EPUB `wero-epi-reference-architecture-handbook-v1.0.epub`: PASS;
+- EPUB XHTML: 102;
+- EPUB SVG: 36;
+- broken internal references: 0;
+- missing manifest resources: 0;
+- EPUB SHA-256: `3cf31e01b332c8601327cef9744cdf08c847ae109ae4236331cbda5fb9ac0fd6`.
+
+Decision: **V1.0 FINAL DIGITAL BUILD PASS**.
+
+The digital book is technically complete. Physical print production is a separate future gate. Public GitHub Release creation remains an explicit distribution action and has not been performed.
