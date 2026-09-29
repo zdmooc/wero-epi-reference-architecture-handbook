@@ -1,6 +1,6 @@
 ---
 status: REVIEWED
-last_verified: 2026-09-28
+last_verified: 2026-09-29
 truth_level: MIXED
 primary_sources:
   - wero-faq-instore
@@ -10,6 +10,12 @@ related_internal_repos:
 ---
 
 # POS, QR et paiement en magasin
+
+La @fig-03-004 fournit la vue de référence utilisée dans ce chapitre.
+
+![Parcours QR en magasin — le POS clôture la vente sur le statut backend.](../../diagrams/svg/secondary/FIG-03-004-pos-qr-instore.svg){#fig-03-004}
+
+*Statut : **MIXED** · Source(s) : Wero public in-store/QR capability + handbook reference backend · Vérifié : 2026-09-29.*
 
 ## 1. Le magasin ajoute un environnement physique
 
