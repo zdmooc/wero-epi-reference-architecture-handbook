@@ -1,6 +1,6 @@
 ---
 status: REVIEWED
-last_verified: 2026-09-28
+last_verified: 2026-09-29
 truth_level: REFERENCE_ARCHITECTURE
 primary_sources:
   - eba-dora-incident-reporting-2026
@@ -9,6 +9,12 @@ related_internal_repos:
 ---
 
 # Runbooks, incidents et post-mortems
+
+La @fig-14-004 complète la lecture de ce chapitre avec la vue de référence correspondante.
+
+![Cycle d’incident paiement — de la détection au post-mortem et à la remédiation.](../../diagrams/svg/secondary/FIG-14-004-incident-lifecycle.svg){#fig-14-004}
+
+*Statut : **REFERENCE_ARCHITECTURE** · Source(s) : Handbook reference architecture · Vérifié : 2026-09-29.*
 
 ## 1. Incident starts with business impact
 
