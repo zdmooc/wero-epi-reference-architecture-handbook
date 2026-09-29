@@ -1,6 +1,6 @@
 ---
 status: REVIEWED
-last_verified: 2026-09-28
+last_verified: 2026-09-29
 truth_level: REFERENCE_ARCHITECTURE
 primary_sources: []
 related_internal_repos:
@@ -8,6 +8,12 @@ related_internal_repos:
 ---
 
 # Segmentation interne et flux East-West
+
+La @fig-09-002 matérialise la vue de référence de ce chapitre.
+
+![Zones réseau et de confiance — dépendances critiques entre Edge, API, paiement, données et banking connectivity.](../../diagrams/svg/secondary/FIG-09-002-network-trust-zones.svg){#fig-09-002}
+
+*Statut : **REFERENCE_ARCHITECTURE** · Source(s) : Handbook reference architecture · Vérifié : 2026-09-29.*
 
 ## 1. Objectif
 
