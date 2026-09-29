@@ -36,6 +36,14 @@ book:
     - book/16-testing/05-resilience-evidence-chain.md
     - book/17-regulation/01-european-regulatory-map.md
 
+    - SUBJECT_INDEX.md
+    - GLOSSARY.md
+    - annexes/ACRONYMS.md
+    - annexes/FAILURE_SCENARIOS.md
+    - annexes/RTO_RPO_MATRIX.md
+    - annexes/RACI_REFERENCE.md
+    - annexes/CHECKLISTS.md
+
 format:
   html:
     toc: true
