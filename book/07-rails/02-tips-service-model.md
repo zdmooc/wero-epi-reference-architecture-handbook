@@ -1,6 +1,6 @@
 ---
 status: REVIEWED
-last_verified: 2026-09-28
+last_verified: 2026-09-29
 truth_level: MIXED
 primary_sources:
   - ecb-tips-overview
@@ -11,6 +11,12 @@ related_internal_repos:
 ---
 
 # TIPS — modèle de service et conséquences d'architecture
+
+La @fig-07-002 synthétise le modèle utilisé dans ce chapitre.
+
+![Modèle de référence participant / compte TIPS.](../../diagrams/svg/secondary/FIG-07-002-tips-account-model.svg){#fig-07-002}
+
+*Statut : **REFERENCE_ARCHITECTURE** · Source(s) : Handbook reference view based on ECB TIPS public model · Vérifié : 2026-09-29.*
 
 ## 1. Rôle de TIPS
 
