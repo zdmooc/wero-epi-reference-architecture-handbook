@@ -1,0 +1,94 @@
+name: collection-v2-editorial-normalize
+
+on:
+  push:
+    branches:
+      - collection-v2-four-volumes
+    paths:
+      - .github/workflows/collection-v2-editorial-normalize.yml
+
+permissions:
+  contents: write
+
+jobs:
+  normalize:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: collection-v2-four-volumes
+          fetch-depth: 0
+
+      - name: Normalize Markdown presentation
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import re
+
+          roots = [Path("volumes") / f"volume-{i}" for i in range(1, 5)]
+          heading = re.compile(
+              r'^(#{2,6})\s+(?:(?:\d+(?:\.\d+)*)|(?:[A-Z])|(?:[IVXLCDM]+))\.\s+(.+)$'
+          )
+          list_start = re.compile(r'^(?:[-*+]\s+|\d+[.)]\s+)')
+          tick_fence = chr(96) * 3
+          tilde_fence = "~" * 3
+
+          changed = []
+          for root in roots:
+              for p in root.rglob("*.md"):
+                  original = p.read_text(encoding="utf-8")
+                  lines = original.splitlines()
+                  out = []
+                  in_fence = False
+                  fence_char = None
+
+                  for raw in lines:
+                      stripped = raw.lstrip()
+                      if stripped.startswith(tick_fence) or stripped.startswith(tilde_fence):
+                          marker = stripped[:3]
+                          if not in_fence:
+                              in_fence = True
+                              fence_char = marker
+                          elif marker == fence_char:
+                              in_fence = False
+                              fence_char = None
+                          out.append(raw)
+                          continue
+
+                      line = raw
+                      if not in_fence:
+                          m = heading.match(line)
+                          if m:
+                              line = f"{m.group(1)} {m.group(2)}"
+
+                          if out and list_start.match(line) and out[-1].rstrip().endswith(":"):
+                              if out[-1] != "":
+                                  out.append("")
+
+                      out.append(line)
+
+                  updated = "\n".join(out)
+                  if original.endswith("\n"):
+                      updated += "\n"
+
+                  if updated != original:
+                      p.write_text(updated, encoding="utf-8")
+                      changed.append(str(p))
+
+          print(f"changed_files={len(changed)}")
+          for p in changed:
+              print(p)
+          PY
+
+      - name: Commit normalization
+        run: |
+          if git diff --quiet; then
+            echo "No editorial normalization required."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add volumes
+          git commit -m "editorial: normalize collection headings and lists"
+          git push origin HEAD:collection-v2-four-volumes
