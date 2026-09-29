@@ -1,6 +1,6 @@
 ---
 status: REVIEWED
-last_verified: 2026-09-28
+last_verified: 2026-09-29
 truth_level: MIXED
 primary_sources:
   - epc-sct-inst-igs-2025-v1.0
@@ -157,7 +157,7 @@ status investigation
 authoritative response/reconciliation
   |
   +--> SETTLED
-  +--> FAILED / REJECTED
+  +--> REJECTED / NO_EFFECT_CONFIRMED
   +--> still pending investigation
 ```
 
