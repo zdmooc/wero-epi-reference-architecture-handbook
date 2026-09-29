@@ -1,6 +1,6 @@
 ---
 status: REVIEWED
-last_verified: 2026-09-28
+last_verified: 2026-09-29
 truth_level: REFERENCE_ARCHITECTURE
 primary_sources: []
 related_internal_repos:
@@ -8,6 +8,12 @@ related_internal_repos:
 ---
 
 # IAM client, workload identity et SCA
+
+La @fig-12-002 matérialise la vue de référence de ce chapitre.
+
+![Couches d’identité — client, marchand, workload et opérateur privilégié.](../../diagrams/svg/secondary/FIG-12-002-identity-security-layers.svg){#fig-12-002}
+
+*Statut : **REFERENCE_ARCHITECTURE** · Source(s) : Handbook reference architecture · Vérifié : 2026-09-29.*
 
 ## 1. Quatre identités différentes
 
