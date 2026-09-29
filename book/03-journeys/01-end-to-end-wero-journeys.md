@@ -14,6 +14,12 @@ related_internal_repos:
 
 # Partie II — Parcours Wero de bout en bout
 
+La @fig-03-001 fournit la vue de référence utilisée dans ce chapitre.
+
+![Flux de référence C2B Wero — du contexte marchand au résultat financier autoritatif.](../../diagrams/svg/hero/FIG-03-001-c2b-end-to-end.svg){#fig-03-001}
+
+*Statut : **REFERENCE_ARCHITECTURE** · Source(s) : Handbook reference architecture + public Wero commerce context · Vérifié : 2026-09-29.*
+
 ## 1. Règle de modélisation
 
 Chaque parcours est décrit avec quatre lignes de vie indépendantes :
