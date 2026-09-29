@@ -191,3 +191,29 @@ Intentional double-figure chapters:
 Decision: **FIGURE_CHAPTER_INTEGRATION_PASS**.
 
 Remaining proof is page-level rendering/layout, not content or figure-source completion.
+
+
+## Quarto layout proof — 2026-09-29
+
+Final successful CI proof: run `36551667995`.
+
+PASS:
+- 87 chapter files scanned;
+- 36 figure IDs;
+- 36 prose figure references;
+- 36 embedded SVGs;
+- HTML render: PASS;
+- 98 HTML files;
+- unresolved xrefs: 0;
+- missing images: 0;
+- PDF proof render: PASS;
+- A4 proof pages: 446;
+- PDF bytes: 1,743,753;
+- TeX overfull boxes: 0;
+- 36 figure-bearing pages reviewed visually;
+- FIG-13-004 overlap found, corrected and re-rendered;
+- final proof rerun: PASS.
+
+Decision: **LAYOUT_PROOF_PASS / READY_FOR_FINAL_MANUSCRIPT_FREEZE**.
+
+The rendered PDF is a temporary layout proof and is not a publication artifact.
