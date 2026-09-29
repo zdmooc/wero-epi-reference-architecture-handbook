@@ -132,7 +132,7 @@ Le nombre de pages restera une **conséquence du contenu**, pas une contrainte.
 
 ## État
 
-**V1.0 MANUSCRIPT — FINAL_MANUSCRIPT_FREEZE ; contenu I1→I16 terminé ; Design System V1 défini ; 36/36 figures = FIGURE_CHAPTER_INTEGRATION_PASS ; PDF/EPUB/print différés.**
+**V1.0 — PUBLICATION_RC1_PASS ; manuscrit gelé, 36/36 figures intégrées, PDF RC1 + EPUB RC1 validés ; aucune release publique effectuée.**
 
 Premiers éléments créés :
 
@@ -183,7 +183,7 @@ Voir :
 - `governance/COVERAGE_MATRIX.md`
 - `governance/V1_QUALITY_GATE.md`
 
-Les artefacts **PDF, EPUB et print ne font pas partie de cette étape**. Ils seront produits uniquement après validation/freeze du manuscrit GitHub.
+Le manuscrit a ensuite été gelé puis les artefacts **PDF RC1 et EPUB RC1** ont été produits et validés. Le **print proof** et la release publique restent à décider.
 
 
 
@@ -197,10 +197,10 @@ Le programme I1→I16 est terminé au niveau **contenu GitHub**.
 - 36 diagrammes Mermaid maintenables ;
 - aucun chemin manquant dans `publishing/book-order.txt` ;
 - sources primaires 2026 versionnées ;
-- PDF/EPUB non générés à ce stade, conformément à la stratégie éditoriale.
+- PDF RC1 et EPUB RC1 générés et validés depuis le SHA gelé ; aucune release publique.
 
-Prochaine phase après le freeze éditorial :
-`placement des 36 SVG + légendes/sources → mise en page/typographie → PDF → EPUB → proof papier → publication`.
+Prochaine phase :
+`RC1 validée → cover/imprint/legal metadata → print proof si retenu → décision ISBN/distribution → promotion V1.0 finale`.
 
 
 Visual status — 2026-09-29:
