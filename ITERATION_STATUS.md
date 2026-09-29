@@ -74,4 +74,19 @@ This separation is deliberate: first finish the book in GitHub, then manufacture
 - captions/source notes/cross-references = PASS;
 - figure-to-chapter integration = FIGURE_CHAPTER_INTEGRATION_PASS.
 
-Status: **READY_FOR_MANUSCRIPT_FREEZE — FIGURE_CHAPTER_INTEGRATION_PASS**.
+Status: **LAYOUT_PROOF_PASS — READY_FOR_FINAL_MANUSCRIPT_FREEZE**.
+
+
+## Layout proof pass — 2026-09-29
+
+- Quarto layout proof = PASS;
+- HTML render / xrefs / images = PASS;
+- PDF layout proof = PASS;
+- 446 A4 proof pages;
+- 0 unresolved figure references;
+- 0 missing images;
+- 0 overfull TeX boxes;
+- 36 figure-bearing pages reviewed;
+- FIG-13-004 corrected and revalidated.
+
+Status: **LAYOUT_PROOF_PASS — READY_FOR_FINAL_MANUSCRIPT_FREEZE**.
