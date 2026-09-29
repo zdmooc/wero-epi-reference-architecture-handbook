@@ -187,34 +187,37 @@ Each major edition:
 
 
 
-## V1.0 — finalisation de publication numérique — 2026-09-29
+## V1.0 — publication numérique finalisée — 2026-09-29
 
-Le contenu I1→I16 est terminé et les 87 chapitres techniques restent gelés.
+Le contenu I1→I16 est terminé. Les 87 chapitres techniques ont été relus et le front matter de publication a été intégré.
 
-Déjà réalisé :
-1. relecture éditoriale ;
-2. placement/caption des 36 figures ;
-3. index et références croisées ;
-4. layout proof Quarto ;
-5. gel du manuscrit ;
-6. PDF RC1 ;
-7. EPUB RC1 ;
-8. QA et checksums RC1.
+### Gates terminés
 
-Décisions prises pour la première édition numérique :
+- [x] relecture éditoriale complète
+- [x] 36 figures intégrées et QA
+- [x] glossaire / acronymes / index / références croisées
+- [x] note d’édition / indépendance / droits
+- [x] métadonnées d’édition numérique
+- [x] layout proof final — run `36593144021`
+- [x] 448 pages A4 / 0 xref cassée / 0 image manquante / 0 overfull box
+- [x] gel final — `freeze/v1.0-digital-final-2026-09-29`
+- [x] SHA final — `705b13664d9c3783d3d05fae72269648c80bcee8`
+- [x] PDF V1.0 final
+- [x] EPUB V1.0 final
+- [x] QA structurelle PDF/EPUB
+- [x] SHA-256 finaux
+- [x] statut `V1.0 FINAL DIGITAL BUILD PASS`
+
+### Décisions numériques
+
 - imprint : **Djamal Zidane — publication indépendante** ;
-- ISBN : **non attribué** pour cette édition numérique ;
+- ISBN : **non attribué** pour cette première édition numérique ;
 - couverture digitale : **page de titre Quarto** ;
 - distribution cible : **GitHub Release** ;
-- prix commercial : **non défini / hors périmètre de cette release** ;
 - édition papier : **flux séparé et différé**.
 
-Derniers gates techniques :
-1. intégrer la note d'édition au front matter ;
-2. rerun layout proof ;
-3. geler la source finale de publication ;
-4. générer PDF + EPUB V1.0 finaux ;
-5. vérifier checksums et structure ;
-6. promouvoir en `V1.0 FINAL`.
+### Action de diffusion non exécutée
 
-La création d'une release publique reste une action explicite distincte.
+- [ ] créer la GitHub Release publique après autorisation explicite.
+
+Le livre numérique est techniquement terminé. La publication publique n’est pas confondue avec la fin de fabrication.
