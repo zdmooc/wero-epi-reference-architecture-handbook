@@ -1,6 +1,6 @@
 ---
 status: REVIEWED
-last_verified: 2026-09-28
+last_verified: 2026-09-29
 truth_level: MIXED
 primary_sources:
   - eu-dora-2022-2554
@@ -11,6 +11,12 @@ related_internal_repos:
 ---
 
 # Tests de résilience, chaos, DORA et TLPT
+
+La @fig-13-004 complète la lecture de ce chapitre avec la vue de référence correspondante.
+
+![Échelle de tests de résilience — composant, panne, charge, DR, cyber et TLPT lorsque applicable.](../../diagrams/svg/secondary/FIG-13-004-resilience-testing-pyramid.svg){#fig-13-004}
+
+*Statut : **REFERENCE_ARCHITECTURE** · Source(s) : DORA/TIBER context + handbook evidence model · Vérifié : 2026-09-29.*
 
 ## 1. Testing pyramid
 
