@@ -69,6 +69,9 @@ This separation is deliberate: first finish the book in GitHub, then manufacture
 - final figure source set = 36;
 - 8 Hero SVGs = QA PASS;
 - 28 Secondary SVGs = QA PASS;
-- 36/36 figure SVG corpus = SVG_SOURCE_QA_PASS.
+- 36/36 figure SVG corpus = SVG_SOURCE_QA_PASS;
+- 36 figures embedded in 34 canonical chapters;
+- captions/source notes/cross-references = PASS;
+- figure-to-chapter integration = FIGURE_CHAPTER_INTEGRATION_PASS.
 
-Status: **READY_FOR_MANUSCRIPT_FREEZE — 36/36 SVG_SOURCE_QA_PASS**.
+Status: **READY_FOR_MANUSCRIPT_FREEZE — FIGURE_CHAPTER_INTEGRATION_PASS**.
