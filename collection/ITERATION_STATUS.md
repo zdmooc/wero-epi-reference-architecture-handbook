@@ -19,8 +19,8 @@ Branch: `collection-v2-four-volumes`
 | I13 | cross-volume thread consistency | COMPLETE |
 | I14 | diagrams and visual corpus | COMPLETE |
 | I15 | source/evidence gate | COMPLETE |
-| I16 | annexes, glossary, indexes, navigation | NEXT |
-| I17 | Quarto/build/layout/QA | PLANNED |
+| I16 | annexes, glossary, indexes, navigation | COMPLETE |
+| I17 | Quarto/build/layout/QA | IN_PROGRESS |
 | I18 | freeze, checksums and collection releases | PLANNED |
 
 ## I1 acceptance
@@ -122,3 +122,12 @@ No V1.0 release artifact has been modified.
 - Kubernetes/OpenShift primary documentation added to source registry;
 - VOP 2.0 identified as active watch after the 2026-09-29 baseline;
 - source/evidence gate report recorded.
+
+
+## I16 acceptance
+- collection-level navigation and global index created;
+- per-volume subject indexes created;
+- glossary/acronym snapshots materialised from canonical shared sources;
+- ISO 20022 annex assigned to Volume II;
+- failure/RTO-RPO/RACI annexes assigned to Volume IV;
+- annexes and indexes integrated into all four Quarto manifests.
