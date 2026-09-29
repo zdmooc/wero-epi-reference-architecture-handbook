@@ -43,8 +43,9 @@
 
 ## Decisions still required before public/commercial release
 
+- [x] front-cover concept approved
 - [ ] final front-cover artwork approved
-- [ ] back-cover copy approved
+- [x] back-cover copy approved
 - [ ] imprint / legal-publication page approved
 - [ ] trademark/legal wording reviewed
 - [ ] publisher/imprint identity decided
