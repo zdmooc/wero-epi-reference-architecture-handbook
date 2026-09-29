@@ -1,6 +1,6 @@
 ---
 status: REVIEWED
-last_verified: 2026-09-28
+last_verified: 2026-09-29
 truth_level: REFERENCE_ARCHITECTURE
 primary_sources:
   - wero-merchants
@@ -11,6 +11,12 @@ related_internal_repos:
 ---
 
 # Partie III — Architecture fonctionnelle de référence
+
+La @fig-04-001 fournit la vue de référence utilisée dans ce chapitre.
+
+![Carte des capacités fonctionnelles — orchestration, contrôles, exécution et exploitation.](../../diagrams/svg/secondary/FIG-04-001-functional-capability-map.svg){#fig-04-001}
+
+*Statut : **REFERENCE_ARCHITECTURE** · Source(s) : Handbook reference architecture · Vérifié : 2026-09-29.*
 
 ## 1. Objectif
 
