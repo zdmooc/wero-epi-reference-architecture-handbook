@@ -61,3 +61,14 @@ PDF, EPUB and print artifacts are intentionally **not generated yet**. Publicati
 
 ### Editorial decision
 The book is not constrained to a fixed page count. Completeness, evidence quality and maintainability take priority.
+
+
+### 2026-09-29 — Publication RC1
+- added frozen-SHA Quarto publication pipeline;
+- produced PDF and EPUB release-candidate artifacts;
+- validated PDF: 446 pages, 0 unresolved xrefs, 0 missing images, 0 overfull boxes;
+- validated EPUB: 101 XHTML, 36 SVG, 0 missing manifest resources, 0 broken internal links;
+- generated SHA-256 checksums;
+- independently compared representative PDF page renders to the approved layout proof;
+- reached PUBLICATION_RC1_PASS;
+- no public release performed.
