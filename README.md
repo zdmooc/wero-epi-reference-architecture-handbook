@@ -132,7 +132,7 @@ Le nombre de pages restera une **conséquence du contenu**, pas une contrainte.
 
 ## État
 
-**V1.0 MANUSCRIPT — READY_FOR_MANUSCRIPT_FREEZE ; contenu I1→I16 terminé ; Design System V1 défini ; 8 Hero Figures = HERO_SVG_QA_PASS ; PDF/EPUB/print différés.**
+**V1.0 MANUSCRIPT — READY_FOR_MANUSCRIPT_FREEZE ; contenu I1→I16 terminé ; Design System V1 défini ; 36/36 figures = SVG_SOURCE_QA_PASS ; PDF/EPUB/print différés.**
 
 Premiers éléments créés :
 
@@ -200,7 +200,7 @@ Le programme I1→I16 est terminé au niveau **contenu GitHub**.
 - PDF/EPUB non générés à ce stade, conformément à la stratégie éditoriale.
 
 Prochaine phase après le freeze éditorial :
-`render SVG des 36 figures → mise en page/typographie → PDF → EPUB → proof papier → publication`.
+`placement des 36 SVG + légendes/sources → mise en page/typographie → PDF → EPUB → proof papier → publication`.
 
 
 Visual status — 2026-09-29:
@@ -208,4 +208,6 @@ Visual status — 2026-09-29:
 - 8/8 visually inspected;
 - FIG-11, FIG-14 and FIG-15 corrected after visual QA;
 - Hero gate: **HERO_SVG_QA_PASS**;
-- next: apply Visual System V1 to the remaining 28 figures.
+- 28/28 secondary figures rendered as SVG and passed vector/geometry QA;
+- complete figure corpus: **36/36 SVG_SOURCE_QA_PASS**;
+- next: chapter placement, captions/source notes and page-layout proof.
