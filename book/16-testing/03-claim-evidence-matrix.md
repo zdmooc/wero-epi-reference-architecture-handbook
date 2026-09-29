@@ -1,6 +1,6 @@
 ---
 status: REVIEWED
-last_verified: 2026-09-28
+last_verified: 2026-09-29
 truth_level: EVIDENCE
 primary_sources: []
 related_internal_repos:
@@ -9,6 +9,12 @@ related_internal_repos:
 ---
 
 # Claim-Evidence Matrix
+
+La @fig-16-001 complète la lecture de ce chapitre avec la vue de référence correspondante.
+
+![Échelle claim→evidence — designed, implemented, tested, runtime, production et compliance assessment.](../../diagrams/svg/secondary/FIG-16-001-claim-evidence-ladder.svg){#fig-16-001}
+
+*Statut : **EDITORIAL** · Source(s) : Handbook claim-evidence governance · Vérifié : 2026-09-29.*
 
 ## 1. Why
 
