@@ -102,6 +102,9 @@ book:
     - annexes/RTO_RPO_MATRIX.md
     - annexes/RACI_REFERENCE.md
     - annexes/CHECKLISTS.md
+    - annexes/ACRONYMS.md
+    - annexes/SUBJECT_INDEX.md
+    - annexes/ARCHITECTURE_CROSS_REFERENCE.md
     - sources/VERIFIED_BASELINE_2026-09-28.md
 
 format:
