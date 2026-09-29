@@ -1,7 +1,8 @@
 # Iteration Status — I0 to I16
 
-**Baseline:** 2026-09-28  
-**Editorial state:** V1.0 — PUBLICATION_RC1_PASS
+**Baseline:** 2026-09-29  
+**Editorial state:** V1.0 — FINAL_DIGITAL_BUILD_PASS  
+**Public release:** NOT YET PUBLISHED
 
 | Iteration | Scope | Status |
 |---|---|---|
@@ -23,115 +24,95 @@
 | I15 | future / interoperability / Digital Euro | COMPLETE — detailed |
 | I16 | testing / evidence / content quality gate | COMPLETE |
 
-## Verified manuscript structure
+## Final manuscript structure
 
-- 87 canonical chapter files;
-- 97 canonical files including annexes and verified baseline;
+- 87 canonical technical chapter files;
+- 1 rendered publication-note front-matter file;
+- 98 entries in `publishing/book-order.txt`;
 - 36 Mermaid diagram sources;
-- 0 missing paths in `publishing/book-order.txt`;
-- official-source registry maintained with dated/current status.
+- 36 validated SVG figure artifacts;
+- 0 missing canonical paths;
+- 0 TODO/TBD/FIXME markers in rendered manuscript content.
 
-## Meaning of COMPLETE
+## Content decision
 
-`COMPLETE` means the first-edition GitHub manuscript has a coherent, detailed treatment of the full architecture scope and has passed the repository content audit.
+The first-edition architecture content is complete and has been reread end to end.
 
-It does not mean the subject stops evolving. Wero, EPC rulebooks, TARGET/TIPS, RT1, regulation and Digital Euro remain versioned topics.
+The subject remains versioned: Wero/EPI capabilities, EPC rulebooks and IGs, TARGET/TIPS, RT1, EU regulation and Digital Euro must continue to be maintained after V1.0.
 
-## Publication state
+## Final layout proof — 2026-09-29
 
-The manuscript freeze is complete and the **PDF/EPUB RC1 publication artifacts have passed QA**.
+Successful workflow run: `36593144021`.
 
-Completed before RC1:
-- visual copy-edit / figure placement;
-- index/cross-reference integration;
-- PDF RC1 render and QA;
-- EPUB RC1 render and structural QA.
-
-Still pending:
-- physical print proof if retained;
-- final cover/imprint/legal-publication metadata;
-- ISBN/distribution decisions;
-- explicit promotion from RC1 to final V1.0.
-
-This separation is deliberate: first finish the book in GitHub, then manufacture publication artifacts.
-
-
-## Editorial finishing pass — 2026-09-29
-
-- terminology/style guide added;
-- glossary expanded;
-- acronym index added;
-- subject index added;
-- cross-reference map added;
-- all foundation DRAFT chapters reviewed;
-- 36/36 Mermaid sources contain truth metadata and verification date;
-- critical official sources revalidated;
-- no TODO/TBD/FIXME content markers found;
-- figure numbering and placement review completed;
-- 2 redundant diagrams removed and 4 high-value diagrams added;
-- final figure source set = 36;
-- 8 Hero SVGs = QA PASS;
-- 28 Secondary SVGs = QA PASS;
-- 36/36 figure SVG corpus = SVG_SOURCE_QA_PASS;
-- 36 figures embedded in 34 canonical chapters;
-- captions/source notes/cross-references = PASS;
-- figure-to-chapter integration = FIGURE_CHAPTER_INTEGRATION_PASS.
-
-Status: **FINAL_MANUSCRIPT_FREEZE**.
-
-
-## Layout proof pass — 2026-09-29
-
-- Quarto layout proof = PASS;
-- HTML render / xrefs / images = PASS;
-- PDF layout proof = PASS;
-- 446 A4 proof pages;
-- 0 unresolved figure references;
+PASS:
+- 88 rendered book Markdown files = 87 technical chapters + publication note;
+- 36 figure IDs;
+- 36 figure references;
+- 36 embedded SVGs;
+- 99 HTML files;
+- 0 unresolved cross-references;
 - 0 missing images;
+- PDF proof: 448 A4 pages;
+- 0 TeX overfull boxes.
+
+Final layout-proof source:
+`705b13664d9c3783d3d05fae72269648c80bcee8`.
+
+## Final digital freeze
+
+Ref:
+`freeze/v1.0-digital-final-2026-09-29`
+
+SHA:
+`705b13664d9c3783d3d05fae72269648c80bcee8`
+
+No render-sensitive content change is permitted after this ref without a new proof and publication build.
+
+## V1.0 final digital build — 2026-09-29
+
+Successful workflow run:
+`36593794049`
+
+PDF:
+- `wero-epi-reference-architecture-handbook-v1.0.pdf`;
+- 448 A4 pages;
+- 1,749,066 bytes;
+- 0 unresolved xrefs;
 - 0 overfull TeX boxes;
-- 36 figure-bearing pages reviewed;
-- FIG-13-004 corrected and revalidated.
+- SHA-256 `df2f77e93e10c73edf9331063976a1892d1bacb12c94e61be64bd2ac7c508bb0`.
 
-Status: **LAYOUT_PROOF_PASS — READY_FOR_FINAL_MANUSCRIPT_FREEZE**.
+EPUB:
+- `wero-epi-reference-architecture-handbook-v1.0.epub`;
+- 102 XHTML files;
+- 36 SVG assets;
+- 0 unresolved xrefs;
+- 0 broken internal references;
+- 0 missing manifest resources;
+- SHA-256 `3cf31e01b332c8601327cef9744cdf08c847ae109ae4236331cbda5fb9ac0fd6`.
 
+Artifact:
+`wero-epi-handbook-v1.0-final`.
 
-## Final manuscript freeze — 2026-09-29
+Status: **V1.0 FINAL DIGITAL BUILD — PASS**.
 
-- proof basis: PASS;
-- post-proof render-sensitive diff: 0;
-- manuscript baseline frozen;
-- publication artifacts still deferred.
+## Publication decisions
 
-Status: **FINAL_MANUSCRIPT_FREEZE**.
+Completed for digital V1.0:
+- digital title-page cover treatment;
+- publication / independence note;
+- publisher/imprint: **Djamal Zidane — publication indépendante**;
+- no ISBN assigned for the initial digital edition;
+- target distribution channel: GitHub Release;
+- digital PDF/EPUB final build and checksums.
 
-
-## Publication RC1 — 2026-09-29
-
-- frozen-source build = PASS;
-- PDF RC1 = PASS;
-- EPUB RC1 = PASS;
-- checksum validation = PASS;
-- independent PDF visual regression = PASS.
-
-Status: **PUBLICATION_RC1_PASS**.
-
-Next gate: print/release metadata/distribution decision before final V1.0 public release.
-
-
-## Final release readiness — 2026-09-29
-
-Prepared:
-- canonical RC1 publication metadata;
-- final release-readiness gate;
-- physical print-proof checklist.
-
-Pending explicit decisions:
-- cover;
-- imprint/legal metadata;
-- publisher;
-- ISBN;
-- distribution;
+Separated from digital V1.0:
+- print/retail cover artwork;
+- trim/binding/paper;
 - physical print proof;
-- final V1.0 promotion/public release.
+- print ISBN/barcode/price/distribution.
 
-Status: **PUBLICATION_RC1_PASS — RELEASE_DECISION_PENDING**.
+## Remaining action
+
+The book is technically final.
+
+The only release action intentionally not executed is the **public GitHub Release**, which remains an explicit publication authorization step.
