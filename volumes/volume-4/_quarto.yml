@@ -1,0 +1,50 @@
+project:
+  type: book
+  output-dir: _book-volume-4
+
+book:
+  title: "Wero & EPI — Volume IV"
+  subtitle: "Security & Operational Resilience: IAM, DORA, HA/DR & SRE"
+  author: "Djamal Zidane"
+  chapters:
+    - index.md
+    - book/12-security/01-security-identity-fraud-vop.md
+    - book/12-security/02-customer-workload-iam-sca.md
+    - book/12-security/03-mtls-pki-hsm-key-lifecycle.md
+    - book/12-security/04-fraud-aml-sanctions-controls.md
+    - book/12-security/05-vop-security-and-user-decision.md
+    - book/12-security/06-threat-model-and-secure-operations.md
+    - book/13-resilience/01-operational-resilience-dora.md
+    - book/13-resilience/02-bia-critical-services-rto-rpo.md
+    - book/13-resilience/03-active-passive-active-active-fencing.md
+    - book/13-resilience/04-degraded-modes-and-reconciliation-recovery.md
+    - book/13-resilience/05-chaos-dora-testing-tlpt.md
+    - book/13-resilience/06-third-party-exit-cyber-recovery.md
+    - book/14-operations/01-sre-observability-operations.md
+    - book/14-operations/04-sli-slo-business-observability.md
+    - book/14-operations/05-capacity-performance-load.md
+    - book/14-operations/06-runbooks-incidents-postmortems.md
+    - book/14-operations/07-operating-model-oncall-raci.md
+    - book/14-operations/08-reconciliation-operations.md
+    - book/16-testing/01-testing-and-evidence-strategy.md
+    - book/16-testing/02-end-to-end-test-matrix.md
+    - book/16-testing/03-claim-evidence-matrix.md
+    - book/16-testing/04-companion-lab-evidence-map.md
+    - book/17-regulation/01-european-regulatory-map.md
+
+format:
+  html:
+    toc: true
+    number-sections: true
+  epub:
+    toc: true
+  pdf:
+    documentclass: scrbook
+    toc: true
+    number-sections: true
+    papersize: a4
+    geometry:
+      - margin=20mm
+
+execute:
+  freeze: auto
