@@ -17,9 +17,12 @@ book:
     - book/02-wero-epi/04-merchant-acceptance-model.md
     - book/03-journeys/01-end-to-end-wero-journeys.md
     - book/03-journeys/02-p2p-alias-and-directory.md
-    - book/03-journeys/03-ecommerce-desktop-mobile.md
-    - book/03-journeys/04-pos-qr-instore.md
-    - book/03-journeys/05-recurring-refund-return-recall-dispute.md
+    - book/03-journeys/03-ecommerce-desktop-qr.md
+    - book/03-journeys/04-ecommerce-mobile-app-to-app.md
+    - book/03-journeys/05-pos-qr-instore.md
+    - book/03-journeys/06-request-money-bill-split.md
+    - book/03-journeys/07-recurring-subscription-consent.md
+    - book/03-journeys/08-post-payment-refund-return-recall-investigation-dispute.md
     - book/04-functional/01-functional-reference-architecture.md
     - book/04-functional/02-domain-driven-payment-model.md
     - book/04-functional/03-state-machines-and-invariants.md
