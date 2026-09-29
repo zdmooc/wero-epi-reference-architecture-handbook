@@ -17,9 +17,9 @@ Branch: `collection-v2-four-volumes`
 | I11 | Volume IV deepening/review | COMPLETE |
 | I12 | duplicate elimination / canonical ownership | COMPLETE |
 | I13 | cross-volume thread consistency | COMPLETE |
-| I14 | diagrams and visual corpus | NEXT |
-| I15 | source/evidence gate | PLANNED |
-| I16 | annexes, glossary, indexes, navigation | PLANNED |
+| I14 | diagrams and visual corpus | COMPLETE |
+| I15 | source/evidence gate | COMPLETE |
+| I16 | annexes, glossary, indexes, navigation | NEXT |
 | I17 | Quarto/build/layout/QA | PLANNED |
 | I18 | freeze, checksums and collection releases | PLANNED |
 
@@ -108,3 +108,17 @@ No V1.0 release artifact has been modified.
 - identifiers remain stable from business journey to rail, platform and operations;
 - UNKNOWN and site-failover scenarios explicitly cross all four volumes;
 - mandatory consistency checkpoints defined.
+
+
+## I14 acceptance
+- all 36 V1.0 figures assigned to canonical volume owners;
+- shared diagram tree exposed to all four volume workspaces;
+- collection-only COL-001 four-volume map source added;
+- collection-only COL-002 UNKNOWN cross-volume thread source added;
+- semantic fork rule defined.
+
+## I15 acceptance
+- Wero/EPI, SCT Inst, VoP, TIPS, RT1 and DORA baselines revalidated against current primary sources;
+- Kubernetes/OpenShift primary documentation added to source registry;
+- VOP 2.0 identified as active watch after the 2026-09-29 baseline;
+- source/evidence gate report recorded.
