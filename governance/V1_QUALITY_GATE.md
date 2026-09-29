@@ -67,6 +67,11 @@
 - [x] source registry current at baseline date
 - [x] 34 maintainable Mermaid source diagrams
 - [x] claim/evidence governance normalized
+- [x] terminology/style guide
+- [x] acronym index
+- [x] subject index
+- [x] cross-reference map
+- [x] critical sources revalidated on 2026-09-29
 
 ## Publication — deliberately deferred
 - [ ] final visual/copy-edit pass
@@ -78,7 +83,7 @@
 
 ## Gate decision
 
-**V1.0 GITHUB MANUSCRIPT: PASS**
+**V1.0 GITHUB MANUSCRIPT: PASS — READY_FOR_MANUSCRIPT_FREEZE**
 
 **PDF/EPUB: NOT STARTED BY EDITORIAL DECISION**
 
