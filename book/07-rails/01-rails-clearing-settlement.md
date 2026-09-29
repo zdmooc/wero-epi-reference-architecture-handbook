@@ -1,6 +1,6 @@
 ---
 status: REVIEWED
-last_verified: 2026-09-28
+last_verified: 2026-09-29
 truth_level: MIXED
 primary_sources:
   - ecb-tips-overview
@@ -11,6 +11,12 @@ related_internal_repos:
 ---
 
 # Partie VI — Rails, clearing, routing et settlement
+
+La @fig-07-001 synthétise le modèle utilisé dans ce chapitre.
+
+![Séparation des couches Wero, SCT Inst, ISO 20022, CSM et règlement.](../../diagrams/svg/hero/FIG-07-001-rails-layering.svg){#fig-07-001}
+
+*Statut : **MIXED** · Source(s) : EPC SCT Inst + ECB TIPS + EBA CLEARING RT1 · Vérifié : 2026-09-29.*
 
 ## 1. Le vocabulaire qui évite les erreurs
 
