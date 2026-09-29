@@ -1,22 +1,54 @@
-%% title: European retail payments coexistence — future reference
+%% title: European retail payments coexistence — 2030 reference
 %% view: future
 %% truth_level: MIXED
-%% last_verified: 2026-09-28
-%% sources: ECB digital euro strategy; handbook reference architecture
+%% last_verified: 2026-09-29
+%% sources: ECB digital euro preparation; EPI/Wero public roadmap context; EPC schemes; handbook reference architecture
+%% related_chapter: book/15-future-annexes/04-european-payments-2030-reference.md
+%% visual_system: V1
+%% layout: hero-landscape
 
+%%{init: {"theme":"base","flowchart":{"curve":"linear","nodeSpacing":28,"rankSpacing":48},"themeVariables":{"fontFamily":"Arial, sans-serif","fontSize":"15px","lineColor":"#475569","primaryTextColor":"#0F172A"}}}%%
 flowchart TB
-    C[Customer / Merchant]
-    W[Wallet / Bank App / Checkout]
-    P[Payment Choice / Policy]
-    PR[Private European Solutions<br/>Wero and other schemes]
-    DE[Digital Euro<br/>potential public digital money]
-    ST[Common Standards / Acceptance<br/>where applicable]
-    PSP[PSP / Bank / Acquirer]
-    SET[Settlement Infrastructure / Central Bank Context]
+    C(["Customer / Merchant"]):::actor
+    X["Wallet / Bank App / Checkout / POS"]:::experience
+    O["Payment Method Orchestrator<br/>choice · policy · consent context"]:::business
 
-    C --> W --> P
-    P --> PR
-    P --> DE
-    PR --> ST
-    DE --> ST
-    ST --> PSP --> SET
+    subgraph PRIVATE["Private / account-based payment methods"]
+      W["Wero / European private solutions"]:::scheme
+      SI["SCT Inst"]:::scheme
+      OCT["OCT Inst / cross-border where applicable"]:::scheme
+    end
+
+    subgraph OTHER["Other established payment methods"]
+      CARD["Cards / other rails"]:::rail
+    end
+
+    subgraph PUBLIC["Potential public digital money"]
+      DE["Digital Euro<br/><b>potential — if issued</b>"]:::future
+      DEP["Digital Euro platform / rulebook context<br/><b>future</b>"]:::future
+    end
+
+    PSP["PSP / Bank / Acceptor capabilities"]:::business
+    SET["Settlement / financial infrastructure<br/>method-specific"]:::settlement
+
+    C --> X --> O
+    O --> W
+    O --> SI
+    O --> OCT
+    O --> CARD
+    O -. "future method" .-> DE
+    W --> PSP
+    SI --> PSP
+    OCT --> PSP
+    CARD --> PSP
+    DE -.-> DEP
+    PSP --> SET
+    DEP -. "distinct future settlement model" .-> SET
+
+    classDef actor fill:#F8FAFC,stroke:#334155,color:#0F172A,stroke-width:2px;
+    classDef experience fill:#E0F2FE,stroke:#0369A1,color:#0F172A,stroke-width:2px;
+    classDef business fill:#DBEAFE,stroke:#1D4ED8,color:#0F172A,stroke-width:2px;
+    classDef scheme fill:#EDE9FE,stroke:#7C3AED,color:#0F172A,stroke-width:2px;
+    classDef rail fill:#CCFBF1,stroke:#0F766E,color:#0F172A,stroke-width:2px;
+    classDef settlement fill:#DCFCE7,stroke:#15803D,color:#0F172A,stroke-width:2px;
+    classDef future fill:#F3E8FF,stroke:#9333EA,color:#0F172A,stroke-width:2px,stroke-dasharray: 6 4;

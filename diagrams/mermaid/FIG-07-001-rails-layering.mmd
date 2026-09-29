@@ -1,18 +1,26 @@
 %% title: Payment rails layering
 %% view: payment-rail
 %% truth_level: MIXED
-%% last_verified: 2026-09-28
-%% sources: EPC, ECB TIPS, EBA CLEARING RT1
+%% last_verified: 2026-09-29
+%% sources: EPC SCT Inst; ECB TIPS; EBA CLEARING RT1
+%% related_chapter: book/07-rails/01-rails-clearing-settlement.md
+%% visual_system: V1
+%% layout: hero-portrait
 
+%%{init: {"theme":"base","flowchart":{"curve":"linear","nodeSpacing":35,"rankSpacing":45},"themeVariables":{"fontFamily":"Arial, sans-serif","fontSize":"16px","lineColor":"#475569","primaryTextColor":"#0F172A"}}}%%
 flowchart TB
-    W[Wero Experience]
-    S[SCT Inst Scheme]
-    ISO[ISO 20022]
-    R[Routing / CSM]
-    T[TIPS]
-    RT[RT1]
-    O[Other relevant SCT Inst CSM]
-    CB[Central-bank liquidity / settlement accounts]
+    W(["Experience / payment product<br/><b>Wero</b>"]):::experience
+    S["Scheme rules<br/><b>SCT Inst</b>"]:::scheme
+    ISO["Message standard<br/><b>ISO 20022</b>"]:::message
+    R["Reachability & route selection<br/><b>CSM / routing layer</b>"]:::rail
+
+    subgraph CSM["Instant-payment infrastructures"]
+      T["TIPS<br/>Eurosystem"]:::rail
+      RT["RT1<br/>EBA CLEARING"]:::rail
+      O["Other relevant SCT Inst CSM"]:::rail
+    end
+
+    CB["Settlement / liquidity context<br/>central-bank accounts / positions according to infrastructure"]:::settlement
 
     W --> S --> ISO --> R
     R --> T
@@ -20,4 +28,10 @@ flowchart TB
     R --> O
     T --> CB
     RT --> CB
-    O -. settlement arrangement depends on infrastructure .-> CB
+    O -. "settlement model depends on infrastructure" .-> CB
+
+    classDef experience fill:#E0F2FE,stroke:#0369A1,color:#0F172A,stroke-width:2px;
+    classDef scheme fill:#EDE9FE,stroke:#7C3AED,color:#0F172A,stroke-width:2px;
+    classDef message fill:#FEF3C7,stroke:#B45309,color:#0F172A,stroke-width:2px;
+    classDef rail fill:#CCFBF1,stroke:#0F766E,color:#0F172A,stroke-width:2px;
+    classDef settlement fill:#DCFCE7,stroke:#15803D,color:#0F172A,stroke-width:2px;

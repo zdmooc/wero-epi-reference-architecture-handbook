@@ -1,19 +1,35 @@
 %% title: SCT Inst ISO 20022 message map — 2025 IG
 %% view: message-map
 %% truth_level: PUBLIC_VERIFIED
-%% last_verified: 2026-09-28
+%% last_verified: 2026-09-29
 %% sources: EPC SCT Inst Inter-PSP IG 2025 V1.0
+%% related_chapter: book/05-iso20022/01-iso20022-reference.md
+%% visual_system: V1
+%% layout: hero-landscape
 
+%%{init: {"theme":"base","flowchart":{"curve":"linear","nodeSpacing":45,"rankSpacing":55},"themeVariables":{"fontFamily":"Arial, sans-serif","fontSize":"16px","lineColor":"#475569","primaryTextColor":"#0F172A"}}}%%
 flowchart LR
-    P8[pacs.008.001.08<br/>Payment]
-    P2[pacs.002.001.10<br/>Positive / Negative Confirmation]
-    P28[pacs.028.001.03<br/>Status Investigation]
-    C56[camt.056.001.08<br/>Recall / Request for Recall]
-    C29[camt.029.001.09<br/>Negative Response]
-    P4[pacs.004.001.09<br/>Return / Positive Response]
+    P8["pacs.008.001.08<br/><b>Payment instruction</b>"]:::payment
+    P2["pacs.002.001.10<br/><b>Confirmation / status</b>"]:::status
+    P28["pacs.028.001.03<br/><b>Status inquiry</b>"]:::inquiry
+    C56["camt.056.001.08<br/><b>Recall request</b>"]:::exception
+    C29["camt.029.001.09<br/><b>Negative recall response</b>"]:::exception
+    P4["pacs.004.001.09<br/><b>Return / positive recall outcome</b>"]:::return
 
-    P8 --> P2
-    P8 -. status inquiry .-> P28
-    P8 -. recall .-> C56
-    C56 --> C29
-    C56 --> P4
+    P8 -->|"normal processing"| P2
+    P8 -. "status investigation" .-> P28
+    P8 -. "recall process" .-> C56
+    C56 -->|"refused"| C29
+    C56 -->|"accepted / funds returned"| P4
+
+    subgraph L["How to read this figure"]
+      X1["solid = outcome/process"]:::legend
+      X2["dashed = inquiry / exception initiation"]:::legend
+    end
+
+    classDef payment fill:#DBEAFE,stroke:#1D4ED8,color:#0F172A,stroke-width:2px;
+    classDef status fill:#DCFCE7,stroke:#15803D,color:#0F172A,stroke-width:2px;
+    classDef inquiry fill:#EEF2FF,stroke:#4338CA,color:#0F172A,stroke-width:2px;
+    classDef exception fill:#FEF3C7,stroke:#B45309,color:#0F172A,stroke-width:2px;
+    classDef return fill:#CCFBF1,stroke:#0F766E,color:#0F172A,stroke-width:2px;
+    classDef legend fill:#F8FAFC,stroke:#94A3B8,color:#334155,stroke-width:1px;
