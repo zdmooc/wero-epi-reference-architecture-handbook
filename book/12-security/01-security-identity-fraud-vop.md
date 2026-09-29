@@ -1,6 +1,6 @@
 ---
 status: REVIEWED
-last_verified: 2026-09-28
+last_verified: 2026-09-29
 truth_level: MIXED
 primary_sources:
   - epc-vop-2026-v1.1
@@ -13,6 +13,12 @@ related_internal_repos:
 ---
 
 # Partie XI — Sécurité, identité, fraude et Verification of Payee
+
+La @fig-12-001 matérialise la vue de référence de ce chapitre.
+
+![Chaîne de confiance sécurité — identité, contrôles risque, PKI/HSM et identité du rail.](../../diagrams/svg/secondary/FIG-12-001-security-trust-chain.svg){#fig-12-001}
+
+*Statut : **REFERENCE_ARCHITECTURE** · Source(s) : Handbook reference architecture · Vérifié : 2026-09-29.*
 
 ## 1. Trust chain
 
