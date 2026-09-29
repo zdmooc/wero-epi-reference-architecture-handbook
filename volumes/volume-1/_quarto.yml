@@ -31,6 +31,11 @@ book:
     - book/15-future-annexes/02-wero-vs-digital-euro-architecture.md
     - book/15-future-annexes/04-european-payments-2030-reference.md
 
+    - SUBJECT_INDEX.md
+    - GLOSSARY.md
+    - annexes/ACRONYMS.md
+    - annexes/CHECKLISTS.md
+
 format:
   html:
     toc: true
