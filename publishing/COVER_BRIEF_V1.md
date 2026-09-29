@@ -1,6 +1,6 @@
 # Cover Brief — V1.0
 
-**Status:** DESIGN BRIEF READY / ARTWORK NOT FINAL
+**Status:** CONCEPT_APPROVED / ARTWORK_PENDING
 
 ## Product
 
@@ -97,7 +97,8 @@ Until explicit licensing exists:
 
 ## Required final decisions
 
-- [ ] front-cover artwork approved
+- [x] front-cover concept approved
+- [ ] final front-cover artwork approved
 - [x] back-cover copy draft prepared
 - [ ] back-cover copy approved
 - [ ] print trim selected
