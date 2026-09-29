@@ -1,0 +1,14 @@
+%% id: COL-001
+%% title: Four-volume collection architecture
+%% truth_level: EDITORIAL
+%% last_verified: 2026-09-29
+flowchart LR
+  V1["Volume I<br/>Wero/EPI<br/>Business & Functional"]
+  V2["Volume II<br/>ISO 20022 / SCT Inst<br/>Rails & Liquidity"]
+  V3["Volume III<br/>API / Event / Data<br/>Network & OpenShift"]
+  V4["Volume IV<br/>Security / Resilience<br/>DORA & SRE"]
+
+  V1 -->|"intent, actors, states"| V2
+  V2 -->|"scheme + rail contract"| V3
+  V3 -->|"runtime mechanisms + telemetry"| V4
+  V4 -->|"evidence + service feedback"| V1
