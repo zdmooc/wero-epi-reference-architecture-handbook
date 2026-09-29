@@ -5,7 +5,7 @@ Scope: GitHub manuscript V1.0 — content audit
 
 ## Executive conclusion
 
-The repository now contains a complete first-edition architecture manuscript spanning the end-to-end payment path from customer experience to interbank settlement, liquidity, network, infrastructure, security, resilience, operations and European regulatory context.
+The repository now contains a complete first-edition architecture manuscript spanning the end-to-end payment path from customer experience to interbank settlement, liquidity, network, infrastructure, security, resilience, operations and European regulatory context. The technical manuscript and RC1 digital artifacts have passed QA; final digital publication packaging is the remaining work.
 
 ## Strongest characteristics
 
@@ -53,7 +53,6 @@ The manuscript does not claim:
 - production multi-AZ/site proof;
 - legal advice;
 - a physical print proof;
-- that PDF/EPUB layout has already been validated.
 
 ## Delegated references
 
@@ -70,8 +69,8 @@ Detailed specialist depth remains in:
 - Detailed I1→I16 coverage: **PASS**
 - Source/evidence governance: **PASS**
 - Diagram source catalogue: **PASS**
-- PDF/EPUB generation: **DEFERRED BY EDITORIAL DECISION**
-- Physical print approval: **NOT STARTED**
+- PDF/EPUB RC1 generation + QA: **PASS**
+- Physical print approval: **DEFERRED TO SEPARATE PRINT EDITION**
 - Long-term maintenance: **ACTIVE 2026→2031**
 
 Verified structure on 2026-09-28:
@@ -105,7 +104,7 @@ PASS:
 
 Decision: **READY_FOR_MANUSCRIPT_FREEZE**.
 
-This means the GitHub content has no identified architecture/editorial blocker. It does not mean PDF/EPUB layout has been produced.
+At that editorial gate, the GitHub content had no identified architecture/editorial blocker. Subsequent sections below record the completed layout proof and PDF/EPUB RC1 QA.
 
 
 ## Diagram review pass — 2026-09-29
