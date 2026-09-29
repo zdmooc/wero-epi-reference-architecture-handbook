@@ -1,6 +1,6 @@
 ---
 status: REVIEWED
-last_verified: 2026-09-28
+last_verified: 2026-09-29
 truth_level: MIXED
 primary_sources:
   - ecb-target-shared-features
@@ -12,6 +12,12 @@ related_internal_repos:
 ---
 
 # Partie VII — Settlement et liquidité 24/7/365
+
+La @fig-08-001 synthétise le modèle utilisé dans ce chapitre.
+
+![Boucle de contrôle de liquidité 24/7 — observation, forecast, buffer, action et monitoring.](../../diagrams/svg/secondary/FIG-08-001-liquidity-control-loop.svg){#fig-08-001}
+
+*Statut : **REFERENCE_ARCHITECTURE** · Source(s) : ECB TARGET/TIPS public liquidity model + handbook control loop · Vérifié : 2026-09-29.*
 
 ## 1. Pourquoi la liquidité est une architecture
 
