@@ -89,8 +89,8 @@
 - [x] FIG-13-004 page-layout issue corrected and revalidated
 - [x] final manuscript freeze
 - [x] figure-page visual QA / page-layout proof
-- [ ] PDF render
-- [ ] EPUB render
+- [x] PDF release-candidate render
+- [x] EPUB release-candidate render
 - [ ] physical print proof
 - [ ] ISBN/distribution decision
 
@@ -103,3 +103,18 @@
 **PRINT-PRODUCTION APPROVAL: NOT STARTED**
 
 The manuscript, 36 SVG artifacts, chapter integration, Quarto layout proof and final manuscript freeze are complete. The next action is a separate publication build.
+
+
+## Publication RC1 gate
+
+- [x] build pinned to final frozen SHA
+- [x] PDF RC1 checksum + independent visual regression QA
+- [x] EPUB RC1 archive / manifest / links QA
+- [x] publication artifact checksums generated
+- [ ] physical print proof
+- [ ] final cover / imprint / legal-publication metadata
+- [ ] ISBN decision
+- [ ] distribution decision
+- [ ] public GitHub/publication release
+
+Current state: **PUBLICATION_RC1_PASS — NOT PUBLICLY RELEASED**.
