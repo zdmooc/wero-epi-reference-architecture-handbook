@@ -81,6 +81,6 @@ The following are not blockers for digital V1.0:
 
 **V1.0 FINAL DIGITAL BUILD: PASS**
 
-**PUBLIC GITHUB RELEASE: NOT YET EXECUTED**
+**PUBLIC GITHUB RELEASE: PASS — `v1.0`**
 
-The book is technically ready for digital publication. Public release remains a separate explicit action.
+The digital book passed its final gates and has been published as GitHub Release `v1.0`.
