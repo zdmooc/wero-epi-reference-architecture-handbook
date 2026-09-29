@@ -59,7 +59,7 @@ This is deliberate: the handbook is the editorial reference layer, not a monorep
 
 - chapter files: 87
 - canonical files including annexes/baseline/indexes: 97
-- Mermaid diagram sources: 34
+- Mermaid diagram sources: 36
 - missing canonical paths: 0
 - canonical order: `publishing/book-order.txt`
 
