@@ -131,3 +131,10 @@ No V1.0 release artifact has been modified.
 - ISO 20022 annex assigned to Volume II;
 - failure/RTO-RPO/RACI annexes assigned to Volume IV;
 - annexes and indexes integrated into all four Quarto manifests.
+
+
+## I17 editorial normalization pass
+- 131 Markdown files normalized conservatively;
+- duplicate manual H2+ numbering removed where Quarto already numbers sections;
+- Markdown list separation normalized outside fenced code;
+- post-normalization build required before I17 closure.
