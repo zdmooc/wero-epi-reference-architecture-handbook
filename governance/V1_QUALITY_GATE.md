@@ -75,6 +75,8 @@
 
 ## Publication — deliberately deferred
 - [x] figure source selection / numbering / canonical placement
+- [x] Visual Design System V1
+- [x] 8 hero figures source-prepared
 - [ ] SVG rendering / visual proof / final typography
 - [ ] PDF render
 - [ ] EPUB render
