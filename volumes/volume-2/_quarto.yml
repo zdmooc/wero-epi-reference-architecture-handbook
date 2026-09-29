@@ -34,6 +34,12 @@ book:
     - book/08-liquidity/06-liquidity-resilience-model.md
     - book/15-future-annexes/03-cross-border-oct-inst-and-interoperability.md
 
+    - SUBJECT_INDEX.md
+    - GLOSSARY.md
+    - annexes/ACRONYMS.md
+    - annexes/ISO20022_MESSAGE_CATALOG.md
+    - annexes/CHECKLISTS.md
+
 format:
   html:
     toc: true
