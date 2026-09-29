@@ -40,12 +40,18 @@ A dedicated publication/legal review remains advisable before a commercial retai
 - new trademark language is introduced;
 - commercial claims are added.
 
-## RC1 provenance
+## Publication provenance
 
 Historical RC1 basis:
-- frozen source: `357399fc7bc5dbaf48ae06d3b7e207a47c70193c`
-- build: `36558924392`
-- PDF SHA-256: `51a6ceee2bc51b33c833510a58ac8bbe8d1e83ea24000109c2ffe12a269c5e23`
-- EPUB SHA-256: `aa4d61048820381bbcc219325bab43afa30dcb78e557e7c6fd725ecefe535331`
+- frozen source: `357399fc7bc5dbaf48ae06d3b7e207a47c70193c`;
+- build: `36558924392`.
 
-Final V1.0 provenance will replace the RC1 publication hashes after the refreshed front-matter build passes.
+Final V1.0:
+- final source ref: `freeze/v1.0-digital-final-2026-09-29`;
+- final source SHA: `705b13664d9c3783d3d05fae72269648c80bcee8`;
+- layout proof: `36593144021`;
+- publication build: `36593794049`;
+- PDF SHA-256: `df2f77e93e10c73edf9331063976a1892d1bacb12c94e61be64bd2ac7c508bb0`;
+- EPUB SHA-256: `3cf31e01b332c8601327cef9744cdf08c847ae109ae4236331cbda5fb9ac0fd6`;
+- final digital build: **PASS**;
+- public release: **not yet executed**.
