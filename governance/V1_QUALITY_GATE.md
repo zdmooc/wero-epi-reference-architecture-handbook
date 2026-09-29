@@ -80,7 +80,11 @@
 - [x] 8 hero SVGs rendered and visually QA-passed
 - [x] 28 secondary SVGs rendered and vector/geometry QA-passed
 - [x] 36/36 SVG figure artifacts complete
+- [x] 36 figures embedded in 34 canonical chapters
+- [x] Quarto figure IDs / captions / source notes / cross-references
 - [x] remaining 28 figures: Visual System V1 + SVG vector/geometry QA
+- [ ] Quarto page-layout render proof
+- [ ] portrait/landscape sizing + page-break QA
 - [ ] PDF render
 - [ ] EPUB render
 - [ ] physical print proof
