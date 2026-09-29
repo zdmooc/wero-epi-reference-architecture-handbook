@@ -87,6 +87,7 @@
 - [x] 0 unresolved figure references / 0 missing images / 0 overfull boxes
 - [x] 36 figure-bearing pages reviewed
 - [x] FIG-13-004 page-layout issue corrected and revalidated
+- [x] final manuscript freeze
 - [x] figure-page visual QA / page-layout proof
 - [ ] PDF render
 - [ ] EPUB render
@@ -95,10 +96,10 @@
 
 ## Gate decision
 
-**V1.0 GITHUB MANUSCRIPT: PASS — LAYOUT_PROOF_PASS / READY_FOR_FINAL_MANUSCRIPT_FREEZE**
+**V1.0 GITHUB MANUSCRIPT: PASS — FINAL_MANUSCRIPT_FREEZE**
 
 **PDF/EPUB: NOT STARTED BY EDITORIAL DECISION**
 
 **PRINT-PRODUCTION APPROVAL: NOT STARTED**
 
-The manuscript, 36 SVG artifacts, chapter integration and Quarto layout proof are complete. The next action is FINAL_MANUSCRIPT_FREEZE, then a separate publication build.
+The manuscript, 36 SVG artifacts, chapter integration, Quarto layout proof and final manuscript freeze are complete. The next action is a separate publication build.
