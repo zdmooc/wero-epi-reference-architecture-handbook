@@ -65,7 +65,7 @@
 - [x] canonical order complete
 - [x] no missing canonical file
 - [x] source registry current at baseline date
-- [x] 34 maintainable Mermaid source diagrams
+- [x] 36 maintainable Mermaid source diagrams
 - [x] claim/evidence governance normalized
 - [x] terminology/style guide
 - [x] acronym index
@@ -74,8 +74,8 @@
 - [x] critical sources revalidated on 2026-09-29
 
 ## Publication — deliberately deferred
-- [ ] final visual/copy-edit pass
-- [ ] final figure placement and numbering
+- [x] figure source selection / numbering / canonical placement
+- [ ] SVG rendering / visual proof / final typography
 - [ ] PDF render
 - [ ] EPUB render
 - [ ] physical print proof
@@ -89,4 +89,4 @@
 
 **PRINT-PRODUCTION APPROVAL: NOT STARTED**
 
-The next action after this gate is manuscript freeze/review, not automatic publication.
+The manuscript/figure-source review is complete. The next production action is SVG rendering and layout after the freeze snapshot, not automatic PDF/EPUB publication.
