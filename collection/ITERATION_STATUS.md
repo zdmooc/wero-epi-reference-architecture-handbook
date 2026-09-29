@@ -7,9 +7,9 @@ Branch: `collection-v2-four-volumes`
 | I1 | collection editorial architecture | COMPLETE |
 | I2 | canonical transaction model | COMPLETE |
 | I3 | four master journeys | COMPLETE |
-| I4 | Volume I migration | NEXT |
-| I5 | Volume I enrichment/review | PLANNED |
-| I6 | Volume II migration | PLANNED |
+| I4 | Volume I migration | COMPLETE |
+| I5 | Volume I enrichment/review | COMPLETE |
+| I6 | Volume II migration | NEXT |
 | I7 | Volume II deepening/review | PLANNED |
 | I8 | Volume III migration | PLANNED |
 | I9 | Volume III technical deepening | PLANNED |
@@ -43,3 +43,17 @@ Branch: `collection-v2-four-volumes`
 - cross-volume replay rule established.
 
 No V1.0 release artifact has been modified.
+
+
+## I4 acceptance
+- 19 V1.0 chapters materialised under `volumes/volume-1/`;
+- original V1.0 files remain untouched;
+- dedicated Volume I index and Quarto manifest created.
+
+## I5 acceptance
+- e-commerce desktop and mobile split into distinct master journeys;
+- in-store/POS promoted to master journey;
+- Request Money and Bill Split classified as variants;
+- recurring/subscription separated from post-payment;
+- Refund / Return / Recall / Investigation / Dispute given a canonical taxonomy;
+- Volume I Quarto order updated to the recomposed journey structure.
