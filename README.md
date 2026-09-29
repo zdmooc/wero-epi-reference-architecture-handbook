@@ -268,3 +268,14 @@ Final release readiness — 2026-09-29:
 - print-proof checklist: `publishing/PRINT_PROOF_CHECKLIST_V1.md`;
 - ISBN / publisher / imprint / distribution / cover remain deliberately TBD;
 - public release remains blocked pending explicit decision.
+
+
+Release-readiness decision gate — 2026-09-29:
+- cover brief ready;
+- back-cover copy draft ready;
+- imprint/legal template ready;
+- trademark/independence editorial wording prepared from official Wero/EPI public sources;
+- print-proof checklist ready;
+- final release decision matrix ready;
+- ISBN / publisher / distribution / print format remain intentionally undecided;
+- state: **DECISION_GATE — NOT PUBLICLY RELEASED**.
