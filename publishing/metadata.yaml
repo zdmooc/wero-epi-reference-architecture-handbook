@@ -5,8 +5,8 @@ author: "Djamal Zidane"
 date: "2026-09-29"
 lang: "fr-FR"
 edition: "V1.0"
-release_candidate: "FINALIZATION"
-publication_status: "DIGITAL_V1_FINALIZATION"
+release_candidate: null
+publication_status: "V1.0_FINAL_BUILD_PASS"
 rights: "Copyright © 2026 Djamal Zidane. Tous droits réservés."
 description: "Ouvrage d'architecture de référence vivant 2026-2031."
 publisher: "Djamal Zidane"
@@ -38,10 +38,29 @@ rc1_basis:
     qa: "PASS"
 
 final_build:
-  source_freeze_ref: null
-  source_freeze_sha: null
-  publication_build_run: null
-  pdf: null
-  epub: null
-  qa: "PENDING_AFTER_FRONT_MATTER_LAYOUT_PROOF"
+  source_freeze_ref: "freeze/v1.0-digital-final-2026-09-29"
+  source_freeze_sha: "705b13664d9c3783d3d05fae72269648c80bcee8"
+  layout_proof_run: "36593144021"
+  publication_build_run: "36593794049"
+  artifact_name: "wero-epi-handbook-v1.0-final"
+  artifact_id: 11045231337
+  pdf:
+    filename: "wero-epi-reference-architecture-handbook-v1.0.pdf"
+    pages: 448
+    format: "A4"
+    bytes: 1749066
+    sha256: "df2f77e93e10c73edf9331063976a1892d1bacb12c94e61be64bd2ac7c508bb0"
+    unresolved_xrefs: 0
+    overfull_boxes: 0
+    qa: "PASS"
+  epub:
+    filename: "wero-epi-reference-architecture-handbook-v1.0.epub"
+    xhtml_files: 102
+    svg_assets: 36
+    unresolved_xrefs: 0
+    broken_internal_refs: 0
+    missing_manifest_resources: 0
+    sha256: "3cf31e01b332c8601327cef9744cdf08c847ae109ae4236331cbda5fb9ac0fd6"
+    qa: "PASS"
+  qa: "PASS"
 ---
