@@ -1,6 +1,6 @@
 # V1.0 Coverage Matrix
 
-Date: 2026-09-28
+Date: 2026-09-29
 
 The master TOC deliberately enumerates hundreds of subtopics. V1.0 now implements them through 87 canonical chapter files, grouping closely related topics while keeping detailed subchapters for the high-value architecture domains.
 
@@ -30,6 +30,9 @@ The master TOC deliberately enumerates hundreds of subtopics. V1.0 now implement
 | ISO catalog | `annexes/ISO20022_MESSAGE_CATALOG.md` |
 | RACI | `annexes/RACI_REFERENCE.md` |
 | Glossary | `GLOSSARY.md` |
+| Acronyms | `annexes/ACRONYMS.md` |
+| Subject index | `annexes/SUBJECT_INDEX.md` |
+| Architecture cross-reference | `annexes/ARCHITECTURE_CROSS_REFERENCE.md` |
 | Official bibliography / dated baseline | `sources/OFFICIAL_SOURCES.yml`, `sources/VERIFIED_BASELINE_2026-09-28.md` |
 
 ## Coverage policy
@@ -52,10 +55,10 @@ V1 links rather than copies:
 This is deliberate: the handbook is the editorial reference layer, not a monorepo dump.
 
 
-## Verified structure — 2026-09-28
+## Verified structure — 2026-09-29
 
 - chapter files: 87
-- canonical files including annexes/baseline: 94
+- canonical files including annexes/baseline/indexes: 97
 - Mermaid diagram sources: 34
 - missing canonical paths: 0
 - canonical order: `publishing/book-order.txt`
