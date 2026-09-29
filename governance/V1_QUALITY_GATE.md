@@ -73,7 +73,7 @@
 - [x] cross-reference map
 - [x] critical sources revalidated on 2026-09-29
 
-## Publication — deliberately deferred
+## Publication pipeline
 - [x] figure source selection / numbering / canonical placement
 - [x] Visual Design System V1
 - [x] 8 hero figures source-prepared
@@ -98,11 +98,11 @@
 
 **V1.0 GITHUB MANUSCRIPT: PASS — FINAL_MANUSCRIPT_FREEZE**
 
-**PDF/EPUB: NOT STARTED BY EDITORIAL DECISION**
+**PDF/EPUB RC1: PASS — NOT PUBLICLY RELEASED**
 
-**PRINT-PRODUCTION APPROVAL: NOT STARTED**
+**PRINT-PRODUCTION APPROVAL: PENDING**
 
-The manuscript, 36 SVG artifacts, chapter integration, Quarto layout proof and final manuscript freeze are complete. The next action is a separate publication build.
+The manuscript, figures, integration, layout proof and final freeze are complete. The frozen-SHA PDF/EPUB RC1 publication build also passed. Remaining gates concern print/release metadata and distribution.
 
 
 ## Publication RC1 gate
