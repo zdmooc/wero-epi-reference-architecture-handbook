@@ -111,6 +111,8 @@ The manuscript, figures, integration, layout proof and final freeze are complete
 - [x] PDF RC1 checksum + independent visual regression QA
 - [x] EPUB RC1 archive / manifest / links QA
 - [x] publication artifact checksums generated
+- [x] final release-readiness matrix prepared
+- [x] print-proof checklist prepared
 - [ ] physical print proof
 - [ ] final cover / imprint / legal-publication metadata
 - [ ] ISBN decision
