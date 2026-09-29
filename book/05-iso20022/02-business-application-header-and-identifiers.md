@@ -1,6 +1,6 @@
 ---
 status: REVIEWED
-last_verified: 2026-09-28
+last_verified: 2026-09-29
 truth_level: MIXED
 primary_sources:
   - epc-sct-inst-igs-2025-v1.0
@@ -9,6 +9,12 @@ related_internal_repos:
 ---
 
 # Business Application Header et chaîne d'identifiants
+
+La @fig-05-002 fournit la vue de référence utilisée dans ce chapitre.
+
+![Chaîne de corrélation des identifiants métier, ISO 20022, événementiels et de règlement.](../../diagrams/svg/secondary/FIG-05-002-identifier-correlation-chain.svg){#fig-05-002}
+
+*Statut : **REFERENCE_ARCHITECTURE** · Source(s) : Handbook reference architecture · Vérifié : 2026-09-29.*
 
 ## 1. Pourquoi l'identification est critique
 
