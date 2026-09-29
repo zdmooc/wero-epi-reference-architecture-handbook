@@ -25,13 +25,13 @@ epub:
   sha256: "aa4d61048820381bbcc219325bab43afa30dcb78e557e7c6fd725ecefe535331"
   qa: "PASS"
 release_readiness: "DECISION_GATE"
-back_cover_copy_status: "DRAFT_READY"
+back_cover_copy_status: "APPROVED"
 trademark_notice_status: "EDITORIAL_DRAFT_READY_LEGAL_REVIEW_PENDING"
 isbn: null
 publisher: null
 imprint: null
 distribution_channels: []
 print_format: null
-cover_status: "BRIEF_READY_ARTWORK_TBD"
+cover_status: "CONCEPT_APPROVED_ARTWORK_PENDING"
 public_release: false
 ---
