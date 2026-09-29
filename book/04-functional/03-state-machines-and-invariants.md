@@ -1,6 +1,6 @@
 ---
 status: REVIEWED
-last_verified: 2026-09-28
+last_verified: 2026-09-29
 truth_level: REFERENCE_ARCHITECTURE
 primary_sources: []
 related_internal_repos:
@@ -8,6 +8,12 @@ related_internal_repos:
 ---
 
 # Machines d'état et invariants
+
+La @fig-04-002 fournit la vue de référence utilisée dans ce chapitre.
+
+![Séparation des états commercial, scheme et financier.](../../diagrams/svg/secondary/FIG-04-002-payment-state-machines.svg){#fig-04-002}
+
+*Statut : **REFERENCE_ARCHITECTURE** · Source(s) : Handbook reference architecture · Vérifié : 2026-09-29.*
 
 ## 1. Un statut unique est insuffisant
 
