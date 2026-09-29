@@ -247,3 +247,15 @@ Final manuscript freeze — 2026-09-29:
 - status: **FINAL_MANUSCRIPT_FREEZE**.
 
 Publication PDF/EPUB are still not released.
+
+
+Publication RC1 — 2026-09-29:
+- frozen source: `357399fc7bc5dbaf48ae06d3b7e207a47c70193c`;
+- PDF RC1: PASS — 446 A4 pages, 0 unresolved figure refs, 0 missing images, 0 overfull boxes;
+- EPUB RC1: PASS — 101 XHTML, 36 SVG, 0 missing manifest resources, 0 broken internal links;
+- PDF SHA-256: `51a6ceee2bc51b33c833510a58ac8bbe8d1e83ea24000109c2ffe12a269c5e23`;
+- EPUB SHA-256: `aa4d61048820381bbcc219325bab43afa30dcb78e557e7c6fd725ecefe535331`;
+- successful publication build run: `36558924392`;
+- status: **PUBLICATION_RC1_PASS**.
+
+No public release or distribution has been performed.
