@@ -218,6 +218,6 @@ Le contenu I1→I16 est terminé. Les 87 chapitres techniques ont été relus et
 
 ### Action de diffusion non exécutée
 
-- [ ] créer la GitHub Release publique après autorisation explicite.
+- [x] GitHub Release publique `v1.0` créée et vérifiée.
 
-Le livre numérique est techniquement terminé. La publication publique n’est pas confondue avec la fin de fabrication.
+Le livre numérique V1.0 est terminé et publié. L’édition papier reste une filière séparée.
