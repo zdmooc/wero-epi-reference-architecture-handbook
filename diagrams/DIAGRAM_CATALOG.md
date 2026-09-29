@@ -3,7 +3,23 @@
 **Editorial review:** 2026-09-29  
 **Final source count:** 36 Mermaid diagrams  
 **Numbering:** unique — no duplicate figure IDs  
-**Status:** 36/36 FIGURES — FIGURE_CHAPTER_INTEGRATION_PASS
+**Status:** 36/36 FIGURES — LAYOUT_PROOF_PASS
+
+## Quarto layout proof status
+
+The complete manuscript was rendered through Quarto after figure integration.
+
+Result:
+- 36/36 figures resolved;
+- 0 missing rendered images;
+- 0 unresolved figure cross-references;
+- 0 TeX overfull boxes;
+- 36 figure-bearing PDF proof pages visually reviewed;
+- FIG-13-004 corrected and revalidated.
+
+Status: **LAYOUT_PROOF_PASS**.
+
+See `governance/LAYOUT_PROOF_V1_2026-09-29.md`.
 
 ## Chapter integration status
 
