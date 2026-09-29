@@ -15,9 +15,9 @@ Branch: `collection-v2-four-volumes`
 | I9 | Volume III technical deepening | COMPLETE |
 | I10 | Volume IV migration | COMPLETE |
 | I11 | Volume IV deepening/review | COMPLETE |
-| I12 | duplicate elimination / canonical ownership | NEXT |
-| I13 | cross-volume thread consistency | PLANNED |
-| I14 | diagrams and visual corpus | PLANNED |
+| I12 | duplicate elimination / canonical ownership | COMPLETE |
+| I13 | cross-volume thread consistency | COMPLETE |
+| I14 | diagrams and visual corpus | NEXT |
 | I15 | source/evidence gate | PLANNED |
 | I16 | annexes, glossary, indexes, navigation | PLANNED |
 | I17 | Quarto/build/layout/QA | PLANNED |
@@ -96,3 +96,15 @@ No V1.0 release artifact has been modified.
 - payment incident command model added;
 - resilience evidence chain added;
 - Volume IV manifest updated.
+
+
+## I12 acceptance
+- canonical concept ownership matrix created;
+- reconciliation, PKI/HSM and multi-site overlap boundaries made explicit;
+- three superseded combined Volume I journey files removed.
+
+## I13 acceptance
+- three canonical cross-volume transaction threads created;
+- identifiers remain stable from business journey to rail, platform and operations;
+- UNKNOWN and site-failover scenarios explicitly cross all four volumes;
+- mandatory consistency checkpoints defined.
