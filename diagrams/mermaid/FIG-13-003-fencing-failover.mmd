@@ -1,6 +1,9 @@
 %% title: Site failover with fencing
+%% view: resilience-sequence
 %% truth_level: REFERENCE_ARCHITECTURE
-%% last_verified: 2026-09-28
+%% last_verified: 2026-09-29
+%% related_chapter: book/13-resilience/03-active-passive-active-active-fencing.md
+
 flowchart LR
   DET[Detect Site A Failure] --> DEC[Declare Incident]
   DEC --> F[Fence Site A Writes]

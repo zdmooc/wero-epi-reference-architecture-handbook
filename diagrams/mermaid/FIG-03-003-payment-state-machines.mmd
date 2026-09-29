@@ -1,7 +1,9 @@
 %% title: Commercial scheme and financial state separation
 %% view: state
 %% truth_level: REFERENCE_ARCHITECTURE
-%% last_verified: 2026-09-28
+%% last_verified: 2026-09-29
+%% related_chapter: book/04-functional/03-state-machines-and-invariants.md
+
 flowchart LR
   subgraph Commercial
     C1[CREATED] --> C2[PAYMENT_PENDING] --> C3[PAID] --> C4[REFUND_PENDING] --> C5[REFUNDED]
