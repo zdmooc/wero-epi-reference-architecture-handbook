@@ -1,6 +1,6 @@
 ---
 status: REVIEWED
-last_verified: 2026-09-28
+last_verified: 2026-09-29
 truth_level: REFERENCE_ARCHITECTURE
 primary_sources: []
 related_internal_repos:
@@ -9,6 +9,12 @@ related_internal_repos:
 ---
 
 # Partie VIII — Réseaux et flux de bout en bout
+
+La @fig-09-001 matérialise la vue de référence de ce chapitre.
+
+![Chemin réseau de bout en bout — zones Edge, application, paiement, données et connectivité bancaire.](../../diagrams/svg/hero/FIG-09-001-end-to-end-network-reference.svg){#fig-09-001}
+
+*Statut : **REFERENCE_ARCHITECTURE** · Source(s) : Handbook reference architecture · Vérifié : 2026-09-29.*
 
 ## 1. Le réseau fait partie du paiement
 
