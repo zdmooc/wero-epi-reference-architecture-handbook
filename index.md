@@ -2,11 +2,13 @@
 title: "Wero & EPI — Architecture de Référence des Paiements Européens"
 subtitle: "Paiements instantanés, ISO 20022, SCT Inst, TIPS, RT1, réseaux, cloud, sécurité, résilience et réglementation européenne"
 author: "Djamal Zidane"
-date: "2026-09-28"
+date: "2026-09-29"
 lang: fr-FR
 ---
 
 # À propos de cette édition
+
+**Édition numérique V1.0 — 2026. Baseline publique vérifiée au 29 septembre 2026.**
 
 Cet ouvrage est une référence vivante 2026–2031 consacrée à Wero/EPI et à l'architecture de bout en bout des paiements instantanés européens.
 
