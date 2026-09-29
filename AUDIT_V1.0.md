@@ -232,3 +232,25 @@ PASS:
 Decision: **FINAL_MANUSCRIPT_FREEZE**.
 
 Publication remains a separate subsequent build.
+
+
+## Publication RC1 QA — 2026-09-29
+
+PASS:
+- publication build forced to frozen SHA `357399fc7bc5dbaf48ae06d3b7e207a47c70193c`;
+- PDF RC1 rendered: 446 A4 pages;
+- PDF unresolved figure refs: 0;
+- PDF missing images: 0;
+- PDF overfull boxes: 0;
+- 8 representative PDF pages pixel-identical to approved layout proof;
+- EPUB archive integrity: PASS;
+- EPUB XHTML: 101;
+- EPUB SVG: 36;
+- missing manifest resources: 0;
+- broken internal resources/links: 0;
+- unresolved EPUB figure refs: 0;
+- SHA256 checks verified.
+
+Decision: **PUBLICATION_RC1_PASS**.
+
+Public release remains blocked on explicit final release/print/distribution decisions.
