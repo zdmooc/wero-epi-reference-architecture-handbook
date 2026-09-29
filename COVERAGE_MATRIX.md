@@ -74,10 +74,10 @@ All entries in that file were checked on 2026-09-29 and resolve to existing file
 
 ## Verified manuscript structure
 
-As of 2026-09-28:
+As of 2026-09-29:
 - 87 canonical chapter files;
 - 97 canonical files including annexes and verified baseline;
-- 34 Mermaid source diagrams;
+- 36 Mermaid source diagrams;
 - 0 missing paths in `publishing/book-order.txt`.
 
 ## Publication is intentionally deferred
@@ -85,8 +85,7 @@ As of 2026-09-28:
 Content coverage I1→I16 is complete at GitHub manuscript level.
 
 The following are deliberately **not started yet**:
-- final figure placement/numbering;
-- final copy-edit/layout pass;
+- SVG rendering + final visual/layout pass;
 - PDF render;
 - EPUB render;
 - print proof;
