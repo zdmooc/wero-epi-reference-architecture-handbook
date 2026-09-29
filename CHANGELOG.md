@@ -29,7 +29,11 @@
 - finalized canonical figure placement/layout guidance for all 36 figures;
 - created Visual Design System V1 and prepared the 8 hero figures for SVG rendering;
 - rendered 8 hero SVG artifacts and completed 8/8 visual QA;
-- corrected FIG-11, FIG-14 and FIG-15 after visual inspection.
+- corrected FIG-11, FIG-14 and FIG-15 after visual inspection;
+- migrated the remaining 28 Mermaid figures to Visual System V1 metadata;
+- rendered the remaining 28 secondary SVG artifacts;
+- completed secondary SVG vector/geometry QA and corrected FIG-13-004 overlap;
+- reached 36/36 SVG_SOURCE_QA_PASS with zero missing or duplicate figure IDs.
 
 ### Editorial boundary
 PDF, EPUB and print artifacts are intentionally **not generated yet**. Publication starts only after final manuscript freeze.
