@@ -132,7 +132,7 @@ Le nombre de pages restera une **conséquence du contenu**, pas une contrainte.
 
 ## État
 
-**V1.0 MANUSCRIPT — READY_FOR_MANUSCRIPT_FREEZE ; contenu I1→I16 terminé ; Design System V1 défini ; 36/36 figures = SVG_SOURCE_QA_PASS ; PDF/EPUB/print différés.**
+**V1.0 MANUSCRIPT — READY_FOR_MANUSCRIPT_FREEZE ; contenu I1→I16 terminé ; Design System V1 défini ; 36/36 figures = FIGURE_CHAPTER_INTEGRATION_PASS ; PDF/EPUB/print différés.**
 
 Premiers éléments créés :
 
@@ -211,3 +211,13 @@ Visual status — 2026-09-29:
 - 28/28 secondary figures rendered as SVG and passed vector/geometry QA;
 - complete figure corpus: **36/36 SVG_SOURCE_QA_PASS**;
 - next: chapter placement, captions/source notes and page-layout proof.
+
+
+Figure integration status — 2026-09-29:
+- 36/36 SVG figures embedded in canonical chapters;
+- 34 target chapters;
+- Quarto figure IDs + prose cross-references added;
+- captions + truth/source/date notes added;
+- 0 missing figure/chapter path;
+- status: **FIGURE_CHAPTER_INTEGRATION_PASS**;
+- next: Quarto page-layout proof before any PDF/EPUB release.
