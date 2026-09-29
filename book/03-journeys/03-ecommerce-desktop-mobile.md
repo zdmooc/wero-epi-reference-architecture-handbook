@@ -1,6 +1,6 @@
 ---
 status: REVIEWED
-last_verified: 2026-09-28
+last_verified: 2026-09-29
 truth_level: MIXED
 primary_sources:
   - wero-faq-desktop
@@ -12,6 +12,12 @@ related_internal_repos:
 ---
 
 # E-commerce desktop et mobile
+
+La @fig-03-002 fournit la vue de référence utilisée dans ce chapitre.
+
+![Séquence e-commerce desktop — QR, autorisation, exécution financière et callback marchand.](../../diagrams/svg/secondary/FIG-03-002-ecommerce-sequence.svg){#fig-03-002}
+
+*Statut : **REFERENCE_ARCHITECTURE** · Source(s) : Wero public desktop journey + reference backend architecture · Vérifié : 2026-09-29.*
 
 ## 1. Deux parcours, une même vérité financière
 
