@@ -32,6 +32,11 @@ book:
     - book/14-operations/02-bank-reference-architecture.md
     - book/14-operations/03-psp-merchant-reference-architecture.md
 
+    - SUBJECT_INDEX.md
+    - GLOSSARY.md
+    - annexes/ACRONYMS.md
+    - annexes/CHECKLISTS.md
+
 format:
   html:
     toc: true
