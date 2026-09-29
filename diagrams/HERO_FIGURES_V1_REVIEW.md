@@ -1,7 +1,7 @@
 # Hero Figures — V1 Preparation Review
 
 **Date:** 2026-09-29  
-**Status:** HERO_SOURCE_PREPARED  
+**Status:** HERO_SVG_QA_PASS  
 **Scope:** 8 master figures
 
 ## Review result
@@ -59,3 +59,12 @@ The hero sources are ready for:
 `Mermaid source → SVG render → visual inspection → typography adjustments → publication placement`.
 
 No PDF or EPUB generation is part of this step.
+
+
+## SVG QA
+
+The eight SVG artifacts have been rendered, visually inspected and corrected where necessary.
+
+Result: **HERO_SVG_QA_PASS**
+
+See `diagrams/HERO_SVG_QA_V1.md`.
