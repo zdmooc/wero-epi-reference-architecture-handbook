@@ -11,9 +11,9 @@ Branch: `collection-v2-four-volumes`
 | I5 | Volume I enrichment/review | COMPLETE |
 | I6 | Volume II migration | COMPLETE |
 | I7 | Volume II deepening/review | COMPLETE |
-| I8 | Volume III migration | NEXT |
-| I9 | Volume III technical deepening | PLANNED |
-| I10 | Volume IV migration | PLANNED |
+| I8 | Volume III migration | COMPLETE |
+| I9 | Volume III technical deepening | COMPLETE |
+| I10 | Volume IV migration | NEXT |
 | I11 | Volume IV deepening/review | PLANNED |
 | I12 | duplicate elimination / canonical ownership | PLANNED |
 | I13 | cross-volume thread consistency | PLANNED |
@@ -70,3 +70,16 @@ No V1.0 release artifact has been modified.
 - deterministic multi-rail routing decision model added;
 - liquidity resilience model added;
 - Volume II manifest updated.
+
+
+## I8 acceptance
+- 20 canonical V1.0 chapters migrated to `volumes/volume-3/`;
+- network, API/event/data, infrastructure and technical capstones grouped;
+- dedicated Volume III landing page and Quarto manifest created.
+
+## I9 acceptance
+- concrete Kubernetes/OpenShift payment workload blueprint added;
+- probes, topology spread, PDB and NetworkPolicy semantics aligned with current official documentation;
+- durable payment-submission pattern added;
+- runtime evidence/failure-test ladder added;
+- Volume III manifest updated.
