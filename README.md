@@ -111,7 +111,6 @@ Voir `sources/internal-repositories.yml`.
 book/                 manuscrit source
 diagrams/             Mermaid / PlantUML / Draw.io / SVG
 sources/              sources officielles et registre de preuves
-examples/             ISO 20022 / API / réseau / résilience
 publishing/           règles de génération PDF/EPUB/print
 governance/           règles éditoriales, qualité, vérité
 CHANGELOG.md           évolution du livre
@@ -220,7 +219,7 @@ Figure integration status — 2026-09-29:
 - captions + truth/source/date notes added;
 - 0 missing figure/chapter path;
 - status: **FIGURE_CHAPTER_INTEGRATION_PASS**;
-- next: Quarto page-layout proof before any PDF/EPUB release.
+- étape suivante à ce moment-là : Quarto page-layout proof ; cette étape est désormais terminée.
 
 
 Layout proof status — 2026-09-29:
@@ -236,7 +235,7 @@ Layout proof status — 2026-09-29:
 - FIG-13-004 corrected and revalidated;
 - status: **LAYOUT_PROOF_PASS**.
 
-The proof PDF is temporary QA evidence, not the publication PDF. EPUB remains ungenerated.
+Cette étape de proof a depuis été superseded par le build RC1 PDF/EPUB validé ci-dessous.
 
 
 Final manuscript freeze — 2026-09-29:
@@ -266,8 +265,10 @@ Final release readiness — 2026-09-29:
 - canonical publication metadata aligned in `publishing/metadata.yaml`;
 - release-readiness matrix: `governance/FINAL_RELEASE_READINESS_V1.md`;
 - print-proof checklist: `publishing/PRINT_PROOF_CHECKLIST_V1.md`;
-- ISBN / publisher / imprint / distribution / cover remain deliberately TBD;
-- public release remains blocked pending explicit decision.
+- l’édition numérique retient désormais **Djamal Zidane — publication indépendante** comme imprint ;
+- aucun ISBN n’est attribué à la première édition numérique ;
+- la distribution cible est un GitHub Release, sans publication publique automatique ;
+- la couverture retail/print et le print proof sont reportés à la filière papier.
 
 
 Release-readiness decision gate — 2026-09-29:
@@ -279,3 +280,20 @@ Release-readiness decision gate — 2026-09-29:
 - final release decision matrix ready;
 - ISBN / publisher / distribution / print format remain intentionally undecided;
 - state: **DECISION_GATE — NOT PUBLICLY RELEASED**.
+
+
+## Finalisation numérique V1.0 — 2026-09-29
+
+Après relecture intégrale du manuscrit et revalidation des sources volatiles critiques :
+
+- les **87 chapitres techniques** restent gelés sur leur contenu d'architecture ;
+- une note d'édition / indépendance / droits est ajoutée au front matter ;
+- le traitement numérique retient la page de titre Quarto comme couverture de l'édition digitale V1.0 ;
+- l'artwork retail/print, le format papier, le dos et le proof physique sont séparés de la V1.0 numérique ;
+- l'imprint est **Djamal Zidane — publication indépendante** ;
+- aucun ISBN n'est attribué à cette première édition numérique ;
+- le canal de distribution préparé est **GitHub Release** ;
+- une nouvelle preuve de layout et un nouveau build PDF/EPUB sont requis après l'ajout du front matter ;
+- aucune publication publique n'est déclenchée sans autorisation explicite.
+
+État de transition : **PUBLICATION_RC1_PASS → DIGITAL_V1_FINALIZATION**.
