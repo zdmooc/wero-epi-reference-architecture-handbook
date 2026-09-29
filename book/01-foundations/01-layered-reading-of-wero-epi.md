@@ -13,6 +13,12 @@ related_internal_repos:
 
 # Chapitre 1 — Lire Wero/EPI par couches
 
+La @fig-01-001 fournit la vue de référence utilisée dans ce chapitre.
+
+![Architecture de paiement par couches — modèle mental de l’ouvrage.](../../diagrams/svg/hero/FIG-01-001-layered-payment-architecture.svg){#fig-01-001}
+
+*Statut : **REFERENCE_ARCHITECTURE** · Source(s) : Handbook editorial model · Vérifié : 2026-09-29.*
+
 ## 1.1 Pourquoi une lecture en couches
 
 Le terme « paiement Wero » peut désigner des réalités différentes selon l'interlocuteur.
