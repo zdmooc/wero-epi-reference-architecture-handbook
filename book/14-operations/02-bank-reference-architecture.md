@@ -1,6 +1,6 @@
 ---
 status: REVIEWED
-last_verified: 2026-09-28
+last_verified: 2026-09-29
 truth_level: REFERENCE_ARCHITECTURE
 primary_sources:
   - epc-sct-inst-2025-v1.1
@@ -12,6 +12,12 @@ related_internal_repos:
 ---
 
 # Architecture de référence d'une banque connectée à Wero
+
+La @fig-14-001 complète la lecture de ce chapitre avec la vue de référence correspondante.
+
+![Architecture bancaire de référence Wero / paiements instantanés — vocabulaire visuel maître de l’ouvrage.](../../diagrams/svg/hero/FIG-14-001-bank-reference-architecture.svg){#fig-14-001}
+
+*Statut : **REFERENCE_ARCHITECTURE** · Source(s) : Handbook reference architecture · Vérifié : 2026-09-29.*
 
 ## 1. Vue d'ensemble
 
