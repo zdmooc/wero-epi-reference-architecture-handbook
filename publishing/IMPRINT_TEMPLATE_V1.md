@@ -1,87 +1,51 @@
-# Imprint / Legal Page Template — V1.0
+# Imprint / Legal Page — V1.0
 
-**Status:** EDITORIAL DRAFT READY — NOT YET INSERTED INTO FROZEN MANUSCRIPT
+**Status:** IMPLEMENTED_IN_MANUSCRIPT  
+**Canonical manuscript file:** `book/00-front-matter/01-publication-note.md`  
+**Date:** 2026-09-29
 
-> This template is not legal advice. Final wording should be reviewed before commercial publication.
+This file is retained as publishing provenance. It is no longer the source of wording rendered in the book.
 
----
+## Digital V1.0 decisions
 
-**Wero & EPI — Architecture de Référence des Paiements Européens**
+- Author: **Djamal Zidane**
+- Edition: **V1.0 — 2026**
+- Publisher / imprint: **Djamal Zidane — publication indépendante**
+- Copyright: **Copyright © 2026 Djamal Zidane. Tous droits réservés.**
+- ISBN: **not assigned for the initial digital edition**
+- Distribution target: **GitHub Release**
+- Standalone print/retail cover: **deferred**
+- Physical print proof: **deferred to a separate print gate**
 
-**Paiements instantanés, ISO 20022, SCT Inst, TIPS, RT1, réseaux, cloud, sécurité, résilience et réglementation européenne**
+## Independence and marks
 
-Author: **Djamal Zidane**
+The canonical front matter states that the handbook is independent, does not constitute official EPI/Wero/ECB/EPC/EBA CLEARING/bank documentation, does not imply sponsorship or endorsement, and uses organisation/product names only for identification, architecture analysis and reference.
 
-Edition: **V1.0 — 2026**
-
-Copyright © 2026 Djamal Zidane.
-
-All rights / licensing wording: **TBD before release**
-
-Publisher / imprint: **TBD**
-
-ISBN: **TBD / not assigned**
-
-Publication location: **TBD if required**
-
-Website / contact: **TBD**
-
-## Independence notice
-
-This publication is an independent architecture reference.
-
-It is not official documentation of European Payments Initiative (EPI), Wero, the European Central Bank, the European Payments Council, EBA CLEARING, or any bank/payment-service provider, and should not be interpreted as sponsorship or endorsement by those organisations.
-
-## Trademarks
-
-Editorial draft based on official Wero/EPI public terms checked on 2026-09-29:
-
-> Wero is a trademark of EPI Company SE. EPI and the names of other organisations, schemes, services and products referenced in this publication may be trademarks or registered marks of their respective owners. Their use in this independent publication is solely for identification, architecture analysis and reference purposes.
-
-Primary editorial references:
-- https://wero-wallet.eu/nl/wero-wallet-app-terms-and-conditions-v1-en
-- https://wero-wallet.eu/de/bedingungen-aktion-2026
-
-Final trademark wording: **LEGAL_REVIEW_PENDING**
+The digital V1.0 does not rely on an official Wero/EPI logo or copied brand identity.
 
 ## Technical / regulatory disclaimer
 
-The book distinguishes:
-- publicly verified information;
-- reference architecture;
-- inference;
-- runtime evidence.
+The canonical front matter also preserves the handbook truth model and warns that standards, scheme rules, regulation and product capabilities evolve over time.
 
-Standards, scheme rules, regulation and product capabilities evolve over time. Readers should consult the applicable current primary sources before production or compliance decisions.
+The publication does not claim legal, regulatory, financial, security or compliance certification.
 
-This publication does not constitute legal, regulatory, financial or security advice.
+## Commercial / retail review
 
-## Version provenance
+No external legal review is represented as having occurred.
 
-Frozen manuscript source:
+A dedicated publication/legal review remains advisable before a commercial retail/print edition, especially if:
+- a retailer-specific imprint is added;
+- an ISBN/barcode is assigned;
+- official logos or licensed brand assets are considered;
+- new trademark language is introduced;
+- commercial claims are added.
 
-`357399fc7bc5dbaf48ae06d3b7e207a47c70193c`
+## RC1 provenance
 
-RC1 publication build:
+Historical RC1 basis:
+- frozen source: `357399fc7bc5dbaf48ae06d3b7e207a47c70193c`
+- build: `36558924392`
+- PDF SHA-256: `51a6ceee2bc51b33c833510a58ac8bbe8d1e83ea24000109c2ffe12a269c5e23`
+- EPUB SHA-256: `aa4d61048820381bbcc219325bab43afa30dcb78e557e7c6fd725ecefe535331`
 
-`36558924392`
-
-PDF RC1 SHA-256:
-
-`51a6ceee2bc51b33c833510a58ac8bbe8d1e83ea24000109c2ffe12a269c5e23`
-
-EPUB RC1 SHA-256:
-
-`aa4d61048820381bbcc219325bab43afa30dcb78e557e7c6fd725ecefe535331`
-
----
-
-## Fields that must be resolved before insertion
-
-- [ ] final rights/licence wording
-- [ ] publisher/imprint
-- [ ] ISBN decision
-- [ ] publication/contact details
-- [x] trademark/independence editorial draft prepared
-- [ ] trademark/legal wording review
-- [ ] legal disclaimer review
+Final V1.0 provenance will replace the RC1 publication hashes after the refreshed front-matter build passes.
