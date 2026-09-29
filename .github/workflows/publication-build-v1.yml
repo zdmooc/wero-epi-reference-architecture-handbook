@@ -61,7 +61,7 @@ jobs:
           pdfinfo "$PDF" | tee publication-artifacts/pdfinfo.txt
           pdftotext -layout "$PDF" publication-artifacts/book-pdf.txt
 
-          if grep -Eq '@fig-[0-9]{2}-[0-9]{3}|\\?\\?' publication-artifacts/book-pdf.txt; then
+          if grep -Eq '@fig-[0-9]{2}-[0-9]{3}|\?\?' publication-artifacts/book-pdf.txt; then
             echo "Unresolved reference marker detected in PDF" >&2
             exit 1
           fi
