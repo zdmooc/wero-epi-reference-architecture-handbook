@@ -1,6 +1,6 @@
 ---
 status: REVIEWED
-last_verified: 2026-09-28
+last_verified: 2026-09-29
 truth_level: MIXED
 primary_sources:
   - epc-sct-inst-2025-v1.1
@@ -11,6 +11,18 @@ related_internal_repos:
 ---
 
 # Timing, timeout et reason codes SCT Inst
+
+La @fig-06-001 fournit la vue de référence utilisée dans ce chapitre.
+
+![Recovery d’un paiement au statut UNKNOWN — investigation et réconciliation avant toute nouvelle exécution.](../../diagrams/svg/secondary/FIG-06-001-sctinst-unknown-recovery.svg){#fig-06-001}
+
+*Statut : **REFERENCE_ARCHITECTURE** · Source(s) : EPC status-investigation capability + handbook recovery model · Vérifié : 2026-09-29.*
+
+La @fig-06-002 fournit la vue de référence utilisée dans ce chapitre.
+
+![Fenêtre de traitement SCT Inst — maximum scheme de neuf secondes.](../../diagrams/svg/secondary/FIG-06-002-sctinst-nine-second-window.svg){#fig-06-002}
+
+*Statut : **PUBLIC_VERIFIED** · Source(s) : EPC SCT Inst 2025 rulebook v1.1 · Vérifié : 2026-09-29.*
 
 ## 1. Plusieurs horloges
 
