@@ -313,3 +313,36 @@ rules:
   - "Do not use internal portfolio repositories as primary evidence for public claims."
   - "Version-sensitive statements must carry a checked_date or last_verified date."
   - "ROADMAP and ACTIVE_EXPLORATION capabilities must never be described as generally live."
+
+
+  - id: kubernetes-probes
+    authority: Kubernetes
+    title: "Liveness, Readiness, and Startup Probes"
+    url: "https://kubernetes.io/docs/concepts/workloads/pods/probes/"
+    topics: [kubernetes, probes, readiness, liveness, startup]
+    status: CURRENT
+    checked: 2026-09-29
+
+  - id: kubernetes-topology-spread
+    authority: Kubernetes
+    title: "Pod Topology Spread Constraints"
+    url: "https://kubernetes.io/docs/concepts/scheduling-eviction/topology-spread-constraints/"
+    topics: [kubernetes, scheduling, topology, availability]
+    status: CURRENT
+    checked: 2026-09-29
+
+  - id: kubernetes-pdb
+    authority: Kubernetes
+    title: "Disruptions and Pod Disruption Budgets"
+    url: "https://kubernetes.io/docs/concepts/workloads/pods/disruptions/"
+    topics: [kubernetes, disruption, pdb, availability]
+    status: CURRENT
+    checked: 2026-09-29
+
+  - id: openshift-4.22-network-policy
+    authority: Red Hat
+    title: "OpenShift Container Platform 4.22 — Network policy"
+    url: "https://docs.redhat.com/en/documentation/openshift_container_platform/4.22/html/network_security/network-policy"
+    topics: [openshift, networkpolicy, ovn-kubernetes, security]
+    status: CURRENT
+    checked: 2026-09-29
