@@ -1,0 +1,106 @@
+name: publish-v1-release
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - .github/workflows/publish-v1-release.yml
+
+permissions:
+  contents: write
+  actions: read
+
+env:
+  FINAL_SHA: 705b13664d9c3783d3d05fae72269648c80bcee8
+  FINAL_RUN_ID: "36593794049"
+  FINAL_ARTIFACT: wero-epi-handbook-v1.0-final
+  TAG: v1.0
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Download validated final artifacts
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          rm -rf release-assets
+          mkdir -p release-assets
+          gh run download "$FINAL_RUN_ID"             --repo "${{ github.repository }}"             --name "$FINAL_ARTIFACT"             --dir release-assets
+
+          test -s release-assets/wero-epi-reference-architecture-handbook-v1.0.pdf
+          test -s release-assets/wero-epi-reference-architecture-handbook-v1.0.epub
+          test -s release-assets/SHA256SUMS.txt
+
+          cd release-assets
+          sha256sum -c SHA256SUMS.txt
+
+      - name: Prepare release notes
+        run: |
+          cat > release-notes.md <<'EOF'
+          # Wero & EPI — Architecture de Référence des Paiements Européens — V1.0
+
+          Première édition numérique de référence, datée du 29 septembre 2026.
+
+          Cette édition couvre notamment :
+          - Wero / EPI et les parcours Consumer / P2P / e-commerce / POS ;
+          - ISO 20022 et SCT Inst ;
+          - TIPS, RT1, reachability, settlement et liquidité ;
+          - API, event-driven architecture, ledger, idempotence et réconciliation ;
+          - réseau, mTLS, PKI, HSM, IAM, SCA, fraude, AML/CFT et VoP ;
+          - Kubernetes / OpenShift, bases de données, messaging et multi-site ;
+          - BIA, RTO/RPO, fencing, DORA, chaos engineering et cyber-résilience ;
+          - observabilité, SRE, exploitation et gouvernance de preuve.
+
+          ## Validation de cette édition
+
+          Source finale gelée :
+          `705b13664d9c3783d3d05fae72269648c80bcee8`
+
+          Build final :
+          `36593794049`
+
+          PDF :
+          - 448 pages A4
+          - 0 référence non résolue
+          - 0 overfull box
+          - SHA-256 : `df2f77e93e10c73edf9331063976a1892d1bacb12c94e61be64bd2ac7c508bb0`
+
+          EPUB :
+          - 102 fichiers XHTML
+          - 36 SVG
+          - 0 référence interne cassée
+          - 0 ressource de manifest manquante
+          - SHA-256 : `3cf31e01b332c8601327cef9744cdf08c847ae109ae4236331cbda5fb9ac0fd6`
+
+          Publication indépendante de Djamal Zidane. Cette publication n'est pas une documentation officielle EPI/Wero et n'implique aucun sponsoring ou endorsement des organisations citées.
+          EOF
+
+      - name: Create or update public GitHub Release v1.0
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+
+          if gh release view "$TAG" --repo "${{ github.repository }}" >/dev/null 2>&1; then
+            gh release edit "$TAG"               --repo "${{ github.repository }}"               --title "Wero & EPI — Architecture de Référence des Paiements Européens — V1.0"               --notes-file release-notes.md               --target "$FINAL_SHA"               --draft=false               --prerelease=false
+
+            gh release upload "$TAG"               release-assets/wero-epi-reference-architecture-handbook-v1.0.pdf               release-assets/wero-epi-reference-architecture-handbook-v1.0.epub               release-assets/SHA256SUMS.txt               --repo "${{ github.repository }}"               --clobber
+          else
+            gh release create "$TAG"               release-assets/wero-epi-reference-architecture-handbook-v1.0.pdf               release-assets/wero-epi-reference-architecture-handbook-v1.0.epub               release-assets/SHA256SUMS.txt               --repo "${{ github.repository }}"               --target "$FINAL_SHA"               --title "Wero & EPI — Architecture de Référence des Paiements Européens — V1.0"               --notes-file release-notes.md
+          fi
+
+      - name: Verify release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          gh release view "$TAG"             --repo "${{ github.repository }}"             --json tagName,name,isDraft,isPrerelease,url,targetCommitish,assets
