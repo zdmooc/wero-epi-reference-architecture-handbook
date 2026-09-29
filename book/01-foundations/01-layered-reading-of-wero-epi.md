@@ -1,8 +1,11 @@
 ---
-status: DRAFT
-last_verified: 2026-09-28
+status: REVIEWED
+last_verified: 2026-09-29
 truth_level: MIXED
-primary_sources: []
+primary_sources:
+  - epi-wero-commerce-2026-09
+  - epc-sct-inst-2025-v1.1
+  - ecb-tips-overview
 related_internal_repos:
   - zdmooc/wero-organisme-poc
   - zdmooc/payment-hub-iso20022-opf-reference
