@@ -1,14 +1,12 @@
 # V1.0 Quality Gate
 
 ## Editorial
-- [x] no fixed page-count constraint
 - [x] coherent end-to-end narrative
-- [x] network, flows, rails, settlement and liquidity are core domains
 - [x] facts separated from reference design
-- [x] chapters carry status / verification metadata
-- [x] glossary exists
-- [x] annexes exist
-- [x] diagrams use source format and truth metadata
+- [x] 87 technical chapters reread
+- [x] glossary / acronym index / subject index / cross-reference map
+- [x] no TODO/TBD/FIXME marker in rendered manuscript content
+- [x] publication note integrated into front matter
 
 ## Public truth
 - [x] Wero/EPI public baseline dated
@@ -19,106 +17,70 @@
 - [x] RT1 sourced from EBA CLEARING
 - [x] IPR sourced from EUR-Lex
 - [x] DORA sourced from EUR-Lex
-- [x] PSD3/PSR described as legislative trajectory, not silently promoted to applicable law
-- [x] Digital euro described as conditional/preparatory, not issued
+- [x] PSD3/PSR status versioned rather than silently promoted
+- [x] Digital Euro described as conditional/preparatory
+- [x] critical volatile sources revalidated on 2026-09-29
 
-## Anti-invention
-- [x] no claimed internal EPI topology
-- [x] no claimed bank internal technology
-- [x] Kubernetes/OpenShift/Kafka/MQ clearly reference/lab patterns
-- [x] CRC scope limitations explicit
-- [x] no fake RTO/RPO presented as contractual
-- [x] no fake universal API presented as EPI API
-
-## Payment correctness
+## Architecture correctness
+- [x] Wero / SCT Inst / ISO 20022 / CSM / settlement layers separated
 - [x] UNKNOWN != FAILED
 - [x] no blind financial retry
 - [x] idempotency and concurrency addressed
 - [x] settlement truth separated from UI success
-- [x] refund/return/recall separated
+- [x] refund / return / recall separated
 - [x] reconciliation first-class
 - [x] liquidity first-class
+- [x] network / security / resilience / operations treated end to end
 
-## Network
-- [x] zones
-- [x] DNS
-- [x] DDoS/WAF
-- [x] LB/proxy
-- [x] API gateway
-- [x] firewalls/flow matrix
-- [x] banking connectivity
-- [x] mTLS/PKI/HSM
-- [x] latency/connection failure modes
+## Figures and layout
+- [x] 36 maintainable Mermaid sources
+- [x] 36/36 SVG artifacts complete
+- [x] 36 figures integrated into 34 technical chapters
+- [x] final Quarto layout proof run `36593144021`
+- [x] 99 HTML files
+- [x] 0 unresolved xrefs
+- [x] 0 missing images
+- [x] 448-page A4 proof
+- [x] 0 TeX overfull boxes
 
-## Resilience / DORA
-- [x] BIA
-- [x] RTO/RPO
-- [x] failure domains
-- [x] fencing/split brain
-- [x] degraded modes
-- [x] chaos
-- [x] third-party/exit
-- [x] evidence model
+## Final digital publication build
+- [x] immutable final source ref
+- [x] source SHA verified before rendering
+- [x] final PDF V1.0 render
+- [x] final PDF QA
+- [x] final EPUB V1.0 render
+- [x] final EPUB archive / manifest / link QA
+- [x] SHA-256 checksums generated
+- [x] final artifact uploaded by GitHub Actions
+- [x] digital cover treatment decided
+- [x] publication/imprint metadata decided
+- [x] initial digital ISBN decision — no ISBN assigned
+- [x] digital distribution target decided — GitHub Release
 
-## Manuscript structure
-- [x] I1→I16 detailed
-- [x] canonical order complete
-- [x] no missing canonical file
-- [x] source registry current at baseline date
-- [x] 36 maintainable Mermaid source diagrams
-- [x] claim/evidence governance normalized
-- [x] terminology/style guide
-- [x] acronym index
-- [x] subject index
-- [x] cross-reference map
-- [x] critical sources revalidated on 2026-09-29
+Final source:
+`freeze/v1.0-digital-final-2026-09-29` @ `705b13664d9c3783d3d05fae72269648c80bcee8`
 
-## Publication pipeline
-- [x] figure source selection / numbering / canonical placement
-- [x] Visual Design System V1
-- [x] 8 hero figures source-prepared
-- [x] 8 hero SVGs rendered and visually QA-passed
-- [x] 28 secondary SVGs rendered and vector/geometry QA-passed
-- [x] 36/36 SVG figure artifacts complete
-- [x] 36 figures embedded in 34 canonical chapters
-- [x] Quarto figure IDs / captions / source notes / cross-references
-- [x] remaining 28 figures: Visual System V1 + SVG vector/geometry QA
-- [x] Quarto page-layout render proof
-- [x] 0 unresolved figure references / 0 missing images / 0 overfull boxes
-- [x] 36 figure-bearing pages reviewed
-- [x] FIG-13-004 page-layout issue corrected and revalidated
-- [x] final manuscript freeze
-- [x] figure-page visual QA / page-layout proof
-- [x] PDF release-candidate render
-- [x] EPUB release-candidate render
+Final build:
+`36593794049`
+
+PDF SHA-256:
+`df2f77e93e10c73edf9331063976a1892d1bacb12c94e61be64bd2ac7c508bb0`
+
+EPUB SHA-256:
+`3cf31e01b332c8601327cef9744cdf08c847ae109ae4236331cbda5fb9ac0fd6`
+
+## Separate print gate
+
+The following are not blockers for digital V1.0:
 - [ ] physical print proof
-- [ ] ISBN/distribution decision
+- [ ] print/retail cover wrap and spine
+- [ ] print ISBN/barcode
+- [ ] print pricing/distribution
 
 ## Gate decision
 
-**V1.0 GITHUB MANUSCRIPT: PASS — FINAL_MANUSCRIPT_FREEZE**
+**V1.0 FINAL DIGITAL BUILD: PASS**
 
-**PDF/EPUB RC1: PASS — NOT PUBLICLY RELEASED**
+**PUBLIC GITHUB RELEASE: NOT YET EXECUTED**
 
-**PRINT-PRODUCTION APPROVAL: PENDING**
-
-The manuscript, figures, integration, layout proof and final freeze are complete. The frozen-SHA PDF/EPUB RC1 publication build also passed. Remaining gates concern print/release metadata and distribution.
-
-
-## Publication RC1 gate
-
-- [x] build pinned to final frozen SHA
-- [x] PDF RC1 checksum + independent visual regression QA
-- [x] EPUB RC1 archive / manifest / links QA
-- [x] publication artifact checksums generated
-- [x] final release-readiness matrix prepared
-- [x] back-cover copy draft prepared
-- [x] trademark/independence editorial wording prepared
-- [x] print-proof checklist prepared
-- [ ] physical print proof
-- [ ] final cover / imprint / legal-publication metadata
-- [ ] ISBN decision
-- [ ] distribution decision
-- [ ] public GitHub/publication release
-
-Current state: **PUBLICATION_RC1_PASS — DECISION_GATE — NOT PUBLICLY RELEASED**.
+The book is technically ready for digital publication. Public release remains a separate explicit action.
