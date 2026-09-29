@@ -1,6 +1,6 @@
 ---
 status: REVIEWED
-last_verified: 2026-09-28
+last_verified: 2026-09-29
 truth_level: MIXED
 primary_sources:
   - eu-dora-2022-2554
@@ -9,6 +9,18 @@ related_internal_repos:
 ---
 
 # BIA, services critiques, RTO et RPO
+
+La @fig-13-001 complète la lecture de ce chapitre avec la vue de référence correspondante.
+
+![Carte des dépendances d’un service de paiement critique — du service métier aux preuves et runbooks.](../../diagrams/svg/secondary/FIG-13-001-resilience-dependency-map.svg){#fig-13-001}
+
+*Statut : **REFERENCE_ARCHITECTURE** · Source(s) : Handbook reference architecture · Vérifié : 2026-09-29.*
+
+La @fig-13-002 complète la lecture de ce chapitre avec la vue de référence correspondante.
+
+![Failure domains d’un service de paiement — technologie, tiers externes et facteurs humains.](../../diagrams/svg/secondary/FIG-13-002-resilience-failure-domains.svg){#fig-13-002}
+
+*Statut : **REFERENCE_ARCHITECTURE** · Source(s) : Handbook reference architecture · Vérifié : 2026-09-29.*
 
 ## 1. Partir du service métier
 
