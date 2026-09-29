@@ -64,9 +64,9 @@
 
 The eight hero figures have completed source-level visual preparation under `diagrams/VISUAL_DESIGN_SYSTEM_V1.md`.
 
-Status: **HERO_SOURCE_PREPARED**
+Status: **HERO_SVG_QA_PASS**
 
-They are ready for SVG rendering and visual QA. No PDF/EPUB generation is triggered by this status.
+8/8 hero SVG artifacts are rendered and have passed visual QA. No PDF/EPUB generation is triggered by this status.
 
 ## Hero figures
 
