@@ -25,7 +25,7 @@
 - selected GitHub Release as the target digital distribution channel;
 - separated the future print/retail proof and cover stream from digital V1.0;
 - reached **V1.0 FINAL DIGITAL BUILD PASS**;
-- no public GitHub Release created.
+- public GitHub Release `v1.0` created with final PDF, EPUB and SHA256SUMS assets.
 
 ## 1.0.0-manuscript — 2026-09-29
 
