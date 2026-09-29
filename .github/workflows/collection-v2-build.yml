@@ -65,7 +65,8 @@ jobs:
             : > pdf-overfull.txt
           fi
 
-          mkdir -p visual-proof
+          mkdir -p visual-proof artifacts
+          cp "$PDF" "artifacts/wero-epi-collection-v2-volume-${{ matrix.volume }}.pdf"
           pdftoppm -png -f 1 -singlefile -r 120 "$PDF" visual-proof/cover
           PAGES="$(pdfinfo "$PDF" | awk '/^Pages:/ {print $2}')"
           MID="$(( (PAGES + 1) / 2 ))"
@@ -144,18 +145,20 @@ jobs:
           print(f"xhtml={len(docs)} broken=0 unresolved=0")
           PY
 
+          cp "$EPUB" "artifacts/wero-epi-collection-v2-volume-${{ matrix.volume }}.epub"
+
       - name: Checksums
         run: |
           set -euo pipefail
-          find _book-volume-${{ matrix.volume }} -maxdepth 1 -type f \( -name '*.pdf' -o -name '*.epub' \) -print0 | sort -z | xargs -0 sha256sum | tee SHA256SUMS.txt
+          find artifacts -maxdepth 1 -type f \( -name '*.pdf' -o -name '*.epub' \) -print0 | sort -z | xargs -0 sha256sum | tee SHA256SUMS.txt
 
       - name: Upload volume artifacts
         uses: actions/upload-artifact@v4
         with:
           name: wero-epi-collection-v2-volume-${{ matrix.volume }}
           path: |
-            volumes/volume-${{ matrix.volume }}/_book-volume-${{ matrix.volume }}/*.pdf
-            volumes/volume-${{ matrix.volume }}/_book-volume-${{ matrix.volume }}/*.epub
+            volumes/volume-${{ matrix.volume }}/artifacts/*.pdf
+            volumes/volume-${{ matrix.volume }}/artifacts/*.epub
             volumes/volume-${{ matrix.volume }}/SHA256SUMS.txt
             volumes/volume-${{ matrix.volume }}/qa-summary.txt
             volumes/volume-${{ matrix.volume }}/pdfinfo.txt
