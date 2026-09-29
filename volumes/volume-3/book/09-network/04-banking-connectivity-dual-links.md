@@ -17,11 +17,11 @@ La @fig-09-003 matérialise la vue de référence de ce chapitre.
 
 *Statut : **REFERENCE_ARCHITECTURE** · Source(s) : Handbook reference architecture · Vérifié : 2026-09-29.*
 
-## 1. Le chemin externe financier est un service critique
+## Le chemin externe financier est un service critique
 
 La disponibilité applicative interne n'a aucune valeur si le PSP ne peut plus atteindre le rail/CSM.
 
-## 2. Topologie de référence
+## Topologie de référence
 
 ~~~text
 Site / Region A
@@ -35,11 +35,12 @@ Banking Connectivity Zone
 TIPS / RT1 / provider
 ~~~
 
-## 3. Dual connectivity
+## Dual connectivity
 
 Dual links doivent être réellement indépendants.
 
 Vérifier :
+
 - carrier ;
 - physical path ;
 - router ;
@@ -52,14 +53,16 @@ Vérifier :
 
 Deux VLAN sur le même équipement ne constituent pas une vraie redondance.
 
-## 4. Active/active vs active/standby
+## Active/active vs active/standby
 
 ### Active/active
 Pros:
+
 - capacity usage ;
 - rapid failure tolerance.
 
 Risks:
+
 - ordering ;
 - asymmetric routing ;
 - duplicate sessions ;
@@ -67,16 +70,19 @@ Risks:
 
 ### Active/standby
 Pros:
+
 - simpler behavior.
 
 Risks:
+
 - standby rot ;
 - failover delay ;
 - untested route.
 
-## 5. Session model
+## Session model
 
 Document:
+
 - persistent session ?
 - reconnect semantics ?
 - sequence state ?
@@ -86,9 +92,10 @@ Document:
 
 A network reconnect must not create a second financial instruction.
 
-## 6. Provider dependency
+## Provider dependency
 
 If using a technical service provider:
+
 - contract ;
 - topology ;
 - SLA/SLO ;
@@ -98,9 +105,10 @@ If using a technical service provider:
 - DORA mapping ;
 - exit.
 
-## 7. Firewall
+## Firewall
 
 Rules should be:
+
 - destination-specific ;
 - port-specific ;
 - source-specific ;
@@ -109,9 +117,10 @@ Rules should be:
 
 No broad any-any for convenience.
 
-## 8. Proxy
+## Proxy
 
 If proxy is used:
+
 - preserve mTLS semantics ;
 - no unsafe retry ;
 - connection pool sizing ;
@@ -119,9 +128,10 @@ If proxy is used:
 - timeout ;
 - logging.
 
-## 9. Failover test
+## Failover test
 
 Inject:
+
 - link A down ;
 - provider A down ;
 - router down ;
@@ -130,32 +140,36 @@ Inject:
 - certificate invalid.
 
 Measure:
+
 - connection restoration ;
 - in-flight payments ;
 - UNKNOWNs ;
 - duplicate count ;
 - recovery.
 
-## 10. Maintenance
+## Maintenance
 
 Planned maintenance still requires:
+
 - alternate path validated ;
 - freeze or traffic drain ;
 - incident readiness ;
 - rollback.
 
-## 11. Capacity
+## Capacity
 
 Links sized for:
+
 - peak payment traffic ;
 - status/inquiry ;
 - burst after outage ;
 - TLS overhead ;
 - monitoring.
 
-## 12. Monitoring
+## Monitoring
 
 Metrics:
+
 - session state ;
 - RTT ;
 - packet loss ;
@@ -165,19 +179,22 @@ Metrics:
 - certificate expiry ;
 - active path.
 
-## 13. Network vs business status
+## Network vs business status
 
 Network DOWN before submit:
+
 - no effect.
 
 Network breaks after submit:
+
 - possible UNKNOWN.
 
 This distinction must appear in runbooks.
 
-## 14. Disaster recovery
+## Disaster recovery
 
 Site failover requires:
+
 - alternate network path already provisioned ;
 - certificates available ;
 - firewall routes ;
@@ -186,9 +203,10 @@ Site failover requires:
 
 A DR site without tested CSM connectivity is not a payment DR site.
 
-## 15. Evidence
+## Evidence
 
 Keep:
+
 - topology ;
 - path diversity ;
 - failover timestamps ;

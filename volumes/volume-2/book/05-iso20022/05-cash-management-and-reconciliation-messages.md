@@ -9,51 +9,55 @@ related_internal_repos:
 
 # Cash management messages et réconciliation
 
-## 1. Pourquoi camt.052/.053/.054 comptent
+## Pourquoi camt.052/.053/.054 comptent
 
 Le paiement instantané est traité en secondes, mais la comptabilité et la réconciliation vivent sur des horizons différents.
 
 Les messages de cash management peuvent fournir des informations utiles pour :
+
 - intraday monitoring ;
 - statements ;
 - debit/credit notifications ;
 - reconciliation.
 
-## 2. camt.052
+## camt.052
 
 Concept :
 BankToCustomerAccountReport.
 
 Usage typique :
+
 - reporting intraday ;
 - balance/entry visibility ;
 - treasury monitoring.
 
 Il ne remplace pas le pacs.002 du flow inter-PSP.
 
-## 3. camt.053
+## camt.053
 
 Concept :
 BankToCustomerStatement.
 
 Usage :
+
 - statement ;
 - end-of-day/accounting ;
 - reconciliation ;
 - audit.
 
-## 4. camt.054
+## camt.054
 
 Concept :
 BankToCustomerDebitCreditNotification.
 
 Usage :
+
 - notification de mouvements de compte selon le service concerné.
 
 Important :
 un marchand intégré via PSP reçoit souvent des API/webhooks, pas directement camt.054.
 
-## 5. Reconciliation sources
+## Reconciliation sources
 
 ~~~text
 Payment database
@@ -67,9 +71,10 @@ Callbacks/events
 
 No single source contains every dimension.
 
-## 6. Matching keys
+## Matching keys
 
 Priority:
+
 - exact unique external reference ;
 - EndToEndId/TxId ;
 - amount/currency ;
@@ -79,7 +84,7 @@ Priority:
 
 Avoid fuzzy matching as first line.
 
-## 7. Reconciliation levels
+## Reconciliation levels
 
 ### L1 — Technical
 Was message delivered?
@@ -93,17 +98,18 @@ Do ledger and settlement/account entries agree?
 ### L4 — Commercial
 Does merchant order/refund state agree?
 
-## 8. Intraday vs end-of-day
+## Intraday vs end-of-day
 
 Instant payments need intraday reconciliation because waiting for end-of-day can leave UNKNOWNs too long.
 
 End-of-day still validates:
+
 - completeness ;
 - accounting ;
 - statements ;
 - unresolved breaks.
 
-## 9. Break classes
+## Break classes
 
 - missing external ;
 - missing local ;
@@ -115,30 +121,34 @@ End-of-day still validates:
 - wrong value date ;
 - late notification.
 
-## 10. Auto-reconciliation
+## Auto-reconciliation
 
 Rules can close:
+
 - exact match ;
 - known delayed callback ;
 - duplicate event without duplicate financial effect.
 
 Manual review:
+
 - conflicting settlement evidence ;
 - amount difference ;
 - multiple candidate transactions ;
 - fraud/legal hold.
 
-## 11. Idempotent correction
+## Idempotent correction
 
 Correction must be idempotent.
 
 Example:
+
 - reconciliation case triggers state update once ;
 - repeated file/message does not create second adjustment.
 
-## 12. Data retention
+## Data retention
 
 Store enough evidence for:
+
 - operations ;
 - customer support ;
 - accounting ;
@@ -147,9 +157,10 @@ Store enough evidence for:
 
 Retention duration is policy/legal-specific.
 
-## 13. Observability
+## Observability
 
 KPIs:
+
 - total breaks ;
 - break age ;
 - auto-match rate ;
@@ -158,9 +169,10 @@ KPIs:
 - settlement mismatch ;
 - retry count.
 
-## 14. Incident recovery
+## Incident recovery
 
 After site failure:
+
 1. restore platform ;
 2. establish external connectivity ;
 3. obtain authoritative reports/status ;
@@ -170,6 +182,6 @@ After site failure:
 
 Starting new payments before reconciling may be permitted or blocked according to risk policy, but the decision must be explicit.
 
-## 15. Architecture lesson
+## Architecture lesson
 
 The reconciliation engine is not a reporting afterthought. It is a safety mechanism that allows a distributed payment system to converge after partial failures.

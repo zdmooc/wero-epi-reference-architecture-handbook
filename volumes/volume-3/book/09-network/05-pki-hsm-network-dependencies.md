@@ -9,13 +9,14 @@ related_internal_repos:
 
 # PKI, certificats et dépendances HSM
 
-## 1. La crypto a une disponibilité
+## La crypto a une disponibilité
 
 Un certificat expiré ou un HSM inaccessible peut arrêter un paiement aussi sûrement qu'une panne DB.
 
-## 2. Certificate inventory
+## Certificate inventory
 
 For every certificate:
+
 - owner ;
 - use ;
 - endpoint ;
@@ -27,7 +28,7 @@ For every certificate:
 - rotation process ;
 - emergency contact.
 
-## 3. Certificate lifecycle
+## Certificate lifecycle
 
 ~~~text
 request
@@ -41,9 +42,10 @@ request
 → archive evidence
 ~~~
 
-## 4. Expiry alerts
+## Expiry alerts
 
 Recommended bands:
+
 - D-90 ;
 - D-60 ;
 - D-30 ;
@@ -53,18 +55,20 @@ Recommended bands:
 
 Exact operational policy is institution-specific.
 
-## 5. Rotation
+## Rotation
 
 Test:
+
 - new + old overlap ;
 - truststore updated ;
 - peer accepts new cert ;
 - rollback ;
 - no restart if possible.
 
-## 6. Truststore
+## Truststore
 
 Risks:
+
 - missing intermediate ;
 - expired CA ;
 - wrong truststore ;
@@ -73,9 +77,10 @@ Risks:
 
 Treat truststore as versioned configuration.
 
-## 7. mTLS
+## mTLS
 
 Both sides need:
+
 - valid cert ;
 - trusted issuer ;
 - allowed identity ;
@@ -84,7 +89,7 @@ Both sides need:
 
 An open TCP port is not sufficient health.
 
-## 8. HSM use cases
+## HSM use cases
 
 - private key protection ;
 - signing ;
@@ -92,9 +97,10 @@ An open TCP port is not sufficient health.
 - token/crypto operations ;
 - key generation.
 
-## 9. HSM HA
+## HSM HA
 
 Questions:
+
 - cluster ?
 - dual appliance ?
 - multi-site ?
@@ -103,9 +109,10 @@ Questions:
 - failover time ?
 - capacity ?
 
-## 10. Network dependency
+## Network dependency
 
 HSM reachable over network introduces:
+
 - latency ;
 - connection pool ;
 - firewall ;
@@ -116,20 +123,22 @@ HSM reachable over network introduces:
 
 Monitor HSM network independently.
 
-## 11. Key loss
+## Key loss
 
 RPO for keys may effectively be zero for critical identity.
 
 Controls:
+
 - secure backup ;
 - replicated HSM ;
 - documented restore ;
 - dual control ;
 - recovery test.
 
-## 12. Revocation incident
+## Revocation incident
 
 If credential compromised:
+
 1. identify scope ;
 2. revoke ;
 3. issue replacement ;
@@ -137,22 +146,23 @@ If credential compromised:
 5. restore peer trust ;
 6. reconcile payments affected.
 
-## 13. Certificate pinning
+## Certificate pinning
 
 Can improve control but complicates rotation.
 
 Use only with explicit lifecycle support.
 
-## 14. Secrets management
+## Secrets management
 
 Certificate/key references may live in:
+
 - secret manager ;
 - Kubernetes Secret with external management ;
 - HSM integration.
 
 Never store private keys in Git.
 
-## 15. Metrics
+## Metrics
 
 - expiry days ;
 - handshake failure ;
@@ -162,7 +172,7 @@ Never store private keys in Git.
 - connection saturation ;
 - revocation events.
 
-## 16. Chaos tests
+## Chaos tests
 
 - revoke test cert ;
 - expire cert ;

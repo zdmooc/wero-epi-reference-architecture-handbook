@@ -9,9 +9,10 @@ related_internal_repos:
 
 # Threat model et opérations de sécurité
 
-## 1. Assets
+## Assets
 
 Protect:
+
 - money movement ;
 - payment state ;
 - customer identity ;
@@ -21,7 +22,7 @@ Protect:
 - settlement connectivity ;
 - audit evidence.
 
-## 2. Threat actors
+## Threat actors
 
 - cybercriminal ;
 - fraudster ;
@@ -31,7 +32,7 @@ Protect:
 - advanced attacker ;
 - accidental operator.
 
-## 3. Entry points
+## Entry points
 
 - mobile/web ;
 - merchant API ;
@@ -43,9 +44,10 @@ Protect:
 - CSM connectivity ;
 - third-party API.
 
-## 4. STRIDE-like review
+## STRIDE-like review
 
 For each boundary consider:
+
 - spoofing ;
 - tampering ;
 - repudiation ;
@@ -53,7 +55,7 @@ For each boundary consider:
 - denial of service ;
 - elevation of privilege.
 
-## 5. Payment-specific abuse
+## Payment-specific abuse
 
 - duplicate submit ;
 - beneficiary substitution ;
@@ -64,57 +66,67 @@ For each boundary consider:
 - operator override ;
 - route manipulation.
 
-## 6. Security controls by layer
+## Security controls by layer
 
 Edge:
+
 - DDoS/WAF/rate.
 
 API:
+
 - auth/authz/schema/idempotency.
 
 Service:
+
 - workload identity/mTLS.
 
 Data:
+
 - encryption/RBAC/audit.
 
 Platform:
+
 - policy/image/runtime.
 
 Operations:
+
 - PAM/MFA/segregation.
 
-## 7. Admin plane
+## Admin plane
 
 Separate from customer plane.
 
 Controls:
+
 - private access ;
 - PAM ;
 - no shared accounts ;
 - session audit ;
 - approval for critical action.
 
-## 8. Vulnerability management
+## Vulnerability management
 
 Prioritize by:
+
 - exploitability ;
 - exposed component ;
 - business criticality ;
 - compensating control.
 
-## 9. Patch strategy
+## Patch strategy
 
 For 24/7:
+
 - rolling ;
 - canary ;
 - PDB/topology ;
 - compatibility ;
 - emergency patch path.
 
-## 10. Supply-chain incident
+## Supply-chain incident
 
 If compromised image/dependency:
+
 - stop promotion ;
 - identify deployments ;
 - revoke credentials if needed ;
@@ -122,9 +134,10 @@ If compromised image/dependency:
 - preserve evidence ;
 - reconcile payments if runtime integrity impacted.
 
-## 11. Secrets leak
+## Secrets leak
 
 Response:
+
 - revoke ;
 - rotate ;
 - search usage ;
@@ -132,9 +145,10 @@ Response:
 - audit access ;
 - validate downstream trust.
 
-## 12. Detection
+## Detection
 
 Signals:
+
 - auth anomaly ;
 - unexpected admin ;
 - certificate use ;
@@ -142,17 +156,19 @@ Signals:
 - unusual payment patterns ;
 - route/config change.
 
-## 13. Security incident and payment truth
+## Security incident and payment truth
 
 Containment must preserve ability to answer:
+
 - which payments settled ?
 - which are UNKNOWN ?
 - were any states tampered ?
 - which credentials were used ?
 
-## 14. Recovery
+## Recovery
 
 Security recovery includes:
+
 - clean environment ;
 - trusted artifacts ;
 - key rotation ;
@@ -160,6 +176,6 @@ Security recovery includes:
 - reconciliation ;
 - business validation.
 
-## 15. Evidence
+## Evidence
 
 Keep a claim-evidence mapping for security controls rather than declaring generic secure or compliant status.

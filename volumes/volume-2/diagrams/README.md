@@ -25,6 +25,7 @@ The handbook is diagram-first. Complex payment architecture must be understandab
 ## Source formats
 
 Preferred:
+
 - Mermaid for maintainable sequences/state/flow diagrams ;
 - PlantUML where richer formal sequence/component views help ;
 - Draw.io for complex network and physical views ;

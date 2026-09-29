@@ -12,26 +12,28 @@ related_internal_repos:
 
 # Verification of Payee et SCT Inst
 
-## 1. VoP n'est pas settlement
+## VoP n'est pas settlement
 
 VoP répond à une question pré-exécution :
 > les informations du bénéficiaire correspondent-elles selon le service de verification applicable ?
 
 Il ne :
+
 - réserve pas les fonds ;
 - n'exécute pas SCT Inst ;
 - ne garantit pas absence de fraude ;
 - ne prouve pas settlement.
 
-## 2. Actors
+## Actors
 
 Reference:
+
 - Requesting PSP ;
 - Responding PSP ;
 - payer/customer ;
 - supporting routing/directory services according to scheme.
 
-## 3. Flow
+## Flow
 
 ~~~text
 payer enters beneficiary details
@@ -43,11 +45,12 @@ payer enters beneficiary details
 → SCT Inst payment if continued
 ~~~
 
-## 4. Timing
+## Timing
 
 VoP affects UX latency before payment submission.
 
 Design budget:
+
 - request ;
 - network ;
 - matching ;
@@ -56,11 +59,12 @@ Design budget:
 
 Do not consume payment execution budget by coupling it badly to a later rail timeout.
 
-## 5. Result semantics
+## Result semantics
 
 Result categories should be preserved as scheme-defined values.
 
 Internal app may map them to:
+
 - green ;
 - warning ;
 - danger ;
@@ -68,45 +72,50 @@ Internal app may map them to:
 
 But must retain raw result/version for audit.
 
-## 6. Close match
+## Close match
 
 UX needs careful design:
+
 - show proposed/corrected name as allowed ;
 - avoid confusing customer ;
 - capture decision.
 
 No generic automatic overwrite without scheme/product rules.
 
-## 7. No match
+## No match
 
 Possible actions depend on legal/scheme/product requirements.
 
 Architecture must support:
+
 - explicit warning ;
 - customer choice when permitted ;
 - audit of presented result.
 
-## 8. Check not possible
+## Check not possible
 
 Do not convert technical unavailable into No Match.
 
 Separate:
+
 - beneficiary mismatch ;
 - service unavailable.
 
-## 9. Cache
+## Cache
 
 VoP result can become stale.
 
 If caching is allowed:
+
 - very clear TTL ;
 - input binding ;
 - no reuse across different beneficiary data ;
 - audit.
 
-## 10. Fraud integration
+## Fraud integration
 
 Fraud engine can consume:
+
 - VoP result ;
 - new beneficiary ;
 - device ;
@@ -116,23 +125,26 @@ Fraud engine can consume:
 But fraud decision remains separate.
 
 Example:
+
 - VoP Match + high-risk device may still be blocked.
 - VoP No Match may be warning/decision input according to rules.
 
-## 11. Data minimisation
+## Data minimisation
 
 VoP handles identity data.
 
 Controls:
+
 - transmit only required fields ;
 - limit logs ;
 - protect response ;
 - retention policy ;
 - access control.
 
-## 12. Resilience
+## Resilience
 
 Failure modes:
+
 - Requesting service down ;
 - Responding PSP down ;
 - network timeout ;
@@ -142,9 +154,10 @@ Failure modes:
 
 Define fail behavior based on legal/scheme rule, not developer convenience.
 
-## 13. Observability
+## Observability
 
 Metrics:
+
 - request count ;
 - latency ;
 - result distribution ;
@@ -153,7 +166,7 @@ Metrics:
 - downstream payment conversion ;
 - fraud correlation.
 
-## 14. Testing
+## Testing
 
 - exact match ;
 - close match ;
@@ -165,9 +178,10 @@ Metrics:
 - high latency ;
 - unauthorized caller.
 
-## 15. Audit chain
+## Audit chain
 
 Persist:
+
 - input reference ;
 - response category ;
 - timestamp ;

@@ -9,11 +9,11 @@ primary_sources:
 
 # E-commerce desktop + QR
 
-## 1. Pourquoi ce parcours est un parcours maître
+## Pourquoi ce parcours est un parcours maître
 
 Le desktop sépare physiquement deux contextes : le navigateur marchand et le wallet/application bancaire utilisé pour autoriser le paiement. Cette séparation rend visible une règle structurante de toute la collection : **le canal de présentation n'est pas la source de vérité financière**.
 
-## 2. Séquence de référence
+## Séquence de référence
 
 ```text
 Customer
@@ -46,9 +46,10 @@ Acceptor side / Merchant Backend
 Browser presentation
 ```
 
-## 3. Identifiants canoniques
+## Identifiants canoniques
 
 Le parcours réutilise :
+
 - `orderId` pour la commande ;
 - `paymentRequestId` pour le contexte de paiement ;
 - `paymentId` pour le paiement logique ;
@@ -56,7 +57,7 @@ Le parcours réutilise :
 - identifiants scheme/rail du Volume II ;
 - `correlationId` pour l'observabilité du Volume III/IV.
 
-## 4. Invariants
+## Invariants
 
 1. Le QR doit identifier un contexte de paiement, pas constituer lui-même une preuve de paiement.
 2. Le retour navigateur ne valide jamais seul la vente.
@@ -65,7 +66,7 @@ Le parcours réutilise :
 5. Une divergence entre état commande et état paiement déclenche rapprochement, pas une nouvelle exécution automatique.
 6. L'expiration du payment request est distincte d'un timeout de paiement après soumission.
 
-## 5. États à ne pas fusionner
+## États à ne pas fusionner
 
 Commercial : `ORDER_CREATED / PAYMENT_PENDING / PAID / CANCELLED`.
 
@@ -75,7 +76,7 @@ Payment/scheme : `CREATED / SUBMITTED / ACCEPTED / REJECTED / UNKNOWN`.
 
 Financial : `NOT_SUBMITTED / IN_FLIGHT / SETTLED / NOT_SETTLED / UNKNOWN`.
 
-## 6. Défaillances caractéristiques
+## Défaillances caractéristiques
 
 - navigateur fermé après approbation ;
 - QR expiré ;
@@ -85,7 +86,7 @@ Financial : `NOT_SUBMITTED / IN_FLIGHT / SETTLED / NOT_SETTLED / UNKNOWN`.
 - timeout après soumission ;
 - paiement réglé mais statut marchand non observé.
 
-## 7. Passage aux autres volumes
+## Passage aux autres volumes
 
 - Volume II : messages, timing, UNKNOWN, rail et settlement.
 - Volume III : APIs, webhook, stockage, events et idempotency.

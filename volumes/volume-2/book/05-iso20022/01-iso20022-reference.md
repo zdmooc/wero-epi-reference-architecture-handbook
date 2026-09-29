@@ -17,9 +17,10 @@ La @fig-05-001 fournit la vue de référence utilisée dans ce chapitre.
 
 *Statut : **PUBLIC_VERIFIED** · Source(s) : EPC SCT Inst Inter-PSP IG 2025 v1.0 · Vérifié : 2026-09-29.*
 
-## 1. ISO 20022 n'est pas un rail
+## ISO 20022 n'est pas un rail
 
 ISO 20022 fournit un modèle de messages financiers. Il ne décide pas à lui seul :
+
 - quel scheme est utilisé ;
 - quel CSM route ou traite le paiement ;
 - où a lieu le settlement ;
@@ -38,7 +39,7 @@ Business intent
 
 Chaque couche garde son vocabulaire et sa responsabilité.
 
-## 2. Baseline SCT Inst 2025
+## Baseline SCT Inst 2025
 
 Les Implementation Guidelines EPC SCT Inst 2025 utilisent la version 2019 du standard ISO 20022 et définissent notamment les messages inter-PSP suivants :
 
@@ -53,7 +54,7 @@ Les Implementation Guidelines EPC SCT Inst 2025 utilisent la version 2019 du sta
 
 Ces numéros de version sont **version-sensitive**. Une future édition doit les revalider contre le rulebook et les IG applicables.
 
-## 3. pacs.008 — l'instruction
+## pacs.008 — l'instruction
 
 Le `pacs.008` transporte une instruction FI-to-FI Customer Credit Transfer.
 
@@ -93,7 +94,7 @@ Pour l'architecte, les questions essentielles ne sont pas seulement XML :
 
 Cet extrait est pédagogique, pas un XML complet conforme aux IG.
 
-## 4. Identifiants : ne pas tout mettre dans correlationId
+## Identifiants : ne pas tout mettre dans correlationId
 
 Une architecture robuste distingue :
 
@@ -112,9 +113,10 @@ Une architecture robuste distingue :
 
 Un `traceId` ne doit pas devenir la seule clé d'audit financier.
 
-## 5. pacs.002 — confirmation et statut
+## pacs.002 — confirmation et statut
 
 Dans les IG SCT Inst 2025 :
+
 - le même message `pacs.002.001.10` sert à transporter les confirmations ;
 - `RJCT` est utilisé pour une confirmation négative ;
 - `ACCP` est utilisé pour la confirmation positive du use case SCT Inst décrit par les IG.
@@ -125,9 +127,10 @@ Dans ce contexte, **ACCP signifie AcceptedCustomerProfile**.
 
 Le livre ne doit pas inventer d'autres expansions. Il ne faut pas non plus interpréter automatiquement ACCP comme une garantie commerciale de commande livrée.
 
-## 6. Reason codes
+## Reason codes
 
 Une erreur technique devient exploitable seulement si :
+
 - elle est correctement classifiée ;
 - le système sait si l'effet financier a pu se produire ;
 - une politique de recovery est associée.
@@ -145,9 +148,10 @@ Exemples présents dans les IG :
 
 La présence d'un timeout scheme ne justifie pas la règle simpliste « pas de pacs.002 → camt.056 ». L'investigation et le recall sont des processus distincts.
 
-## 7. pacs.028 — investigation de statut
+## pacs.028 — investigation de statut
 
 Le `pacs.028.001.03` est utilisé dans les IG pour des demandes de statut, notamment :
+
 - investigation du statut d'une transaction SCT Inst ;
 - demande de mise à jour de statut sur un recall/request for recall.
 
@@ -167,7 +171,7 @@ authoritative response/reconciliation
   +--> still pending investigation
 ```
 
-## 8. camt.056, camt.029, pacs.004
+## camt.056, camt.029, pacs.004
 
 ### camt.056
 FI-to-FI Payment Cancellation Request. Dans les IG SCT Inst, il porte les processus de recall/request for recall prévus.
@@ -192,7 +196,7 @@ decision beneficiary side
      +--> accept -> pacs.004 / return
 ```
 
-## 9. Cash-management messages
+## Cash-management messages
 
 `camt.052`, `camt.053`, `camt.054` appartiennent à la famille cash-management/reporting.
 
@@ -200,11 +204,12 @@ Le livre les traite dans la réconciliation et le reporting bancaire. Il ne les 
 
 Le marchand Wero n'est pas supposé recevoir directement un `camt.054`. Dans une architecture merchant moderne, il reçoit plus probablement un statut API/webhook de son PSP, tandis que les messages bancaires restent derrière cette frontière.
 
-## 10. Business Application Header
+## Business Application Header
 
 Le BAH, lorsqu'il est utilisé dans le contexte cible, sépare l'enveloppe/application header du payload métier.
 
 Questions d'architecture :
+
 - identité expéditeur/destinataire ;
 - identifiant de message ;
 - service ;
@@ -213,7 +218,7 @@ Questions d'architecture :
 
 Le header n'annule pas le besoin d'identifiants métier dans le document.
 
-## 11. Validation en couches
+## Validation en couches
 
 ```text
 XML well-formed
@@ -237,7 +242,7 @@ Pipeline conseillé :
 8. exécution ;
 9. reconciliation.
 
-## 12. Versioning
+## Versioning
 
 Une plateforme ne doit pas disperser les versions ISO dans le code.
 
@@ -256,7 +261,7 @@ validation-rules
 migration-notes
 ```
 
-## 13. Mapping API ↔ ISO
+## Mapping API ↔ ISO
 
 L'API du canal ne doit pas exposer mécaniquement chaque champ ISO.
 
@@ -274,15 +279,17 @@ Exemple :
 Le payment domain enrichit ensuite le modèle canonique avant génération du message ISO.
 
 Avantages :
+
 - isolation du canal ;
 - versioning ;
 - contrôle ;
 - meilleure testabilité ;
 - remplacement possible du rail.
 
-## 14. Contrats de test
+## Contrats de test
 
 Un test ISO sérieux couvre :
+
 - message nominal ;
 - champ obligatoire absent ;
 - format invalide ;
@@ -296,7 +303,7 @@ Un test ISO sérieux couvre :
 - investigation ;
 - changement de version.
 
-## 15. Règle d'or
+## Règle d'or
 
 **Le XML est un contrat, pas l'architecture entière.**
 

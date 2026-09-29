@@ -18,11 +18,11 @@ La @fig-04-001 fournit la vue de référence utilisée dans ce chapitre.
 
 *Statut : **REFERENCE_ARCHITECTURE** · Source(s) : Handbook reference architecture · Vérifié : 2026-09-29.*
 
-## 1. Objectif
+## Objectif
 
 Cette partie ne décrit pas l'architecture interne d'EPI. Elle définit une **architecture de capacités** permettant à une banque, un PSP ou un architecte de raisonner sur un service Wero/instant-payment de bout en bout.
 
-## 2. Capability map
+## Capability map
 
 ```text
 CHANNEL & EXPERIENCE
@@ -81,11 +81,12 @@ PLATFORM
 └── Resilience
 ```
 
-## 3. Domain boundaries
+## Domain boundaries
 
 ### Customer / Wallet Domain
 
 Owns:
+
 - user-facing enrolment ;
 - wallet state ;
 - preferences ;
@@ -93,17 +94,20 @@ Owns:
 - user-level payment history view.
 
 Does not own:
+
 - final settlement truth.
 
 ### Directory / Alias Domain
 
 Owns:
+
 - alias binding ;
 - lookup ;
 - eligibility ;
 - lifecycle and freshness.
 
 Important states:
+
 - FOUND ;
 - NOT_FOUND ;
 - STALE ;
@@ -114,6 +118,7 @@ A directory outage must not silently fall back to an unverified destination.
 ### Consent Domain
 
 Owns:
+
 - what the customer approved ;
 - scope ;
 - merchant/payee context ;
@@ -125,6 +130,7 @@ Owns:
 ### Payment Orchestration Domain
 
 Owns the logical payment intent and coordinates:
+
 - validation ;
 - risk ;
 - execution ;
@@ -137,6 +143,7 @@ It should avoid embedding every bank product detail directly.
 ### Financial Execution Domain
 
 Owns:
+
 - account and funds checks ;
 - ledger posting/reservation logic ;
 - rail instruction ;
@@ -157,6 +164,7 @@ They may contribute to one decision but solve different problems and have differ
 ### Merchant / Acceptor Domain
 
 Owns:
+
 - merchant order correlation ;
 - payment request ;
 - channel type ;
@@ -165,7 +173,7 @@ Owns:
 - refund initiation ;
 - merchant reconciliation.
 
-## 4. Reference component map
+## Reference component map
 
 ```text
 Channels
@@ -192,7 +200,7 @@ Event Bus
 Audit / Analytics / Operations
 ```
 
-## 5. Payment state as a first-class domain object
+## Payment state as a first-class domain object
 
 Recommended conceptual object:
 
@@ -215,7 +223,7 @@ Payment
 
 The model should not store only a generic `status` field. A single status often becomes ambiguous once commercial, orchestration and financial states diverge.
 
-## 6. State transition invariants
+## State transition invariants
 
 Examples:
 
@@ -225,7 +233,7 @@ Examples:
 - merchant order cancellation does not automatically reverse an already-settled payment.
 - an alias lookup failure does not justify reuse of stale beneficiary data unless explicitly allowed by policy.
 
-## 7. Functional sequence — nominal
+## Functional sequence — nominal
 
 ```text
 Channel
@@ -249,7 +257,7 @@ Orchestrator
   -> Notification/Merchant
 ```
 
-## 8. Functional sequence — ambiguous outcome
+## Functional sequence — ambiguous outcome
 
 ```text
 submit
@@ -263,7 +271,7 @@ submit
 
 No new financial instruction is created until policy has established that this is safe.
 
-## 9. Reconciliation as a capability, not a batch afterthought
+## Reconciliation as a capability, not a batch afterthought
 
 Reconciliation must answer:
 
@@ -286,7 +294,7 @@ Reference reconciliation dimensions:
 - external records ;
 - callback delivery.
 
-## 10. Capability ownership matrix
+## Capability ownership matrix
 
 | Capability | System of record candidate | Recovery authority |
 |---|---|---|
@@ -299,7 +307,7 @@ Reference reconciliation dimensions:
 | Audit trail | audit platform | append-only evidence |
 | Reconciliation result | reconciliation domain | authoritative compared records |
 
-## 11. NFRs by capability
+## NFRs by capability
 
 ### Payment Orchestrator
 - strong idempotency ;
@@ -329,9 +337,10 @@ Reference reconciliation dimensions:
 - deduplication ;
 - active status retrieval.
 
-## 12. Design rule: capability before product
+## Design rule: capability before product
 
 The book always defines:
+
 1. required capability ;
 2. contract ;
 3. NFR ;
@@ -357,6 +366,6 @@ Database HA
 
 Products used by companion labs illustrate patterns; they do not reveal participant technology.
 
-## 13. Conclusion
+## Conclusion
 
 The functional architecture is the bridge between business journeys and technical architecture. It provides stable concepts that can survive product replacement, cloud migration and regulatory change.

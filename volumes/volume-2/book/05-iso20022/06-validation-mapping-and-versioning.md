@@ -10,7 +10,7 @@ related_internal_repos:
 
 # Validation, mapping et versioning ISO 20022
 
-## 1. Cinq niveaux de validité
+## Cinq niveaux de validité
 
 ~~~text
 well-formed XML
@@ -22,9 +22,10 @@ well-formed XML
 
 Un XML XSD-valid peut être rejeté par le scheme.
 
-## 2. Parser security
+## Parser security
 
 Controls:
+
 - secure XML parser ;
 - XXE disabled ;
 - entity expansion limits ;
@@ -33,9 +34,10 @@ Controls:
 - schema cache controlled ;
 - no network fetch of arbitrary schemas at runtime.
 
-## 3. XSD management
+## XSD management
 
 Store:
+
 - exact XSD version ;
 - checksum ;
 - source ;
@@ -44,9 +46,10 @@ Store:
 
 Do not download schemas dynamically during payment processing.
 
-## 4. Scheme profile
+## Scheme profile
 
 The EPC IG constrains the generic ISO model:
+
 - mandatory fields ;
 - cardinality ;
 - allowed codes ;
@@ -55,7 +58,7 @@ The EPC IG constrains the generic ISO model:
 
 Generate code from XSD only if the team still preserves scheme business validation separately.
 
-## 5. Canonical model mapping
+## Canonical model mapping
 
 ~~~text
 Channel/API model
@@ -65,22 +68,26 @@ Channel/API model
 
 Mapping must be explicit and tested.
 
-## 6. Lossless vs lossy mapping
+## Lossless vs lossy mapping
 
 Lossless:
+
 - all required semantics preserved.
 
 Lossy:
+
 - source contains information target cannot carry.
 
 Every lossy mapping needs:
+
 - business decision ;
 - audit ;
 - fallback/storage if needed.
 
-## 7. Code lists
+## Code lists
 
 Version:
+
 - reason codes ;
 - purpose codes ;
 - country/currency ;
@@ -88,11 +95,12 @@ Version:
 
 Do not compile them invisibly into application logic without update governance.
 
-## 8. Address transition
+## Address transition
 
 The SCT Inst baseline includes an address-format evolution where unstructured address ceases to be permitted from 15 November 2026.
 
 Architecture implications:
+
 - data quality ;
 - customer/beneficiary master ;
 - mapping ;
@@ -100,27 +108,30 @@ Architecture implications:
 - regression ;
 - cutover.
 
-## 9. Backward compatibility
+## Backward compatibility
 
 During migration:
+
 - receive old/new only if scheme permits ;
 - version-specific parser ;
 - output version selected by effective date ;
 - test both until cutover.
 
-## 10. Message factory
+## Message factory
 
 Avoid building XML by string concatenation.
 
 Use:
+
 - typed model ;
 - schema-aware serialization ;
 - business validator ;
 - canonical ID generator.
 
-## 11. Golden samples
+## Golden samples
 
 Maintain:
+
 - happy path ;
 - reject examples ;
 - recall ;
@@ -131,19 +142,21 @@ Maintain:
 - special characters.
 
 Each sample:
+
 - source version ;
 - expected result ;
 - no real customer data.
 
-## 12. Contract tests
+## Contract tests
 
 Against adapter:
+
 - API input → exact ISO fields ;
 - ISO response → internal state ;
 - reason code mapping ;
 - identifier preservation.
 
-## 13. Upgrade process
+## Upgrade process
 
 ~~~text
 new EPC rulebook/IG
@@ -157,18 +170,20 @@ new EPC rulebook/IG
 → retire old version
 ~~~
 
-## 14. Governance
+## Governance
 
 Owners:
+
 - payment architect ;
 - scheme expert ;
 - application owner ;
 - operations ;
 - compliance where applicable.
 
-## 15. Evidence
+## Evidence
 
 For every scheme release archive:
+
 - rulebook ;
 - IG ;
 - XSD ;

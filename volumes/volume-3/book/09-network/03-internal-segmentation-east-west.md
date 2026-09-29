@@ -15,11 +15,11 @@ La @fig-09-002 matérialise la vue de référence de ce chapitre.
 
 *Statut : **REFERENCE_ARCHITECTURE** · Source(s) : Handbook reference architecture · Vérifié : 2026-09-29.*
 
-## 1. Objectif
+## Objectif
 
 Limiter le blast radius sans casser la disponibilité du paiement.
 
-## 2. Zones de référence
+## Zones de référence
 
 ~~~text
 Public Edge
@@ -34,18 +34,20 @@ Banking Connectivity Zone
 
 Une zone est une frontière de contrôle, pas seulement un subnet.
 
-## 3. Application Zone
+## Application Zone
 
 Expose :
+
 - APIs ;
 - orchestration ;
 - stateless services.
 
 N'accède pas directement à tout le réseau financier.
 
-## 4. Payment Zone
+## Payment Zone
 
 Contient :
+
 - Payment Hub adapters ;
 - ISO gateways ;
 - fraud/VoP connectors ;
@@ -53,9 +55,10 @@ Contient :
 
 Access tightly controlled.
 
-## 5. Data Zone
+## Data Zone
 
 Contains :
+
 - payment DB ;
 - ledger ;
 - event broker ;
@@ -64,9 +67,10 @@ Contains :
 
 Access only from explicit workloads.
 
-## 6. NetworkPolicy
+## NetworkPolicy
 
 Kubernetes/OpenShift:
+
 - default deny ;
 - allow only required source/destination/ports ;
 - namespaces explicit ;
@@ -74,9 +78,10 @@ Kubernetes/OpenShift:
 
 NetworkPolicy complements, not replaces, perimeter/network controls.
 
-## 7. Service-to-service identity
+## Service-to-service identity
 
 Use:
+
 - workload identity ;
 - mTLS ;
 - short-lived credentials ;
@@ -85,20 +90,22 @@ Use:
 
 IP address alone is not identity.
 
-## 8. Egress control
+## Egress control
 
 Critical because payment services can otherwise reach arbitrary Internet endpoints.
 
 Controls:
+
 - egress proxy ;
 - allowlist ;
 - DNS policy ;
 - TLS inspection only where legally/technically appropriate ;
 - service identity.
 
-## 9. Shared services
+## Shared services
 
 Examples:
+
 - IAM ;
 - PKI ;
 - HSM ;
@@ -107,9 +114,10 @@ Examples:
 
 They must not create an uncontrolled flat trust zone.
 
-## 10. East-West flow matrix
+## East-West flow matrix
 
 Each flow:
+
 - source workload ;
 - destination workload ;
 - protocol ;
@@ -120,9 +128,10 @@ Each flow:
 - timeout ;
 - retry.
 
-## 11. Lateral movement
+## Lateral movement
 
 Controls:
+
 - namespace isolation ;
 - least privilege ;
 - no shared admin credentials ;
@@ -130,9 +139,10 @@ Controls:
 - image trust ;
 - audit.
 
-## 12. Internal DNS
+## Internal DNS
 
 Failure modes:
+
 - stale service discovery ;
 - wrong search domain ;
 - resolver saturation ;
@@ -140,14 +150,16 @@ Failure modes:
 
 Test dependency on cluster DNS explicitly.
 
-## 13. Service mesh
+## Service mesh
 
 Potential benefits:
+
 - mTLS ;
 - traffic policy ;
 - telemetry.
 
 Risks:
+
 - added latency ;
 - sidecar/control-plane dependency ;
 - retry amplification ;
@@ -155,13 +167,13 @@ Risks:
 
 Use only where benefits justify.
 
-## 14. Retry policy
+## Retry policy
 
 Never set generic automatic retries on financial POST without idempotency semantics.
 
 Proxy/service-mesh retry must be aligned with application retry.
 
-## 15. Segmentation tests
+## Segmentation tests
 
 - unauthorized service blocked ;
 - authorized flow works ;
@@ -169,9 +181,10 @@ Proxy/service-mesh retry must be aligned with application retry.
 - one namespace compromised cannot reach DB/admin ;
 - observability access remains read-only where possible.
 
-## 16. Change management
+## Change management
 
 Firewall/NetworkPolicy changes require:
+
 - dependency map ;
 - pre-prod validation ;
 - rollback ;

@@ -9,7 +9,7 @@ primary_sources: []
 
 The platform implementation must make the Volume II invariant — one controlled financial submission per logical payment — enforceable under concurrency and crash recovery.
 
-## 1. Data model
+## Data model
 
 Conceptual tables:
 
@@ -42,7 +42,7 @@ OUTBOX
 
 The schema is illustrative. The important property is uniqueness of submission ownership, not the specific database product.
 
-## 2. API flow
+## API flow
 
 ```text
 request
@@ -56,11 +56,12 @@ request
 → emit status event
 ```
 
-## 3. Concurrency
+## Concurrency
 
 Two API replicas can receive the same logical request.
 
 Correctness must come from durable state:
+
 - unique constraint;
 - conditional update / compare-and-set;
 - serialisation strategy where justified;
@@ -68,7 +69,7 @@ Correctness must come from durable state:
 
 Do not rely on in-memory locks across replicas.
 
-## 4. Crash windows
+## Crash windows
 
 ### Crash before commit
 No durable submission claim exists. Same logical request can be retried.
@@ -82,15 +83,16 @@ State becomes uncertain. Recover through external evidence/reconciliation, not a
 ### Crash after outcome, before event publication
 Transactional Outbox permits event publication to resume without recreating the financial effect.
 
-## 5. Event deduplication
+## Event deduplication
 
 Consumers maintain an Inbox/deduplication identity when side effects are not naturally idempotent.
 
 "Exactly once" at one broker layer is not a substitute for end-to-end financial idempotency.
 
-## 6. Operator replay
+## Operator replay
 
 Replay tooling must distinguish:
+
 - republish an event;
 - rerun a projection;
 - retry a technical callback;

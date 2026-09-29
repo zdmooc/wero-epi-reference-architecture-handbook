@@ -6,6 +6,7 @@
 ## Integration contract
 
 Each figure listed below is:
+
 - rendered as SVG;
 - embedded in its canonical chapter;
 - assigned a unique Quarto figure ID `#fig-xx-xxx`;
@@ -63,6 +64,7 @@ Each figure listed below is:
 - duplicate figure IDs: **0**
 
 Two chapters intentionally contain two complementary figures:
+
 - `book/06-sct-inst/02-timing-timeout-and-reason-codes.md` → FIG-06-001 + FIG-06-002;
 - `book/13-resilience/02-bia-critical-services-rto-rpo.md` → FIG-13-001 + FIG-13-002.
 
@@ -71,6 +73,7 @@ Two chapters intentionally contain two complementary figures:
 Figure-to-chapter integration is complete.
 
 Still required before PDF/EPUB:
+
 - actual Quarto page-layout render;
 - page-break/orphan checks;
 - portrait/landscape sizing;

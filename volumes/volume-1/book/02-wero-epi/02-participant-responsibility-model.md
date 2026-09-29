@@ -17,13 +17,13 @@ La @fig-02-001 fournit la vue de référence utilisée dans ce chapitre.
 
 *Statut : **MIXED** · Source(s) : Wero merchant public model + handbook reference boundaries · Vérifié : 2026-09-29.*
 
-## 1. Pourquoi le mot Wero ne suffit pas
+## Pourquoi le mot Wero ne suffit pas
 
 Dans une conversation métier, Wero peut désigner l'expérience visible du client. Dans une architecture, cette simplification est insuffisante : la transaction traverse des responsabilités différentes, avec des contrats, des sources de vérité et des failure domains propres.
 
 Le modèle du livre part donc des rôles plutôt que des produits internes supposés.
 
-## 2. Rôles de référence
+## Rôles de référence
 
 ### Consumer
 
@@ -32,6 +32,7 @@ Le consommateur initie ou autorise une action. Son appareil, sa session, son con
 ### Consumer PSP
 
 Le PSP côté consommateur porte typiquement :
+
 - relation client ;
 - authentification ;
 - SCA lorsque requise ;
@@ -47,6 +48,7 @@ Il ne faut pas en déduire une topologie interne particulière.
 ### Wero / EPI service layer
 
 Les documents publics montrent un écosystème commun qui fournit l'expérience et la coordination Wero. Pour le livre, cette couche est modélisée par des capabilities :
+
 - enrolment/eligibility ;
 - alias/directory lorsque le parcours l'utilise ;
 - payment request ;
@@ -60,6 +62,7 @@ Le diagramme reste volontairement capability-first.
 ### Acceptor PSP
 
 Pour le commerce, le marchand passe par un PSP/acquéreur d'acceptation. Ce rôle peut inclure :
+
 - onboarding marchand ;
 - contractualisation ;
 - API/checkout ;
@@ -74,6 +77,7 @@ Pour le commerce, le marchand passe par un PSP/acquéreur d'acceptation. Ce rôl
 ### Merchant
 
 Le marchand possède la vérité commerciale :
+
 - commande ;
 - panier ;
 - livraison ;
@@ -95,7 +99,7 @@ Il reçoit l'instruction selon le scheme, effectue les contrôles prévus et ren
 
 Le CSM/infrastructure traite le message, le routage et/ou le settlement selon son modèle. Le livre ne regroupe jamais TIPS, RT1 et autres systèmes sous un comportement unique.
 
-## 3. Four-corner view
+## Four-corner view
 
 ~~~text
 Consumer                 Merchant
@@ -111,7 +115,7 @@ Consumer PSP            Acceptor PSP
 
 Cette vue est utile pour les responsabilités, mais elle ne remplace pas la séquence financière détaillée.
 
-## 4. Matrice de responsabilité conceptuelle
+## Matrice de responsabilité conceptuelle
 
 | Capability | Consumer | Consumer PSP | Wero/EPI layer | Acceptor PSP | Merchant |
 |---|---|---|---|---|---|
@@ -128,10 +132,11 @@ Cette vue est utile pour les responsabilités, mais elle ne remplace pas la séq
 
 Ce tableau est un modèle d'architecture, pas un RACI contractuel EPI.
 
-## 5. Frontières de confiance
+## Frontières de confiance
 
 ### Consumer ↔ PSP
 Risques :
+
 - phishing ;
 - device compromise ;
 - session theft ;
@@ -139,6 +144,7 @@ Risques :
 
 ### PSP ↔ Wero service
 Risques :
+
 - identity federation ;
 - API authorization ;
 - replay ;
@@ -147,6 +153,7 @@ Risques :
 
 ### Wero/PSP ↔ Acceptor
 Risques :
+
 - mismatched payment request ;
 - merchant impersonation ;
 - lost status ;
@@ -154,6 +161,7 @@ Risques :
 
 ### PSP ↔ CSM
 Risques :
+
 - network ;
 - PKI ;
 - message duplication ;
@@ -161,7 +169,7 @@ Risques :
 - status ambiguity ;
 - liquidity.
 
-## 6. Ownership des identifiants
+## Ownership des identifiants
 
 | Contexte | Exemple |
 |---|---|
@@ -176,7 +184,7 @@ Risques :
 
 Une architecture sérieuse conserve le mapping entre ces identifiants au lieu de choisir un ID universel artificiel.
 
-## 7. Responsabilité en cas d'ambiguïté
+## Responsabilité en cas d'ambiguïté
 
 Lorsqu'une réponse est perdue après une possible exécution financière, aucun acteur de présentation ne doit inventer l'état.
 
@@ -189,9 +197,10 @@ local state = UNKNOWN
 
 Le propriétaire de l'interface peut être différent du propriétaire de la vérité financière.
 
-## 8. Principe pour tout le livre
+## Principe pour tout le livre
 
 À chaque flux, le lecteur doit pouvoir répondre :
+
 1. quel rôle parle ?
 2. à quel rôle ?
 3. sur quel contrat ?

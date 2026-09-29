@@ -11,9 +11,10 @@ related_internal_repos:
 
 # Prévision de liquidité et stress 24/7
 
-## 1. Forecast horizon
+## Forecast horizon
 
 Horizons utiles :
+
 - 5 min ;
 - 15 min ;
 - 30 min ;
@@ -21,7 +22,7 @@ Horizons utiles :
 - end of constrained funding window ;
 - weekend/holiday horizon.
 
-## 2. Inputs
+## Inputs
 
 - current balance ;
 - incoming/outgoing rate ;
@@ -35,7 +36,7 @@ Horizons utiles :
 - incidents ;
 - historical percentiles.
 
-## 3. Deterministic baseline
+## Deterministic baseline
 
 Commencer simple :
 
@@ -47,9 +48,10 @@ forecast = recent trend
 
 ML est optionnel.
 
-## 4. Safety buffer
+## Safety buffer
 
 Le buffer absorbe :
+
 - forecast error ;
 - burst ;
 - temporary funding outage ;
@@ -57,32 +59,36 @@ Le buffer absorbe :
 - recovery storm.
 
 Trop faible :
+
 - rejects/outage.
 
 Trop élevé :
+
 - fragmentation/idle liquidity.
 
-## 5. Weekend profile
+## Weekend profile
 
 Instant payments continuent.
 
 Plan :
+
 - Friday/weekend opening balance ;
 - Saturday e-commerce ;
 - Sunday behavior ;
 - Monday morning transition ;
 - holidays.
 
-## 6. T2 operating-hours evolution
+## T2 operating-hours evolution
 
 Les travaux Eurosystème 2026 identifient la gestion de liquidité des instant payments comme un moteur d'extension des heures T2.
 
 Conclusion :
+
 - les procédures actuelles suivent les heures actuelles ;
 - l'architecture future doit être adaptable ;
 - une roadmap n'est pas une capacité déjà en production.
 
-## 7. Stress tests
+## Stress tests
 
 ### Volume surge
 Outgoing x5.
@@ -105,9 +111,10 @@ Balance feed delayed.
 ### Combined
 Peak + funding outage + high rejects.
 
-## 8. Test outputs
+## Test outputs
 
 Mesurer :
+
 - minimum balance ;
 - time to warning ;
 - time to critical ;
@@ -116,9 +123,10 @@ Mesurer :
 - operator actions ;
 - recovery time.
 
-## 9. Forecast quality
+## Forecast quality
 
 Metrics :
+
 - MAE/MAPE where meaningful ;
 - underforecast frequency ;
 - worst error ;
@@ -126,11 +134,13 @@ Metrics :
 - peak miss.
 
 Business metric :
+
 - number of liquidity-driven rejects.
 
-## 10. Auto-rebalance
+## Auto-rebalance
 
 Guardrails :
+
 - approved target corridor ;
 - maximum transfer ;
 - rate limit ;
@@ -138,9 +148,10 @@ Guardrails :
 - stop on abnormal route state ;
 - audit.
 
-## 11. Treasury SLO
+## Treasury SLO
 
 SLIs possibles :
+
 - balance freshness ;
 - forecast freshness ;
 - threshold alert latency ;
@@ -148,35 +159,39 @@ SLIs possibles :
 
 Aucune valeur production n'est inventée.
 
-## 12. Capacity link
+## Capacity link
 
 La capacité paiement est bornée par :
+
 - TPS technique ;
 - fonds disponibles.
 
 Un performance test sans liquidity model est incomplet.
 
-## 13. Incident mode
+## Incident mode
 
 Pendant incident :
+
 - augmenter buffer si possible ;
 - réduire mouvements non essentiels ;
 - coordonner routing ;
 - protéger visibility ;
 - suspendre automation risquée.
 
-## 14. Governance
+## Governance
 
 Forecast model change :
+
 - version ;
 - backtest ;
 - approval ;
 - monitored rollout ;
 - rollback.
 
-## 15. Audit
+## Audit
 
 Pour un incident liquidité, préserver :
+
 - balances ;
 - forecasts ;
 - alerts ;

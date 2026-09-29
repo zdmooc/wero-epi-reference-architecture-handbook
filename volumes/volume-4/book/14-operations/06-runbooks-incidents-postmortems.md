@@ -16,18 +16,20 @@ La @fig-14-004 complète la lecture de ce chapitre avec la vue de référence co
 
 *Statut : **REFERENCE_ARCHITECTURE** · Source(s) : Handbook reference architecture · Vérifié : 2026-09-29.*
 
-## 1. Incident starts with business impact
+## Incident starts with business impact
 
 First questions:
+
 - can customers pay ?
 - can merchants receive status ?
 - are payments UNKNOWN ?
 - is settlement affected ?
 - is liquidity affected ?
 
-## 2. Severity
+## Severity
 
 Consider:
+
 - customers ;
 - value/volume ;
 - duration ;
@@ -36,7 +38,7 @@ Consider:
 - security ;
 - data integrity.
 
-## 3. Roles
+## Roles
 
 - incident commander ;
 - technical lead ;
@@ -47,7 +49,7 @@ Consider:
 - treasury ;
 - supplier liaison.
 
-## 4. Timeline
+## Timeline
 
 ~~~text
 detect
@@ -61,9 +63,10 @@ detect
 → postmortem
 ~~~
 
-## 5. Runbook structure
+## Runbook structure
 
 Every runbook:
+
 - trigger ;
 - impact ;
 - checks ;
@@ -73,7 +76,7 @@ Every runbook:
 - recovery ;
 - evidence.
 
-## 6. UNKNOWN runbook
+## UNKNOWN runbook
 
 1. find payment ;
 2. freeze blind retry ;
@@ -84,9 +87,10 @@ Every runbook:
 7. update state ;
 8. notify.
 
-## 7. Reject spike
+## Reject spike
 
 Check:
+
 - deployment ;
 - scheme version ;
 - message validation ;
@@ -96,9 +100,10 @@ Check:
 - liquidity ;
 - certificate.
 
-## 8. Latency spike
+## Latency spike
 
 Trace:
+
 - edge ;
 - IAM ;
 - risk ;
@@ -108,7 +113,7 @@ Trace:
 - CSM ;
 - beneficiary.
 
-## 9. Certificate incident
+## Certificate incident
 
 - identify cert ;
 - issuer/trust ;
@@ -118,7 +123,7 @@ Trace:
 - restore ;
 - reconcile impact.
 
-## 10. Supplier outage
+## Supplier outage
 
 - engage supplier ;
 - verify alternate path ;
@@ -126,25 +131,27 @@ Trace:
 - track SLA ;
 - preserve evidence.
 
-## 11. Communication
+## Communication
 
 Do not state payment failed if UNKNOWN.
 
 Customer communication should be accurate:
+
 - delayed ;
 - being verified ;
 - completed ;
 - rejected when certain.
 
-## 12. DORA incident reporting
+## DORA incident reporting
 
 Current ESA operational instructions support consistent reporting of major ICT incidents but explicitly do not constitute legal interpretation.
 
 The institution must use current legal/ITS criteria and competent authority process.
 
-## 13. Postmortem
+## Postmortem
 
 Include:
+
 - impact ;
 - timeline ;
 - root/contributing causes ;
@@ -154,13 +161,14 @@ Include:
 - reconciliation ;
 - actions.
 
-## 14. No-blame vs accountability
+## No-blame vs accountability
 
 Focus on system/process causes while preserving ownership of remediation and control decisions.
 
-## 15. Action tracking
+## Action tracking
 
 Each action:
+
 - owner ;
 - deadline ;
 - risk ;

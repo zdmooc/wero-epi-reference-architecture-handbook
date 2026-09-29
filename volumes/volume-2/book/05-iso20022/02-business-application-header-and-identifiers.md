@@ -16,15 +16,16 @@ La @fig-05-002 fournit la vue de référence utilisée dans ce chapitre.
 
 *Statut : **REFERENCE_ARCHITECTURE** · Source(s) : Handbook reference architecture · Vérifié : 2026-09-29.*
 
-## 1. Pourquoi l'identification est critique
+## Pourquoi l'identification est critique
 
 Dans un incident, retrouver le XML ne suffit pas. Il faut relier l'intention client, le paiement interne, le message inter-PSP, l'événement technique et le settlement.
 
-## 2. Business Application Header
+## Business Application Header
 
 Le BAH fournit un cadre applicatif autour du message métier.
 
 Champs conceptuels :
+
 - From ;
 - To ;
 - Business Message Identifier ;
@@ -35,9 +36,10 @@ Champs conceptuels :
 
 Le contenu exact dépend du profil utilisé par le scheme/infrastructure.
 
-## 3. Message identity vs transaction identity
+## Message identity vs transaction identity
 
 Ne pas confondre :
+
 - message identifier : identifie une enveloppe/message ;
 - instruction identifier : identifie une instruction dans le contexte de l'émetteur ;
 - EndToEndId : corrélation de bout en bout ;
@@ -46,7 +48,7 @@ Ne pas confondre :
 
 Un resend technique peut créer un nouveau messageId sans créer un nouveau paiement logique si le contrat le prévoit.
 
-## 4. Correlation chain
+## Correlation chain
 
 ~~~text
 merchantOrderId
@@ -63,9 +65,10 @@ merchantOrderId
 ↔ traceId
 ~~~
 
-## 5. Uniqueness
+## Uniqueness
 
 Pour chaque identifiant définir :
+
 - scope d'unicité ;
 - générateur ;
 - longueur/format ;
@@ -73,9 +76,10 @@ Pour chaque identifiant définir :
 - collision handling ;
 - propagation.
 
-## 6. EndToEndId
+## EndToEndId
 
 Utilité :
+
 - relier origine et bénéficiaire ;
 - investigation ;
 - reconciliation ;
@@ -83,18 +87,20 @@ Utilité :
 
 Ne pas le surcharger avec des données personnelles ou une signification métier fragile.
 
-## 7. MsgId
+## MsgId
 
 Le MsgId sert au message. Il peut être utilisé pour :
+
 - duplicate detection ;
 - acknowledgement ;
 - investigation.
 
 Il ne doit pas devenir la seule clé de l'objet Payment.
 
-## 8. Original references
+## Original references
 
 Messages de return/recall/investigation ont besoin de références vers l'original :
+
 - original message ID ;
 - original instruction ;
 - original end-to-end ;
@@ -102,7 +108,7 @@ Messages de return/recall/investigation ont besoin de références vers l'origin
 
 Conserver ces liens durablement.
 
-## 9. Mapping database
+## Mapping database
 
 Table de référence :
 
@@ -111,15 +117,16 @@ Table de référence :
 
 Un paiement peut avoir plusieurs messages au cours de son cycle.
 
-## 10. Observability identity
+## Observability identity
 
 traceId n'est pas financial identity.
 
 Après expiration des traces, le support doit encore retrouver le paiement par ses identifiants métier/financiers.
 
-## 11. Privacy
+## Privacy
 
 Ne pas intégrer dans les IDs :
+
 - nom ;
 - téléphone ;
 - e-mail ;
@@ -127,9 +134,10 @@ Ne pas intégrer dans les IDs :
 
 Préférer des identifiants opaques.
 
-## 12. Clock and timestamps
+## Clock and timestamps
 
 Store:
+
 - business occurrence ;
 - message creation ;
 - local receipt ;
@@ -139,18 +147,20 @@ Store:
 
 Utiliser une référence temporelle cohérente et gérer les time zones explicitement.
 
-## 13. Replay
+## Replay
 
 Le système doit distinguer :
+
 - same message replay ;
 - same payment new message ;
 - new payment.
 
 Cette distinction est essentielle pour la sécurité financière.
 
-## 14. Support case
+## Support case
 
 Un agent support saisit idéalement :
+
 - paymentId ;
 - orderId ;
 - EndToEndId ;
@@ -158,7 +168,7 @@ Un agent support saisit idéalement :
 
 Le système rassemble ensuite toute la chaîne au lieu d'exiger une recherche manuelle dans plusieurs logs.
 
-## 15. Design review
+## Design review
 
 - chaque identifiant a-t-il un owner ?
 - où est-il créé ?

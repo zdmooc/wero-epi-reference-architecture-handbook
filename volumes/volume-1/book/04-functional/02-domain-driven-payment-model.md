@@ -10,11 +10,11 @@ related_internal_repos:
 
 # Domain-Driven Design appliqué au paiement
 
-## 1. Pourquoi le découpage métier compte
+## Pourquoi le découpage métier compte
 
 Un microservice par table ou endpoint n'est pas une architecture métier. Le paiement exige des frontières où les invariants restent cohérents.
 
-## 2. Bounded contexts de référence
+## Bounded contexts de référence
 
 ### Customer
 Customer identity reference, eligibility, preferences, device relation.
@@ -46,7 +46,7 @@ Local vs external truth, breaks, recovery, investigation.
 ### Notification
 Customer notification, merchant webhook, delivery state.
 
-## 3. Aggregate Payment
+## Aggregate Payment
 
 ~~~text
 Payment
@@ -63,14 +63,16 @@ Payment
 ~~~
 
 Invariants :
+
 - one businessKey → one logical payment ;
 - amount immutable after authorization ;
 - terminal financial states controlled ;
 - every transition auditable.
 
-## 4. Aggregate PaymentRequest
+## Aggregate PaymentRequest
 
 Merchant-owned request :
+
 - paymentRequestId ;
 - merchantOrderId ;
 - expected amount ;
@@ -80,7 +82,7 @@ Merchant-owned request :
 
 Un PaymentRequest expiré ne signifie pas qu'une opération financière déjà soumise a échoué.
 
-## 5. Aggregate Refund
+## Aggregate Refund
 
 - refundId ;
 - originalPaymentId ;
@@ -89,30 +91,35 @@ Un PaymentRequest expiré ne signifie pas qu'une opération financière déjà s
 - state ;
 - idempotency key.
 
-## 6. Value objects
+## Value objects
 
 Money :
+
 - amount ;
 - currency ;
 - exact decimal handling.
 
 PaymentIdentity :
+
 - internal ID ;
 - EndToEndId ;
 - TxId mapping.
 
 Beneficiary :
+
 - account/party references ;
 - verification context.
 
 Reason :
+
 - scheme code ;
 - internal category ;
 - customer-safe text.
 
-## 7. Domain events
+## Domain events
 
 Events expriment des faits :
+
 - PaymentIntentCreated ;
 - PaymentAuthorized ;
 - PaymentSubmitted ;
@@ -124,7 +131,7 @@ Events expriment des faits :
 
 Ne pas publier une commande comme si elle était déjà un fait.
 
-## 8. Commands
+## Commands
 
 - CreatePayment ;
 - AuthorizePayment ;
@@ -134,7 +141,7 @@ Ne pas publier une commande comme si elle était déjà un fait.
 
 Une commande peut échouer.
 
-## 9. Anti-corruption layer
+## Anti-corruption layer
 
 ~~~text
 Payment Domain
@@ -144,11 +151,12 @@ Payment Domain
 
 Le domain model ne doit pas hériter de tous les codes historiques.
 
-## 10. Canonical model caution
+## Canonical model caution
 
 Un canonical model est utile aux frontières d'intégration, mais peut devenir surdimensionné.
 
 Conserver :
+
 - identifiers ;
 - money ;
 - parties essentielles ;
@@ -157,31 +165,35 @@ Conserver :
 
 Éviter le super-objet global.
 
-## 11. Transaction boundary
+## Transaction boundary
 
 Garder atomiques localement :
+
 - Payment + idempotency claim ;
 - Payment + Outbox ;
 - refund amount reservation + refund entity.
 
 Ne pas chercher une transaction ACID distribuée avec un CSM externe.
 
-## 12. Eventual consistency
+## Eventual consistency
 
 Acceptable pour :
+
 - analytics ;
 - notification ;
 - reporting ;
 - non-authoritative views.
 
 Pas une excuse pour :
+
 - double effet financier ;
 - ledger incohérent ;
 - double writer.
 
-## 13. Domain ownership
+## Domain ownership
 
 Chaque bounded context a :
+
 - owner team ;
 - API/event contract ;
 - data owner ;
@@ -189,7 +201,7 @@ Chaque bounded context a :
 - runbook ;
 - change policy.
 
-## 14. Design review questions
+## Design review questions
 
 - where is the invariant enforced ?
 - what happens under concurrency ?

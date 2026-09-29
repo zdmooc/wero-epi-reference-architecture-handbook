@@ -10,13 +10,14 @@ related_internal_repos:
 
 # Matrice des flux, budget de latence et failure budget
 
-## 1. Une architecture réseau doit être exploitable
+## Une architecture réseau doit être exploitable
 
 Un joli diagramme n'est pas suffisant. Il faut une matrice de flux.
 
-## 2. Flow record
+## Flow record
 
 Fields:
+
 - flowId ;
 - source ;
 - destination ;
@@ -31,7 +32,7 @@ Fields:
 - criticality ;
 - owner.
 
-## 3. Example
+## Example
 
 | ID | Source | Destination | Protocol | Auth | Critical |
 |---|---|---|---|---|---|
@@ -43,20 +44,22 @@ Fields:
 | F06 | Rail Adapter | CSM | scheme channel | cert | yes |
 | F07 | Acceptor | Merchant | HTTPS | signed webhook | yes |
 
-## 4. Timeout hierarchy
+## Timeout hierarchy
 
 Avoid contradiction:
+
 - proxy timeout 2s ;
 - app timeout 5s ;
 - client timeout 3s.
 
 Define top-down budget.
 
-## 5. SCT Inst timing context
+## SCT Inst timing context
 
 The scheme/regulatory timing creates an end-to-end constraint.
 
 Architecture must allocate margin between:
+
 - channel ;
 - API ;
 - risk ;
@@ -65,9 +68,10 @@ Architecture must allocate margin between:
 - CSM ;
 - beneficiary.
 
-## 6. Tail latency
+## Tail latency
 
 Track:
+
 - p50 ;
 - p95 ;
 - p99 ;
@@ -76,9 +80,10 @@ Track:
 
 Tail determines customer timeouts and UNKNOWN risk.
 
-## 7. Connection setup
+## Connection setup
 
 Latency components:
+
 - DNS ;
 - TCP ;
 - TLS ;
@@ -88,19 +93,21 @@ Latency components:
 
 Use persistent secure connections where safe to avoid repeated setup cost.
 
-## 8. Packet loss
+## Packet loss
 
 Small packet loss can amplify latency with retransmissions.
 
 Monitor:
+
 - loss ;
 - retransmit ;
 - reset ;
 - handshake failure.
 
-## 9. Failure budget
+## Failure budget
 
 For each dependency:
+
 - detection time ;
 - failover time ;
 - retry allowance ;
@@ -115,44 +122,49 @@ total customer budget
 = safety margin
 ~~~
 
-## 10. Queueing
+## Queueing
 
 At high load, queues dominate latency.
 
 Monitor:
+
 - request queue ;
 - thread pool ;
 - DB pool ;
 - broker lag ;
 - network appliance queue.
 
-## 11. Timeout storm
+## Timeout storm
 
 If dependency slows:
+
 - callers timeout ;
 - retry ;
 - more load ;
 - further slowdown.
 
 Controls:
+
 - bounded retry ;
 - circuit breaker ;
 - backpressure ;
 - queue limits ;
 - load shedding on non-critical features.
 
-## 12. Financial retry
+## Financial retry
 
 Network retry must never bypass idempotency.
 
 For uncertain financial effect:
+
 - stop ;
 - mark UNKNOWN ;
 - reconcile.
 
-## 13. Synthetic checks
+## Synthetic checks
 
 Safe checks can verify:
+
 - DNS ;
 - TLS ;
 - route ;
@@ -161,18 +173,20 @@ Safe checks can verify:
 
 Do not create real money movement just for basic network health.
 
-## 14. Change impact
+## Change impact
 
 Any network change should identify affected flow IDs.
 
 This enables:
+
 - targeted testing ;
 - rollback ;
 - audit.
 
-## 15. Deliverables
+## Deliverables
 
 Network chapter should produce:
+
 - zone diagram ;
 - flow matrix ;
 - certificate inventory ;

@@ -1,6 +1,6 @@
 # Annexe — Checklists professionnelles
 
-## A. Architecture paiement
+## Architecture paiement
 
 - [ ] acteurs et responsabilités identifiés
 - [ ] état commercial séparé de l'état financier
@@ -15,7 +15,7 @@
 - [ ] rail/CSM/settlement explicités
 - [ ] source de finalité identifiée
 
-## B. Réseau
+## Réseau
 
 - [ ] diagramme zones
 - [ ] matrice des flux
@@ -36,7 +36,7 @@
 - [ ] NAT/ephemeral ports capacity
 - [ ] MTU/path tests if needed
 
-## C. API / EDA
+## API / EDA
 
 - [ ] OpenAPI
 - [ ] idempotency semantics
@@ -52,7 +52,7 @@
 - [ ] replay control
 - [ ] AsyncAPI/event catalogue where useful
 
-## D. Data
+## Data
 
 - [ ] system of record by entity
 - [ ] payment state versioning
@@ -68,7 +68,7 @@
 - [ ] RPO per failure domain
 - [ ] fencing/quorum
 
-## E. Security
+## Security
 
 - [ ] customer IAM
 - [ ] SCA
@@ -88,7 +88,7 @@
 - [ ] incident response
 - [ ] supply-chain controls
 
-## F. Kubernetes / OpenShift
+## Kubernetes / OpenShift
 
 - [ ] replicas
 - [ ] topology spread
@@ -107,7 +107,7 @@
 - [ ] operators version compatibility
 - [ ] multi-zone dependencies checked
 
-## G. Résilience
+## Résilience
 
 - [ ] business service defined
 - [ ] BIA
@@ -126,7 +126,7 @@
 - [ ] cyber recovery
 - [ ] third-party outage
 
-## H. DORA
+## DORA
 
 - [ ] governance owner
 - [ ] ICT risk framework mapping
@@ -143,7 +143,7 @@
 - [ ] register of information
 - [ ] evidence matrix
 
-## I. SRE / Production Readiness
+## SRE / Production Readiness
 
 - [ ] on-call
 - [ ] service ownership
@@ -164,7 +164,7 @@
 - [ ] reconciliation ops
 - [ ] liquidity monitoring
 
-## J. Publication quality
+## Publication quality
 
 - [ ] public facts source primaire
 - [ ] dates de vérification

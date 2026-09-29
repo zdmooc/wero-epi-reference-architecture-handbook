@@ -13,7 +13,7 @@ related_internal_repos:
 
 # Partie XIV — Interopérabilité, Digital Euro et architecture européenne future
 
-## 1. Deux transformations simultanées
+## Deux transformations simultanées
 
 L'architecture des paiements européens évolue sur deux axes :
 
@@ -22,22 +22,24 @@ L'architecture des paiements européens évolue sur deux axes :
 
 Le livre refuse le faux dilemme « Wero ou digital euro ». Les rôles économiques et techniques sont différents.
 
-## 2. Wero
+## Wero
 
 Wero est une solution privée européenne de paiement portée par EPI.
 
 Son architecture publique s'appuie sur :
+
 - PSP participants ;
 - services Consumer / Merchant ;
 - paiements account-to-account ;
 - SCT Inst pour les usages concernés ;
 - intégrations avec acquéreurs/merchants.
 
-## 3. Digital euro
+## Digital euro
 
 Le digital euro est un projet Eurosystème de monnaie banque centrale numérique de détail.
 
 Au 28 septembre 2026 :
+
 - 36 PSP ont été sélectionnés pour participer au pilote ;
 - le pilote est prévu au second semestre 2027 pour douze mois ;
 - la BCE vise une préparation permettant une éventuelle première émission en 2029 sous hypothèse d'adoption du règlement européen ;
@@ -45,11 +47,12 @@ Au 28 septembre 2026 :
 
 Le livre ne le présente donc pas comme déjà émis.
 
-## 4. Complémentarité public / privé
+## Complémentarité public / privé
 
 La BCE décrit explicitement une stratégie de complémentarité entre digital euro et moyens de paiement privés européens.
 
 Axes évoqués publiquement :
+
 - standards communs ;
 - co-badging dans certains contextes ;
 - réutilisation de standards européens ;
@@ -57,7 +60,7 @@ Axes évoqués publiquement :
 
 Le livre traduit cela en **hypothèses d'architecture**, pas en intégration Wero confirmée.
 
-## 5. Architecture conceptuelle 2030
+## Architecture conceptuelle 2030
 
 ```text
 Customer / Merchant
@@ -80,7 +83,7 @@ Settlement / central bank infrastructure
 
 Cette vue exprime une coexistence possible ; elle ne préjuge pas du modèle final.
 
-## 6. Interopérabilité entre solutions européennes
+## Interopérabilité entre solutions européennes
 
 L'interopérabilité peut exister à plusieurs niveaux :
 
@@ -102,12 +105,13 @@ QR, request-to-pay, API, ISO, identity.
 ### Settlement
 Différents instruments peuvent finir dans des mécanismes distincts tout en partageant certaines infrastructures.
 
-## 7. Ce que signifie « interoperable »
+## Ce que signifie « interoperable »
 
 Ne pas réduire à :
 “les deux apps parlent directement”.
 
 Interopérabilité peut signifier :
+
 - common acceptance ;
 - common technical standard ;
 - directory federation ;
@@ -116,11 +120,12 @@ Interopérabilité peut signifier :
 - co-badging ;
 - merchant terminal compatibility.
 
-## 8. Cross-border instant payments
+## Cross-border instant payments
 
 SCT Inst fournit déjà une base paneuropéenne pour les virements instantanés en euro.
 
 Les architectures futures doivent traiter :
+
 - reachability ;
 - multi-CSM ;
 - participant routing ;
@@ -130,13 +135,13 @@ Les architectures futures doivent traiter :
 - one-leg-out scenarios lorsque scheme adapté ;
 - global fast-payment interlinking.
 
-## 9. One-Leg-Out
+## One-Leg-Out
 
 Les use cases One-Leg-Out Instant Credit Transfer appartiennent à un cadre scheme distinct.
 
 Le livre les présente comme extension cross-border et ne mélange pas automatiquement leurs règles avec SCT Inst intra-SEPA.
 
-## 10. FX
+## FX
 
 Lorsqu'un paiement traverse des devises :
 
@@ -151,22 +156,24 @@ payment initiation
 ```
 
 L'FX introduit :
+
 - rate risk ;
 - quote expiry ;
 - spread/fees ;
 - multiple settlement assets ;
 - additional timeouts.
 
-## 11. Digital identity
+## Digital identity
 
 Le cadre européen d'identité numérique peut fournir à terme des building blocks d'identité utilisables par les PSP et wallets.
 
 Mais :
+
 - identité numérique ≠ consentement paiement ;
 - wallet identité ≠ wallet paiement ;
 - authentification ≠ autorisation financière.
 
-## 12. Agentic commerce
+## Agentic commerce
 
 Une tendance future est l'usage d'agents logiciels pour rechercher, négocier ou initier des achats.
 
@@ -186,9 +193,10 @@ financial execution
 
 L'agent ne reçoit pas un droit illimité de déplacer des fonds.
 
-## 13. Programmable services
+## Programmable services
 
 La programmabilité pertinente peut concerner :
+
 - règles de consentement ;
 - recurring ;
 - conditional merchant flow ;
@@ -198,20 +206,22 @@ La programmabilité pertinente peut concerner :
 
 Le livre évite le terme “programmable money” lorsqu'il s'agit seulement d'une règle applicative autour d'un paiement.
 
-## 14. Tokenisation et wholesale
+## Tokenisation et wholesale
 
 Les travaux Eurosystème sur tokenisation/wholesale sont une trajectoire distincte des paiements retail Wero.
 
 Les architectures futures peuvent néanmoins converger sur :
+
 - digital identity ;
 - programmable settlement ;
 - central bank money ;
 - interoperability ;
 - common standards.
 
-## 15. Post-quantum
+## Post-quantum
 
 La durée de vie de certains certificats et signatures impose de suivre :
+
 - standards PQC ;
 - crypto-agility ;
 - inventory ;
@@ -221,11 +231,12 @@ La durée de vie de certains certificats et signatures impose de suivre :
 
 Le livre classe ce sujet WATCH tant que les exigences opérationnelles Wero/SCT Inst ne l'imposent pas directement.
 
-## 16. Green IT
+## Green IT
 
 L'instant payment 24/7 doit être performant sans surprovisionnement aveugle.
 
 Principes :
+
 - rightsizing ;
 - autoscaling contrôlé ;
 - efficient logging ;
@@ -236,7 +247,7 @@ Principes :
 
 La résilience ne doit pas être sacrifiée au Green IT ; le bon objectif est supprimer le gaspillage sans réduire les safety margins indispensables.
 
-## 17. Architecture européenne 2030 — principes
+## Architecture européenne 2030 — principes
 
 Le livre retient dix principes durables :
 
@@ -251,9 +262,10 @@ Le livre retient dix principes durables :
 9. public/private complementarity ;
 10. interoperability without collapsing all schemes into one system.
 
-## 18. Watchlist annuelle
+## Watchlist annuelle
 
 Chaque édition revalide :
+
 - Wero country/capability coverage ;
 - EPI participant/acquirer announcements ;
 - EPC SCT Inst / VoP ;
@@ -267,6 +279,6 @@ Chaque édition revalide :
 - tokenised settlement ;
 - PQC.
 
-## 19. Conclusion
+## Conclusion
 
 La meilleure architecture future n'est pas celle qui prédit un produit gagnant. C'est celle qui garde les couches découplées : expérience, instrument, scheme, message, rail, settlement, identity et infrastructure peuvent évoluer sans imposer une réécriture complète.

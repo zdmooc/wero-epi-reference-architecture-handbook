@@ -10,9 +10,10 @@ related_internal_repos:
 
 # Tiers ICT, concentration, exit strategy et cyber recovery
 
-## 1. Dependency inventory
+## Dependency inventory
 
 For each provider:
+
 - service ;
 - critical business service supported ;
 - data ;
@@ -23,11 +24,12 @@ For each provider:
 - RTO/RPO ;
 - exit path.
 
-## 2. Criticality
+## Criticality
 
 Not all suppliers equal.
 
 Critical examples:
+
 - cloud/hosting ;
 - banking connectivity ;
 - HSM ;
@@ -36,9 +38,10 @@ Critical examples:
 - payment processor ;
 - CSM technical provider.
 
-## 3. Concentration risk
+## Concentration risk
 
 Questions:
+
 - same provider for primary and DR ?
 - same telecom backbone ?
 - same cloud region group ?
@@ -47,7 +50,7 @@ Questions:
 
 Apparent diversity can hide common dependency.
 
-## 4. Subcontractor chain
+## Subcontractor chain
 
 Map:
 ~~~text
@@ -59,9 +62,10 @@ Financial Entity
 
 Need visibility proportionate to criticality and legal requirements.
 
-## 5. Contract architecture
+## Contract architecture
 
 Technical requirements reflected in contract:
+
 - availability ;
 - incident notification ;
 - support ;
@@ -72,11 +76,12 @@ Technical requirements reflected in contract:
 - exit ;
 - data return/deletion.
 
-## 6. Exit strategy
+## Exit strategy
 
 Exit is executable architecture.
 
 Steps:
+
 1. inventory data/config ;
 2. deploy alternate service ;
 3. migrate ;
@@ -87,9 +92,10 @@ Steps:
 8. reconcile ;
 9. delete/return data as required.
 
-## 7. Exit RTO
+## Exit RTO
 
 Measure:
+
 - procurement not just technical ;
 - build ;
 - data migration ;
@@ -98,20 +104,22 @@ Measure:
 - certification ;
 - cutover.
 
-## 8. Portability
+## Portability
 
 Reduce proprietary coupling where sensible:
+
 - standard APIs ;
 - export formats ;
 - IaC ;
 - container portability ;
 - abstraction only where it adds real value.
 
-## 9. Cyber recovery
+## Cyber recovery
 
 Different from normal DR.
 
 Assume:
+
 - primary compromised ;
 - backup may be compromised ;
 - credentials stolen ;
@@ -119,7 +127,7 @@ Assume:
 
 Need clean-room/trusted recovery concept.
 
-## 10. Clean recovery
+## Clean recovery
 
 - known-good images ;
 - isolated environment ;
@@ -128,30 +136,32 @@ Need clean-room/trusted recovery concept.
 - controlled reconnect ;
 - reconciliation.
 
-## 11. Immutable evidence
+## Immutable evidence
 
 Protect:
+
 - audit ;
 - security logs ;
 - backups ;
 - deployment provenance.
 
-## 12. Provider compromise
+## Provider compromise
 
 Actions:
+
 - isolate integration ;
 - rotate secrets ;
 - identify affected transactions ;
 - switch provider if possible ;
 - reconcile.
 
-## 13. DORA register/evidence
+## DORA register/evidence
 
 Maintain provider data and contractual/operational information required by governance.
 
 The book does not claim legal completeness; use current RTS/ITS and compliance interpretation.
 
-## 14. Exercises
+## Exercises
 
 - cloud region/provider issue ;
 - telecom provider failure ;
@@ -160,6 +170,6 @@ The book does not claim legal completeness; use current RTS/ITS and compliance i
 - compromised technical provider ;
 - exit tabletop.
 
-## 15. Principle
+## Principle
 
 A provider SLA is not a resilience strategy. The financial entity must know how the service continues or exits when the provider is unavailable.

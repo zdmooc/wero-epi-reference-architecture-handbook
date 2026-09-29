@@ -9,9 +9,10 @@ related_internal_repos:
 
 # Capacity planning, performance et load testing
 
-## 1. Capacity is end-to-end
+## Capacity is end-to-end
 
 Bottleneck can be:
+
 - API ;
 - CPU ;
 - DB ;
@@ -22,9 +23,10 @@ Bottleneck can be:
 - rail ;
 - liquidity.
 
-## 2. Workload model
+## Workload model
 
 Define:
+
 - normal TPS ;
 - peak TPS ;
 - burst ;
@@ -34,9 +36,10 @@ Define:
 - webhook ;
 - inquiry.
 
-## 3. Business peaks
+## Business peaks
 
 Examples:
+
 - salary ;
 - lunch ;
 - weekends ;
@@ -45,9 +48,10 @@ Examples:
 - ticket launch ;
 - incident recovery.
 
-## 4. Performance percentiles
+## Performance percentiles
 
 Measure:
+
 - p50 ;
 - p95 ;
 - p99 ;
@@ -56,7 +60,7 @@ Measure:
 
 Average is insufficient.
 
-## 5. Load test types
+## Load test types
 
 ### Baseline
 Normal volume.
@@ -76,9 +80,10 @@ Backlog after outage.
 ### Failure under load
 Kill component during peak.
 
-## 6. Data realism
+## Data realism
 
 Use:
+
 - realistic payload sizes ;
 - key distributions ;
 - merchant mix ;
@@ -86,9 +91,10 @@ Use:
 
 Do not use real PII.
 
-## 7. DB capacity
+## DB capacity
 
 Metrics:
+
 - TPS ;
 - query latency ;
 - locks ;
@@ -97,7 +103,7 @@ Metrics:
 - WAL/log ;
 - replication lag.
 
-## 8. Broker capacity
+## Broker capacity
 
 - producer throughput ;
 - consumer lag ;
@@ -105,14 +111,14 @@ Metrics:
 - disk ;
 - recovery throughput.
 
-## 9. HSM capacity
+## HSM capacity
 
 - crypto ops/s ;
 - sessions ;
 - latency ;
 - failover capacity.
 
-## 10. Network capacity
+## Network capacity
 
 - bandwidth ;
 - packets ;
@@ -121,44 +127,49 @@ Metrics:
 - NAT ports ;
 - loss.
 
-## 11. Autoscaling
+## Autoscaling
 
 Scale before saturation when possible.
 
 But downstream must support extra load.
 
 HPA cannot fix:
+
 - DB max connections ;
 - CSM rate limit ;
 - HSM saturation.
 
-## 12. Backpressure
+## Backpressure
 
 When downstream slower:
+
 - queue bounded ;
 - reject/slow according to policy ;
 - protect system ;
 - do not create retry storm.
 
-## 13. Headroom
+## Headroom
 
 Capacity target includes:
+
 - forecast growth ;
 - failure capacity ;
 - recovery backlog ;
 - maintenance.
 
-## 14. Capacity review
+## Capacity review
 
 Cadence:
+
 - weekly trend ;
 - monthly forecast ;
 - before major campaign ;
 - after architecture change.
 
-## 15. Evidence
+## Evidence
 
 Performance claim requires:
+
 - environment ;
 - dataset ;
 - topology ;

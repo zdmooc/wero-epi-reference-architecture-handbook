@@ -10,11 +10,11 @@ primary_sources:
 
 # Runtime evidence and failure-test ladder
 
-## 1. Evidence follows the failure domain
+## Evidence follows the failure domain
 
 A test is evidence only for the property and environment actually exercised.
 
-## 2. Ladder
+## Ladder
 
 ### Level 1 — process/container
 - startup failure;
@@ -53,9 +53,10 @@ A test is evidence only for the property and environment actually exercised.
 - reconciliation resolves UNKNOWN;
 - no second financial effect.
 
-## 3. Evidence record
+## Evidence record
 
 Each test record should contain:
+
 - test ID;
 - build/config SHA;
 - environment topology;
@@ -68,11 +69,12 @@ Each test record should contain:
 - pass/fail;
 - residual risk.
 
-## 4. Critical rule
+## Critical rule
 
 A successful pod restart is not evidence of site resilience.
 
 A successful site switch is not sufficient evidence of payment correctness unless the test also proves:
+
 - only one writer/submission authority;
 - no duplicate external effect;
 - state convergence;

@@ -20,7 +20,7 @@ La @fig-03-001 fournit la vue de référence utilisée dans ce chapitre.
 
 *Statut : **REFERENCE_ARCHITECTURE** · Source(s) : Handbook reference architecture + public Wero commerce context · Vérifié : 2026-09-29.*
 
-## 1. Règle de modélisation
+## Règle de modélisation
 
 Chaque parcours est décrit avec quatre lignes de vie indépendantes :
 
@@ -33,7 +33,7 @@ FINANCIAL / SETTLEMENT STATE
 
 Un système robuste ne fusionne pas ces états.
 
-## 2. P2P — parcours conceptuel
+## P2P — parcours conceptuel
 
 ```text
 Payer
@@ -71,7 +71,7 @@ Beneficiary
 - le statut affiché doit être corrélé au même paiement ;
 - un timeout après soumission ne doit pas produire automatiquement un nouveau paiement.
 
-## 3. E-commerce desktop
+## E-commerce desktop
 
 Le parcours public Wero montre un QR affiché dans le navigateur et une validation sur mobile.
 
@@ -119,6 +119,7 @@ Browser
 ### Point critique : redirect ≠ règlement
 
 Le navigateur peut :
+
 - être fermé ;
 - perdre le réseau ;
 - être redirigé avant la réception du statut marchand ;
@@ -127,7 +128,7 @@ Le navigateur peut :
 
 Le merchant backend doit donc s'appuyer sur un statut de paiement autoritatif via son PSP/intégration, pas uniquement sur le redirect.
 
-## 4. E-commerce mobile / app-to-app
+## E-commerce mobile / app-to-app
 
 Le principe est semblable mais la frontière UX change :
 
@@ -152,6 +153,7 @@ Merchant App
 ```
 
 Risques :
+
 - callback d'application falsifié ;
 - retour au mauvais orderId ;
 - double clic ;
@@ -159,13 +161,14 @@ Risques :
 - statut marchand en retard.
 
 Contrôles :
+
 - contexte signé ou opaque ;
 - correlation IDs ;
 - authoritative backend status ;
 - idempotency ;
 - timeout avec refresh actif.
 
-## 5. In-store QR dynamique
+## In-store QR dynamique
 
 Le QR dynamique est associé à une transaction précise.
 
@@ -200,18 +203,19 @@ POS closes sale
 - impossibilité de réutiliser le même payment request pour un second effet financier ;
 - POS ferme la vente sur statut backend, pas sur capture visuelle côté client.
 
-## 6. QR statique
+## QR statique
 
 Le QR statique peut référencer un marchand ou point d'acceptation et déclencher ensuite la saisie/récupération du montant.
 
 Il augmente l'importance de :
+
 - l'authenticité du QR ;
 - l'affichage du nom marchand dans le wallet ;
 - la validation du montant ;
 - la détection de substitution de sticker ;
 - la géographie ou le contexte si utilisé comme signal antifraude.
 
-## 7. Refund
+## Refund
 
 Le refund est un **nouveau mouvement financier lié au paiement initial**.
 
@@ -230,13 +234,14 @@ Merchant + consumer notified
 ```
 
 Invariants :
+
 - `refundId != paymentId` ;
 - montant cumulé remboursé contrôlé ;
 - même idempotency key → même refund ;
 - audit séparé ;
 - pas de modification rétroactive du ledger initial.
 
-## 8. Return vs Recall
+## Return vs Recall
 
 Le livre sépare strictement :
 
@@ -246,7 +251,7 @@ Le livre sépare strictement :
 
 Ces notions ne sont pas interchangeables.
 
-## 9. Recurring / subscription
+## Recurring / subscription
 
 Un recurring payment exige de séparer :
 
@@ -264,7 +269,7 @@ Revocation / expiry / pause
 
 Le consentement n'est pas un paiement. La révocation du consentement ne réécrit pas les paiements déjà finalisés.
 
-## 10. Modèle d'état de référence
+## Modèle d'état de référence
 
 ```text
 CREATED
@@ -297,9 +302,10 @@ SETTLED
 
 Cette machine est une **REFERENCE_ARCHITECTURE**. Les codes et états de scheme exacts restent distincts.
 
-## 11. Idempotence de bout en bout
+## Idempotence de bout en bout
 
 Une idempotency key API ne suffit pas si :
+
 - le canal perd son commit local ;
 - le service redémarre ;
 - la requête descendante est déjà effective ;
@@ -316,7 +322,7 @@ same business intent
 
 Une même clé avec un payload financier différent doit être rejetée comme conflit.
 
-## 12. UNKNOWN : le scénario de référence
+## UNKNOWN : le scénario de référence
 
 ```text
 submit
@@ -336,7 +342,7 @@ authoritative resolution
 
 C'est l'un des invariants centraux de l'ouvrage et du companion lab.
 
-## 13. Corrélation
+## Corrélation
 
 Un parcours marchand devrait pouvoir relier :
 
@@ -357,7 +363,7 @@ correlationId
 
 Tous ne sont pas nécessairement présents dans chaque implémentation. L'architecture doit néanmoins définir clairement quelles références survivent à chaque frontière.
 
-## 14. Matrice de vérité
+## Matrice de vérité
 
 | Événement visible | Ce qu'il prouve | Ce qu'il ne prouve pas |
 |---|---|---|
@@ -370,6 +376,6 @@ Tous ne sont pas nécessairement présents dans chaque implémentation. L'archit
 | settlement authoritative | effet financier final selon rail | livraison du bien |
 | order CLOSED | décision marchand | rail exact si non corrélé |
 
-## 15. Conclusion
+## Conclusion
 
 Le parcours Wero n'est pas une seule flèche. Il est la synchronisation contrôlée de plusieurs machines d'état. La résilience consiste autant à préserver cette cohérence qu'à maintenir des pods disponibles.

@@ -18,13 +18,14 @@ La @fig-03-003 fournit la vue de référence utilisée dans ce chapitre.
 
 *Statut : **REFERENCE_ARCHITECTURE** · Source(s) : Handbook reference architecture · Vérifié : 2026-09-29.*
 
-## 1. Le problème d'architecture
+## Le problème d'architecture
 
 L'expérience P2P cherche à masquer l'IBAN derrière un identifiant plus humain. Cette simplification UX crée un domaine critique : le directory/alias.
 
-## 2. Alias ≠ compte
+## Alias ≠ compte
 
 Un alias peut être :
+
 - numéro de téléphone ;
 - e-mail ;
 - identifiant de service ;
@@ -32,7 +33,7 @@ Un alias peut être :
 
 Il pointe vers un contexte permettant d'atteindre le bon bénéficiaire, mais ne doit pas être considéré comme le compte bancaire lui-même.
 
-## 3. Lifecycle d'alias
+## Lifecycle d'alias
 
 ~~~text
 UNREGISTERED
@@ -45,6 +46,7 @@ UNREGISTERED
 ~~~
 
 Transitions sensibles :
+
 - changement de banque ;
 - changement de téléphone ;
 - numéro réattribué ;
@@ -52,22 +54,25 @@ Transitions sensibles :
 - utilisateur décédé ;
 - fraude.
 
-## 4. Proof of possession
+## Proof of possession
 
 Avant de lier un alias, il faut vérifier que l'utilisateur possède ou contrôle l'identifiant selon le modèle du service.
 
 Risques :
+
 - SIM swap ;
 - mailbox compromise ;
 - stale verification ;
 - recycled mobile number.
 
-## 5. Directory lookup
+## Directory lookup
 
 Input :
+
 - alias.
 
 Output conceptuel :
+
 - resolved party ;
 - PSP route ;
 - display data ;
@@ -76,18 +81,19 @@ Output conceptuel :
 
 Ne pas renvoyer plus de données que nécessaire.
 
-## 6. Privacy
+## Privacy
 
 Un directory peut être abusé pour énumérer utilisateurs, noms ou institutions.
 
 Protections :
+
 - rate limits ;
 - authentication ;
 - response minimisation ;
 - abuse detection ;
 - audit.
 
-## 7. P2P sequence
+## P2P sequence
 
 ~~~text
 Payer
@@ -103,9 +109,10 @@ Payer
 → notifications
 ~~~
 
-## 8. Contact-book risk
+## Contact-book risk
 
 Une application peut lire un carnet d'adresses, mais doit gérer :
+
 - consentement OS ;
 - privacy ;
 - normalisation ;
@@ -115,11 +122,11 @@ Une application peut lire un carnet d'adresses, mais doit gérer :
 
 Le contact local et l'alias du service sont deux données différentes.
 
-## 9. Name display
+## Name display
 
 Le nom présenté au payeur doit réduire erreur et impersonation, mais ne devient pas l'identifiant technique du paiement.
 
-## 10. Idempotence
+## Idempotence
 
 Le double clic ou le retry d'un écran ne doit pas créer deux intents.
 
@@ -130,7 +137,7 @@ payer + resolved beneficiary + amount + logical interaction
 
 La clé exacte dépend du produit, mais doit rester stable pendant la reprise.
 
-## 11. Timeout
+## Timeout
 
 Si le paiement a été soumis et le statut final perdu :
 
@@ -143,20 +150,23 @@ UI timeout
 
 L'application ne doit pas inviter automatiquement à recommencer.
 
-## 12. Notifications
+## Notifications
 
 Payeur :
+
 - submitted/pending ;
 - settled ;
 - rejected ;
 - investigating selon UX.
 
 Bénéficiaire :
+
 - notifier seulement sur un état suffisamment autoritatif.
 
-## 13. P2P fraud
+## P2P fraud
 
 Patterns :
+
 - account takeover ;
 - APP/social engineering ;
 - impersonation ;
@@ -165,6 +175,7 @@ Patterns :
 - beneficiary change.
 
 Signals :
+
 - new device ;
 - new beneficiary ;
 - amount anomaly ;
@@ -172,9 +183,10 @@ Signals :
 - risky alias changes ;
 - geo/device mismatch.
 
-## 14. Directory resilience
+## Directory resilience
 
 Failure modes :
+
 - lookup timeout ;
 - stale mapping ;
 - partition ;
@@ -182,13 +194,15 @@ Failure modes :
 - inconsistent cache.
 
 Safe behavior :
+
 - stop avant paiement si l'identité ne peut pas être résolue de façon sûre ;
 - ne jamais deviner la destination ;
 - cacher uniquement avec une sémantique de fraîcheur explicite.
 
-## 15. Reconciliation
+## Reconciliation
 
 Comparer :
+
 - user-facing history ;
 - internal ledger ;
 - rail status ;

@@ -11,6 +11,7 @@ The eight hero figures were rendered to committed SVG artifacts under:
 `diagrams/svg/hero/`
 
 All eight passed:
+
 - SVG open/close structure;
 - explicit width/height;
 - explicit `viewBox`;
@@ -53,6 +54,7 @@ All eight passed:
 ## Technical checks
 
 Every hero SVG:
+
 - starts with a valid SVG root;
 - ends with `</svg>`;
 - has a stable vector `viewBox`;
@@ -66,6 +68,7 @@ Every hero SVG:
 The eight hero figures are ready for use in final layout.
 
 Next step:
+
 1. apply the same Visual System V1 to the remaining 28 figures;
 2. render their SVG artifacts;
 3. run visual QA;

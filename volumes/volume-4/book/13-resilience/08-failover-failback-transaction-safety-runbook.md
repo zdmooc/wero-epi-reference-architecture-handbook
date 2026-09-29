@@ -8,11 +8,11 @@ primary_sources:
 
 # Failover / failback transaction-safety runbook
 
-## 1. Objective
+## Objective
 
 Restore service without creating duplicate financial effects, split-brain or irreversible state divergence.
 
-## 2. Failover sequence
+## Failover sequence
 
 ```text
 detect
@@ -31,7 +31,7 @@ detect
 → reopen full service
 ```
 
-## 3. Mandatory evidence before promotion
+## Mandatory evidence before promotion
 
 - old writer cannot continue authorised writes;
 - promoted data state is understood;
@@ -40,7 +40,7 @@ detect
 - monitoring path works;
 - operator roles are explicit.
 
-## 4. In-flight payment classes
+## In-flight payment classes
 
 ### Not submitted
 Safe to resume under same logical identity.
@@ -54,11 +54,12 @@ Mark/retain UNKNOWN and investigate.
 ### Settled externally
 Repair local observation; never resubmit.
 
-## 5. Failback
+## Failback
 
 Failback is a new controlled transition, not "turn the first site back on".
 
 Required:
+
 - root cause fixed;
 - old site/data reconciled;
 - authority transfer plan;
@@ -66,7 +67,7 @@ Required:
 - controlled traffic shift;
 - post-failback reconciliation.
 
-## 6. Success criteria
+## Success criteria
 
 - no dual writer;
 - no duplicate external effect;

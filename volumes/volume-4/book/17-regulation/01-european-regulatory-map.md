@@ -15,7 +15,7 @@ primary_sources:
 
 # Partie XVI — Carte réglementaire européenne
 
-## 1. Ne pas confondre loi, scheme et standard
+## Ne pas confondre loi, scheme et standard
 
 ```text
 EU Regulation / Directive
@@ -33,11 +33,12 @@ Institution policy / architecture
 
 Chaque couche a une autorité et un statut différents.
 
-## 2. Instant Payments Regulation — EU 2024/886
+## Instant Payments Regulation — EU 2024/886
 
 Le règlement modifie le cadre européen pour les virements instantanés en euro.
 
 Impacts architecturaux :
+
 - capacité d'envoi/réception selon obligations applicables ;
 - disponibilité 24/7 ;
 - pricing constraints ;
@@ -48,11 +49,12 @@ Impacts architecturaux :
 
 Les dates exactes dépendent du type de PSP et de sa localisation ; elles doivent être revalidées à chaque édition.
 
-## 3. SCT Inst Rulebook
+## SCT Inst Rulebook
 
 Le rulebook EPC n'est pas un règlement UE.
 
 Il définit le scheme SCT Inst :
+
 - actors ;
 - datasets ;
 - timelines ;
@@ -61,11 +63,12 @@ Il définit le scheme SCT Inst :
 
 L'architecture doit être conforme au rulebook applicable lorsqu'elle participe au scheme.
 
-## 4. VoP Scheme
+## VoP Scheme
 
 Le VoP EPC rulebook v1.1 est effectif depuis le 20 septembre 2026.
 
 Architecture :
+
 - Requesting PSP ;
 - Responding PSP ;
 - verification request ;
@@ -75,11 +78,12 @@ Architecture :
 
 VoP est à la fois un scheme capability et une réponse à des obligations européennes ; il reste distinct du moteur fraude.
 
-## 5. PSD2
+## PSD2
 
 PSD2 demeure une référence du cadre payment-services tant que les futurs actes PSD3/PSR ne sont pas applicables.
 
 Sujets architecture :
+
 - PSP ;
 - SCA ;
 - access to account/open banking ;
@@ -87,20 +91,22 @@ Sujets architecture :
 - incident/fraud context ;
 - liability.
 
-## 6. PSD3 / PSR
+## PSD3 / PSR
 
 Au 28 septembre 2026 :
+
 - un accord politique provisoire a été annoncé en novembre 2025 ;
 - le livre ne les décrit pas comme pleinement applicables sans revalidation du processus législatif final.
 
 Editorial rule:
 `legal_status` doit être versionné.
 
-## 7. DORA
+## DORA
 
 Applicable depuis 17 janvier 2025.
 
 Domains :
+
 - ICT risk ;
 - incidents ;
 - resilience testing ;
@@ -111,9 +117,10 @@ Domains :
 
 DORA est transversal à la plateforme, pas un microservice.
 
-## 8. GDPR
+## GDPR
 
 Impacts :
+
 - personal data inventory ;
 - purpose/minimisation ;
 - retention ;
@@ -124,11 +131,12 @@ Impacts :
 
 Payment audit requirements and privacy must be reconciled with explicit retention policies.
 
-## 9. AML/CFT
+## AML/CFT
 
 The book treats AML/CFT as a regulated financial-crime control domain.
 
 Architecture:
+
 - customer/transaction risk ;
 - screening/monitoring ;
 - cases ;
@@ -137,22 +145,24 @@ Architecture:
 
 Exact obligations depend on institution/jurisdiction and are not reduced to one EU payment rulebook.
 
-## 10. Sanctions
+## Sanctions
 
 Sanctions controls are distinct from AML and fraud.
 
 Design:
+
 - lists/source governance ;
 - screening timing ;
 - false-positive handling ;
 - evidence ;
 - emergency list update.
 
-## 11. eIDAS2
+## eIDAS2
 
 Regulation EU 2024/1183 establishes the European Digital Identity Framework.
 
 Architectural relevance:
+
 - identity assurance ;
 - wallets ;
 - trust services ;
@@ -160,13 +170,13 @@ Architectural relevance:
 
 No specific Wero integration is assumed.
 
-## 12. NIS2
+## NIS2
 
 Directive EU 2022/2555 addresses cybersecurity for covered entities/sectors.
 
 For financial entities also under DORA, legal interaction/scope must be assessed. The handbook provides architecture mapping, not entity-specific legal advice.
 
-## 13. Regulatory evidence matrix
+## Regulatory evidence matrix
 
 | Requirement domain | Architecture artifact |
 |---|---|
@@ -180,7 +190,7 @@ For financial entities also under DORA, legal interaction/scope must be assessed
 | SCA | auth/consent architecture |
 | Scheme compliance | message/version catalogue |
 
-## 14. Change management
+## Change management
 
 Regulatory update workflow:
 
@@ -195,9 +205,10 @@ official publication
 → release note
 ```
 
-## 15. Source hierarchy
+## Source hierarchy
 
 Priority:
+
 1. EUR-Lex ;
 2. European Commission / ESAs / ECB ;
 3. EPC ;
@@ -205,10 +216,10 @@ Priority:
 5. institution legal/compliance interpretation ;
 6. secondary material.
 
-## 16. Disclaimer
+## Disclaimer
 
 This handbook is an architecture reference. It is not legal advice and does not certify compliance of any institution.
 
-## 17. Conclusion
+## Conclusion
 
 La réglementation devient exploitable lorsqu'elle est transformée en capabilities, responsabilités, contrôles, tests et evidence, tout en conservant la traçabilité vers la source juridique exacte.

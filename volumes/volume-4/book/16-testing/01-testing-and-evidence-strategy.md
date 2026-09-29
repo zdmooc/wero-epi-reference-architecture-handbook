@@ -10,7 +10,7 @@ related_internal_repos:
 
 # Partie XV — Stratégie de test et modèle de preuve
 
-## 1. Tester les invariants, pas seulement les endpoints
+## Tester les invariants, pas seulement les endpoints
 
 Un test paiement doit démontrer des propriétés métier :
 
@@ -21,7 +21,7 @@ Un test paiement doit démontrer des propriétés métier :
 - le settlement peut être réconcilié ;
 - une panne ne crée pas deux writers.
 
-## 2. Pyramide de tests
+## Pyramide de tests
 
 ```text
 Static / lint / schema
@@ -39,9 +39,10 @@ Operational exercise
 
 Chaque niveau répond à une question différente.
 
-## 3. Contract tests
+## Contract tests
 
 Contrats :
+
 - REST/OpenAPI ;
 - event/AsyncAPI/schema ;
 - ISO 20022 ;
@@ -50,6 +51,7 @@ Contrats :
 - database schema.
 
 Tests :
+
 - happy path ;
 - field missing ;
 - invalid enum ;
@@ -58,9 +60,10 @@ Tests :
 - timeout ;
 - duplicate.
 
-## 4. ISO 20022 testing
+## ISO 20022 testing
 
 Vérifier :
+
 - well-formed XML ;
 - namespace ;
 - XSD ;
@@ -71,7 +74,7 @@ Vérifier :
 - reason codes ;
 - recall/status-investigation paths.
 
-## 5. End-to-end
+## End-to-end
 
 Un test E2E utile trace :
 
@@ -89,9 +92,10 @@ customer intent
 → merchant/customer status
 ```
 
-## 6. Negative tests
+## Negative tests
 
 Obligatoires :
+
 - invalid token ;
 - wrong scope ;
 - bad certificate ;
@@ -103,9 +107,10 @@ Obligatoires :
 - unavailable VoP ;
 - duplicate webhook.
 
-## 7. Performance
+## Performance
 
 Mesurer :
+
 - throughput ;
 - p50/p95/p99/p99.9 ;
 - CPU/memory ;
@@ -116,6 +121,7 @@ Mesurer :
 - GC/runtime if applicable.
 
 Scénarios :
+
 - nominal ;
 - peak ;
 - peak + one node lost ;
@@ -123,9 +129,10 @@ Scénarios :
 - retry storm ;
 - recovery backlog.
 
-## 8. Soak
+## Soak
 
 Un service 24/7 doit subir des tests longs pour détecter :
+
 - leaks ;
 - pool exhaustion ;
 - growing lag ;
@@ -133,9 +140,10 @@ Un service 24/7 doit subir des tests longs pour détecter :
 - certificate/session issues ;
 - degradation over time.
 
-## 9. Chaos
+## Chaos
 
 Fault injection :
+
 - process ;
 - pod ;
 - dependency ;
@@ -150,9 +158,10 @@ Fault injection :
 
 Chaque test possède une hypothèse métier.
 
-## 10. DR exercise
+## DR exercise
 
 Un PRA sérieux teste :
+
 1. declaration ;
 2. fencing ;
 3. promotion ;
@@ -163,7 +172,7 @@ Un PRA sérieux teste :
 8. failback ;
 9. evidence.
 
-## 11. Security tests
+## Security tests
 
 - SAST/SCA ;
 - IaC/container scan ;
@@ -176,7 +185,7 @@ Un PRA sérieux teste :
 - key/cert rotation ;
 - supply-chain validation.
 
-## 12. Evidence classes
+## Evidence classes
 
 Le livre utilise :
 
@@ -187,11 +196,12 @@ Le livre utilise :
 - TO_BE_VERIFIED.
 
 Le companion lab ajoute :
+
 - CI_RENDER_PROVEN ;
 - REFERENCE_DESIGN ;
 - DISCOVERY_REQUIRED.
 
-## 13. Claim-Evidence Matrix
+## Claim-Evidence Matrix
 
 Template :
 
@@ -201,7 +211,7 @@ Template :
 | pod recovery | runtime | pod kill | CRC | date | not node/AZ |
 | AZ failover | reference | design only | n/a | date | runtime required |
 
-## 14. Anti-inflation rule
+## Anti-inflation rule
 
 A claim never automatically climbs the ladder:
 
@@ -214,9 +224,10 @@ DESIGNED
 != COMPLIANT
 ```
 
-## 15. Test data
+## Test data
 
 Use:
+
 - synthetic customer ;
 - synthetic IBAN/accounts ;
 - synthetic merchant ;
@@ -224,9 +235,10 @@ Use:
 - no real secrets ;
 - no confidential client data.
 
-## 16. Regression pack
+## Regression pack
 
 Minimum:
+
 - nominal P2P ;
 - nominal C2B ;
 - duplicate ;
@@ -240,9 +252,10 @@ Minimum:
 - VoP negative/unavailable ;
 - reconciliation.
 
-## 17. Release gate
+## Release gate
 
 A release fails when:
+
 - critical invariant test fails ;
 - schema compatibility breaks ;
 - unresolved high-severity vulnerability ;
@@ -250,6 +263,6 @@ A release fails when:
 - certificate lifecycle invalid ;
 - official scheme version mismatch.
 
-## 18. Conclusion
+## Conclusion
 
 La qualité d'une architecture de paiement se mesure à la qualité de ses preuves. Un diagramme est une intention ; un test documenté transforme une partie de cette intention en connaissance vérifiée.

@@ -15,11 +15,11 @@ La @fig-04-002 fournit la vue de référence utilisée dans ce chapitre.
 
 *Statut : **REFERENCE_ARCHITECTURE** · Source(s) : Handbook reference architecture · Vérifié : 2026-09-29.*
 
-## 1. Un statut unique est insuffisant
+## Un statut unique est insuffisant
 
 Le livre maintient au moins quatre axes : commercial, consent/customer, orchestration/scheme et financial.
 
-## 2. Commercial state
+## Commercial state
 
 ~~~text
 ORDER_CREATED
@@ -33,7 +33,7 @@ ORDER_CREATED
 
 Un order CANCELLED n'implique pas que le paiement soit annulé s'il a déjà été exécuté.
 
-## 3. Consent state
+## Consent state
 
 ~~~text
 NOT_STARTED
@@ -43,13 +43,14 @@ NOT_STARTED
 ~~~
 
 Branches :
+
 - DECLINED ;
 - EXPIRED ;
 - CANCELLED.
 
 Approval ne prouve pas le settlement.
 
-## 4. Financial state
+## Financial state
 
 ~~~text
 CREATED
@@ -59,12 +60,14 @@ CREATED
 ~~~
 
 Branches :
+
 - REJECTED ;
 - UNKNOWN → RECONCILING → SETTLED / REJECTED / MANUAL_REVIEW.
 
-## 5. UNKNOWN comme first-class state
+## UNKNOWN comme first-class state
 
 Properties :
+
 - financial effect may exist ;
 - no blind retry ;
 - controlled communication ;
@@ -73,9 +76,10 @@ Properties :
 
 UNKNOWN n'est pas une exception technique générique.
 
-## 6. Terminal states
+## Terminal states
 
 Définir explicitement :
+
 - SETTLED ;
 - REJECTED ;
 - CANCELLED_BEFORE_SUBMIT ;
@@ -84,29 +88,34 @@ Définir explicitement :
 
 Une API générique ne doit pas rouvrir librement un terminal state.
 
-## 7. Transition guards
+## Transition guards
 
 CREATED → READY_TO_SUBMIT :
+
 - valid amount ;
 - eligible participant ;
 - consent ;
 - risk controls.
 
 READY_TO_SUBMIT → SUBMITTED :
+
 - one financial submission token ;
 - durable intent ;
 - idempotency claim.
 
 SUBMITTED → SETTLED :
+
 - authoritative positive outcome.
 
 SUBMITTED → REJECTED :
+
 - authoritative negative outcome.
 
 SUBMITTED → UNKNOWN :
+
 - outcome cannot be determined safely.
 
-## 8. Optimistic concurrency
+## Optimistic concurrency
 
 ~~~text
 UPDATE payment
@@ -115,11 +124,12 @@ WHERE payment_id=? AND version=?
 ~~~
 
 Si aucune ligne :
+
 - reread ;
 - resolve competing transition ;
 - never overwrite blindly.
 
-## 9. Monotonicity
+## Monotonicity
 
 ~~~text
 local heuristic < callback < authoritative inquiry/rail result
@@ -127,23 +137,25 @@ local heuristic < callback < authoritative inquiry/rail result
 
 Un vieux PENDING ne doit pas écraser SETTLED.
 
-## 10. Duplicate event
+## Duplicate event
 
 1. claim eventId ;
 2. read state/version ;
 3. if already applied, acknowledge ;
 4. else apply atomically.
 
-## 11. Out-of-order event
+## Out-of-order event
 
 SETTLED puis ancien PENDING :
+
 - conserver SETTLED ;
 - enregistrer éventuellement l'anomalie ;
 - ne pas réouvrir.
 
-## 12. Side effects
+## Side effects
 
 Transition peut déclencher :
+
 - notification ;
 - fulfilment ;
 - audit ;
@@ -151,16 +163,17 @@ Transition peut déclencher :
 
 Outbox lie état durable et intention d'événement.
 
-## 13. Recovery transition
+## Recovery transition
 
 UNKNOWN → RECONCILING doit stocker :
+
 - inquiry attempts ;
 - external reference ;
 - result ;
 - operator action ;
 - timestamps.
 
-## 14. State reason
+## State reason
 
 ~~~text
 state = REJECTED
@@ -171,18 +184,20 @@ customerMessageKey = PAYEE_ACCOUNT_INVALID
 
 Le message client ne doit pas exposer des diagnostics internes.
 
-## 15. Testing
+## Testing
 
 Chaque transition :
+
 - positive test ;
 - invalid previous-state test ;
 - concurrent transition test ;
 - duplicate test ;
 - recovery test.
 
-## 16. Audit
+## Audit
 
 Append :
+
 - before ;
 - after ;
 - actor ;

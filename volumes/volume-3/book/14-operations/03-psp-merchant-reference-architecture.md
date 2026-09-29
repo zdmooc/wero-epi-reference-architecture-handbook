@@ -18,7 +18,7 @@ La @fig-14-002 complète la lecture de ce chapitre avec la vue de référence co
 
 *Statut : **REFERENCE_ARCHITECTURE** · Source(s) : Handbook reference architecture · Vérifié : 2026-09-29.*
 
-## 1. Objectif
+## Objectif
 
 Le commerce ajoute une deuxième machine d'état : la commande.
 
@@ -28,7 +28,7 @@ Order state
 != Settlement state
 ```
 
-## 2. Vue de référence
+## Vue de référence
 
 ```text
 Customer
@@ -52,9 +52,10 @@ Acceptor status / reconciliation
 Merchant Backend
 ```
 
-## 3. Merchant backend
+## Merchant backend
 
 Should own:
+
 - order ;
 - amount ;
 - customer session ;
@@ -64,13 +65,15 @@ Should own:
 - local audit.
 
 Should not infer financial success from:
+
 - browser redirect only ;
 - QR scan only ;
 - user screenshot.
 
-## 4. Acceptor PSP
+## Acceptor PSP
 
 Reference capabilities:
+
 - merchant onboarding ;
 - API credentials ;
 - payment request ;
@@ -82,7 +85,7 @@ Reference capabilities:
 - merchant reconciliation ;
 - reporting.
 
-## 5. Payment request
+## Payment request
 
 Conceptual model:
 
@@ -99,7 +102,7 @@ paymentId
 callbackUrl/profile
 ```
 
-## 6. Channel types
+## Channel types
 
 - ECOMMERCE ;
 - MCOMMERCE ;
@@ -109,7 +112,7 @@ callbackUrl/profile
 
 The payment domain should not encode channel-specific UI logic into the financial core.
 
-## 7. Callback / webhook
+## Callback / webhook
 
 Reference lifecycle:
 
@@ -123,25 +126,28 @@ Payment final state
 ```
 
 On failure:
+
 - persist ;
 - exponential/bounded retry ;
 - deduplicate ;
 - active merchant status query remains possible.
 
-## 8. Merchant status API
+## Merchant status API
 
 Critical fallback:
 merchant can query by `paymentRequestId` or equivalent stable reference.
 
 This protects against:
+
 - lost callback ;
 - merchant restart ;
 - browser loss ;
 - out-of-order notifications.
 
-## 9. Merchant reconciliation
+## Merchant reconciliation
 
 Compare:
+
 - orders ;
 - payment requests ;
 - payments ;
@@ -150,6 +156,7 @@ Compare:
 - fees if relevant.
 
 Statuses:
+
 - paid/order open ;
 - order fulfilled/payment missing ;
 - refund pending ;
@@ -157,9 +164,10 @@ Statuses:
 - amount mismatch ;
 - orphan payment.
 
-## 10. Refund
+## Refund
 
 Merchant refund must be:
+
 - authorised ;
 - amount-limited ;
 - idempotent ;
@@ -167,9 +175,10 @@ Merchant refund must be:
 - linked to original payment ;
 - separately reconciled.
 
-## 11. Security
+## Security
 
 Merchant integration:
+
 - API credentials/workload identity ;
 - TLS/mTLS as contract requires ;
 - webhook signature ;
@@ -179,15 +188,16 @@ Merchant integration:
 - rate limiting ;
 - IP/network controls where useful.
 
-## 12. PCI DSS boundary
+## PCI DSS boundary
 
 Wero account-to-account flows are distinct from card payment flows.
 
 A merchant environment can still be in PCI DSS scope because it also accepts cards. The architecture must draw the boundaries rather than assume “Wero removes all PCI concerns”.
 
-## 13. Availability dependency
+## Availability dependency
 
 The merchant checkout depends on:
+
 - merchant backend ;
 - Acceptor PSP ;
 - Wero service ;
@@ -198,21 +208,24 @@ The merchant checkout depends on:
 
 A failure anywhere changes UX and recovery.
 
-## 14. Degraded modes
+## Degraded modes
 
 Possible:
+
 - callback delayed, status API available ;
 - reporting delayed ;
 - refund temporarily queued.
 
 Not acceptable:
+
 - mark order paid from redirect alone ;
 - issue goods on UNKNOWN without business policy ;
 - retry payment request as a new financial payment blindly.
 
-## 15. Merchant SLOs
+## Merchant SLOs
 
 Examples:
+
 - create payment request availability ;
 - QR generation latency ;
 - callback delivery latency ;
@@ -220,9 +233,10 @@ Examples:
 - refund processing ;
 - reconciliation freshness.
 
-## 16. POS specifics
+## POS specifics
 
 POS must handle:
+
 - terminal timeout ;
 - customer wallet delay ;
 - cashier retry ;
@@ -232,9 +246,10 @@ POS must handle:
 
 The POS should query authoritative backend status before asking the customer to pay again.
 
-## 17. Support tooling
+## Support tooling
 
 Operations screen should show:
+
 - order ;
 - payment request ;
 - payment ;
@@ -245,6 +260,6 @@ Operations screen should show:
 - support notes ;
 - evidence.
 
-## 18. Conclusion
+## Conclusion
 
 The merchant architecture succeeds when commercial state and financial state can diverge temporarily without creating duplicate charges or false fulfilment.

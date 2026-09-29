@@ -9,9 +9,10 @@ related_internal_repos:
 
 # Matrice de tests end-to-end
 
-## 1. Test by invariant
+## Test by invariant
 
 The most important invariants:
+
 - one intent → at most one financial effect ;
 - no false success ;
 - UNKNOWN recoverable ;
@@ -19,7 +20,7 @@ The most important invariants:
 - audit complete ;
 - settlement truth reconcilable.
 
-## 2. Journey tests
+## Journey tests
 
 ### P2P
 - nominal ;
@@ -44,7 +45,7 @@ The most important invariants:
 - store network loss ;
 - customer approves after terminal timeout.
 
-## 3. ISO tests
+## ISO tests
 
 - pacs.008 valid ;
 - invalid XSD ;
@@ -57,7 +58,7 @@ The most important invariants:
 - return ;
 - status inquiry.
 
-## 4. Rail tests
+## Rail tests
 
 - TIPS route nominal ;
 - RT1 route nominal ;
@@ -69,7 +70,7 @@ The most important invariants:
 
 Real CSM tests require participant/test environments; mocks only prove adapter logic.
 
-## 5. Concurrency tests
+## Concurrency tests
 
 - 10 same key ;
 - 50 ;
@@ -79,11 +80,12 @@ Real CSM tests require participant/test environments; mocks only prove adapter l
 - simultaneous status callbacks.
 
 Assertions:
+
 - one logical resource ;
 - no duplicate effect ;
 - deterministic conflict.
 
-## 6. Failure tests
+## Failure tests
 
 - app pod ;
 - node ;
@@ -96,7 +98,7 @@ Assertions:
 - CSM connection ;
 - site.
 
-## 7. Recovery tests
+## Recovery tests
 
 - UNKNOWN inquiry ;
 - DB restore + reconciliation ;
@@ -105,7 +107,7 @@ Assertions:
 - merchant callback resend ;
 - site failback.
 
-## 8. Security tests
+## Security tests
 
 - auth bypass ;
 - expired token ;
@@ -116,7 +118,7 @@ Assertions:
 - unauthorized admin ;
 - secret leak simulation.
 
-## 9. Performance
+## Performance
 
 - baseline ;
 - peak ;
@@ -125,7 +127,7 @@ Assertions:
 - failure under load ;
 - backlog recovery.
 
-## 10. Liquidity
+## Liquidity
 
 - warning threshold ;
 - critical threshold ;
@@ -133,7 +135,7 @@ Assertions:
 - route concentration ;
 - weekend simulation.
 
-## 11. Data
+## Data
 
 - backup restore ;
 - PITR ;
@@ -141,7 +143,7 @@ Assertions:
 - stale replica ;
 - audit integrity.
 
-## 12. DORA/resilience
+## DORA/resilience
 
 - business-service continuity ;
 - DR exercise ;
@@ -149,7 +151,7 @@ Assertions:
 - cyber recovery ;
 - TLPT applicability/process where legally required.
 
-## 13. Evidence template
+## Evidence template
 
 ~~~yaml
 test_id:
@@ -169,18 +171,20 @@ limitations:
 status:
 ~~~
 
-## 14. Pass criteria
+## Pass criteria
 
 A test passes only if:
+
 - technical expectation ;
 - business state ;
 - financial state ;
 - audit
 all satisfy expected result.
 
-## 15. Regression
+## Regression
 
 Critical tests run on:
+
 - scheme update ;
 - DB change ;
 - routing change ;

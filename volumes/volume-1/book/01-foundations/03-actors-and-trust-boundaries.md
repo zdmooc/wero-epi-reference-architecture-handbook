@@ -15,6 +15,7 @@ related_internal_repos:
 Une architecture de paiement ne peut pas être comprise uniquement en listant des composants.
 
 Il faut savoir :
+
 - qui opère quoi ;
 - qui fait confiance à qui ;
 - qui possède quelle donnée ;
@@ -57,6 +58,7 @@ Cette représentation est volontairement générique. Les implémentations exact
 ### Boundary A — Client device → external service
 
 Risques :
+
 - device compromis ;
 - session hijacking ;
 - phishing ;
@@ -64,6 +66,7 @@ Risques :
 - credential theft.
 
 Contrôles possibles :
+
 - SCA ;
 - device binding ;
 - secure session ;
@@ -73,6 +76,7 @@ Contrôles possibles :
 ### Boundary B — Internet → provider edge
 
 Risques :
+
 - DDoS ;
 - TLS failure ;
 - DNS attack ;
@@ -80,6 +84,7 @@ Risques :
 - malformed payload.
 
 Contrôles possibles :
+
 - anti-DDoS ;
 - WAF ;
 - TLS ;
@@ -89,12 +94,14 @@ Contrôles possibles :
 ### Boundary C — Edge → payment domain
 
 Risques :
+
 - over-privileged API ;
 - lateral movement ;
 - forged identity ;
 - service impersonation.
 
 Contrôles possibles :
+
 - mTLS ;
 - workload identity ;
 - OAuth2 ;
@@ -104,6 +111,7 @@ Contrôles possibles :
 ### Boundary D — Bank/payment domain → external payment infrastructure
 
 Risques :
+
 - connectivity outage ;
 - certificate expiry ;
 - message duplication ;
@@ -112,6 +120,7 @@ Risques :
 - scheme rejection.
 
 Contrôles possibles :
+
 - dual connectivity ;
 - monitored certificates ;
 - unique identifiers ;
@@ -122,12 +131,14 @@ Contrôles possibles :
 ### Boundary E — Payment status → merchant fulfilment
 
 Risques :
+
 - merchant treats redirect as settlement ;
 - webhook duplicated ;
 - webhook lost ;
 - status arrives out of order.
 
 Contrôles possibles :
+
 - authoritative status endpoint ;
 - webhook signature ;
 - idempotent consumer ;

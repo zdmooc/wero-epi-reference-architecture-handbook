@@ -15,7 +15,7 @@ related_internal_repos:
 
 # Partie I — Wero / EPI : écosystème, rôles et périmètre public
 
-## 1. Pourquoi Wero doit être étudié comme un écosystème
+## Pourquoi Wero doit être étudié comme un écosystème
 
 Wero n'est pas seulement une interface mobile. Pour l'architecte, il faut distinguer au minimum :
 
@@ -28,7 +28,7 @@ Wero n'est pas seulement une interface mobile. Pour l'architecte, il faut distin
 
 Cette séparation permet d'éviter une erreur fréquente : dessiner une « architecture Wero » comme si EPI opérait nécessairement chaque composant bancaire, chaque base de données et chaque rail.
 
-## 2. Chronologie publique utile à l'architecture
+## Chronologie publique utile à l'architecture
 
 ### 2024 — démarrage P2P
 
@@ -67,7 +67,7 @@ Cette évolution change fortement l'architecture. Un transfert P2P peut être re
 - support, dispute et opérations ;
 - disponibilité du parcours marchand.
 
-## 3. Modèle quatre coins public pour le commerce
+## Modèle quatre coins public pour le commerce
 
 Le matériel officiel Wero destiné aux professionnels décrit un **modèle à quatre coins** et indique que le commerçant travaille avec Wero via son acquéreur.
 
@@ -97,7 +97,7 @@ Cette vue est **PUBLIC_VERIFIED au niveau des rôles**, mais elle ne décrit pas
 
 Ces éléments restent inconnus publiquement sauf source explicite.
 
-## 4. Wero et SCT Inst
+## Wero et SCT Inst
 
 Le site Wero pour les professionnels indique que Wero combine le paiement compte-à-compte avec SCT Inst.
 
@@ -119,7 +119,7 @@ TIPS / RT1 / autre CSM pertinent
 
 Le fait que Wero utilise SCT Inst ne permet pas d'affirmer que toutes les transactions Wero traversent un unique CSM ou une seule architecture technique.
 
-## 5. Canaux visibles publiquement
+## Canaux visibles publiquement
 
 ### P2P
 
@@ -153,7 +153,7 @@ Conséquences :
 
 Wero liste les abonnements parmi les capacités actuelles, avec disponibilité dépendante du pays et de la banque. Le livre traite donc le recurring comme un domaine fonctionnel, tout en versionnant les détails de disponibilité.
 
-## 6. Acteurs de référence
+## Acteurs de référence
 
 | Acteur | Responsabilité conceptuelle |
 |---|---|
@@ -167,7 +167,7 @@ Wero liste les abonnements parmi les capacités actuelles, avec disponibilité d
 | CSM / settlement infrastructure | traitement inter-PSP et règlement selon la route |
 | Central bank / TARGET context | actif de règlement central-bank-money lorsque applicable |
 
-## 7. Frontières de responsabilité
+## Frontières de responsabilité
 
 Une bonne architecture doit répondre, pour chaque étape :
 
@@ -180,7 +180,7 @@ Une bonne architecture doit répondre, pour chaque étape :
 - quel acteur est responsable du retry ?
 - quel acteur ne doit surtout pas réessayer à l'aveugle ?
 
-## 8. Carte de capabilities Wero de référence
+## Carte de capabilities Wero de référence
 
 ```text
 Customer & Wallet
@@ -220,7 +220,7 @@ Risk & Trust
 
 Cette capability map est **REFERENCE_ARCHITECTURE**. Elle aide à raisonner sans prétendre reproduire les composants EPI.
 
-## 9. Ce qui doit être versionné dans chaque édition
+## Ce qui doit être versionné dans chaque édition
 
 Les éléments suivants sont volatils :
 
@@ -235,6 +235,6 @@ Les éléments suivants sont volatils :
 
 Ils ne doivent jamais être imprimés comme des vérités intemporelles sans date.
 
-## 10. Conclusion architecte
+## Conclusion architecte
 
 Wero doit être analysé comme un **service de paiement européen multi-acteurs**. Le cœur de l'ouvrage ne cherchera pas à deviner ses composants internes. Il cherchera à expliquer les **contrats, responsabilités, états, flux, rails et invariants** que doit maîtriser toute architecture bancaire ou PSP participant à ce type d'écosystème.

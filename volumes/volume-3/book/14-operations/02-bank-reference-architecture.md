@@ -19,7 +19,7 @@ La @fig-14-001 complète la lecture de ce chapitre avec la vue de référence co
 
 *Statut : **REFERENCE_ARCHITECTURE** · Source(s) : Handbook reference architecture · Vérifié : 2026-09-29.*
 
-## 1. Vue d'ensemble
+## Vue d'ensemble
 
 ```text
 Mobile / Web / Wero experience
@@ -52,9 +52,10 @@ Beneficiary PSP
 
 C'est une REFERENCE_ARCHITECTURE. Elle ne décrit aucune banque réelle.
 
-## 2. Channel
+## Channel
 
 Responsibilities:
+
 - collect intent ;
 - display beneficiary ;
 - display VoP result ;
@@ -63,12 +64,14 @@ Responsibilities:
 - show status.
 
 Must not:
+
 - infer settlement from UI redirect ;
 - create a new payment on generic refresh.
 
-## 3. API Management
+## API Management
 
 Capabilities:
+
 - authentication enforcement ;
 - quotas ;
 - threat protection ;
@@ -77,14 +80,16 @@ Capabilities:
 - observability.
 
 A bank may expose separate APIs for:
+
 - channel ;
 - partner ;
 - merchant ;
 - internal services.
 
-## 4. Payment Orchestrator
+## Payment Orchestrator
 
 Responsibilities:
+
 - durable intent ;
 - idempotency ;
 - workflow ;
@@ -94,11 +99,12 @@ Responsibilities:
 - external status inquiry ;
 - reconciliation trigger.
 
-## 5. Fraud / AML / sanctions / VoP
+## Fraud / AML / sanctions / VoP
 
 Keep decisions separated even if a single orchestration layer invokes them.
 
 A useful decision record contains:
+
 - control type ;
 - result ;
 - reason ;
@@ -106,9 +112,10 @@ A useful decision record contains:
 - timestamp ;
 - evidence reference.
 
-## 6. Payment Hub
+## Payment Hub
 
 A Payment Hub can abstract:
+
 - scheme adapters ;
 - canonical model ;
 - validation ;
@@ -118,9 +125,10 @@ A Payment Hub can abstract:
 
 But the book does not require a commercial product.
 
-## 7. Core Banking / account engine
+## Core Banking / account engine
 
 Responsibilities can include:
+
 - account existence ;
 - balance ;
 - reservation/debit ;
@@ -131,9 +139,10 @@ Responsibilities can include:
 Critical invariant:
 financial execution and local state must have a recoverable relationship with the external rail effect.
 
-## 8. SCT Inst Gateway
+## SCT Inst Gateway
 
 Responsibilities:
+
 - ISO 20022 generation/parsing ;
 - scheme validation ;
 - connection to CSM ;
@@ -142,9 +151,10 @@ Responsibilities:
 - inquiry ;
 - recall/return workflows.
 
-## 9. Routing
+## Routing
 
 Inputs:
+
 - reachability ;
 - participant ;
 - rail health ;
@@ -154,9 +164,10 @@ Inputs:
 
 The routing policy must be deterministic and auditable.
 
-## 10. Reconciliation
+## Reconciliation
 
 Sources:
+
 - local payment store ;
 - ledger ;
 - CSM/rail reports/status ;
@@ -165,6 +176,7 @@ Sources:
 - merchant records.
 
 Outputs:
+
 - matched ;
 - missing local ;
 - missing external ;
@@ -173,7 +185,7 @@ Outputs:
 - duplicate ;
 - pending investigation.
 
-## 11. Legacy integration
+## Legacy integration
 
 Possible patterns:
 
@@ -192,45 +204,51 @@ Legacy capability exposed behind stable API.
 ### Strangler
 New domains gradually replace legacy functions.
 
-## 12. Legacy-centric architecture
+## Legacy-centric architecture
 
 Characteristics:
+
 - core owns most logic ;
 - payment orchestration near core ;
 - fewer distributed services.
 
 Trade-offs:
+
 - strong central control ;
 - slower evolution ;
 - coupling.
 
-## 13. Hybrid architecture
+## Hybrid architecture
 
 Characteristics:
+
 - channels/API/cloud-native orchestration ;
 - core remains system of record ;
 - event/messaging integration.
 
 Trade-offs:
+
 - transitional complexity ;
 - strong practical migration path.
 
-## 14. Cloud-native architecture
+## Cloud-native architecture
 
 Characteristics:
+
 - domain services ;
 - container platform ;
 - event-driven ;
 - independently deployable components.
 
 Trade-offs:
+
 - distributed consistency ;
 - operational complexity ;
 - platform maturity required.
 
 No model is universally “better”; context determines fit.
 
-## 15. Network view
+## Network view
 
 ```text
 Internet
@@ -244,7 +262,7 @@ Internet
 → CSM
 ```
 
-## 16. Security view
+## Security view
 
 ```text
 Customer IAM
@@ -258,9 +276,10 @@ AML/Sanctions
 Audit
 ```
 
-## 17. Resilience view
+## Resilience view
 
 Each critical dependency gets:
+
 - failure domain ;
 - redundancy ;
 - recovery ;
@@ -270,14 +289,15 @@ Each critical dependency gets:
 - test ;
 - owner.
 
-## 18. Evidence view
+## Evidence view
 
 Claims must be labelled:
+
 - designed ;
 - rendered/CI ;
 - runtime-proven ;
 - production-proven.
 
-## 19. Conclusion
+## Conclusion
 
 A bank-side Wero architecture is fundamentally an integration between customer experience, payment orchestration, deterministic financial systems and external payment infrastructures.

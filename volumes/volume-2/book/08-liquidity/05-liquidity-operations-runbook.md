@@ -9,9 +9,10 @@ related_internal_repos:
 
 # Runbook de liquidité instant payments
 
-## 1. Trigger
+## Trigger
 
 Déclenchement lorsque :
+
 - balance below warning ;
 - projected depletion ;
 - liquidity rejects ;
@@ -19,7 +20,7 @@ Déclenchement lorsque :
 - balance feed stale ;
 - unusual route shift.
 
-## 2. Initial checks
+## Initial checks
 
 1. confirm data freshness ;
 2. confirm rail health ;
@@ -28,7 +29,7 @@ Déclenchement lorsque :
 5. identify available funding path ;
 6. confirm account state.
 
-## 3. Classify
+## Classify
 
 ### Normal peak
 Forecast underestimated volume.
@@ -48,9 +49,10 @@ Wrong defund/fund.
 ### Fraud/security
 Unexpected movement.
 
-## 4. Safe actions
+## Safe actions
 
 Selon policy :
+
 - fund position ;
 - cancel planned defund ;
 - change routing policy ;
@@ -58,23 +60,25 @@ Selon policy :
 - enter degraded mode ;
 - escalate treasury.
 
-## 5. Prohibited
+## Prohibited
 
 - invent balance ;
 - mark payment settled because liquidity was expected ;
 - blind retry financial transfers ;
 - route UNKNOWN payments elsewhere.
 
-## 6. Maker/checker
+## Maker/checker
 
 Au-dessus d'un seuil de matérialité :
+
 - maker prepares ;
 - checker validates ;
 - audit stores both identities.
 
-## 7. Communication
+## Communication
 
 Notifier :
+
 - payment operations ;
 - treasury ;
 - SRE ;
@@ -82,25 +86,28 @@ Notifier :
 - business if customer impact ;
 - provider if serviced model.
 
-## 8. Customer impact
+## Customer impact
 
 Si de nouveaux paiements ne peuvent pas être acceptés en sécurité :
+
 - clear degraded messaging ;
 - no false confirmation ;
 - preserve status queries.
 
-## 9. Recovery
+## Recovery
 
 Après restauration :
+
 1. verify authoritative balance ;
 2. verify route ;
 3. release traffic under policy ;
 4. monitor rejection rate ;
 5. reconcile impacted payments.
 
-## 10. Post-incident
+## Post-incident
 
 Review :
+
 - forecast ;
 - threshold ;
 - alert ;
@@ -110,9 +117,10 @@ Review :
 - routing ;
 - customer impact.
 
-## 11. Evidence
+## Evidence
 
 Archive :
+
 - exports ;
 - transaction refs ;
 - balances ;
@@ -122,36 +130,40 @@ Archive :
 - incident ticket ;
 - remediation.
 
-## 12. Exercises
+## Exercises
 
 Examples :
+
 - weekend depletion ;
 - provider unavailable ;
 - route failover ;
 - stale balance ;
 - erroneous transfer.
 
-## 13. Ownership
+## Ownership
 
 Primary :
+
 - treasury/liquidity operations.
 
 Partners :
+
 - payment ops ;
 - SRE ;
 - architecture ;
 - risk ;
 - supplier management.
 
-## 14. Security
+## Security
 
 Liquidity operations are privileged financial actions :
+
 - strong authentication ;
 - least privilege ;
 - session recording where applicable ;
 - anomaly detection ;
 - segregation of duties.
 
-## 15. Goal
+## Goal
 
 Maintenir la continuité sans sacrifier la certitude du settlement ni le contrôle de la liquidité banque centrale.

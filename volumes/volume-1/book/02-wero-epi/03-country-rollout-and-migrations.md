@@ -14,9 +14,10 @@ related_internal_repos: []
 
 # Déploiement par pays et architecture de migration
 
-## 1. Un lancement européen n'est pas un big bang
+## Un lancement européen n'est pas un big bang
 
 Les sources publiques montrent un déploiement progressif :
+
 - pays ;
 - banques ;
 - cas d'usage ;
@@ -26,7 +27,7 @@ Les sources publiques montrent un déploiement progressif :
 
 L'architecture doit donc gérer une longue période de coexistence.
 
-## 2. Chronologie utile
+## Chronologie utile
 
 ### Allemagne — 2024
 Le lancement public démarre avec le P2P.
@@ -43,7 +44,7 @@ La migration Payconiq → Wero fournit un exemple concret de transition d'un ser
 ### Pays-Bas
 La transition iDEAL → Wero représente une migration particulièrement structurante car iDEAL est déjà largement intégré dans l'écosystème marchand.
 
-## 3. Dimensions d'une migration
+## Dimensions d'une migration
 
 ~~~text
 Customer
@@ -65,7 +66,7 @@ Settlement path
 
 Elle ne se réduit pas à changer l'API.
 
-## 4. Coexistence
+## Coexistence
 
 ~~~text
 Legacy Scheme / Wallet
@@ -81,15 +82,17 @@ Legacy Scheme / Wallet
 ~~~
 
 Questions :
+
 - combien de temps les deux solutions coexistent ?
 - le même marchand accepte-t-il les deux ?
 - comment éviter une double présentation ?
 - comment traiter les remboursements d'anciennes transactions ?
 - quelle solution est source de reporting historique ?
 
-## 5. Merchant migration
+## Merchant migration
 
 Étapes de référence :
+
 1. inventory des intégrations ;
 2. classify redirect / QR / API / plugin / mobile ;
 3. map credentials ;
@@ -101,9 +104,10 @@ Questions :
 9. monitor ;
 10. retire legacy after refund/dispute tail.
 
-## 6. Customer migration
+## Customer migration
 
 Le client doit retrouver :
+
 - enrolment ;
 - contacts/aliases selon règles ;
 - historique pertinent ;
@@ -113,9 +117,10 @@ Le client doit retrouver :
 
 Ne jamais supposer qu'une migration technique autorise automatiquement la migration de tous les consentements.
 
-## 7. Alias migration
+## Alias migration
 
 Un alias doit être traité comme donnée à cycle de vie :
+
 - create ;
 - verify ;
 - bind ;
@@ -126,9 +131,10 @@ Un alias doit être traité comme donnée à cycle de vie :
 
 Risque critique : un numéro de téléphone réattribué ne doit pas conduire à un paiement vers le mauvais compte.
 
-## 8. QR migration
+## QR migration
 
 Si un écosystème domestique possédait déjà un QR :
+
 - identifier format ;
 - backward compatibility ;
 - dynamic vs static ;
@@ -140,9 +146,10 @@ Si un écosystème domestique possédait déjà un QR :
 
 Un QR est une entrée vers un contexte de paiement ; il ne doit pas contenir plus de données sensibles que nécessaire.
 
-## 9. Observabilité de migration
+## Observabilité de migration
 
 Dashboards :
+
 - adoption rate ;
 - legacy vs Wero volume ;
 - conversion ;
@@ -153,9 +160,10 @@ Dashboards :
 - alias errors ;
 - duplicate attempts.
 
-## 10. Cutover
+## Cutover
 
 Un cutover doit inclure :
+
 - decision authority ;
 - freeze ;
 - rollback ;
@@ -165,9 +173,10 @@ Un cutover doit inclure :
 - communication ;
 - incident threshold.
 
-## 11. Tail management
+## Tail management
 
 Après arrêt de l'ancien parcours, il reste :
+
 - refunds ;
 - returns ;
 - disputes ;
@@ -178,9 +187,10 @@ Après arrêt de l'ancien parcours, il reste :
 
 Le legacy doit être retiré seulement lorsque cette queue métier est maîtrisée.
 
-## 12. Leçon d'architecture
+## Leçon d'architecture
 
 Une migration de moyen de paiement est un programme écosystème. Les risques réels se situent souvent dans :
+
 - coexistence ;
 - identité ;
 - merchant operations ;

@@ -10,7 +10,7 @@ primary_sources:
 
 La récurrence est une capacité de cycle de vie, pas un simple retry du paiement initial.
 
-## 1. Objets distincts
+## Objets distincts
 
 - abonnement / relation commerciale ;
 - consentement ou mandat selon modèle applicable ;
@@ -18,7 +18,7 @@ La récurrence est une capacité de cycle de vie, pas un simple retry du paiemen
 - paiement individuel ;
 - statut financier de chaque occurrence.
 
-## 2. Invariants
+## Invariants
 
 1. Chaque occurrence financière possède sa propre identité.
 2. Le consentement actif n'implique pas qu'une occurrence a été réglée.
@@ -26,7 +26,7 @@ La récurrence est une capacité de cycle de vie, pas un simple retry du paiemen
 4. Un échec d'occurrence ne recrée pas silencieusement un consentement.
 5. Disponibilité fonctionnelle et détails d'implémentation restent versionnés par pays/PSP lorsque les sources publiques le requièrent.
 
-## 3. États conceptuels
+## États conceptuels
 
 Consentement :
 `PROPOSED → ACTIVE → SUSPENDED / REVOKED / EXPIRED`
@@ -34,6 +34,6 @@ Consentement :
 Occurrence :
 `SCHEDULED → DUE → PAYMENT_PENDING → PAID / FAILED / UNKNOWN`
 
-## 4. Limite de vérité
+## Limite de vérité
 
 Le handbook ne déduit pas une implémentation interne Wero/EPI de la seule existence publique d'une capacité subscription.

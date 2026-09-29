@@ -10,6 +10,7 @@
 The complete manuscript was rendered through Quarto after figure integration.
 
 Result:
+
 - 36/36 figures resolved;
 - 0 missing rendered images;
 - 0 unresolved figure cross-references;
@@ -26,6 +27,7 @@ See `governance/LAYOUT_PROOF_V1_2026-09-29.md`.
 All 36 SVG artifacts are now embedded in their canonical chapters.
 
 Integration result:
+
 - 36/36 figures placed;
 - 34 target chapters;
 - unique Quarto IDs `#fig-xx-xxx`;
@@ -110,6 +112,7 @@ The remaining 28 figures have also been migrated to Visual System V1 and rendere
 Status: **SECONDARY_SVG_QA_PASS**
 
 QA result:
+
 - 28/28 valid SVG artifacts;
 - 28/28 with explicit vector viewBox;
 - 28/28 with Visual System V1 signature;
@@ -118,11 +121,13 @@ QA result:
 - 0 semantic node overlaps after one correction to FIG-13-004.
 
 Combined corpus:
+
 - 8 Hero SVGs;
 - 28 Secondary SVGs;
 - **36/36 FIGURES — SVG_SOURCE_QA_PASS**.
 
 See:
+
 - `diagrams/HERO_SVG_QA_V1.md`
 - `diagrams/SECONDARY_SVG_QA_V1.md`
 

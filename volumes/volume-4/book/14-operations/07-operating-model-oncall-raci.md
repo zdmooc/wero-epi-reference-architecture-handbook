@@ -9,9 +9,10 @@ related_internal_repos:
 
 # Operating model, on-call et responsabilités
 
-## 1. 24/7 service needs 24/7 ownership
+## 24/7 service needs 24/7 ownership
 
 A system available at night needs:
+
 - monitoring ;
 - on-call ;
 - escalation ;
@@ -19,9 +20,10 @@ A system available at night needs:
 - treasury path ;
 - decision authority.
 
-## 2. Functional ownership
+## Functional ownership
 
 Domains:
+
 - Wero/customer journey ;
 - merchant/acceptor ;
 - payment hub ;
@@ -35,61 +37,68 @@ Domains:
 - broker ;
 - security.
 
-## 3. Service owner
+## Service owner
 
 Owns:
+
 - business service ;
 - SLO ;
 - risk ;
 - roadmap ;
 - incident priority.
 
-## 4. Technical owner
+## Technical owner
 
 Owns component:
+
 - lifecycle ;
 - patch ;
 - capacity ;
 - runbook ;
 - recovery.
 
-## 5. Payment operations
+## Payment operations
 
 Owns:
+
 - rejects ;
 - unknowns ;
 - recalls ;
 - returns ;
 - reconciliation cases.
 
-## 6. Treasury
+## Treasury
 
 Owns:
+
 - liquidity positions ;
 - funding ;
 - thresholds ;
 - emergency actions.
 
-## 7. SRE/NOC
+## SRE/NOC
 
 Owns:
+
 - monitoring ;
 - first response ;
 - incident coordination ;
 - platform reliability.
 
-## 8. Security
+## Security
 
 Owns:
+
 - IAM policy ;
 - PKI/HSM governance ;
 - vulnerability ;
 - security incident ;
 - detection.
 
-## 9. On-call model
+## On-call model
 
 Define:
+
 - primary ;
 - secondary ;
 - escalation ;
@@ -97,29 +106,32 @@ Define:
 - handover ;
 - fatigue controls.
 
-## 10. Supplier contact
+## Supplier contact
 
 For critical provider:
+
 - 24/7 contact ;
 - contract ID ;
 - severity path ;
 - escalation ;
 - alternate contact.
 
-## 11. RACI
+## RACI
 
 Use annex RACI but tailor per institution.
 
 Critical actions need clear Accountable:
+
 - site failover ;
 - rail switch ;
 - liquidity transfer ;
 - certificate emergency ;
 - payment manual correction.
 
-## 12. Change calendar
+## Change calendar
 
 Coordinate:
+
 - EPC changes ;
 - CSM changes ;
 - bank release ;
@@ -127,28 +139,31 @@ Coordinate:
 - infra maintenance ;
 - merchant peak.
 
-## 13. Shift handover
+## Shift handover
 
 Include:
+
 - active incidents ;
 - unknown queue ;
 - liquidity ;
 - degraded dependencies ;
 - planned changes.
 
-## 14. Knowledge
+## Knowledge
 
 Runbooks and architecture docs must be:
+
 - searchable ;
 - versioned ;
 - tested ;
 - accessible during outage.
 
-## 15. Resilience of people
+## Resilience of people
 
 Avoid one expert dependency.
 
 Use:
+
 - cross-training ;
 - exercises ;
 - paired on-call ;

@@ -9,11 +9,11 @@ related_internal_repos:
 
 # Saga, compensation, replay et DLQ
 
-## 1. Payment is not a generic saga demo
+## Payment is not a generic saga demo
 
 External settlement may be irreversible. A compensation cannot pretend to undo a final transfer.
 
-## 2. Orchestration saga
+## Orchestration saga
 
 Reference:
 ~~~text
@@ -26,10 +26,11 @@ create intent
 ~~~
 
 If settlement succeeds and notification fails:
+
 - retry notification ;
 - do not compensate financial payment.
 
-## 3. Compensation types
+## Compensation types
 
 ### Technical compensation
 Release local reservation.
@@ -40,18 +41,20 @@ Create refund/return process.
 ### No compensation
 If external effect is final and no reverse operation is justified.
 
-## 4. State persistence
+## State persistence
 
 Saga state durable:
+
 - current step ;
 - completed steps ;
 - external refs ;
 - retry count ;
 - timers.
 
-## 5. Timers
+## Timers
 
 Examples:
+
 - payment request expiry ;
 - waiting for external status ;
 - webhook retry ;
@@ -59,29 +62,32 @@ Examples:
 
 Timers must survive process restart.
 
-## 6. DLQ
+## DLQ
 
 DLQ is an operational queue, not a trash can.
 
 For each entry:
+
 - owner ;
 - severity ;
 - retryability ;
 - runbook ;
 - age alert.
 
-## 7. Replay safety
+## Replay safety
 
 Categories:
+
 - safe read-model event ;
 - idempotent state event ;
 - dangerous external side-effect command.
 
 Only first two are broadly replayable.
 
-## 8. Poison message
+## Poison message
 
 If payload/schema invalid:
+
 - quarantine ;
 - preserve ;
 - alert ;
@@ -90,9 +96,10 @@ If payload/schema invalid:
 
 Do not infinite-loop.
 
-## 9. Compensation audit
+## Compensation audit
 
 When creating refund:
+
 - link original payment ;
 - reason ;
 - approval ;
@@ -100,16 +107,18 @@ When creating refund:
 - operator/system ;
 - outcome.
 
-## 10. Timeout saga
+## Timeout saga
 
 If external call times out:
+
 - do not automatically move to compensation ;
 - determine whether effect may exist ;
 - UNKNOWN + inquiry.
 
-## 11. Human task
+## Human task
 
 Some cases require:
+
 - operator decision ;
 - fraud review ;
 - recall approval ;
@@ -117,22 +126,23 @@ Some cases require:
 
 Human task is a durable workflow state, not an e-mail side process.
 
-## 12. Concurrent saga
+## Concurrent saga
 
 One logical payment should have one financial owner.
 
 Use:
+
 - lease/claim ;
 - optimistic version ;
 - DB uniqueness.
 
-## 13. Event choreography risk
+## Event choreography risk
 
 Pure choreography can make overall state hard to understand.
 
 For critical financial lifecycle, explicit orchestration/state ownership often improves auditability.
 
-## 14. Metrics
+## Metrics
 
 - saga age ;
 - stuck state ;
@@ -142,7 +152,7 @@ For critical financial lifecycle, explicit orchestration/state ownership often i
 - human queue ;
 - unknown resolution.
 
-## 15. Testing
+## Testing
 
 - crash between steps ;
 - duplicate event ;

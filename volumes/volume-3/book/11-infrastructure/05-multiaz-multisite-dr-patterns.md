@@ -16,7 +16,7 @@ La @fig-11-001 matérialise la vue de référence de ce chapitre.
 
 *Statut : **REFERENCE_ARCHITECTURE** · Source(s) : Handbook reference architecture · Vérifié : 2026-09-29.*
 
-## 1. Failure domains
+## Failure domains
 
 ~~~text
 process
@@ -31,17 +31,19 @@ provider
 
 Chaque niveau demande une protection différente.
 
-## 2. Multi-node
+## Multi-node
 
 Protège la perte d'un nœud seulement si :
+
 - replicas distribuées ;
 - storage disponible ;
 - LB route ;
 - dependencies survivantes.
 
-## 3. Multi-AZ
+## Multi-AZ
 
 Exige :
+
 - workers répartis ;
 - DB quorum ;
 - broker distribution ;
@@ -51,9 +53,10 @@ Exige :
 - IAM ;
 - secrets/HSM access.
 
-## 4. Multi-site
+## Multi-site
 
 Ajoute :
+
 - WAN latency ;
 - DNS/global routing ;
 - data replication ;
@@ -61,7 +64,7 @@ Ajoute :
 - operational ownership ;
 - network providers.
 
-## 5. Active/passive
+## Active/passive
 
 ~~~text
 Site A ACTIVE
@@ -69,44 +72,50 @@ Site B STANDBY
 ~~~
 
 Nécessite :
+
 - data replication ;
 - regular failover test ;
 - warm capacity ;
 - promotion runbook ;
 - fencing A before B.
 
-## 6. Active/active
+## Active/active
 
 Seulement si :
+
 - ownership/sharding/consensus clair ;
 - duplicate external effects prevented ;
 - data model adapté.
 
 Ne pas choisir pour prestige.
 
-## 7. Cell architecture
+## Cell architecture
 
 Partitionner le trafic en cellules :
+
 - independent app/data slice ;
 - blast-radius control ;
 - known ownership.
 
-## 8. Global routing
+## Global routing
 
 Options :
+
 - DNS ;
 - global LB ;
 - traffic manager.
 
 Définir :
+
 - health source ;
 - TTL ;
 - failover ;
 - client cache behavior.
 
-## 9. Site loss
+## Site loss
 
 Le test doit inclure :
+
 - perte réseau site ;
 - promotion data ;
 - route clients ;
@@ -115,9 +124,10 @@ Le test doit inclure :
 - HSM ;
 - reconciliation.
 
-## 10. External dependencies
+## External dependencies
 
 Le site DR doit atteindre :
+
 - CSM ;
 - IAM ;
 - fraud ;
@@ -125,16 +135,17 @@ Le site DR doit atteindre :
 - observability ;
 - third parties.
 
-## 11. Capacity in DR
+## Capacity in DR
 
 Un standby sous-dimensionné peut ne pas tenir le pic.
 
 Définir :
+
 - minimum critical capacity ;
 - scale-up time ;
 - degraded mode.
 
-## 12. RTO decomposition
+## RTO decomposition
 
 ~~~text
 detect
@@ -148,18 +159,20 @@ detect
 = business RTO
 ~~~
 
-## 13. RPO decomposition
+## RPO decomposition
 
 Par classe de données :
+
 - payment DB ;
 - ledger ;
 - event broker ;
 - audit ;
 - config.
 
-## 14. Failback
+## Failback
 
 Étapes :
+
 - stabilize ;
 - resync ;
 - prove consistency ;
@@ -167,11 +180,12 @@ Par classe de données :
 - move traffic ;
 - reconcile again.
 
-## 15. Evidence
+## Evidence
 
 Le diagramme n'est pas une preuve.
 
 La preuve contient :
+
 - exercise date ;
 - failure injected ;
 - measured times ;

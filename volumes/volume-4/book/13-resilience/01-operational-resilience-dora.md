@@ -12,7 +12,7 @@ related_internal_repos:
 
 # Partie XII — Résilience opérationnelle et DORA
 
-## 1. Disponibilité ≠ résilience
+## Disponibilité ≠ résilience
 
 ~~~text
 Availability
@@ -24,17 +24,19 @@ tout en préservant l'issue métier critique
 ~~~
 
 Pour un paiement, l'issue critique inclut :
+
 - pas de double paiement incontrôlé ;
 - pas de perte silencieuse ;
 - vérité réconciliable ;
 - récupération contrôlée ;
 - preuve exploitable.
 
-## 2. Baseline DORA
+## Baseline DORA
 
 Le règlement (UE) 2022/2554 s'applique depuis le 17 janvier 2025.
 
 Lecture architecture :
+
 - gouvernance ;
 - ICT risk management ;
 - incident management/classification/reporting ;
@@ -45,9 +47,10 @@ Lecture architecture :
 
 DORA ne prescrit pas un produit.
 
-## 3. Level 2 measures
+## Level 2 measures
 
 La Commission et les ESAs maintiennent un ensemble d'actes délégués/implémentation et standards techniques couvrant notamment :
+
 - ICT risk management framework ;
 - incident classification ;
 - major incident reporting ;
@@ -59,7 +62,7 @@ La Commission et les ESAs maintiennent un ensemble d'actes délégués/implémen
 Règle éditoriale :
 la page Commission DORA “implementing and delegated acts” est la source d'inventaire à revalider à chaque édition.
 
-## 4. Critical Business Service
+## Critical Business Service
 
 Commencer par le service, pas les serveurs.
 
@@ -81,9 +84,10 @@ Platform / DB / Broker
 PSP / CSM / Third Parties
 ~~~
 
-## 5. BIA
+## BIA
 
 Questions :
+
 - impact après 10 s ?
 - 1 min ?
 - 15 min ?
@@ -97,6 +101,7 @@ Questions :
 - fraude ?
 
 Outputs :
+
 - criticality ;
 - RTO ;
 - RPO ;
@@ -104,11 +109,12 @@ Outputs :
 - dependencies ;
 - recovery priorities.
 
-## 6. RTO
+## RTO
 
 RTO = délai cible de restauration.
 
 Toujours préciser :
+
 - service ;
 - failure domain ;
 - start event ;
@@ -121,11 +127,12 @@ Payment API RTO <= 60 s pour perte d'un pod.
 Exemple inutile :
 RTO = 0 sans contexte.
 
-## 7. RPO
+## RPO
 
 RPO = fenêtre de perte de données acceptable.
 
 Dans le paiement, distinguer :
+
 - orchestration ;
 - ledger ;
 - events ;
@@ -134,9 +141,10 @@ Dans le paiement, distinguer :
 
 Une transaction peut être réglée à l'extérieur alors que l'état local est perdu. Le RPO DB et la vérité financière ne sont donc pas la même chose.
 
-## 8. Failure domains
+## Failure domains
 
 Catalogue :
+
 - process ;
 - pod ;
 - node ;
@@ -156,7 +164,7 @@ Catalogue :
 - region ;
 - third party.
 
-## 9. Active/passive
+## Active/passive
 
 ~~~text
 Site A = writer
@@ -164,6 +172,7 @@ Site B = warm standby
 ~~~
 
 Critique :
+
 - replication ;
 - fencing ;
 - promotion ;
@@ -171,9 +180,10 @@ Critique :
 - reconciliation ;
 - failback.
 
-## 10. Active/active
+## Active/active
 
 Plus complexe :
+
 - partitionnement ou global consistency ;
 - ownership d'un payment ;
 - idempotency ;
@@ -181,28 +191,31 @@ Plus complexe :
 - cross-region latency ;
 - split-brain control.
 
-## 11. Cell architecture
+## Cell architecture
 
 Cellules indépendantes avec trafic et données contrôlés.
 
 Avantages :
+
 - blast radius ;
 - scaling ;
 - isolation.
 
 Challenge :
+
 - routing ;
 - global identity ;
 - cross-cell operation ;
 - reconciliation.
 
-## 12. Fencing
+## Fencing
 
 Avant promotion d'un nouveau writer :
 
 **prouver que l'ancien writer ne peut plus produire d'effet financier.**
 
 Mechanisms possibles :
+
 - lease/quorum ;
 - storage fencing ;
 - network isolation ;
@@ -210,27 +223,30 @@ Mechanisms possibles :
 - cloud API ;
 - operator-controlled cut.
 
-## 13. Degraded modes
+## Degraded modes
 
 Acceptables selon design :
+
 - notifications retardées ;
 - analytics indisponible ;
 - enrollment temporairement fermé ;
 - callback marchand retardé avec status API disponible.
 
 Inacceptables :
+
 - bypass SCA ;
 - idempotency désactivée ;
 - UNKNOWN converti arbitrairement en SUCCESS ;
 - deux writers non fenced.
 
-## 14. Reconciliation after incident
+## Reconciliation after incident
 
 Question centrale :
 
 **Le paiement a-t-il réellement eu lieu ?**
 
 Runbook :
+
 1. stopper les retries dangereux ;
 2. extraire intents locaux ;
 3. extraire statuts externes ;
@@ -240,7 +256,7 @@ Runbook :
 7. notifier ;
 8. conserver evidence.
 
-## 15. Chaos engineering
+## Chaos engineering
 
 Un test de chaos doit avoir une hypothèse.
 
@@ -255,9 +271,10 @@ And after recovery event is published
 And no second financial payment is created
 ~~~
 
-## 16. Companion lab evidence
+## Companion lab evidence
 
 Le flagship du portefeuille documente dans son scope CRC mono-nœud des preuves runtime pour :
+
 - idempotent replay ;
 - UNKNOWN/reconciliation ;
 - Outbox/Kafka recovery ;
@@ -275,7 +292,7 @@ Le flagship du portefeuille documente dans son scope CRC mono-nœud des preuves 
 
 Ce sont des preuves de pattern dans ce lab, pas des preuves de topologie Wero/EPI ou de multi-AZ.
 
-## 17. Resilience test ladder
+## Resilience test ladder
 
 ~~~text
 unit fault
@@ -290,9 +307,10 @@ unit fault
 → third-party outage
 ~~~
 
-## 18. Third-party risk
+## Third-party risk
 
 Cartographier :
+
 - provider ;
 - service ;
 - critical/important function support ;
@@ -305,9 +323,10 @@ Cartographier :
 - SLA ;
 - evidence.
 
-## 19. Exit strategy
+## Exit strategy
 
 Pour chaque provider critique :
+
 - export data ;
 - format ;
 - migration duration ;
@@ -321,22 +340,24 @@ Pour chaque provider critique :
 
 Une stratégie de sortie non testée reste une hypothèse.
 
-## 20. Incident classification/reporting
+## Incident classification/reporting
 
 Les standards techniques DORA harmonisent classification et reporting.
 
 Conséquence architecture :
+
 - timestamps fiables ;
 - services affectés identifiables ;
 - volumes/clients impactés calculables ;
 - cause/failure domain traçable ;
 - evidence retenue.
 
-## 21. Major incident reporting
+## Major incident reporting
 
 Les standards techniques publiés précisent le contenu, les templates et des délais de reporting.
 
 Le système d'incident management doit donc être capable de produire rapidement :
+
 - detection time ;
 - classification time ;
 - scope ;
@@ -346,11 +367,12 @@ Le système d'incident management doit donc être capable de produire rapidement
 - mitigation ;
 - third-party involvement.
 
-## 22. TLPT
+## TLPT
 
 Threat-Led Penetration Testing pour les entités concernées.
 
 Préparation :
+
 - critical functions ;
 - realistic scope ;
 - third-party coordination ;
@@ -360,9 +382,10 @@ Préparation :
 
 Generic pentest ≠ TLPT.
 
-## 23. Register of Information
+## Register of Information
 
 Architecture inputs :
+
 - provider ;
 - contract ;
 - service ;
@@ -374,7 +397,7 @@ Architecture inputs :
 
 Il faut aligner EAM/CMDB/procurement/legal data pour éviter un registre manuel divergent.
 
-## 24. DORA evidence model
+## DORA evidence model
 
 ~~~text
 obligation
@@ -387,7 +410,7 @@ obligation
 → remediation
 ~~~
 
-## 25. Resilience evidence matrix
+## Resilience evidence matrix
 
 | Claim | Design | CI | Runtime | Production |
 |---|---:|---:|---:|---:|
@@ -397,12 +420,12 @@ obligation
 | RPO=0 | design | config | failure test | contractual |
 | Site DR | runbook | checks | exercise | periodic |
 
-## 26. NIS2 / DORA
+## NIS2 / DORA
 
 Le livre documente les deux cadres mais ne déclare pas l'applicabilité juridique individuelle d'une entité.
 
 Pour les entités financières, vérifier les interactions et la lex specialis avec les textes et autorités compétentes.
 
-## 27. Conclusion
+## Conclusion
 
 La résilience opérationnelle relie correctness paiement, infrastructure, réseau, incident management, third parties et preuve réglementaire. Elle ne se résume ni à Kubernetes, ni à un deuxième datacenter.

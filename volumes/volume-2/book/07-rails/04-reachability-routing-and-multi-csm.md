@@ -19,13 +19,14 @@ La @fig-07-004 synthétise le modèle utilisé dans ce chapitre.
 
 *Statut : **REFERENCE_ARCHITECTURE** · Source(s) : Handbook reference architecture · Vérifié : 2026-09-29.*
 
-## 1. La reachability précède le routing
+## La reachability précède le routing
 
 Avant de choisir une route, le système doit savoir si le beneficiary PSP est atteignable et par quel mécanisme.
 
-## 2. Reachability model
+## Reachability model
 
 Data :
+
 - participantId ;
 - BIC/identifier selon scheme ;
 - direct/indirect ;
@@ -36,20 +37,22 @@ Data :
 - source ;
 - lastUpdated.
 
-## 3. Directory freshness
+## Directory freshness
 
 Une table de route obsolète peut envoyer vers un mauvais CSM, générer des rejects ou allonger le temps.
 
 Controls :
+
 - verified source ;
 - scheduled refresh ;
 - diff review ;
 - effective-date support ;
 - rollback.
 
-## 4. Route policy
+## Route policy
 
 Inputs :
+
 - reachability ;
 - participant preference ;
 - operational health ;
@@ -60,11 +63,12 @@ Inputs :
 - regulation.
 
 Output :
+
 - selected route ;
 - reason ;
 - policy version.
 
-## 5. Determinism
+## Determinism
 
 ~~~text
 payment X
@@ -76,7 +80,7 @@ payment X
 
 Le routing ne doit pas être opaque.
 
-## 6. Multi-CSM architecture
+## Multi-CSM architecture
 
 ~~~text
 Payment Hub
@@ -90,14 +94,15 @@ Routing Service
 
 Chaque adapter porte le même canonical intent avec son contrat, sa connexion, son health et sa reconciliation.
 
-## 7. Fallback before submit
+## Fallback before submit
 
 Si route A est indisponible et aucune instruction n'a été soumise :
+
 - route B possible si destination reachable et policy permet ;
 - garder same logical payment ;
 - lier la nouvelle tentative de route.
 
-## 8. Fallback after uncertain submit
+## Fallback after uncertain submit
 
 Interdit par défaut :
 
@@ -116,15 +121,17 @@ A becomes UNKNOWN
    then route B
 ~~~
 
-## 9. Rail health
+## Rail health
 
 Levels :
+
 - GREEN ;
 - DEGRADED ;
 - UNAVAILABLE ;
 - UNKNOWN.
 
 Inputs :
+
 - connectivity ;
 - rejects ;
 - latency ;
@@ -132,37 +139,41 @@ Inputs :
 - liquidity ;
 - probes where allowed.
 
-## 10. Routing flapping
+## Routing flapping
 
 Controls :
+
 - hysteresis ;
 - minimum hold time ;
 - manual override ;
 - audit.
 
-## 11. Liquidity-aware routing
+## Liquidity-aware routing
 
 Risks :
+
 - oscillation ;
 - depletion of alternate rail ;
 - cost surprises ;
 - non-deterministic behavior.
 
 Controls :
+
 - threshold bands ;
 - treasury approval ;
 - caps ;
 - stable policy.
 
-## 12. Cost-aware routing
+## Cost-aware routing
 
 Le coût ne doit jamais dégrader :
+
 - scheme compliance ;
 - settlement certainty ;
 - resilience ;
 - customer timing.
 
-## 13. Testing
+## Testing
 
 - direct route ;
 - indirect route ;
@@ -174,9 +185,10 @@ Le coût ne doit jamais dégrader :
 - liquidity low ;
 - route flapping.
 
-## 14. Observability
+## Observability
 
 KPIs :
+
 - route distribution ;
 - route changes ;
 - fallback count ;
@@ -185,9 +197,10 @@ KPIs :
 - directory freshness ;
 - route-specific UNKNOWN.
 
-## 15. Governance
+## Governance
 
 Une modification de routing policy est un changement production :
+
 - review ;
 - test ;
 - versioning ;

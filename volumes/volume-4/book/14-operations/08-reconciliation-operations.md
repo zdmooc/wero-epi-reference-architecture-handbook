@@ -9,9 +9,10 @@ related_internal_repos:
 
 # Reconciliation Operations
 
-## 1. Reconciliation is an operational service
+## Reconciliation is an operational service
 
 It needs:
+
 - owner ;
 - queues ;
 - SLIs ;
@@ -20,7 +21,7 @@ It needs:
 
 Not a nightly script nobody owns.
 
-## 2. Queues
+## Queues
 
 - UNKNOWN ;
 - local/external mismatch ;
@@ -29,9 +30,10 @@ Not a nightly script nobody owns.
 - refund mismatch ;
 - orphan message.
 
-## 3. Prioritization
+## Prioritization
 
 By:
+
 - age ;
 - value ;
 - customer impact ;
@@ -39,9 +41,10 @@ By:
 - accounting deadline ;
 - regulatory significance.
 
-## 4. Auto-match
+## Auto-match
 
 Exact rules:
+
 - unique reference ;
 - amount/currency ;
 - participant ;
@@ -49,18 +52,20 @@ Exact rules:
 
 Avoid fuzzy automatic correction of money.
 
-## 5. Auto-resolution
+## Auto-resolution
 
 Safe examples:
+
 - duplicate callback ;
 - delayed event after already settled ;
 - known read-model lag.
 
 Financial adjustment usually requires stronger control.
 
-## 6. Manual case
+## Manual case
 
 Operator sees:
+
 - payment timeline ;
 - ISO references ;
 - ledger ;
@@ -69,16 +74,18 @@ Operator sees:
 - events ;
 - recommended action.
 
-## 7. Four-eyes
+## Four-eyes
 
 Use for:
+
 - financial correction ;
 - large-value adjustment ;
 - forced state transition.
 
-## 8. Daily control
+## Daily control
 
 Review:
+
 - open count ;
 - oldest ;
 - total value ;
@@ -86,26 +93,29 @@ Review:
 - reason ;
 - unresolved UNKNOWN.
 
-## 9. End-of-day
+## End-of-day
 
 Confirm:
+
 - payment totals ;
 - settlement/account totals ;
 - refunds/returns ;
 - outstanding breaks.
 
-## 10. Incident surge
+## Incident surge
 
 After outage:
+
 - freeze low-priority manual work ;
 - bulk inquiry ;
 - auto-resolve exact matches ;
 - scale case workers ;
 - protect DB/rail from inquiry storm.
 
-## 11. Evidence
+## Evidence
 
 Every closure:
+
 - source ;
 - action ;
 - before/after ;
@@ -113,17 +123,19 @@ Every closure:
 - timestamp ;
 - approvals.
 
-## 12. SLA/SLO
+## SLA/SLO
 
 Different targets:
+
 - UNKNOWN ;
 - merchant callback ;
 - accounting break ;
 - recall case.
 
-## 13. Reporting
+## Reporting
 
 Trend:
+
 - root cause ;
 - system ;
 - participant ;
@@ -132,12 +144,12 @@ Trend:
 
 Reconciliation data should drive architecture improvements.
 
-## 14. Access control
+## Access control
 
 Operators need only data/actions required.
 
 Mask sensitive data where possible.
 
-## 15. Goal
+## Goal
 
 Every financial ambiguity must converge to a provable state without creating a second payment.

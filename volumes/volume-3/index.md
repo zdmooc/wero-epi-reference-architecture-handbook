@@ -9,6 +9,7 @@ Comment construire et déployer une plateforme de paiement qui conserve les inva
 ## Autorité de ce volume
 
 Ce volume est canonique pour :
+
 - réseau et matrice des flux ;
 - APIs, webhooks et contrats techniques ;
 - event-driven architecture, Outbox/Inbox, Kafka/MQ ;

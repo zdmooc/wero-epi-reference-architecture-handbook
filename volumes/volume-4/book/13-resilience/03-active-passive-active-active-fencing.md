@@ -16,11 +16,11 @@ La @fig-13-003 complète la lecture de ce chapitre avec la vue de référence co
 
 *Statut : **REFERENCE_ARCHITECTURE** · Source(s) : Handbook reference architecture · Vérifié : 2026-09-29.*
 
-## 1. Availability is not correctness
+## Availability is not correctness
 
 Deux sites actifs peuvent augmenter disponibilité tout en augmentant le risque de double effet.
 
-## 2. Active/passive
+## Active/passive
 
 ~~~text
 Site A ACTIVE
@@ -31,31 +31,36 @@ Site B STANDBY
 ~~~
 
 Advantages:
+
 - single writer ;
 - simpler consistency.
 
 Risks:
+
 - standby untested ;
 - promotion delay ;
 - stale config ;
 - failback.
 
-## 3. Hot vs warm standby
+## Hot vs warm standby
 
 Hot:
+
 - services running ;
 - data near-current ;
 - quick promotion.
 
 Warm:
+
 - partial capacity ;
 - startup/scale required.
 
 Document exact state.
 
-## 4. Active/active
+## Active/active
 
 Possible models:
+
 - shared consensus datastore ;
 - sharded ownership ;
 - cell-based ;
@@ -63,21 +68,24 @@ Possible models:
 
 Avoid uncontrolled dual writer.
 
-## 5. Split brain
+## Split brain
 
 Scenario:
+
 - A cannot see B ;
 - both think other failed ;
 - both accept same logical payment.
 
 Outcome can be catastrophic.
 
-## 6. Fencing
+## Fencing
 
 Before promoting B:
+
 - ensure A cannot write.
 
 Mechanisms:
+
 - consensus lease ;
 - DB quorum ;
 - storage fencing ;
@@ -85,47 +93,51 @@ Mechanisms:
 - cloud/provider fencing ;
 - manual isolation with proof.
 
-## 7. Quorum
+## Quorum
 
 Place quorum so no simple network partition creates two majorities.
 
 Understand:
+
 - node count ;
 - zone placement ;
 - witness ;
 - latency.
 
-## 8. External side effects
+## External side effects
 
 Even if internal DB uses consensus, two workers may still call external rail twice unless submission ownership is fenced.
 
 Use:
+
 - durable claim ;
 - state version ;
 - unique logical submission ;
 - idempotency.
 
-## 9. Traffic fencing
+## Traffic fencing
 
 Global LB/DNS must not send new writes to old site after promotion.
 
 Need:
+
 - health source ;
 - TTL ;
 - drain ;
 - session handling.
 
-## 10. Operator split brain
+## Operator split brain
 
 Two incident teams can take conflicting actions.
 
 Define:
+
 - incident commander ;
 - promotion authority ;
 - runbook ;
 - communication channel.
 
-## 11. Failover sequence
+## Failover sequence
 
 ~~~text
 detect
@@ -140,18 +152,19 @@ detect
 → reopen full service
 ~~~
 
-## 12. Failback
+## Failback
 
 Not immediate.
 
 Need:
+
 - root cause fixed ;
 - data resynced ;
 - old site trustworthy ;
 - planned window ;
 - second fencing event.
 
-## 13. Testing
+## Testing
 
 - clean failover ;
 - network partition ;
@@ -161,7 +174,7 @@ Need:
 - operator duplicate promotion ;
 - external submit during switchover.
 
-## 14. Metrics
+## Metrics
 
 - detection ;
 - fencing time ;
@@ -170,6 +183,6 @@ Need:
 - first successful payment ;
 - reconciliation completion.
 
-## 15. Design rule
+## Design rule
 
 If the architecture cannot explain exactly who owns write authority during every partition, it is not ready for active/active financial processing.

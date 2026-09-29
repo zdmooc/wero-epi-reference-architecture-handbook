@@ -12,24 +12,26 @@ related_internal_repos:
 
 # RT1 — position de liquidité et contrôle
 
-## 1. Position par participant
+## Position par participant
 
 Le modèle public RT1 décrit une funds balance par participant.
 
 Chaque paiement :
+
 - débite la position du sender ;
 - crédite celle du receiver ;
 - ne peut pas faire passer la position du sender sous zéro.
 
-## 2. Backing central bank funds
+## Backing central bank funds
 
 Les fonds sont adossés au modèle de central-bank funds du système via le compte technique applicable dans TIPS.
 
 Conséquence :
+
 - la position RT1 n'est pas une simple ligne comptable locale ;
 - elle doit être réconciliée avec le système.
 
-## 3. Funding
+## Funding
 
 ~~~text
 Treasury
@@ -46,20 +48,22 @@ participant position
 → target liquidity account
 ~~~
 
-## 4. 24/7
+## 24/7
 
 EBA CLEARING décrit une gestion de liquidité 24/7.
 
 Operations :
+
 - monitoring continu ;
 - support ;
 - alerts ;
 - transfer controls ;
 - provider availability if serviced.
 
-## 5. Liquidity serviced participant
+## Liquidity serviced participant
 
 If using a liquidity provider :
+
 - provider executes/manages funding ;
 - participant needs visibility ;
 - SLA ;
@@ -67,9 +71,10 @@ If using a liquidity provider :
 - fallback ;
 - DORA supplier mapping.
 
-## 6. Position threshold
+## Position threshold
 
 Référence :
+
 - target ;
 - warning ;
 - critical ;
@@ -77,7 +82,7 @@ Référence :
 
 Ne pas exploiter normalement à zéro.
 
-## 7. Inflow/outflow
+## Inflow/outflow
 
 Projected position :
 
@@ -91,27 +96,30 @@ current balance
 
 Prévoir une bande d'incertitude.
 
-## 8. Route concentration
+## Route concentration
 
 Si un autre CSM est indisponible, le volume RT1 peut augmenter.
 
 Treasury et routing engine doivent partager :
+
 - route shift ;
 - volume forecast ;
 - remaining buffer.
 
-## 9. Reject due to liquidity
+## Reject due to liquidity
 
 Le classer séparément de :
+
 - beneficiary reject ;
 - validation reject ;
 - technical timeout.
 
 Il doit déclencher treasury/operations, pas blind application retry.
 
-## 10. Serviced model failure
+## Serviced model failure
 
 Cas :
+
 - liquidity provider unavailable ;
 - provider funds late ;
 - connectivity provider OK but no funds ;
@@ -119,17 +127,19 @@ Cas :
 
 Il faut une supervision indépendante du participant.
 
-## 11. Reconciliation
+## Reconciliation
 
 Rapprocher :
+
 - local payment values ;
 - RT1 participant position changes ;
 - external reports ;
 - treasury transfers.
 
-## 12. Stress test
+## Stress test
 
 Scénarios :
+
 - 5x outflow ;
 - no incoming ;
 - route failover ;
@@ -137,7 +147,7 @@ Scénarios :
 - erroneous oversized defund ;
 - stale balance feed.
 
-## 13. Controls
+## Controls
 
 - max transfer ;
 - min retained buffer ;
@@ -146,7 +156,7 @@ Scénarios :
 - alert on rapid depletion ;
 - independent reconciliation.
 
-## 14. Metrics
+## Metrics
 
 - balance ;
 - value sent/received ;
@@ -156,6 +166,6 @@ Scénarios :
 - provider latency ;
 - time below warning threshold.
 
-## 15. Architecture lesson
+## Architecture lesson
 
 Real-time settlement transforme la trésorerie d'un sujet fin de journée en dépendance opérationnelle continue.

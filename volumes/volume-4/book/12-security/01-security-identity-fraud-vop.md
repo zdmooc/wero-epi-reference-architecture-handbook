@@ -20,9 +20,10 @@ La @fig-12-001 matérialise la vue de référence de ce chapitre.
 
 *Statut : **REFERENCE_ARCHITECTURE** · Source(s) : Handbook reference architecture · Vérifié : 2026-09-29.*
 
-## 1. Trust chain
+## Trust chain
 
 La sécurité d'un paiement traverse :
+
 - client ;
 - device ;
 - canal ;
@@ -37,9 +38,10 @@ La sécurité d'un paiement traverse :
 
 Zero Trust signifie vérifier identité, droit et contexte à chaque frontière pertinente.
 
-## 2. Customer IAM
+## Customer IAM
 
 Capabilities :
+
 - enrollment ;
 - authentication ;
 - account/wallet binding ;
@@ -50,11 +52,12 @@ Capabilities :
 
 Identity proofing et authentification continue sont deux problèmes différents.
 
-## 3. SCA
+## SCA
 
 Strong Customer Authentication doit être pensée comme capability de sécurité et de conformité sous le cadre juridique applicable.
 
 Sujets :
+
 - indépendance des facteurs ;
 - transaction binding/dynamic linking lorsque applicable ;
 - biométrie locale vs preuve serveur ;
@@ -65,37 +68,42 @@ Sujets :
 
 Face ID seul n'est pas “l'architecture SCA”.
 
-## 4. OAuth2 / OIDC
+## OAuth2 / OIDC
 
 OIDC :
+
 - authentication/federation.
 
 OAuth2 :
+
 - authorization d'API.
 
 Reference service-to-service :
+
 - client credentials ou workload federation ;
 - scopes minimaux ;
 - audience ;
 - token court ;
 - rotation/identity lifecycle.
 
-## 5. Workload identity
+## Workload identity
 
 Éviter les comptes techniques partagés.
 
 Préférer :
+
 - platform identities ;
 - federation ;
 - short-lived token ;
 - certificate identity ;
 - per-service scopes.
 
-## 6. TLS / mTLS
+## TLS / mTLS
 
 TLS protège le transport. mTLS ajoute l'authentification mutuelle.
 
 Questions :
+
 - CA ?
 - cert ownership ?
 - rotation ?
@@ -104,9 +112,10 @@ Questions :
 - revocation ?
 - emergency procedure ?
 
-## 7. PKI
+## PKI
 
 Inventaire :
+
 - root CA ;
 - intermediates ;
 - endpoint certs ;
@@ -117,15 +126,17 @@ Inventaire :
 
 La PKI est une dépendance de disponibilité.
 
-## 8. HSM
+## HSM
 
 Use cases :
+
 - private-key protection ;
 - signature ;
 - crypto ;
 - payment/security key operations selon architecture.
 
 Controls :
+
 - dual control ;
 - key ceremony ;
 - partitions ;
@@ -135,9 +146,10 @@ Controls :
 - HA ;
 - DR.
 
-## 9. Secrets management
+## Secrets management
 
 Principes :
+
 - aucun secret plaintext dans Git ;
 - rotation ;
 - short-lived lorsque possible ;
@@ -146,7 +158,7 @@ Principes :
 - break-glass ;
 - revocation.
 
-## 10. Fraud, AML, sanctions et VoP
+## Fraud, AML, sanctions et VoP
 
 Ils ne sont pas synonymes.
 
@@ -164,11 +176,12 @@ VoP
 = vérification du couple payee name / account identifier
 ~~~
 
-## 11. Verification of Payee
+## Verification of Payee
 
 Le rulebook EPC VoP version 1.1 est effectif depuis le 20 septembre 2026.
 
 Modèle public :
+
 1. le payer fournit le bénéficiaire ;
 2. le Requesting PSP envoie une demande ;
 3. le Responding PSP compare avec ses données ;
@@ -177,7 +190,7 @@ Modèle public :
 
 Les catégories de réponse du scheme incluent notamment des notions de match, no match, close match ou check not possible selon les spécifications applicables.
 
-## 12. Architecture VoP de référence
+## Architecture VoP de référence
 
 ~~~text
 Channel
@@ -197,9 +210,10 @@ Response
 Payer decision / continuation
 ~~~
 
-## 13. VoP failure policy
+## VoP failure policy
 
 Cas :
+
 - timeout ;
 - unavailable ;
 - payee unreachable ;
@@ -209,9 +223,10 @@ Cas :
 
 Le comportement UI/paiement doit suivre les règles juridiques et scheme applicables. Le livre n'invente pas une politique universelle block/allow.
 
-## 14. Fraud architecture
+## Fraud architecture
 
 Signaux :
+
 - device ;
 - identity ;
 - velocity ;
@@ -224,6 +239,7 @@ Signaux :
 - historical risk.
 
 Décisions de référence :
+
 - ALLOW ;
 - CHALLENGE ;
 - REVIEW ;
@@ -231,11 +247,12 @@ Décisions de référence :
 
 L'exécution financière reste déterministe.
 
-## 15. APP fraud
+## APP fraud
 
 Authorised Push Payment fraud est particulier : le vrai client peut authentifier un paiement frauduleux.
 
 Contrôles :
+
 - VoP ;
 - warnings ;
 - anomaly detection ;
@@ -244,9 +261,10 @@ Contrôles :
 - intervention ;
 - intelligence post-event.
 
-## 16. QR threats
+## QR threats
 
 In-store/e-commerce QR :
+
 - substitution ;
 - phishing ;
 - stale/expired request ;
@@ -255,6 +273,7 @@ In-store/e-commerce QR :
 - amount alteration.
 
 Controls :
+
 - signed/opaque context ;
 - merchant identity displayed in wallet ;
 - amount confirmation ;
@@ -262,9 +281,10 @@ Controls :
 - one-time token when dynamic ;
 - domain/app link verification.
 
-## 17. Webhook security
+## Webhook security
 
 Webhook marchand :
+
 - TLS ;
 - HMAC/signature or mTLS according to contract ;
 - timestamp ;
@@ -276,9 +296,10 @@ Webhook marchand :
 
 A successful signature does not itself prove financial finality; it proves message authenticity under the integration contract.
 
-## 18. GDPR / data minimisation
+## GDPR / data minimisation
 
 Payment data can include :
+
 - IBAN/account refs ;
 - phone/email alias ;
 - merchant ;
@@ -289,6 +310,7 @@ Payment data can include :
 - fraud signals.
 
 Architecture :
+
 - purpose limitation ;
 - minimisation ;
 - access controls ;
@@ -297,9 +319,10 @@ Architecture :
 - subject rights processes ;
 - breach response.
 
-## 19. Threat model
+## Threat model
 
 Payment-specific threats:
+
 - duplicate payment ;
 - forged callback ;
 - account takeover ;
@@ -313,9 +336,10 @@ Payment-specific threats:
 - supply-chain compromise ;
 - insider abuse.
 
-## 20. Security logging
+## Security logging
 
 Audit events:
+
 - auth ;
 - SCA ;
 - consent ;
@@ -331,7 +355,7 @@ Audit events:
 
 Do not log secrets or unnecessary personal data.
 
-## 21. Incident containment
+## Incident containment
 
 Example :
 
@@ -348,29 +372,31 @@ credential compromise suspected
 
 Une réponse cyber doit préserver la vérité paiement.
 
-## 22. PSD3 / PSR status
+## PSD3 / PSR status
 
 Au 28 septembre 2026 :
+
 - accord politique provisoire Parlement/Conseil obtenu le 27 novembre 2025 ;
 - le livre ne présente pas PSD3/PSR comme pleinement applicables sans revalidation des textes finaux et dates.
 
 Cette discipline évite de publier une réglementation “future” comme déjà en vigueur.
 
-## 23. eIDAS2
+## eIDAS2
 
 Le cadre européen d'identité numérique est pertinent comme contexte pour de futures intégrations d'identité/wallet.
 
 Aucune utilisation spécifique par Wero n'est affirmée sans source.
 
-## 24. NIS2
+## NIS2
 
 NIS2 apporte un contexte cybersécurité européen. Pour les entités financières soumises à DORA, l'articulation juridique exacte doit être traitée avec la règle lex specialis et l'analyse de périmètre appropriée.
 
 Le livre ne formule pas d'avis juridique individuel.
 
-## 25. Security evidence
+## Security evidence
 
 Un claim de sécurité doit être relié à :
+
 - config ;
 - test positif ;
 - test négatif ;
@@ -381,6 +407,6 @@ Un claim de sécurité doit être relié à :
 
 “mTLS configuré” sans test de refus d'un mauvais client reste une preuve incomplète.
 
-## 26. Conclusion
+## Conclusion
 
 La sécurité instant-payment est une chaîne de confiance. Une faiblesse dans l'identité, la PKI, le QR, le webhook, le réseau ou la récupération d'incident peut compromettre un parcours pourtant fonctionnellement correct.

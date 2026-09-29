@@ -13,9 +13,10 @@ primary_sources:
 
 This blueprint turns the platform principles into a concrete workload pattern. It is illustrative, not a claim about EPI internal infrastructure.
 
-## 1. Deployment contract
+## Deployment contract
 
 A stateless payment API should make explicit:
+
 - replicas;
 - requests/limits;
 - startup/readiness/liveness;
@@ -29,7 +30,7 @@ A stateless payment API should make explicit:
 
 Kubernetes documents distinct purposes for startup, readiness and liveness probes: startup protects slow initialisation, readiness controls traffic eligibility, and liveness is for process failure that warrants restart. A dependency outage should not automatically become a liveness failure.
 
-## 2. Reference Deployment
+## Reference Deployment
 
 ```yaml
 apiVersion: apps/v1
@@ -88,21 +89,23 @@ spec:
 
 Values are illustrative and must be load-tested.
 
-## 3. Readiness policy
+## Readiness policy
 
 Readiness can include dependencies that are mandatory to serve the endpoint correctly. It should not include every optional downstream system.
 
 Examples:
+
 - local configuration valid: mandatory;
 - database required for this API path: potentially mandatory;
 - optional analytics exporter: not mandatory;
 - external notification service: normally not a reason to remove payment API traffic.
 
-## 4. Liveness policy
+## Liveness policy
 
 Liveness answers: "is this process irrecoverably unhealthy such that restart is useful?"
 
 Do not tie liveness directly to:
+
 - CSM availability;
 - database failover in progress;
 - Kafka temporary outage;
@@ -110,13 +113,13 @@ Do not tie liveness directly to:
 
 Otherwise a dependency incident can trigger mass pod restarts and amplify the incident.
 
-## 5. Topology spread
+## Topology spread
 
 Kubernetes topology spread constraints distribute replicas across labelled failure domains. They only provide the failure-domain property that the infrastructure actually exposes.
 
 A single-node CRC can validate manifest syntax and application behaviour; it cannot prove zone resilience.
 
-## 6. PodDisruptionBudget
+## PodDisruptionBudget
 
 Reference:
 
@@ -134,21 +137,23 @@ spec:
 
 A PDB helps constrain supported voluntary disruptions. It is not protection against node crash, application defect, zone loss or database failure.
 
-## 7. Network policy
+## Network policy
 
 OpenShift 4.22 documents NetworkPolicy as the mechanism for restricting allowed ingress/egress to selected pods.
 
 Reference baseline:
+
 - default deny for application namespace;
 - explicit ingress from approved gateway/router path;
 - explicit egress to DNS, database, broker, IAM and required external gateways;
 - no broad egress "just in case".
 
-## 8. Payment-specific correctness
+## Payment-specific correctness
 
 Replica count does not provide financial correctness.
 
 The application still needs:
+
 - unique logical payment identity;
 - durable submit claim;
 - idempotency;
@@ -157,7 +162,7 @@ The application still needs:
 - external-effect fencing;
 - reconciliation.
 
-## 9. Runtime proof levels
+## Runtime proof levels
 
 | Environment | Can prove | Cannot prove |
 |---|---|---|

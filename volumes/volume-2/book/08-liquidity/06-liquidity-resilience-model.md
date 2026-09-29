@@ -13,9 +13,10 @@ primary_sources:
 
 Availability of applications is insufficient when the settlement position cannot support payment execution.
 
-## 1. Liquidity as a first-class dependency
+## Liquidity as a first-class dependency
 
 The end-to-end service model includes:
+
 - application capacity;
 - connectivity;
 - scheme/rail availability;
@@ -23,9 +24,10 @@ The end-to-end service model includes:
 - ability to transfer or replenish liquidity;
 - operational ownership.
 
-## 2. Reference thresholds
+## Reference thresholds
 
 An institution-specific implementation may define:
+
 - target operating buffer;
 - warning threshold;
 - critical threshold;
@@ -35,7 +37,7 @@ An institution-specific implementation may define:
 
 These values are institution-specific reference-design parameters, not public Wero/EPI facts.
 
-## 3. State model
+## State model
 
 ```text
 NORMAL
@@ -48,7 +50,7 @@ NORMAL
 
 The state must be based on measured position, expected flows and operational ability to replenish.
 
-## 4. Stress scenarios
+## Stress scenarios
 
 - traffic spike;
 - asymmetric outgoing flow;
@@ -58,13 +60,14 @@ The state must be based on measured position, expected flows and operational abi
 - weekend/night operational incident;
 - route change that moves volume to another settlement context.
 
-## 5. Guardrail
+## Guardrail
 
 Routing decisions must not hide liquidity risk. Moving traffic between rails can change operational and settlement dependencies and therefore requires explicit policy.
 
-## 6. Evidence
+## Evidence
 
 Production readiness should be able to show:
+
 - position monitoring;
 - threshold ownership;
 - alert path;
@@ -73,6 +76,6 @@ Production readiness should be able to show:
 - test evidence;
 - reconciliation after liquidity-related rejects.
 
-## 7. Cross-volume contract
+## Cross-volume contract
 
 V2 owns the liquidity model. V3 exposes telemetry and integrations. V4 owns on-call, incident handling, BIA/RTO and evidence.

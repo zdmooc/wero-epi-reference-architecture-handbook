@@ -11,7 +11,7 @@ primary_sources:
 
 This chapter consolidates the invariants that prevent a technical retry from becoming a duplicate financial effect.
 
-## 1. One logical payment, one controlled submission authority
+## One logical payment, one controlled submission authority
 
 A logical payment is identified before external submission. A timeout does not erase that identity.
 
@@ -26,7 +26,7 @@ CREATED
 
 The exact scheme state is governed by the applicable rulebook. The internal states above are a reference architecture for preserving correctness.
 
-## 2. Retry decision matrix
+## Retry decision matrix
 
 | Observation | Effect certainty | Action |
 |---|---|---|
@@ -36,11 +36,12 @@ The exact scheme state is governed by the applicable rulebook. The internal stat
 | settlement evidenced | effect exists | persist/repair observation; never resubmit |
 | duplicate callback/status | no new intent | deduplicate and update same payment |
 
-## 3. UNKNOWN is a safety state
+## UNKNOWN is a safety state
 
 `UNKNOWN` means the system lacks sufficient evidence to classify the financial outcome.
 
 It does not mean:
+
 - failed;
 - safe to retry;
 - settled;
@@ -56,14 +57,14 @@ UNKNOWN
 → downstream repair
 ```
 
-## 4. Idempotency boundary
+## Idempotency boundary
 
 Idempotency must cover the financial intent, not only one HTTP request.
 
 Useful identity chain:
 `idempotencyKey → paymentId → endToEndId → external references`.
 
-## 5. Duplicate protection layers
+## Duplicate protection layers
 
 - API duplicate;
 - workflow duplicate;
@@ -74,11 +75,11 @@ Useful identity chain:
 
 Each layer may use a different technical mechanism, but all converge on the same logical payment identity.
 
-## 6. Reconciliation principle
+## Reconciliation principle
 
 Reconciliation repairs differences in observation between authoritative systems. It must not manufacture a second payment to make dashboards agree.
 
-## 7. Cross-volume contract
+## Cross-volume contract
 
 - V1 owns customer/commercial interpretation.
 - V2 owns financial correctness semantics.

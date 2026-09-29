@@ -11,13 +11,13 @@ related_internal_repos:
 
 # Partie X — Infrastructure, Cloud, Kubernetes et OpenShift
 
-## 1. Capability before platform
+## Capability before platform
 
 La documentation publique Wero n'établit pas qu'un participant utilise Kubernetes, OpenShift, Kafka ou une base particulière.
 
 Cette partie décrit donc une architecture de déploiement professionnelle de référence.
 
-## 2. Failure domains
+## Failure domains
 
 Modéliser explicitement :
 
@@ -39,7 +39,7 @@ central service
 
 Un PDB protège certaines interruptions volontaires. Il ne prouve ni HA de données, ni perte de zone.
 
-## 3. Physical reference
+## Physical reference
 
 ~~~text
 Region / Site A
@@ -62,9 +62,10 @@ Region / Site B
 
 Le choix multi-zone/multi-site dépend de la latence, des exigences de cohérence, du RTO/RPO, du coût et de la localisation des données.
 
-## 4. Stateless workload pattern
+## Stateless workload pattern
 
 Pour API/services :
+
 - replicas multiples ;
 - topology spread ;
 - anti-affinity ;
@@ -76,9 +77,10 @@ Pour API/services :
 - ServiceAccount/workload identity ;
 - image immutable par digest.
 
-## 5. Stateful services
+## Stateful services
 
 Pour DB, broker, IAM :
+
 - replication mode ;
 - quorum ;
 - sync/async ;
@@ -92,7 +94,7 @@ Pour DB, broker, IAM :
 
 StatefulSet seul ne signifie pas HA.
 
-## 6. Database HA
+## Database HA
 
 Référence :
 
@@ -105,16 +107,18 @@ Primary
 ~~~
 
 Pour un claim RPO=0 :
+
 - définir les commits concernés ;
 - définir le domaine de panne ;
 - mesurer ;
 - tester la perte réelle.
 
-## 7. Split brain
+## Split brain
 
 Deux writers sont dangereux.
 
 Contrôles possibles :
+
 - quorum ;
 - consensus ;
 - lease ;
@@ -131,9 +135,10 @@ can be safer than
 uncontrolled double-writer availability
 ~~~
 
-## 8. Broker HA
+## Broker HA
 
 Pattern :
+
 - 3+ brokers selon produit ;
 - replication factor ;
 - min ISR/quorum ;
@@ -144,11 +149,12 @@ Pattern :
 
 Les valeurs exactes dépendent du broker.
 
-## 9. IAM HA
+## IAM HA
 
 L'authentification client peut être critique.
 
 Concevoir :
+
 - plusieurs replicas ;
 - session/cache cohérents ;
 - DB HA ;
@@ -159,24 +165,27 @@ Concevoir :
 
 Jamais de bypass silencieux de SCA pour “sauver la disponibilité”.
 
-## 10. Ingress/router
+## Ingress/router
 
 Référence :
+
 - multiples ingress/router instances ;
 - zones distinctes ;
 - public/internal separation ;
 - TLS policy ;
 - edge/re-encrypt/pass-through choisi consciemment.
 
-## 11. Service mesh
+## Service mesh
 
 Peut apporter :
+
 - mTLS ;
 - workload identity ;
 - traffic policy ;
 - telemetry.
 
 Coûts :
+
 - ressources ;
 - complexité ;
 - latence ;
@@ -185,7 +194,7 @@ Coûts :
 
 Il reste optionnel.
 
-## 12. GitOps
+## GitOps
 
 ~~~text
 Git
@@ -198,6 +207,7 @@ Git
 ~~~
 
 Bénéfices :
+
 - traceabilité ;
 - drift detection ;
 - reproductibilité ;
@@ -205,9 +215,10 @@ Bénéfices :
 
 Secrets plaintext interdits.
 
-## 13. Environnements
+## Environnements
 
 Typique :
+
 - sandbox ;
 - dev ;
 - test ;
@@ -215,6 +226,7 @@ Typique :
 - prod.
 
 La prod ajoute :
+
 - HA réel ;
 - PKI réelle ;
 - network réel ;
@@ -226,11 +238,12 @@ La prod ajoute :
 
 “Manifest renders” n'est pas “production proven”.
 
-## 14. Multi-AZ
+## Multi-AZ
 
 Une plateforme n'est multi-AZ que si les dépendances critiques le sont aussi.
 
 Vérifier :
+
 - app ;
 - DB ;
 - broker ;
@@ -242,16 +255,18 @@ Vérifier :
 - egress ;
 - observability.
 
-## 15. Multi-region / multi-site patterns
+## Multi-region / multi-site patterns
 
 ### Active/passive
 
 Un writer principal, un standby.
 
 Avantages :
+
 - cohérence plus simple.
 
 Risques :
+
 - failover time ;
 - capacité dormante ;
 - risque de bascule non fenced.
@@ -261,9 +276,11 @@ Risques :
 Deux sites actifs.
 
 Avantages :
+
 - disponibilité/localité.
 
 Risques :
+
 - conflicts ;
 - cross-region coordination ;
 - complexity.
@@ -273,10 +290,11 @@ Risques :
 Cellules isolées avec partitionnement contrôlé du trafic et des données.
 
 Objectif :
+
 - blast radius limité ;
 - scaling par cellule.
 
-## 16. Backup, HA et DR
+## Backup, HA et DR
 
 ~~~text
 HA
@@ -291,18 +309,20 @@ DR / PRA
 
 Trois capacités différentes.
 
-## 17. PITR
+## PITR
 
 Protège contre :
+
 - erreur opérateur ;
 - corruption logique ;
 - certains scénarios cyber.
 
 Après restore, un système paiement doit souvent réconcilier avec les sources externes avant de reprendre comme writer.
 
-## 18. Cyber recovery
+## Cyber recovery
 
 Controls :
+
 - backups immutables ;
 - credentials séparés ;
 - isolation ;
@@ -312,9 +332,10 @@ Controls :
 - rotation des secrets/clés ;
 - reconciliation.
 
-## 19. Supply chain
+## Supply chain
 
 Pipeline :
+
 - secret scan ;
 - SAST ;
 - SCA ;
@@ -326,9 +347,10 @@ Pipeline :
 - admission policy ;
 - vulnerability management.
 
-## 20. Capacity planning
+## Capacity planning
 
 Mesurer :
+
 - CPU ;
 - memory ;
 - threads ;
@@ -342,9 +364,10 @@ Mesurer :
 
 Dimensionner sur peak + failure headroom, pas sur moyenne.
 
-## 21. Autoscaling
+## Autoscaling
 
 HPA peut aider les workloads stateless mais :
+
 - DB/broker ne scalent pas instantanément ;
 - fraud service peut devenir bottleneck ;
 - scale-up tardif peut rater le budget SCT Inst ;
@@ -352,9 +375,10 @@ HPA peut aider les workloads stateless mais :
 
 Prévoir warm capacity.
 
-## 22. Rolling upgrades
+## Rolling upgrades
 
 Un service 24/7 nécessite :
+
 - backward/forward compatibility ;
 - schema evolution ;
 - connection draining ;
@@ -362,9 +386,10 @@ Un service 24/7 nécessite :
 - canary/progressive delivery ;
 - rollback.
 
-## 23. Local lab evidence
+## Local lab evidence
 
 OpenShift Local/CRC prouve utilement :
+
 - pod behavior ;
 - APIs ;
 - Kafka/Outbox ;
@@ -372,20 +397,23 @@ OpenShift Local/CRC prouve utilement :
 - application recovery.
 
 Il ne prouve pas :
+
 - perte worker ;
 - multi-zone ;
 - region loss ;
 - production capacity ;
 - contractual RTO/RPO.
 
-## 24. Cloud neutrality
+## Cloud neutrality
 
 Reference architecture separates:
+
 - business ;
 - platform capability ;
 - implementation.
 
 Mapping possible :
+
 - Kubernetes managed ;
 - OpenShift ;
 - private cloud ;
@@ -393,6 +421,6 @@ Mapping possible :
 
 Le livre ne transforme pas Azure, OpenShift ou un autre produit en exigence Wero.
 
-## 25. Conclusion
+## Conclusion
 
 La plateforme doit rendre les failure domains explicites, éviter les single points invisibles et démontrer les claims de résilience par des tests correspondant au domaine de panne annoncé.

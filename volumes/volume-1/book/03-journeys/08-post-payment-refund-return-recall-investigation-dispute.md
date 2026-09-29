@@ -12,7 +12,7 @@ related_internal_repos:
 
 Ces notions ne doivent pas être présentées comme cinq use cases équivalents au P2P.
 
-## 1. Refund — contexte commercial
+## Refund — contexte commercial
 
 Un refund est une décision commerciale produisant un nouveau mouvement financier lié au paiement initial.
 
@@ -26,15 +26,15 @@ originalPaymentId
 
 Le paiement original reste historiquement réglé ; le remboursement est un mouvement distinct.
 
-## 2. Return — processus financier/scheme
+## Return — processus financier/scheme
 
 Le return correspond à un retour de fonds selon le mécanisme applicable. Le détail normatif et les messages appartiennent au Volume II.
 
-## 3. Recall
+## Recall
 
 Le recall est une **demande** de récupération d'un transfert antérieur selon les règles applicables. Une demande de recall ne permet pas de réécrire localement le paiement original comme s'il n'avait jamais existé.
 
-## 4. Investigation
+## Investigation
 
 L'investigation traite un état incertain ou une divergence de preuve.
 
@@ -43,11 +43,11 @@ Exemple :
 
 Pendant `UNKNOWN`, la création automatique d'un paiement de remplacement est interdite.
 
-## 5. Dispute
+## Dispute
 
 Le dispute peut impliquer support client, règles de service, responsabilité et processus juridique/opérationnel. Il est plus large qu'un message ISO 20022 ou une R-transaction.
 
-## 6. Taxonomie canonique
+## Taxonomie canonique
 
 | Concept | Nature | Le paiement original disparaît ? |
 |---|---|---|
@@ -57,6 +57,6 @@ Le dispute peut impliquer support client, règles de service, responsabilité et
 | Investigation | résolution de preuve/statut | non |
 | Dispute | processus métier/opérationnel | non |
 
-## 7. Frontière avec Volume II
+## Frontière avec Volume II
 
 Le Volume I définit l'intention, les acteurs et l'expérience. Le Volume II est l'autorité pour les messages, règles SCT Inst et séquences normatives.

@@ -9,6 +9,7 @@ Comment sécuriser, maintenir correct, restaurer et exploiter un service de paie
 ## Autorité de ce volume
 
 Ce volume est canonique pour :
+
 - IAM/SCA, PKI/HSM et sécurité opérationnelle ;
 - fraude, AML/CFT, sanctions et VoP côté sécurité ;
 - BIA, RTO/RPO, active/passive, active/active, fencing et split brain ;

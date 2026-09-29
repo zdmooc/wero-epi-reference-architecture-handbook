@@ -9,7 +9,7 @@ related_internal_repos:
 
 # Companion Lab — carte des preuves exécutables
 
-## 1. Rôle
+## Rôle
 
 Le handbook explique.
 
@@ -18,9 +18,10 @@ Le companion lab démontre certains comportements applicatifs.
 Repository:
 zdmooc/mayabank-instant-payments-resilience-platform
 
-## 2. Proven themes
+## Proven themes
 
 Selon le référentiel interne :
+
 - stateless recovery ;
 - PostgreSQL-backed payment state ;
 - Outbox recovery ;
@@ -33,9 +34,10 @@ Selon le référentiel interne :
 - concurrent idempotency ;
 - UNKNOWN/inquiry recovery.
 
-## 3. What it proves
+## What it proves
 
 Application-pattern evidence:
+
 - stable intent ;
 - idempotent creation ;
 - durable state ;
@@ -43,7 +45,7 @@ Application-pattern evidence:
 - event propagation ;
 - callback recovery.
 
-## 4. What it does not prove
+## What it does not prove
 
 - real Wero internal behavior ;
 - real TIPS connection ;
@@ -54,7 +56,7 @@ Application-pattern evidence:
 - production SLA ;
 - DORA compliance.
 
-## 5. Mapping
+## Mapping
 
 | Handbook topic | Companion evidence |
 |---|---|
@@ -67,7 +69,7 @@ Application-pattern evidence:
 | Pod recovery | CRC runtime |
 | Multi-site | reference design only |
 
-## 6. Evidence link pattern
+## Evidence link pattern
 
 Handbook chapter may say:
 > Companion lab demonstrates this pattern in a local CRC environment.
@@ -75,34 +77,38 @@ Handbook chapter may say:
 It must not say:
 > Wero production works this way.
 
-## 7. Version pinning
+## Version pinning
 
 Each future book release should record:
+
 - lab tag ;
 - commit ;
 - OpenShift/K8s version ;
 - application version.
 
-## 8. Reproducibility
+## Reproducibility
 
 Lab should provide:
+
 - one-command demo ;
 - test scripts ;
 - expected result ;
 - evidence pack.
 
-## 9. Evidence retention
+## Evidence retention
 
 For release:
+
 - logs ;
 - screenshots where useful ;
 - command outputs ;
 - test reports ;
 - limitations.
 
-## 10. New proof backlog
+## New proof backlog
 
 High-value future evidence:
+
 - multi-node Kubernetes ;
 - DB leader failover ;
 - broker failover ;
@@ -110,28 +116,29 @@ High-value future evidence:
 - cert rotation ;
 - multi-site reference simulation.
 
-## 11. Lab separation
+## Lab separation
 
 No book chapter should include code dump better maintained in the lab repository.
 
 Use explanation + link/reference.
 
-## 12. Security
+## Security
 
 The lab uses synthetic data and generic names.
 
 No client secrets or non-public architecture.
 
-## 13. Publication
+## Publication
 
 The lab may be offered as companion material, but access/licensing is a separate publishing decision.
 
-## 14. Maintenance
+## Maintenance
 
 When handbook architecture changes:
+
 - update lab only if executable pattern changes ;
 - do not force every conceptual chapter into code.
 
-## 15. Principle
+## Principle
 
 One source for narrative, one source for executable evidence, linked by explicit claims.

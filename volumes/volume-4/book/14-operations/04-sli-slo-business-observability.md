@@ -15,13 +15,13 @@ La @fig-14-003 complète la lecture de ce chapitre avec la vue de référence co
 
 *Statut : **REFERENCE_ARCHITECTURE** · Source(s) : Handbook reference architecture · Vérifié : 2026-09-29.*
 
-## 1. HTTP 200 n'est pas un SLI paiement suffisant
+## HTTP 200 n'est pas un SLI paiement suffisant
 
 Un paiement peut retourner 200 puis rester UNKNOWN.
 
 Il faut observer le service métier.
 
-## 2. Four golden signals
+## Four golden signals
 
 - latency ;
 - traffic ;
@@ -29,12 +29,14 @@ Il faut observer le service métier.
 - saturation.
 
 Pour paiement, ajouter :
+
 - financial state distribution ;
 - reconciliation.
 
-## 3. Payment SLIs
+## Payment SLIs
 
 Examples:
+
 - safe initiation success ;
 - time to final authoritative state ;
 - UNKNOWN rate ;
@@ -42,20 +44,22 @@ Examples:
 - duplicate prevention ;
 - merchant callback delivery.
 
-## 4. Status service
+## Status service
 
 Separate SLI:
+
 - status API availability ;
 - freshness ;
 - authority of returned state.
 
 Important during degraded payment execution.
 
-## 5. SLO
+## SLO
 
 SLO is internal reliability objective.
 
 Need:
+
 - measurement window ;
 - denominator ;
 - exclusions ;
@@ -64,26 +68,29 @@ Need:
 
 No invented target in reference book.
 
-## 6. SLA
+## SLA
 
 Contractual/business commitment.
 
 Do not copy SLO directly into SLA without legal/business decision.
 
-## 7. Error budget
+## Error budget
 
 If SLO allows limited error:
+
 - track consumption ;
 - slow risky releases when exhausted ;
 - prioritize reliability.
 
 For financial correctness, some invariants have effectively zero tolerance:
+
 - double settlement caused by platform ;
 - unauthorized state override.
 
-## 8. Business dashboard
+## Business dashboard
 
 Show:
+
 - payments initiated ;
 - settled ;
 - rejected ;
@@ -94,9 +101,10 @@ Show:
 - merchant ;
 - latency.
 
-## 9. Technical dashboard
+## Technical dashboard
 
 Show:
+
 - pods/nodes ;
 - DB ;
 - broker ;
@@ -106,9 +114,10 @@ Show:
 - CSM ;
 - liquidity.
 
-## 10. Correlation
+## Correlation
 
 Every trace/log/event should link where allowed:
+
 - paymentId ;
 - orderId ;
 - EndToEndId ;
@@ -116,35 +125,39 @@ Every trace/log/event should link where allowed:
 - correlationId ;
 - traceId.
 
-## 11. Trace sampling
+## Trace sampling
 
 Payments are high-value observability.
 
 Use:
+
 - head/tail sampling ;
 - preserve error/UNKNOWN traces ;
 - data minimisation.
 
-## 12. Log levels
+## Log levels
 
 Avoid DEBUG payload logging in production for sensitive payment messages.
 
 Use structured logs with references.
 
-## 13. Alert design
+## Alert design
 
 Alert on symptoms:
+
 - finality latency ;
 - unknown rate ;
 - settlement rejects ;
 - liquidity threshold.
 
 Not only causes:
+
 - CPU 80%.
 
-## 14. Alert fatigue
+## Alert fatigue
 
 Every alert needs:
+
 - owner ;
 - severity ;
 - action ;
@@ -152,7 +165,7 @@ Every alert needs:
 
 If no action, maybe dashboard not page.
 
-## 15. Availability view
+## Availability view
 
 End-to-end availability:
 ~~~text

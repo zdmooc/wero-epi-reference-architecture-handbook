@@ -11,6 +11,7 @@ The 28 secondary Mermaid figures were migrated to Visual System V1 and rendered 
 `diagrams/svg/secondary/`
 
 Final corpus:
+
 - 36 Mermaid figure sources;
 - 8 Hero SVGs;
 - 28 Secondary SVGs;
@@ -21,6 +22,7 @@ Final corpus:
 ## QA checks
 
 The 28 secondary SVGs were checked for:
+
 - valid SVG root and closing tag;
 - explicit width and height;
 - explicit vector `viewBox`;
@@ -33,15 +35,18 @@ The 28 secondary SVGs were checked for:
 ## QA result
 
 Before correction:
+
 - 27/28 secondary SVGs: PASS;
 - 1/28: geometric overlap detected in `FIG-13-004-resilience-testing-pyramid.svg`.
 
 Correction:
+
 - moved the business/financial evidence block below the TLPT level;
 - increased the viewBox height;
 - preserved the testing ladder hierarchy.
 
 After correction:
+
 - 28/28: PASS;
 - 0 semantic overlaps detected;
 - 0 out-of-bounds semantic boxes detected.
@@ -89,6 +94,7 @@ After correction:
 This QA validates the vector source/artifact geometry and design-system consistency.
 
 A final page-layout proof remains required during publication production to validate:
+
 - actual printed size;
 - caption placement;
 - page breaks;

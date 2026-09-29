@@ -7,6 +7,7 @@
 ## Review result
 
 All eight hero figures now:
+
 - use `visual_system: V1`;
 - declare an explicit publication layout;
 - carry a truth level;

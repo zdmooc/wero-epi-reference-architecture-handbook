@@ -12,9 +12,10 @@ primary_sources:
 
 Routing is a controlled decision over reachability, policy, health and settlement context. It is not a blind failover between URLs.
 
-## 1. Decision inputs
+## Decision inputs
 
 A reference routing decision can evaluate:
+
 - destination PSP/reachability;
 - supported scheme/service;
 - participant/access model;
@@ -25,7 +26,7 @@ A reference routing decision can evaluate:
 - effective dates of routing data;
 - institution policy.
 
-## 2. Deterministic decision record
+## Deterministic decision record
 
 For every logical payment, persist a routing decision record:
 
@@ -43,11 +44,11 @@ routingDecision
 
 This makes production behaviour explainable after the fact.
 
-## 3. Before submission
+## Before submission
 
 Rerouting may be possible when evidence proves that no financial instruction was submitted.
 
-## 4. After possible submission
+## After possible submission
 
 If effect is uncertain, do not silently reroute the same customer intent to another rail.
 
@@ -59,18 +60,20 @@ possible submit on Rail A
 
 First resolve the original financial outcome.
 
-## 5. Reachability is versioned data
+## Reachability is versioned data
 
 Routing data must support:
+
 - effective-from/effective-to;
 - source/provenance;
 - refresh timestamp;
 - participant/access model;
 - fallback eligibility.
 
-## 6. Failover semantics
+## Failover semantics
 
 A rail outage may produce different states:
+
 - no connection before submit;
 - submit rejected;
 - submit accepted then response lost;
@@ -79,9 +82,10 @@ A rail outage may produce different states:
 
 Failover policy depends on the evidence, not merely on a health check.
 
-## 7. Observability
+## Observability
 
 Measure:
+
 - route decision count;
 - route rejection;
 - participant-specific failures;

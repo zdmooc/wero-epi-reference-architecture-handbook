@@ -18,7 +18,7 @@ La @fig-13-004 complète la lecture de ce chapitre avec la vue de référence co
 
 *Statut : **REFERENCE_ARCHITECTURE** · Source(s) : DORA/TIBER context + handbook evidence model · Vérifié : 2026-09-29.*
 
-## 1. Testing pyramid
+## Testing pyramid
 
 ~~~text
 unit
@@ -33,20 +33,23 @@ TLPT where applicable
 
 Each proves different claims.
 
-## 2. Chaos engineering
+## Chaos engineering
 
 Goal:
+
 - validate resilience hypothesis.
 
 Not:
+
 - randomly break production.
 
 Hypothesis example:
 > loss of one app pod causes no duplicate payment and service remains available.
 
-## 3. Failure injection
+## Failure injection
 
 Domains:
+
 - process ;
 - pod ;
 - node ;
@@ -59,30 +62,34 @@ Domains:
 - IAM ;
 - site.
 
-## 4. Business assertion
+## Business assertion
 
 Every chaos test includes:
+
 - technical expected ;
 - financial expected ;
 - customer expected.
 
 Example:
+
 - pod dies ;
 - payment either completes once or becomes recoverable ;
 - never double-settles.
 
-## 5. Load + failure
+## Load + failure
 
 Recovery under idle load is insufficient.
 
 Test:
+
 - peak traffic ;
 - kill broker/node ;
 - measure queue and p99.
 
-## 6. DR exercise
+## DR exercise
 
 Validate:
+
 - decision ;
 - fencing ;
 - promotion ;
@@ -91,15 +98,16 @@ Validate:
 - reconciliation ;
 - failback.
 
-## 7. DORA testing
+## DORA testing
 
 DORA requires a digital operational resilience testing programme proportionate to the entity and risk, with advanced testing requirements for designated entities.
 
 The exact legal applicability must be assessed by competent legal/compliance functions.
 
-## 8. TLPT
+## TLPT
 
 Threat-Led Penetration Testing:
+
 - intelligence-led ;
 - critical functions ;
 - live production context under controlled process ;
@@ -109,23 +117,25 @@ Threat-Led Penetration Testing:
 - threat intelligence provider ;
 - authority oversight depending framework.
 
-## 9. TIBER-EU
+## TIBER-EU
 
 The updated TIBER-EU framework is aligned with DORA TLPT RTS.
 
 It includes DORA-aligned process steps and mandatory purple teaming in the updated framework.
 
-## 10. Purple team
+## Purple team
 
 Purpose:
+
 - share learnings ;
 - replay techniques ;
 - improve detection/response ;
 - validate remediation.
 
-## 11. Test evidence
+## Test evidence
 
 For resilience test:
+
 - hypothesis ;
 - scope ;
 - environment ;
@@ -136,9 +146,10 @@ For resilience test:
 - limitation ;
 - remediation.
 
-## 12. Production safety
+## Production safety
 
 Controls:
+
 - blast radius ;
 - stop condition ;
 - approvals ;
@@ -146,9 +157,10 @@ Controls:
 - monitoring ;
 - customer protection.
 
-## 13. Supplier test
+## Supplier test
 
 Third-party dependency scenarios:
+
 - outage ;
 - throttling ;
 - bad data ;
@@ -157,21 +169,25 @@ Third-party dependency scenarios:
 
 Contract should enable sufficient testing/evidence.
 
-## 14. Test calendar
+## Test calendar
 
 Continuous:
+
 - app failure.
 
 Quarterly/periodic:
+
 - component/zone exercises.
 
 Annual or risk-driven:
+
 - site DR ;
 - cyber scenario.
 
 TLPT:
+
 - according to legal/designation cycle.
 
-## 15. Principle
+## Principle
 
 A resilience claim without an executed test is a design claim, not runtime evidence.

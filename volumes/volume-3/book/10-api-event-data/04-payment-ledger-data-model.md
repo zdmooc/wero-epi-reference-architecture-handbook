@@ -9,17 +9,19 @@ related_internal_repos:
 
 # Modèle de données paiement et ledger
 
-## 1. Séparer workflow et ledger
+## Séparer workflow et ledger
 
 Payment workflow answers:
+
 - where is the payment in its lifecycle?
 
 Ledger answers:
+
 - what financial entries exist?
 
 Do not overload one table with both responsibilities.
 
-## 2. Core entities
+## Core entities
 
 ~~~text
 PAYMENT
@@ -35,9 +37,10 @@ INBOX
 AUDIT_EVENT
 ~~~
 
-## 3. PAYMENT
+## PAYMENT
 
 Fields:
+
 - paymentId ;
 - businessKey ;
 - payerRef ;
@@ -50,9 +53,10 @@ Fields:
 - createdAt ;
 - updatedAt.
 
-## 4. PAYMENT_REFERENCE
+## PAYMENT_REFERENCE
 
 Multiple references per payment:
+
 - merchant order ;
 - payment request ;
 - MsgId ;
@@ -62,9 +66,10 @@ Multiple references per payment:
 
 Use type/value/issuer/effective timestamps.
 
-## 5. Status history
+## Status history
 
 Append:
+
 - from ;
 - to ;
 - reason ;
@@ -75,9 +80,10 @@ Append:
 
 Current state can be denormalized in PAYMENT.
 
-## 6. Ledger entry
+## Ledger entry
 
 Immutable concept:
+
 - entryId ;
 - account/reference ;
 - direction ;
@@ -87,9 +93,10 @@ Immutable concept:
 - paymentId ;
 - original entry if correction.
 
-## 7. Refund
+## Refund
 
 Separate:
+
 - refundId ;
 - originalPaymentId ;
 - amount ;
@@ -97,9 +104,10 @@ Separate:
 - reason ;
 - business key.
 
-## 8. Reconciliation case
+## Reconciliation case
 
 Stores:
+
 - expected ;
 - observed ;
 - difference ;
@@ -107,20 +115,22 @@ Stores:
 - resolution ;
 - operator.
 
-## 9. Audit
+## Audit
 
 Audit should be append-only/tamper-evident according to policy.
 
 Record:
+
 - privileged actions ;
 - manual correction ;
 - configuration changes ;
 - state override ;
 - replay.
 
-## 10. PII
+## PII
 
 Classify:
+
 - names ;
 - IBAN/account ;
 - phone/e-mail aliases ;
@@ -129,7 +139,7 @@ Classify:
 
 Minimise copies.
 
-## 11. Encryption
+## Encryption
 
 - storage encryption ;
 - backup encryption ;
@@ -137,9 +147,10 @@ Minimise copies.
 - field-level protection where justified ;
 - keys separate from data.
 
-## 12. Retention
+## Retention
 
 Different retention classes:
+
 - financial ;
 - operational logs ;
 - traces ;
@@ -149,9 +160,10 @@ Different retention classes:
 
 Do not retain all data forever because storage is cheap.
 
-## 13. Indexes
+## Indexes
 
 Need for:
+
 - paymentId ;
 - businessKey ;
 - EndToEndId ;
@@ -161,32 +173,36 @@ Need for:
 
 Beware hot indexes and excessive write cost.
 
-## 14. Partitioning
+## Partitioning
 
 Possible by:
+
 - date ;
 - tenant/domain ;
 - hash key.
 
 Design for:
+
 - queries ;
 - retention ;
 - backup ;
 - archive ;
 - write throughput.
 
-## 15. Data quality
+## Data quality
 
 Constraints:
+
 - exact numeric type ;
 - currency mandatory ;
 - unique business keys ;
 - valid transitions ;
 - references not silently overwritten.
 
-## 16. Recovery
+## Recovery
 
 Restore test must prove:
+
 - PAYMENT ;
 - ledger ;
 - references ;

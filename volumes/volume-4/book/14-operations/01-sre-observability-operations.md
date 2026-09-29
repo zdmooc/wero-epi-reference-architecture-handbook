@@ -10,7 +10,7 @@ related_internal_repos:
 
 # Partie XIII — Exploitation, SRE et observabilité
 
-## 1. Exploiter un paiement, pas seulement des composants
+## Exploiter un paiement, pas seulement des composants
 
 Une plateforme peut avoir tous ses pods au vert alors que des paiements restent bloqués, inconnus ou non réconciliés.
 
@@ -28,7 +28,7 @@ merchant callback failures
 liquidity pressure
 ```
 
-## 2. Identifiants d'observabilité
+## Identifiants d'observabilité
 
 Un paiement de bout en bout doit pouvoir être recherché par plusieurs clés :
 
@@ -45,7 +45,7 @@ Un paiement de bout en bout doit pouvoir être recherché par plusieurs clés :
 
 Le `traceId` sert à la vue technique. Il ne remplace pas les identifiants financiers.
 
-## 3. OpenTelemetry
+## OpenTelemetry
 
 Architecture de référence :
 
@@ -65,15 +65,17 @@ Observability backends
 ```
 
 La propagation doit conserver le contexte à travers :
+
 - HTTP ;
 - messages ;
 - Kafka/MQ ;
 - callbacks ;
 - jobs de reconciliation.
 
-## 4. Logs
+## Logs
 
 Un log utile répond :
+
 - quel paiement ?
 - quelle étape ?
 - quel actor ?
@@ -83,13 +85,14 @@ Un log utile répond :
 - quel external reference ?
 
 Éviter :
+
 - secrets ;
 - tokens ;
 - clés ;
 - données personnelles excessives ;
 - payload XML complet par défaut.
 
-## 5. Metrics
+## Metrics
 
 ### Techniques
 - request rate ;
@@ -114,7 +117,7 @@ Un log utile répond :
 - merchant callback success ;
 - VoP response distribution.
 
-## 6. Traces
+## Traces
 
 Une trace idéale relie :
 
@@ -132,12 +135,13 @@ Channel
 
 Pour un rail externe, la trace distribuée peut s'arrêter à la frontière. Il faut alors relier le reste par identifiants métier/ISO.
 
-## 7. SLI / SLO / SLA
+## SLI / SLO / SLA
 
 ### SLI
 Mesure.
 
 Exemples :
+
 - successful payment API ratio ;
 - p99 initiation latency ;
 - payment finality latency ;
@@ -152,7 +156,7 @@ Engagement contractuel.
 
 Ne jamais transformer un SLO de lab en SLA client.
 
-## 8. Error budget
+## Error budget
 
 Un SLO de disponibilité peut être converti en budget d'erreur, mais pour le paiement il faut ajouter des budgets métier :
 
@@ -162,7 +166,7 @@ Un SLO de disponibilité peut être converti en budget d'erreur, mais pour le pa
 - max stale alias rate ;
 - max certificate expiry risk window.
 
-## 9. Latency SLO
+## Latency SLO
 
 Décomposer :
 
@@ -179,9 +183,10 @@ client
 
 La latence p99 totale doit être compatible avec le budget scheme.
 
-## 10. Capacity planning
+## Capacity planning
 
 Dimensions :
+
 - payments/sec ;
 - peak x normal ;
 - retry multiplier ;
@@ -194,6 +199,7 @@ Dimensions :
 - audit retention.
 
 Scénarios :
+
 - Black Friday ;
 - soldes ;
 - paie ;
@@ -201,9 +207,10 @@ Scénarios :
 - recovery après outage ;
 - retry storm.
 
-## 11. Backpressure
+## Backpressure
 
 Quand une dépendance ralentit :
+
 - limiter intake si nécessaire ;
 - protéger DB/broker ;
 - queue contrôlée ;
@@ -213,7 +220,7 @@ Quand une dépendance ralentit :
 
 Le circuit breaker ne doit pas convertir une ambiguïté financière en échec certain.
 
-## 12. Runbooks
+## Runbooks
 
 Minimum :
 
@@ -256,9 +263,10 @@ Minimum :
 - merchant status API available ;
 - monitor dedup.
 
-## 13. Incident severity
+## Incident severity
 
 Severity should combine:
+
 - number/value of payments ;
 - customers/merchants ;
 - duration ;
@@ -269,9 +277,10 @@ Severity should combine:
 
 A low infrastructure impact can still be a high payment incident if financial state is ambiguous.
 
-## 14. Post-mortem
+## Post-mortem
 
 Include:
+
 - timeline ;
 - trigger ;
 - contributing factors ;
@@ -288,9 +297,10 @@ Include:
 
 Avoid “human error” as root cause without system analysis.
 
-## 15. Change/release
+## Change/release
 
 24/7 platform principles:
+
 - backward compatibility ;
 - expand/contract DB migrations ;
 - canary ;
@@ -299,9 +309,10 @@ Avoid “human error” as root cause without system analysis.
 - dark launch where useful ;
 - no schema-breaking big bang.
 
-## 16. Operational readiness review
+## Operational readiness review
 
 Before production:
+
 - ownership ;
 - on-call ;
 - dashboards ;
@@ -318,7 +329,7 @@ Before production:
 - vendor escalation ;
 - change rollback.
 
-## 17. Golden signals + payment signals
+## Golden signals + payment signals
 
 ```text
 Latency
@@ -334,6 +345,6 @@ Liquidity
 Callbacks
 ```
 
-## 18. Conclusion
+## Conclusion
 
 SRE appliqué au paiement consiste à exploiter une vérité financière distribuée. Les meilleurs dashboards combinent santé technique et état métier.

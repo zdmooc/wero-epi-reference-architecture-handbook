@@ -17,11 +17,11 @@ La @fig-15-001 complète la lecture de ce chapitre avec la vue de référence co
 
 *Statut : **MIXED** · Source(s) : ECB digital euro preparation + EPI/Wero public roadmap context + EPC schemes + handbook reference architecture · Vérifié : 2026-09-29.*
 
-## 1. Objective
+## Objective
 
 Build an architecture able to absorb new methods without rebuilding bank core for each wallet.
 
-## 2. Layered direction
+## Layered direction
 
 ~~~text
 Experience
@@ -34,9 +34,10 @@ Experience
 → Reconciliation
 ~~~
 
-## 3. Payment methods
+## Payment methods
 
 Potential portfolio:
+
 - Wero ;
 - SCT Inst ;
 - OCT Inst ;
@@ -44,9 +45,10 @@ Potential portfolio:
 - digital euro if issued ;
 - other local/international methods.
 
-## 4. Common capabilities
+## Common capabilities
 
 Share where safe:
+
 - customer IAM ;
 - merchant onboarding ;
 - fraud platform ;
@@ -55,18 +57,20 @@ Share where safe:
 - reconciliation framework ;
 - secrets/PKI.
 
-## 5. Keep separate
+## Keep separate
 
 Do not over-share:
+
 - financial state machine if semantics differ ;
 - settlement adapter ;
 - dispute model ;
 - asset/ledger ;
 - legal retention.
 
-## 6. Merchant abstraction
+## Merchant abstraction
 
 A merchant can receive:
+
 - payment intent API ;
 - method selection ;
 - status ;
@@ -75,18 +79,20 @@ A merchant can receive:
 
 Backend chooses method-specific execution.
 
-## 7. European identity
+## European identity
 
 eIDAS2/EUDI developments may affect:
+
 - onboarding ;
 - authentication ;
 - attribute sharing.
 
 Do not assume exact Wero integration without public evidence.
 
-## 8. Real-time everywhere
+## Real-time everywhere
 
 Trends:
+
 - instant settlement ;
 - 24/7 operations ;
 - real-time fraud ;
@@ -95,11 +101,12 @@ Trends:
 
 Architecture must remove end-of-day assumptions.
 
-## 9. Data
+## Data
 
 Use event-driven reporting while keeping authoritative ledger.
 
 Future AI use:
+
 - fraud ;
 - capacity ;
 - liquidity forecasting ;
@@ -107,19 +114,21 @@ Future AI use:
 
 Never let AI invent settlement state.
 
-## 10. AI agents
+## AI agents
 
 ECB innovation work in 2026 explores AI/payment scenarios.
 
 Architecture guardrail:
+
 - agent can propose/initiate within authorization ;
 - deterministic policy validates ;
 - human/customer consent where required ;
 - payment engine remains authoritative.
 
-## 11. Programmability
+## Programmability
 
 Possible future services:
+
 - subscriptions ;
 - conditional merchant flows ;
 - micropayments ;
@@ -127,9 +136,10 @@ Possible future services:
 
 Keep financial core controlled.
 
-## 12. Resilience
+## Resilience
 
 2030 architecture should isolate:
+
 - channel ;
 - method ;
 - rail ;
@@ -138,9 +148,10 @@ Keep financial core controlled.
 
 One rail outage should not corrupt others.
 
-## 13. Sovereignty
+## Sovereignty
 
 European payments strategy increasingly values:
+
 - European reach ;
 - resilience ;
 - reduced concentration ;
@@ -148,9 +159,10 @@ European payments strategy increasingly values:
 
 Architecture should measure dependencies rather than use sovereignty as marketing label.
 
-## 14. Migration strategy
+## Migration strategy
 
 Evolve by adapters/capabilities:
+
 - add method ;
 - certify ;
 - migrate traffic ;
@@ -158,9 +170,10 @@ Evolve by adapters/capabilities:
 
 Avoid big-bang core replacement.
 
-## 15. Five-year principle
+## Five-year principle
 
 Stable core concepts:
+
 - truth ;
 - idempotency ;
 - finality ;
@@ -169,6 +182,7 @@ Stable core concepts:
 - failure domains.
 
 Volatile:
+
 - products ;
 - participants ;
 - rules ;

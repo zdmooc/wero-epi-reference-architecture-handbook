@@ -9,6 +9,7 @@ Comment une intention fonctionnelle devient-elle un paiement instantané correct
 ## Autorité de ce volume
 
 Ce volume est canonique pour :
+
 - ISO 20022 et identifiants scheme ;
 - SCT Inst et ses états/règles ;
 - UNKNOWN, investigation et R-transactions au niveau scheme ;

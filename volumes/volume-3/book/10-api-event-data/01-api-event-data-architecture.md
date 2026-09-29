@@ -12,7 +12,7 @@ related_internal_repos:
 
 # Partie IX — API, Event-Driven et Data Architecture
 
-## 1. Trois contrats différents
+## Trois contrats différents
 
 Une plateforme de paiement expose généralement trois familles de contrats :
 
@@ -28,7 +28,7 @@ Ils ne sont pas interchangeables.
 - Event : notification d'un fait ou d'une transition d'état.
 - Message financier : contrat de scheme ou d'infrastructure.
 
-## 2. API design
+## API design
 
 Exemple conceptuel de création :
 
@@ -56,7 +56,7 @@ Réponse conceptuelle :
 
 Ce contrat est une REFERENCE_ARCHITECTURE, pas une API publique EPI.
 
-## 3. Idempotency contract
+## Idempotency contract
 
 Sémantique attendue :
 
@@ -69,6 +69,7 @@ same key + materially different payload
 ~~~
 
 Stocker :
+
 - key ;
 - fingerprint sémantique ;
 - paymentId ;
@@ -77,7 +78,7 @@ Stocker :
 
 L'idempotence doit être atomique sous concurrence.
 
-## 4. Durable intent
+## Durable intent
 
 Pattern critique :
 
@@ -88,14 +89,16 @@ potential external financial effect
 ~~~
 
 Sinon :
+
 1. paiement externe réussi ;
 2. crash local avant enregistrement ;
 3. retry du caller ;
 4. risque de second paiement.
 
-## 5. Concurrency
+## Concurrency
 
 Approches :
+
 - optimistic versioning ;
 - compare-and-swap ;
 - row/advisory lock ;
@@ -105,7 +108,7 @@ Approches :
 L'invariant compte plus que le produit :
 un seul logical intent peut déclencher un effet financier donné.
 
-## 6. Transactional Outbox
+## Transactional Outbox
 
 Problème classique :
 
@@ -130,16 +133,17 @@ publisher:
   mark published
 ~~~
 
-## 7. Inbox / consumer deduplication
+## Inbox / consumer deduplication
 
 Un consumer doit tolérer une livraison au moins une fois.
 
 Référence :
+
 - eventId + consumer = unique ;
 - si nouveau : appliquer l'effet ;
 - si déjà traité : ack sans second effet.
 
-## 8. Delivery semantics
+## Delivery semantics
 
 At-most-once : peut perdre.
 
@@ -153,9 +157,10 @@ Règle du livre :
 
 La sûreté financière exige idempotence et réconciliation aux frontières.
 
-## 9. Event taxonomy
+## Event taxonomy
 
 Événements de référence :
+
 - PaymentIntentCreated ;
 - PaymentAuthorized ;
 - PaymentSubmitted ;
@@ -169,6 +174,7 @@ La sûreté financière exige idempotence et réconciliation aux frontières.
 - MerchantCallbackFailed.
 
 Envelope :
+
 - eventId ;
 - eventType ;
 - eventVersion ;
@@ -179,26 +185,29 @@ Envelope :
 - trace context ;
 - payload.
 
-## 10. Event versioning
+## Event versioning
 
 Principes :
+
 - évolution additive ;
 - schema version explicite ;
 - compatibility tests ;
 - deprecation window ;
 - registry lorsque pertinent.
 
-## 11. Kafka et MQ
+## Kafka et MQ
 
 Ils illustrent des patterns différents.
 
 Kafka-like :
+
 - log d'événements ;
 - multi-consumers ;
 - replay ;
 - analytics.
 
 MQ-like :
+
 - commandes ;
 - queues ;
 - transactional messaging ;
@@ -206,7 +215,7 @@ MQ-like :
 
 Une architecture bancaire peut combiner les deux.
 
-## 12. Replay
+## Replay
 
 ~~~text
 replay event
@@ -214,6 +223,7 @@ replay event
 ~~~
 
 Replay sécurisé :
+
 - eventId ;
 - consumer dedup ;
 - business idempotency ;
@@ -221,16 +231,17 @@ Replay sécurisé :
 - audit ;
 - approval pour flux sensibles.
 
-## 13. DLQ
+## DLQ
 
 Une DLQ doit avoir un runbook :
+
 - classifier ;
 - corriger ;
 - replay/drop/manual ;
 - relier au paymentId ;
 - enregistrer l'action opérateur.
 
-## 14. Modèle de données canonique
+## Modèle de données canonique
 
 Entités :
 
@@ -253,7 +264,7 @@ RiskDecision
 ReconciliationRecord
 ~~~
 
-## 15. Ledger
+## Ledger
 
 Le ledger doit conserver l'histoire.
 
@@ -267,9 +278,10 @@ REFUND               -30
 
 On ne remplace pas l'entrée initiale par un état final simplifié.
 
-## 16. Payment state store
+## Payment state store
 
 Optimisé pour l'orchestration :
+
 - current state ;
 - version ;
 - external reference ;
@@ -277,9 +289,10 @@ Optimisé pour l'orchestration :
 
 Il ne remplace pas l'historique ledger/audit.
 
-## 17. Reconciliation store
+## Reconciliation store
 
 Contient :
+
 - source A ;
 - source B ;
 - comparison ;
@@ -288,33 +301,37 @@ Contient :
 - resolution ;
 - evidence.
 
-## 18. Consistency classes
+## Consistency classes
 
 Strong consistency candidates :
+
 - idempotency reservation ;
 - financial state ;
 - ledger ;
 - single-writer ownership.
 
 Eventual consistency candidates :
+
 - analytics ;
 - dashboards ;
 - search ;
 - notification history.
 
-## 19. CAP appliqué au paiement
+## CAP appliqué au paiement
 
 En partition réseau, autoriser deux writers divergents peut être pire qu'une indisponibilité temporaire.
 
 Pour les données financières :
+
 - quorum ;
 - fencing ;
 - ownership ;
 - fail-closed selon le cas.
 
-## 20. RPO=0
+## RPO=0
 
 Un claim RPO=0 doit préciser :
+
 - failure domain ;
 - acknowledged commits ;
 - synchronous replicas ;
@@ -324,9 +341,10 @@ Un claim RPO=0 doit préciser :
 
 RPO=0 sur perte d'un nœud n'implique pas RPO=0 sur perte région.
 
-## 21. Encryption
+## Encryption
 
 À considérer :
+
 - transit ;
 - at-rest ;
 - backup ;
@@ -334,9 +352,10 @@ RPO=0 sur perte d'un nœud n'implique pas RPO=0 sur perte région.
 - secrets ;
 - key separation.
 
-## 22. Retention
+## Retention
 
 Le paiement combine besoins :
+
 - comptables ;
 - litiges ;
 - fraude ;
@@ -345,7 +364,7 @@ Le paiement combine besoins :
 
 La rétention doit être par classe de données.
 
-## 23. Data lineage
+## Data lineage
 
 Pour un paiement :
 
@@ -361,9 +380,10 @@ request
 → reconciliation
 ~~~
 
-## 24. Evidence du companion lab
+## Evidence du companion lab
 
 Le flagship instant-payments du portefeuille apporte des preuves runtime documentées pour plusieurs patterns :
+
 - idempotency ;
 - UNKNOWN ;
 - Outbox/Inbox ;
@@ -375,6 +395,6 @@ Le flagship instant-payments du portefeuille apporte des preuves runtime documen
 
 Ces preuves sont utiles pour valider le pattern, pas pour attribuer ces technologies à Wero/EPI.
 
-## 25. Conclusion
+## Conclusion
 
 API, événements et données forment la mémoire du paiement. Leur fonction principale est de préserver une vérité durable et réconciliable lorsque le système distribué devient ambigu.

@@ -8,7 +8,7 @@ primary_sources:
 
 # Resilience evidence chain
 
-## 1. From claim to proof
+## From claim to proof
 
 ```text
 Business objective
@@ -24,7 +24,7 @@ Business objective
 
 A document asserting "RPO=0" is not evidence. Evidence demonstrates the authoritative data boundary and tested failure scenario.
 
-## 2. Evidence classes
+## Evidence classes
 
 - configuration evidence;
 - topology evidence;
@@ -36,11 +36,12 @@ A document asserting "RPO=0" is not evidence. Evidence demonstrates the authorit
 - reconciliation evidence;
 - recovery/failback evidence.
 
-## 3. Example — site loss
+## Example — site loss
 
 Claim: critical payment service survives site loss within target.
 
 Evidence package:
+
 - topology and failure-domain map;
 - initial data state;
 - fault timestamp;
@@ -53,9 +54,10 @@ Evidence package:
 - UNKNOWN/reconciliation report;
 - failback evidence.
 
-## 4. Negative evidence matters
+## Negative evidence matters
 
 A failed exercise produces useful evidence when:
+
 - the failure is preserved;
 - root cause is traceable;
 - corrective action is owned;
@@ -63,6 +65,6 @@ A failed exercise produces useful evidence when:
 
 Deleting inconvenient test results weakens operational-resilience governance.
 
-## 5. Runtime-proven boundary
+## Runtime-proven boundary
 
 `RUNTIME_PROVEN` applies only to the demonstrated property in the demonstrated environment and version. It never silently becomes proof of production architecture.

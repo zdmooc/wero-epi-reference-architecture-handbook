@@ -14,7 +14,7 @@ related_internal_repos:
 
 # Partie V — SCT Inst : cycle de vie, erreurs et investigation
 
-## 1. Scheme, pas moteur technique
+## Scheme, pas moteur technique
 
 SCT Inst définit des règles communes pour un virement instantané en euro. Le scheme n'impose pas l'architecture applicative interne de chaque PSP.
 
@@ -28,9 +28,10 @@ PSP implementation
 CSM / settlement path
 ```
 
-## 2. Baseline temporelle 2026
+## Baseline temporelle 2026
 
 L'EPC indique pour le rulebook 2025 :
+
 - disponibilité permanente du scheme ;
 - un budget total de neuf secondes pour le traitement scheme décrit ;
 - possibilité d'accords bilatéraux/multilatéraux plus courts.
@@ -55,7 +56,7 @@ Total                     9000 ms
 
 Ce budget est un exercice de design, pas une distribution EPC officielle.
 
-## 3. Happy path
+## Happy path
 
 ```text
 Payer
@@ -75,9 +76,10 @@ Originator PSP
 Payer status
 ```
 
-## 4. Rejet
+## Rejet
 
 Un rejet doit être distingué selon son moment :
+
 - avant soumission ;
 - validation scheme ;
 - PSP bénéficiaire ;
@@ -86,6 +88,7 @@ Un rejet doit être distingué selon son moment :
 - compte destinataire.
 
 L'application doit stocker :
+
 - reason code ;
 - actor/failure domain ;
 - timestamp ;
@@ -93,13 +96,14 @@ L'application doit stocker :
 - retryability ;
 - customer-safe message.
 
-## 5. Timeout n'est pas un seul cas
+## Timeout n'est pas un seul cas
 
 ### Timeout before effect
 
 Le système peut établir que l'opération n'a pas été acceptée ou n'existe pas.
 
 Recovery possible :
+
 - retry contrôlé du même logical payment selon contrat.
 
 ### Timeout after possible effect
@@ -110,20 +114,22 @@ State :
 `UNKNOWN`.
 
 Recovery :
+
 - inquiry ;
 - status investigation ;
 - reconciliation ;
 - jamais nouveau paiement aveugle.
 
-## 6. Codes timeout
+## Codes timeout
 
 Les IG 2025 incluent notamment :
+
 - `AB05 TimeoutCreditorAgent` ;
 - `AB06 TimeoutInstructedAgent`.
 
 Le code doit être traité selon son contexte exact. Le livre évite la fausse règle « tout timeout = AB04 » ou « tout timeout = recall ».
 
-## 7. UNKNOWN ≠ FAILED
+## UNKNOWN ≠ FAILED
 
 ```text
 FAILED
@@ -134,6 +140,7 @@ UNKNOWN
 ```
 
 La distinction change :
+
 - UI ;
 - retry ;
 - accounting ;
@@ -141,7 +148,7 @@ La distinction change :
 - incident response ;
 - customer support.
 
-## 8. Investigation
+## Investigation
 
 Le scheme prévoit un dataset de status investigation utilisant `pacs.028.001.03`.
 
@@ -163,7 +170,7 @@ close case
 
 Le case management peut être technique ou outillé ; le besoin fonctionnel reste le même.
 
-## 9. Duplicate protection
+## Duplicate protection
 
 Deux niveaux :
 
@@ -174,6 +181,7 @@ Exemple : même message reçu deux fois.
 Exemple : utilisateur appuie deux fois et crée deux requêtes différentes pour la même intention.
 
 Contrôles :
+
 - MsgId uniqueness ;
 - business idempotency key ;
 - semantic payload hash ;
@@ -181,7 +189,7 @@ Contrôles :
 - ledger uniqueness ;
 - outbox dedup.
 
-## 10. Recall
+## Recall
 
 Un recall est une demande postérieure au paiement suivant les règles du scheme.
 
@@ -201,11 +209,12 @@ Beneficiary side
   +--> positive return -> pacs.004
 ```
 
-## 11. Request for Recall by the Originator
+## Request for Recall by the Originator
 
 Le rulebook distingue les use cases de recall et de Request for Recall by the Originator. Le livre conserve cette différence au lieu de tout appeler « annulation ».
 
 Conséquence :
+
 - UI client ;
 - droits ;
 - délais ;
@@ -214,7 +223,7 @@ Conséquence :
 - états opérationnels
 doivent être modélisés explicitement.
 
-## 12. Return
+## Return
 
 Un return est un mouvement financier de retour.
 
@@ -227,7 +236,7 @@ RETURN  -100
 
 On ne modifie pas rétroactivement le paiement original en `FAILED`.
 
-## 13. Reconciliation
+## Reconciliation
 
 Trois niveaux :
 
@@ -241,6 +250,7 @@ Comparer volumes, montants, statuts et comptes.
 Reconstituer une vérité après panne.
 
 Minimum reconciliation key set :
+
 - EndToEndId ;
 - TxId ;
 - paymentId ;
@@ -249,9 +259,10 @@ Minimum reconciliation key set :
 - timestamps ;
 - final status.
 
-## 14. 24/7/365 operational impact
+## 24/7/365 operational impact
 
 Instant payment means :
+
 - astreinte ;
 - certificate monitoring ;
 - no overnight batch dependency for critical path ;
@@ -260,11 +271,12 @@ Instant payment means :
 - liquidity monitoring outside classical business hours ;
 - controlled maintenance.
 
-## 15. Change 15 November 2026
+## Change 15 November 2026
 
 Le rulebook 2025 v1.1 fixe au 15 novembre 2026 la fin de l'utilisation de l'adresse non structurée dans les messages EPC concernés.
 
 Pour l'architecte :
+
 - data model ;
 - validation ;
 - API ;
@@ -273,7 +285,7 @@ Pour l'architecte :
 - test de non-régression
 doivent être alignés avant la date applicable.
 
-## 16. Rulebook upgrade strategy
+## Rulebook upgrade strategy
 
 Chaque upgrade suit :
 
@@ -290,6 +302,6 @@ new rulebook
 -> evidence
 ```
 
-## 17. Conclusion
+## Conclusion
 
 Le vrai défi SCT Inst n'est pas uniquement d'envoyer un `pacs.008` vite. C'est de maintenir une vérité financière cohérente face aux délais, duplications, pertes de réponse, retours et investigations.

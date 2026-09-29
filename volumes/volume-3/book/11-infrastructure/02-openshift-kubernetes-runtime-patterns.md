@@ -10,9 +10,10 @@ related_internal_repos:
 
 # OpenShift / Kubernetes — patterns runtime
 
-## 1. Le cluster n'est pas l'architecture métier
+## Le cluster n'est pas l'architecture métier
 
 OpenShift fournit des capacités de plateforme :
+
 - scheduling ;
 - networking ;
 - ingress ;
@@ -25,9 +26,10 @@ OpenShift fournit des capacités de plateforme :
 
 Le paiement conserve ses propres invariants au-dessus.
 
-## 2. Namespaces
+## Namespaces
 
 Reference separation:
+
 - payment-app ;
 - payment-data ;
 - platform-observability ;
@@ -37,9 +39,10 @@ Reference separation:
 
 Avoid namespace sprawl without ownership.
 
-## 3. Deployment
+## Deployment
 
 For stateless services:
+
 - replicas aligned with failure objective ;
 - readiness ;
 - startup ;
@@ -48,65 +51,71 @@ For stateless services:
 - topology spread ;
 - anti-affinity.
 
-## 4. Readiness
+## Readiness
 
 A pod should not receive traffic if:
+
 - startup incomplete ;
 - configuration invalid ;
 - mandatory dependency unavailable according to service policy.
 
 Avoid making readiness depend on every optional downstream.
 
-## 5. Liveness
+## Liveness
 
 Liveness answers whether the process is stuck.
 
 It must not restart healthy pods because a downstream system is temporarily unavailable.
 
-## 6. Startup probe
+## Startup probe
 
 Useful for slow JVM/startup to prevent premature liveness failures.
 
-## 7. Requests and limits
+## Requests and limits
 
 Requests drive scheduling.
 
 Too low:
+
 - contention ;
 - eviction risk.
 
 Too high:
+
 - poor density ;
 - unschedulable workloads.
 
 Limits require workload-specific testing.
 
-## 8. HPA
+## HPA
 
 Scale signals:
+
 - CPU ;
 - memory ;
 - custom RPS/queue metrics.
 
 Payment latency and downstream capacity can matter more than CPU alone.
 
-## 9. PDB
+## PDB
 
 PodDisruptionBudget reduces risk during voluntary disruption.
 
 It does not protect against:
+
 - node crash ;
 - zone loss ;
 - app bug ;
 - DB outage.
 
-## 10. Topology spread
+## Topology spread
 
 Distribute replicas across nodes and zones only if the infrastructure truly has those failure domains.
 
-## 11. NetworkPolicy
+## NetworkPolicy
 
 Default deny and explicit allow for:
+
 - API ;
 - DB ;
 - broker ;
@@ -114,9 +123,10 @@ Default deny and explicit allow for:
 - observability ;
 - egress.
 
-## 12. Secrets
+## Secrets
 
 Use:
+
 - external secret manager/operator ;
 - short-lived credentials where possible ;
 - RBAC ;
@@ -124,9 +134,10 @@ Use:
 
 No secret in ConfigMap or Git.
 
-## 13. Storage
+## Storage
 
 Stateful workloads need:
+
 - storage class ;
 - topology ;
 - performance ;
@@ -135,15 +146,16 @@ Stateful workloads need:
 - restore ;
 - failure-domain semantics.
 
-## 14. Operators
+## Operators
 
 Operators can simplify lifecycle but add:
+
 - CRD versioning ;
 - compatibility ;
 - upgrade dependency ;
 - support boundaries.
 
-## 15. Runtime evidence
+## Runtime evidence
 
 CRC/local can prove deployment, probes, pod restart, GitOps and application behavior.
 

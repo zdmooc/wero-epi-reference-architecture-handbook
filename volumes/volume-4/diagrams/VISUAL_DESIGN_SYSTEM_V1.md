@@ -4,11 +4,12 @@
 **Scope:** handbook diagrams and final publication figures  
 **Status:** APPROVED_FOR_SVG_RENDERING
 
-## 1. Design goals
+## Design goals
 
 The visual system must make a complex payment architecture readable without turning diagrams into decoration.
 
 Priority order:
+
 1. semantic accuracy;
 2. readable hierarchy;
 3. stable vocabulary across the book;
@@ -16,7 +17,7 @@ Priority order:
 5. accessibility;
 6. visual consistency.
 
-## 2. Semantic families
+## Semantic families
 
 | Family | Meaning | Preferred visual treatment |
 |---|---|---|
@@ -34,7 +35,7 @@ Priority order:
 
 Colours are never the sole carrier of meaning; every node remains text-labelled.
 
-## 3. Core colour tokens
+## Core colour tokens
 
 - ink: #0F172A
 - line: #475569
@@ -52,7 +53,7 @@ Colours are never the sole carrier of meaning; every node remains text-labelled.
 
 First value is fill, second is border.
 
-## 4. Shapes
+## Shapes
 
 - actor / person / external party: rounded node;
 - service/capability: rectangle;
@@ -61,14 +62,14 @@ First value is fill, second is border.
 - external rail/platform: rectangle with explicit system name;
 - future concept: dashed relationship and explicit “potential / if issued / watch” wording.
 
-## 5. Lines
+## Lines
 
 - solid arrow: primary processing or authoritative flow;
 - dashed arrow: inquiry, optional path, dependency or future relation;
 - bidirectional arrow: real two-way relationship only;
 - never use arrow direction as a decorative choice.
 
-## 6. Typography
+## Typography
 
 Mermaid source uses a safe publication stack:
 `Arial, sans-serif`.
@@ -76,14 +77,16 @@ Mermaid source uses a safe publication stack:
 Final SVG/layout may substitute the book typeface during visual production, but editable Mermaid remains font-portable.
 
 Rules:
+
 - avoid text below 10 pt equivalent in print;
 - node labels should normally fit in two lines;
 - abbreviations must exist in the glossary/acronym index;
 - no paragraph-sized nodes.
 
-## 7. Truth labels
+## Truth labels
 
 Every source figure must include:
+
 - `title`;
 - `view`;
 - `truth_level`;
@@ -94,9 +97,10 @@ Every source figure must include:
 
 For MIXED figures, public facts and reference design must be distinguishable in the caption/source note.
 
-## 8. Hero-figure rules
+## Hero-figure rules
 
 Hero figures:
+
 - use full page or full-width landscape;
 - one dominant reading direction;
 - maximum 7–12 primary conceptual nodes before grouping;
@@ -104,19 +108,21 @@ Hero figures:
 - one visual takeaway per figure;
 - caption must explain what the reader should learn.
 
-## 9. Sequence diagrams
+## Sequence diagrams
 
 Use when order matters.
 
 Rules:
+
 - participants ordered left-to-right by responsibility;
 - commercial/coordination flow separated conceptually from financial execution;
 - authoritative result visually returns from the financial side;
 - browser/app return is not shown as settlement proof.
 
-## 10. Network diagrams
+## Network diagrams
 
 Use zones:
+
 - external;
 - edge;
 - application;
@@ -127,9 +133,10 @@ Use zones:
 
 Show trust boundaries and critical path before secondary management flows.
 
-## 11. Resilience diagrams
+## Resilience diagrams
 
 Always show:
+
 - failure domain;
 - writer authority;
 - fencing where relevant;
@@ -137,9 +144,10 @@ Always show:
 
 Never imply that replica count alone proves HA.
 
-## 12. Future diagrams
+## Future diagrams
 
 Future capability uses explicit labels:
+
 - potential;
 - pilot;
 - if issued;
@@ -147,7 +155,7 @@ Future capability uses explicit labels:
 
 No future system is drawn as current production fact.
 
-## 13. Publication rendering
+## Publication rendering
 
 Source of truth:
 `diagrams/mermaid/*.mmd`.
@@ -157,7 +165,7 @@ Production path:
 
 SVG is the preferred intermediate because it remains vector and inspectable.
 
-## 14. Accessibility
+## Accessibility
 
 - no red/green-only meaning;
 - sufficient border/text contrast;
@@ -165,12 +173,12 @@ SVG is the preferred intermediate because it remains vector and inspectable.
 - line style reinforces optional/future semantics;
 - printed greyscale must remain understandable.
 
-## 15. Figure caption template
+## Figure caption template
 
 **FIG-xx-xxx — Title.** One-sentence reader takeaway.  
 *Status: REFERENCE_ARCHITECTURE / PUBLIC_VERIFIED / MIXED. Sources: … Checked: YYYY-MM-DD.*
 
-## 16. V1 hero set
+## V1 hero set
 
 1. FIG-01-001 — layered payment architecture;
 2. FIG-03-001 — C2B end-to-end;

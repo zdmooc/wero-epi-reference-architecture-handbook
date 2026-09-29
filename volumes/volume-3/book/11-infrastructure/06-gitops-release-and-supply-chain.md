@@ -10,7 +10,7 @@ related_internal_repos:
 
 # GitOps, release et software supply chain
 
-## 1. Desired state
+## Desired state
 
 ~~~text
 Git
@@ -23,9 +23,10 @@ Git
 
 Le drift devient visible.
 
-## 2. Repository structure
+## Repository structure
 
 Séparer :
+
 - application source ;
 - image build ;
 - environment config ;
@@ -33,7 +34,7 @@ Séparer :
 
 Éviter un dépôt unique avec droits excessifs.
 
-## 3. Promotion
+## Promotion
 
 Promouvoir le même image digest :
 
@@ -46,9 +47,10 @@ sandbox
 
 Ne pas rebuilder un binaire différent par environnement.
 
-## 4. Image provenance
+## Image provenance
 
 Tracer :
+
 - commit ;
 - build ;
 - digest ;
@@ -56,13 +58,14 @@ Tracer :
 - scan ;
 - signature/attestation.
 
-## 5. Secrets
+## Secrets
 
 Git contient des références, pas les secrets en clair.
 
-## 6. Policy gates
+## Policy gates
 
 Exemples :
+
 - no latest tag ;
 - signed image ;
 - approved registry ;
@@ -71,42 +74,47 @@ Exemples :
 - NetworkPolicy ;
 - privileged container interdit sauf exception.
 
-## 7. Database migration
+## Database migration
 
 Séquence :
+
 - expand schema ;
 - deploy compatible app ;
 - migrate data ;
 - contract later.
 
-## 8. Canary
+## Canary
 
 Pour payment processing :
+
 - stable idempotency ;
 - compatible state ;
 - event schema compatibility ;
 - no double consumer effect.
 
-## 9. Rollback
+## Rollback
 
 Rollback peut être dangereux si :
+
 - schema destructif ;
 - event schema incompatible ;
 - external protocol changed.
 
 Préférer forward-compatible design.
 
-## 10. Emergency change
+## Emergency change
 
 Break-glass :
+
 - authorized ;
 - logged ;
 - time-limited ;
 - reconciled back to Git.
 
-## 11. Supply-chain risk
+## Supply-chain risk
 
 Protéger :
+
 - source ;
 - CI runner ;
 - dependencies ;
@@ -114,7 +122,7 @@ Protéger :
 - base images ;
 - deployment credentials.
 
-## 12. Scanning
+## Scanning
 
 - SCA ;
 - image scan ;
@@ -123,16 +131,18 @@ Protéger :
 
 Le nombre de CVE seul ne suffit pas à prioriser le risque.
 
-## 13. Signed artifacts
+## Signed artifacts
 
 Quand possible :
+
 - sign image ;
 - verify at admission ;
 - retain provenance.
 
-## 14. Release evidence
+## Release evidence
 
 Conserver :
+
 - change ticket ;
 - commit ;
 - image digest ;
@@ -141,9 +151,10 @@ Conserver :
 - deployment time ;
 - rollback result.
 
-## 15. Production readiness
+## Production readiness
 
 Pas de release sans :
+
 - functional tests ;
 - contract tests ;
 - ISO tests ;

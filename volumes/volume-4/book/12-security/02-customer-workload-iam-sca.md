@@ -15,7 +15,7 @@ La @fig-12-002 matérialise la vue de référence de ce chapitre.
 
 *Statut : **REFERENCE_ARCHITECTURE** · Source(s) : Handbook reference architecture · Vérifié : 2026-09-29.*
 
-## 1. Quatre identités différentes
+## Quatre identités différentes
 
 - customer identity ;
 - merchant identity ;
@@ -24,9 +24,10 @@ La @fig-12-002 matérialise la vue de référence de ce chapitre.
 
 Les fusionner dans un même modèle d'autorisation crée des privilèges excessifs.
 
-## 2. Customer IAM
+## Customer IAM
 
 Capabilities :
+
 - login ;
 - MFA/SCA integration ;
 - device relation ;
@@ -34,7 +35,7 @@ Capabilities :
 - recovery ;
 - consent context.
 
-## 3. Authentication vs authorization
+## Authentication vs authorization
 
 Authentication:
 who are you?
@@ -45,9 +46,10 @@ what may you do?
 Payment approval adds:
 what transaction are you consenting to?
 
-## 4. SCA
+## SCA
 
 Le design doit supporter :
+
 - facteurs ;
 - exemptions lorsque cadre applicable ;
 - challenge ;
@@ -57,18 +59,20 @@ Le design doit supporter :
 
 SCA success does not equal settlement success.
 
-## 5. Session
+## Session
 
 Controls:
+
 - short idle timeout appropriate to UX ;
 - secure cookie/token ;
 - device binding if policy ;
 - re-auth for sensitive action ;
 - logout/revocation.
 
-## 6. OAuth2
+## OAuth2
 
 Reference:
+
 - authorization server ;
 - resource server ;
 - client ;
@@ -77,9 +81,10 @@ Reference:
 
 Use short-lived access tokens and explicit audiences.
 
-## 7. OIDC
+## OIDC
 
 Provides identity layer:
+
 - issuer ;
 - subject ;
 - claims ;
@@ -87,9 +92,10 @@ Provides identity layer:
 
 Do not send ID token to APIs as generic access token unless designed.
 
-## 8. Workload identity
+## Workload identity
 
 Prefer:
+
 - service account ;
 - short-lived token ;
 - certificate ;
@@ -97,9 +103,10 @@ Prefer:
 
 Avoid shared static API keys.
 
-## 9. Operator IAM
+## Operator IAM
 
 Privileged actions:
+
 - payment correction ;
 - replay ;
 - liquidity ;
@@ -107,15 +114,17 @@ Privileged actions:
 - config.
 
 Require:
+
 - MFA ;
 - least privilege ;
 - PAM where applicable ;
 - approval ;
 - audit.
 
-## 10. Token validation
+## Token validation
 
 Check:
+
 - signature ;
 - issuer ;
 - audience ;
@@ -124,26 +133,29 @@ Check:
 - scopes ;
 - key version.
 
-## 11. JWKS/key rotation
+## JWKS/key rotation
 
 Cache keys but:
+
 - refresh safely ;
 - handle overlap ;
 - alert unknown kid ;
 - no long outage on rotation.
 
-## 12. IAM outage
+## IAM outage
 
 Design choices:
+
 - existing valid token can continue if validation local ;
 - new login may fail ;
 - revocation freshness trade-off.
 
 Document degraded mode.
 
-## 13. Account recovery
+## Account recovery
 
 High-risk flow:
+
 - identity proof ;
 - fraud ;
 - SIM swap ;
@@ -151,13 +163,14 @@ High-risk flow:
 
 Recovery must not bypass payment protections.
 
-## 14. Separation of duties
+## Separation of duties
 
 No single operator should be able to:
+
 - change security policy ;
 - execute financial correction ;
 - hide audit.
 
-## 15. Evidence
+## Evidence
 
 Store authentication/payment consent evidence according to legal/policy needs without excessive sensitive retention.

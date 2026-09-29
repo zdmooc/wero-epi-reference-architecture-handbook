@@ -18,7 +18,7 @@ La @fig-07-001 synthétise le modèle utilisé dans ce chapitre.
 
 *Statut : **MIXED** · Source(s) : EPC SCT Inst + ECB TIPS + EBA CLEARING RT1 · Vérifié : 2026-09-29.*
 
-## 1. Le vocabulaire qui évite les erreurs
+## Le vocabulaire qui évite les erreurs
 
 ### Scheme
 Règles communes du paiement.
@@ -38,7 +38,7 @@ Transfert de l'actif de règlement qui éteint l'obligation correspondante selon
 ### Rail
 Terme d'architecture pratique qui regroupe un chemin de traitement. Il doit toujours être précisé par le nom réel de l'infrastructure.
 
-## 2. Pile conceptuelle
+## Pile conceptuelle
 
 ```text
 Wero experience
@@ -54,9 +54,10 @@ settlement infrastructure
 central-bank liquidity
 ```
 
-## 3. TIPS
+## TIPS
 
 La BCE décrit TIPS comme la plateforme Eurosystème de settlement instantané :
+
 - en temps réel ;
 - 24/7/365 ;
 - en monnaie banque centrale ;
@@ -78,9 +79,10 @@ PSP B DCA
 
 La technique réelle inclut davantage de rôles et de modes d'accès ; le livre conserve cette vue pour expliquer la finalité.
 
-## 4. RT1
+## RT1
 
 EBA CLEARING décrit RT1 comme :
+
 - un système pan-européen ;
 - real-time gross settlement ;
 - SCT Inst / OCT Inst ;
@@ -97,23 +99,26 @@ RT1  = commercial bank money
 
 Cette représentation serait fausse.
 
-## 5. Relation RT1 / TIPS
+## Relation RT1 / TIPS
 
 EBA CLEARING décrit des options de settlement TIPS incluant :
+
 - DCA TIPS ;
 - modèle utilisant l'AS technical account pour RT1/TIPS.
 
 L'architecture doit donc séparer :
+
 - processing/routing RT1 ;
 - funding model ;
 - settlement account arrangement ;
 - TIPS connectivity.
 
-## 6. T2 / TARGET Services
+## T2 / TARGET Services
 
 TARGET Services partagent un modèle de gestion centralisée de liquidité.
 
 La BCE décrit :
+
 - Main Cash Account ;
 - Central Liquidity Management ;
 - Dedicated Cash Accounts liés aux services ;
@@ -121,20 +126,22 @@ La BCE décrit :
 
 T2 ne doit pas être dessiné comme « le même système que TIPS ». Ils appartiennent à la famille TARGET Services mais ont des rôles distincts.
 
-## 7. STET et autres CSM
+## STET et autres CSM
 
 Le livre inclut STET lorsqu'il est pertinent pour expliquer la reachability ou les architectures multi-CSM.
 
 Règle :
+
 - ne jamais supposer qu'une banque Wero utilise un CSM donné sans source ;
 - modéliser une abstraction `InstantPaymentRailAdapter` ;
 - documenter les particularités du CSM dans un adapter / profil de route.
 
-## 8. Reachability
+## Reachability
 
 Le paiement ne dépend pas seulement de la présence du PSP payeur.
 
 Il faut déterminer :
+
 - comment le payee PSP est reachable ;
 - quels participants sont directs/indirects ;
 - quelles routes sont disponibles ;
@@ -142,7 +149,7 @@ Il faut déterminer :
 - quelles fenêtres de maintenance existent ;
 - comment gérer une route indisponible.
 
-## 9. Multi-rail routing
+## Multi-rail routing
 
 Reference architecture :
 
@@ -157,6 +164,7 @@ Routing Policy
 ```
 
 Routing criteria possibles :
+
 - reachability ;
 - participant preference ;
 - cost ;
@@ -168,7 +176,7 @@ Routing criteria possibles :
 
 Le livre ne recommande pas un algorithme universel. Le choix est établissement-specific.
 
-## 10. Rail adapter contract
+## Rail adapter contract
 
 Minimum :
 
@@ -182,24 +190,26 @@ getHealth()
 ```
 
 Le contrat applicatif doit expliciter :
+
 - idempotency ;
 - retry ;
 - timeout semantics ;
 - authoritative status ;
 - correlation.
 
-## 11. Settlement finality
+## Settlement finality
 
 L'architecte doit identifier exactement le point de finalité applicable au rail.
 
 Erreur :
+
 - considérer la création du paiement comme settlement ;
 - considérer l'acceptation technique comme settlement ;
 - considérer le callback marchand comme settlement.
 
 Il faut tracer l'évidence de l'infrastructure financière appropriée.
 
-## 12. Failure matrix
+## Failure matrix
 
 | Failure | Impact possible | Recovery |
 |---|---|---|
@@ -211,20 +221,22 @@ Il faut tracer l'évidence de l'infrastructure financière appropriée.
 | local gateway down | backlog/no submit | HA/recovery |
 | response path lost | local UNKNOWN | external status |
 
-## 13. Active-active rail adapters
+## Active-active rail adapters
 
 Deux instances d'adapter ne doivent pas signifier deux instructions financières.
 
 Nécessaire :
+
 - durable single logical intent ;
 - fencing / claim ;
 - unique external reference ;
 - idempotent downstream contract si disponible ;
 - reconciliation.
 
-## 14. Rail observability
+## Rail observability
 
 Metrics :
+
 - submitted TPS ;
 - accepted/rejected ;
 - timeout rate ;
@@ -235,6 +247,6 @@ Metrics :
 - liquidity rejects ;
 - investigation backlog.
 
-## 15. Conclusion
+## Conclusion
 
 Une architecture Wero correcte montre le rail explicitement, mais sans confondre rail, scheme, message et settlement. TIPS et RT1 doivent être étudiés selon leurs documents officiels, pas selon des raccourcis.

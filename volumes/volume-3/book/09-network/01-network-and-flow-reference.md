@@ -16,7 +16,7 @@ La @fig-09-001 matérialise la vue de référence de ce chapitre.
 
 *Statut : **REFERENCE_ARCHITECTURE** · Source(s) : Handbook reference architecture · Vérifié : 2026-09-29.*
 
-## 1. Le réseau fait partie du paiement
+## Le réseau fait partie du paiement
 
 Une architecture de paiement ne peut pas reléguer le réseau à une annexe. Une transaction peut échouer alors que les microservices sont parfaitement sains :
 
@@ -33,7 +33,7 @@ Une architecture de paiement ne peut pas reléguer le réseau à une annexe. Une
 
 Le réseau doit donc être modélisé avec le même niveau de précision que les composants applicatifs.
 
-## 2. Vue de référence
+## Vue de référence
 
 ~~~text
 Customer device
@@ -67,7 +67,7 @@ CSM / settlement infrastructure
 
 Cette vue est une REFERENCE_ARCHITECTURE, pas une topologie Wero/EPI publiée.
 
-## 3. Zones
+## Zones
 
 | Zone | Fonction | Entrées autorisées |
 |---|---|---|
@@ -82,11 +82,12 @@ Cette vue est une REFERENCE_ARCHITECTURE, pas une topologie Wero/EPI publiée.
 
 Principe : deny by default, puis ouverture des flux nécessaires.
 
-## 4. DNS
+## DNS
 
 Le DNS est critique parce qu'il précède souvent les API, identity providers, PSP externes, endpoints de rail et outils d'observabilité.
 
 Contrôles :
+
 - plusieurs resolvers ;
 - health checks ;
 - TTL maîtrisé ;
@@ -104,11 +105,12 @@ DNS unavailable
 → controlled recovery
 ~~~
 
-## 5. Anti-DDoS / WAF
+## Anti-DDoS / WAF
 
 Le WAF protège l'exposition HTTP, pas le rail interbancaire.
 
 Capabilities :
+
 - bot filtering ;
 - rate limit ;
 - IP reputation ;
@@ -118,9 +120,10 @@ Capabilities :
 
 Un WAF trop agressif peut devenir la cause de l'outage. Une réponse WAF 403 doit rester distincte d'un rejet métier ou scheme.
 
-## 6. Load balancer, reverse proxy et ingress
+## Load balancer, reverse proxy et ingress
 
 Questions :
+
 - L4 ou L7 ?
 - TLS pass-through ou termination ?
 - re-encrypt ?
@@ -133,14 +136,16 @@ Questions :
 Un reverse proxy ne doit pas rejouer aveuglément un POST financier après timeout si le backend a pu exécuter l'opération.
 
 Politique :
+
 - retry safe GET/health selon règles ;
 - POST payment uniquement avec contrat idempotent explicitement conçu ;
 - timeout propagé avec correlation id ;
 - retry budget borné.
 
-## 7. API Gateway
+## API Gateway
 
 Fonctions :
+
 - authentification et autorisation ;
 - token validation ;
 - quotas ;
@@ -153,9 +158,10 @@ Fonctions :
 
 Le gateway ne doit jamais devenir la source de vérité d'un paiement.
 
-## 8. Firewalls et matrice des flux
+## Firewalls et matrice des flux
 
 La matrice doit documenter :
+
 - source ;
 - destination ;
 - protocol ;
@@ -182,7 +188,7 @@ Exemple :
 
 Les ports non publics sont illustratifs tant qu'ils ne sont pas appuyés par le contrat cible.
 
-## 9. North-south et east-west
+## North-south et east-west
 
 North-south : client/partenaire externe vers la plateforme.
 
@@ -190,18 +196,19 @@ East-west : service vers service au sein de la plateforme.
 
 Une architecture Zero Trust sécurise les deux. Être dans le même cluster Kubernetes ne constitue pas une authentification.
 
-## 10. Banking connectivity
+## Banking connectivity
 
 Le chemin inter-PSP/CSM peut utiliser des connectivités dédiées ou des endpoints approuvés.
 
 Le livre impose :
+
 - documenter la capability de connectivité ;
 - ne pas inventer le fournisseur ;
 - cartographier liens primaire/secondaire ;
 - inclure PKI/certificats ;
 - identifier l'ownership.
 
-## 11. Dual connectivity
+## Dual connectivity
 
 ~~~text
 Gateway A ---- Link/Provider A ---- CSM
@@ -209,6 +216,7 @@ Gateway B ---- Link/Provider B ---- CSM
 ~~~
 
 La diversité physique doit être vérifiée :
+
 - routers séparés ?
 - opérateurs séparés ?
 - fibres/ducts séparés ?
@@ -218,9 +226,10 @@ La diversité physique doit être vérifiée :
 
 Deux VLAN sur un même routeur ne constituent pas une résilience physique indépendante.
 
-## 12. TLS / mTLS / PKI
+## TLS / mTLS / PKI
 
 Points obligatoires :
+
 - TLS policy ;
 - certificats ;
 - trust stores ;
@@ -234,6 +243,7 @@ Points obligatoires :
 Un certificat expiré est un scénario de panne paiement.
 
 PKI doit identifier :
+
 - root/intermediate CA ;
 - enrollment ;
 - renouvellement ;
@@ -242,11 +252,12 @@ PKI doit identifier :
 - emergency rotation ;
 - distribution de confiance.
 
-## 13. HSM connectivity
+## HSM connectivity
 
 Le HSM est à la fois dépendance sécurité et disponibilité.
 
 Questions :
+
 - cluster/HA ?
 - network path ?
 - session limits ?
@@ -258,7 +269,7 @@ Questions :
 
 Un HSM peut arrêter signature ou chiffrement même lorsque tous les pods sont verts.
 
-## 14. Latency budget
+## Latency budget
 
 Le budget end-to-end couvre :
 
@@ -278,9 +289,10 @@ device
 
 Mesurer p50, p95, p99 et p99.9, surtout pendant les incidents.
 
-## 15. TCP et connexions
+## TCP et connexions
 
 Sujets :
+
 - connection pools ;
 - keepalive ;
 - DNS refresh ;
@@ -293,20 +305,22 @@ Sujets :
 
 Une plateforme peut tomber en connection exhaustion longtemps avant 100 % CPU.
 
-## 16. MTU et fragmentation
+## MTU et fragmentation
 
 Pertinent avec VPN, overlays, service mesh et tunnels chiffrés.
 
 Symptômes :
+
 - échecs intermittents de gros messages ;
 - TLS handshake instable ;
 - retransmissions.
 
 Le runbook réseau doit inclure path-MTU si l'environnement l'exige.
 
-## 17. Kubernetes/OpenShift network
+## Kubernetes/OpenShift network
 
 Couches :
+
 - node network ;
 - pod network ;
 - Service ;
@@ -319,7 +333,7 @@ Couches :
 
 NetworkPolicy ne remplace pas firewall, workload identity, TLS ou egress governance.
 
-## 18. Failure catalogue réseau
+## Failure catalogue réseau
 
 N1 DNS loss : alerte, aucun double paiement.
 
@@ -339,7 +353,7 @@ N8 broker network partition : paiement durable via Outbox.
 
 N9 DB network partition : quorum/fencing ; jamais deux writers divergents.
 
-## 19. Flow matrix contract
+## Flow matrix contract
 
 Champs recommandés :
 
@@ -361,6 +375,6 @@ owner
 monitoring
 ~~~
 
-## 20. Conclusion
+## Conclusion
 
 Le réseau n'est pas de la plomberie. Il participe à la machine d'état financière parce qu'un message perdu, retardé ou dupliqué change ce que le système sait du résultat du paiement.

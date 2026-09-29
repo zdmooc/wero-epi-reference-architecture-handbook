@@ -17,54 +17,61 @@ La @fig-05-003 fournit la vue de référence utilisée dans ce chapitre.
 
 *Statut : **PUBLIC_VERIFIED** · Source(s) : EPC SCT Inst Inter-PSP IG 2025 v1.0 · Vérifié : 2026-09-29.*
 
-## 1. Les exceptions sont le vrai test d'une architecture paiement
+## Les exceptions sont le vrai test d'une architecture paiement
 
 Le happy path est court. Les opérations d'exception durent plus longtemps, traversent des équipes et exigent des références historiques fiables.
 
-## 2. Reject
+## Reject
 
 Reject signifie que l'instruction n'a pas abouti selon le contexte du scheme.
 
 Capture :
+
 - reason ;
 - stage ;
 - agent ;
 - timestamp ;
 - retryability.
 
-## 3. Return
+## Return
 
 Baseline message :
+
 - pacs.004.001.09 dans l'IG SCT Inst 2025 pour les cas correspondants.
 
 Le return :
+
 - est une opération distincte ;
 - référence l'original ;
 - déplace les fonds en sens inverse selon le processus applicable ;
 - doit être réconcilié.
 
-## 4. Recall / cancellation request
+## Recall / cancellation request
 
 Baseline :
+
 - camt.056.001.08.
 
 Semantics :
+
 - demande, pas garantie ;
 - peut être acceptée ou refusée ;
 - doit porter les original references.
 
-## 5. Negative recall response
+## Negative recall response
 
 Baseline :
+
 - camt.029.001.09 pour la réponse négative au processus correspondant.
 
 Le dossier doit enregistrer :
+
 - request date ;
 - response date ;
 - reason ;
 - operator/customer context.
 
-## 6. Positive recall outcome
+## Positive recall outcome
 
 Le retour des fonds s'appuie sur le message de return prévu par le scheme.
 
@@ -76,17 +83,19 @@ recall request
 → originator reconciliation
 ~~~
 
-## 7. Status investigation
+## Status investigation
 
 Baseline :
+
 - pacs.028.001.03 pour les demandes de statut prévues par le profil SCT Inst 2025.
 
 Use cases :
+
 - missing final status ;
 - recall status update ;
 - transaction investigation selon règles.
 
-## 8. UNKNOWN resolution
+## UNKNOWN resolution
 
 ~~~text
 payment local state UNKNOWN
@@ -99,7 +108,7 @@ payment local state UNKNOWN
 
 Le mécanisme exact dépend du participant/CSM.
 
-## 9. camt.056 is not timeout retry
+## camt.056 is not timeout retry
 
 Anti-pattern :
 ~~~text
@@ -109,12 +118,13 @@ no pacs.002
 ~~~
 
 Pourquoi c'est faux :
+
 - absence de statut n'est pas nécessairement motif de recall ;
 - recall est une demande métier/scheme ;
 - payment peut être final ;
 - l'investigation doit établir l'état.
 
-## 10. Investigation case data
+## Investigation case data
 
 ~~~text
 caseId
@@ -132,7 +142,7 @@ openedAt
 closedAt
 ~~~
 
-## 11. Case state
+## Case state
 
 ~~~text
 OPEN
@@ -145,15 +155,17 @@ OPEN
 ~~~
 
 Escalations :
+
 - SLA breach ;
 - high amount ;
 - customer complaint ;
 - fraud ;
 - regulatory incident.
 
-## 12. Reason codes
+## Reason codes
 
 Maintain:
+
 - scheme code ;
 - version ;
 - semantic category ;
@@ -163,22 +175,24 @@ Maintain:
 
 Reason-code catalog must be versioned with the scheme.
 
-## 13. Accounting
+## Accounting
 
 A return creates accounting entries; do not erase original entries.
 
-## 14. Operations
+## Operations
 
 Queues:
+
 - rejects needing correction ;
 - unknowns ;
 - recall pending ;
 - return exceptions ;
 - reconciliation breaks.
 
-## 15. Auditability
+## Auditability
 
 An auditor/operator should reconstruct:
+
 1. original payment ;
 2. messages ;
 3. reason ;

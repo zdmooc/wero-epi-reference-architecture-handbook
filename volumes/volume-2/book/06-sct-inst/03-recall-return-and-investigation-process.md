@@ -12,60 +12,66 @@ related_internal_repos:
 
 # Recall, return et investigation SCT Inst
 
-## 1. Ne pas appeler tout échec une R-transaction identique
+## Ne pas appeler tout échec une R-transaction identique
 
 Les parcours d'exception ont des objectifs différents :
+
 - reject ;
 - return ;
 - recall ;
 - request for recall ;
 - status investigation.
 
-## 2. Reject
+## Reject
 
 Le paiement n'aboutit pas dans le flow normal.
 
 Questions :
+
 - à quel stade ?
 - par qui ?
 - avec quel reason ?
 - effet financier existant ?
 - nouvelle tentative autorisée ?
 
-## 3. Return
+## Return
 
 Le paiement initial existe, puis des fonds sont retournés.
 
 Data :
+
 - original payment refs ;
 - return id ;
 - reason ;
 - amount ;
 - settlement status.
 
-## 4. Recall request
+## Recall request
 
 A party asks for a recall/cancellation process.
 
 The request may be:
+
 - accepted ;
 - rejected ;
 - unresolved for a time.
 
 Do not update original payment to cancelled at request creation.
 
-## 5. Investigation case
+## Investigation case
 
 Create a durable case when:
+
 - result ambiguous ;
 - recall pending ;
 - external response missing ;
 - reconciliation break ;
 - customer complaint requiring scheme investigation.
 
-## 6. SLA clock
+## SLA clock
 
 Case records:
+
 - openedAt ;
 - scheme deadline if any ;
 - next action deadline ;
@@ -73,9 +79,10 @@ Case records:
 
 Operations dashboard must surface overdue cases.
 
-## 7. Original references
+## Original references
 
 Mandatory mapping:
+
 - original MsgId ;
 - EndToEndId ;
 - TxId ;
@@ -84,9 +91,10 @@ Mandatory mapping:
 
 Without these, automation and investigation degrade.
 
-## 8. Manual intervention
+## Manual intervention
 
 Operator actions:
+
 - query ;
 - attach evidence ;
 - send scheme message ;
@@ -94,20 +102,23 @@ Operator actions:
 - close case.
 
 Controls:
+
 - RBAC ;
 - four-eyes for financial adjustment ;
 - audit.
 
-## 9. Financial correction
+## Financial correction
 
 If external truth says SETTLED but local is missing:
+
 - do not resend ;
 - repair/reconcile local state ;
 - create accounting adjustment only if required by ledger design.
 
-## 10. Recall customer UX
+## Recall customer UX
 
 Customer-facing states can be:
+
 - recall requested ;
 - waiting counterparty ;
 - returned ;
@@ -115,18 +126,20 @@ Customer-facing states can be:
 
 Avoid promising success on request submission.
 
-## 11. Fraud recall
+## Fraud recall
 
 Fraud cases may require urgent processes, but technical shortcuts must not create inconsistent financial records.
 
 Separate:
+
 - fraud case ;
 - scheme recall case ;
 - payment state.
 
-## 12. Operations ownership
+## Operations ownership
 
 Possible teams:
+
 - payment operations ;
 - fraud ;
 - customer service ;
@@ -135,16 +148,17 @@ Possible teams:
 
 Case routing based on reason/category.
 
-## 13. Reconciliation closure
+## Reconciliation closure
 
 Close only when:
+
 - local state aligned ;
 - ledger aligned ;
 - external outcome known ;
 - merchant/customer communication aligned ;
 - case evidence complete.
 
-## 14. Metrics
+## Metrics
 
 - cases opened ;
 - by type ;
@@ -155,7 +169,7 @@ Close only when:
 - unknown resolution time ;
 - financial adjustments.
 
-## 15. Test scenarios
+## Test scenarios
 
 - positive return ;
 - recall accepted ;

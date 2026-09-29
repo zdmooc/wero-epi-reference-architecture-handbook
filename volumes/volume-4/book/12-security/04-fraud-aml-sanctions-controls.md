@@ -9,7 +9,7 @@ related_internal_repos:
 
 # Fraude, AML/CFT et sanctions — contrôles distincts
 
-## 1. Trois objectifs différents
+## Trois objectifs différents
 
 ### Fraud
 Prevent/detect deceptive or unauthorized loss.
@@ -22,9 +22,10 @@ Comply with restrictive measures.
 
 They may share data but are not one engine.
 
-## 2. Fraud decision
+## Fraud decision
 
 Signals:
+
 - device ;
 - account history ;
 - beneficiary novelty ;
@@ -35,7 +36,7 @@ Signals:
 - VoP result ;
 - merchant risk.
 
-## 3. Decision outputs
+## Decision outputs
 
 - ALLOW ;
 - CHALLENGE ;
@@ -45,32 +46,36 @@ Signals:
 
 Keep reason and model/rule version.
 
-## 4. Real-time budget
+## Real-time budget
 
 Fraud scoring must fit the instant-payment latency budget.
 
 Design:
+
 - precomputed features ;
 - low-latency store ;
 - bounded dependencies ;
 - timeout policy.
 
-## 5. Fail-open vs fail-closed
+## Fail-open vs fail-closed
 
 Must be risk/business decision.
 
 For high-risk payment:
+
 - fail-open can create fraud loss.
 
 For every dependency define:
+
 - timeout ;
 - fallback ;
 - limit ;
 - alert.
 
-## 6. AML controls
+## AML controls
 
 May include:
+
 - transaction monitoring ;
 - customer risk ;
 - patterns ;
@@ -79,7 +84,7 @@ May include:
 
 Not every AML process is synchronous in payment path.
 
-## 7. Sanctions
+## Sanctions
 
 Instant Payments Regulation changes the model for certain targeted financial restrictive-measures checks.
 
@@ -87,9 +92,10 @@ The exact legal process must be derived from the current regulation and implemen
 
 Architecture must version the rule.
 
-## 8. List updates
+## List updates
 
 If screening lists/rules are used:
+
 - source ;
 - version ;
 - effective time ;
@@ -97,20 +103,22 @@ If screening lists/rules are used:
 - rollback ;
 - audit.
 
-## 9. False positive
+## False positive
 
 Operational queue:
+
 - case ;
 - evidence ;
 - review ;
 - SLA ;
 - release/block decision.
 
-## 10. APP fraud
+## APP fraud
 
 Authorized push-payment fraud can occur even after valid authentication.
 
 Controls:
+
 - beneficiary warnings ;
 - VoP ;
 - behavioral analytics ;
@@ -118,17 +126,19 @@ Controls:
 - education ;
 - post-event response.
 
-## 11. Mule detection
+## Mule detection
 
 Network/graph signals:
+
 - rapid pass-through ;
 - many originators ;
 - new account ;
 - unusual velocity.
 
-## 12. Model governance
+## Model governance
 
 For ML:
+
 - training data ;
 - bias/quality ;
 - drift ;
@@ -136,27 +146,29 @@ For ML:
 - champion/challenger ;
 - rollback.
 
-## 13. Privacy
+## Privacy
 
 Fraud data is sensitive.
 
 Minimise:
+
 - access ;
 - retention ;
 - unnecessary sharing.
 
-## 14. Incident integration
+## Incident integration
 
 Fraud spike can be operational incident.
 
 Correlate:
+
 - payment volume ;
 - device patterns ;
 - beneficiary clusters ;
 - merchant ;
 - route.
 
-## 15. Metrics
+## Metrics
 
 - blocked ;
 - challenged ;

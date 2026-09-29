@@ -13,9 +13,10 @@ related_internal_repos:
 
 # Acceptation marchand et modèle Acceptor
 
-## 1. L'acceptation est un domaine d'architecture
+## L'acceptation est un domaine d'architecture
 
 Passer du P2P au commerce ajoute :
+
 - commande ;
 - panier ;
 - merchant identity ;
@@ -29,9 +30,10 @@ Passer du P2P au commerce ajoute :
 
 Le statut de paiement doit être raccordé à un statut commercial sans les confondre.
 
-## 2. Onboarding marchand
+## Onboarding marchand
 
 Capabilities :
+
 - KYB / contractual checks ;
 - merchant identifier ;
 - settlement account ;
@@ -42,7 +44,7 @@ Capabilities :
 - reporting ;
 - support.
 
-## 3. Merchant profile
+## Merchant profile
 
 ~~~text
 Merchant
@@ -58,7 +60,7 @@ Merchant
 - status
 ~~~
 
-## 4. Payment request
+## Payment request
 
 Le payment request relie la commande au paiement :
 
@@ -76,9 +78,10 @@ financialPaymentId
 
 L'identifiant financier peut n'exister qu'après l'autorisation ou la soumission.
 
-## 5. Desktop
+## Desktop
 
 Pattern public :
+
 - checkout navigateur ;
 - sélection Wero ;
 - QR ou transition vers mobile selon parcours ;
@@ -87,9 +90,10 @@ Pattern public :
 
 Risque : le navigateur et le téléphone sont deux contextes différents. Le backend doit maintenir le lien stable.
 
-## 6. Mobile
+## Mobile
 
 App-to-app :
+
 - universal/deep link ;
 - app context ;
 - return URI ;
@@ -99,9 +103,10 @@ App-to-app :
 
 Le retour mobile reste un canal UX, pas une preuve de settlement.
 
-## 7. POS
+## POS
 
 Le POS doit gérer :
+
 - payment request ;
 - QR ;
 - expiration ;
@@ -113,7 +118,7 @@ Le POS doit gérer :
 
 Le terminal peut être temporairement déconnecté. Le design doit empêcher qu'un cashier relance un nouveau paiement alors que le premier est UNKNOWN.
 
-## 8. Merchant callback
+## Merchant callback
 
 Envelope de référence :
 
@@ -129,6 +134,7 @@ Envelope de référence :
 ~~~
 
 Contrôles :
+
 - signature ;
 - timestamp ;
 - replay window ;
@@ -138,7 +144,7 @@ Contrôles :
 - dead-letter operations ;
 - status API fallback.
 
-## 9. Fulfilment
+## Fulfilment
 
 ~~~text
 authoritative payment result
@@ -148,9 +154,10 @@ authoritative payment result
 
 Un redirect navigateur ne suffit pas.
 
-## 10. Reconciliation marchand
+## Reconciliation marchand
 
 Comparer :
+
 - orders ;
 - payment requests ;
 - payment final states ;
@@ -159,6 +166,7 @@ Comparer :
 - fees si applicables.
 
 Exceptions :
+
 - order without payment ;
 - payment without order ;
 - amount mismatch ;
@@ -166,9 +174,10 @@ Exceptions :
 - refunded but order not updated ;
 - duplicate notification.
 
-## 11. Refund
+## Refund
 
 Un refund nécessite :
+
 - autorisation ;
 - référence du paiement original ;
 - montant <= reliquat remboursable ;
@@ -179,9 +188,10 @@ Un refund nécessite :
 
 Pour les remboursements partiels, contrôler le cumul.
 
-## 12. Availability model
+## Availability model
 
 Merchant availability dépend de :
+
 - merchant frontend ;
 - Acceptor PSP ;
 - Wero service path ;
@@ -191,9 +201,10 @@ Merchant availability dépend de :
 
 Donc un simple indicateur Wero up ne suffit pas comme SLI marchand.
 
-## 13. Merchant SLOs
+## Merchant SLOs
 
 SLIs utiles :
+
 - payment-request creation success ;
 - time to customer-presentable context ;
 - payment completion ;

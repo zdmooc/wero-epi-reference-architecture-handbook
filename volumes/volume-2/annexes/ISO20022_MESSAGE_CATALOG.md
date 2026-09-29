@@ -14,6 +14,7 @@ Baseline EPC SCT Inst 2025 Inter-PSP IG.
 ## Cash management family
 
 Common adjacent messages:
+
 - `camt.052` — account report ;
 - `camt.053` — account statement ;
 - `camt.054` — debit/credit notification.
