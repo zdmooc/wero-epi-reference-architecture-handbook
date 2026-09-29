@@ -1,6 +1,6 @@
 ---
 status: REVIEWED
-last_verified: 2026-09-28
+last_verified: 2026-09-29
 truth_level: MIXED
 primary_sources:
   - epi-members-2026
@@ -10,6 +10,12 @@ related_internal_repos:
 ---
 
 # Participants, responsabilités et modèle de service
+
+La @fig-02-001 fournit la vue de référence utilisée dans ce chapitre.
+
+![Vue Wero commerce à quatre coins — responsabilités et frontière avec l’exécution financière.](../../diagrams/svg/secondary/FIG-02-001-wero-commerce-four-corner.svg){#fig-02-001}
+
+*Statut : **MIXED** · Source(s) : Wero merchant public model + handbook reference boundaries · Vérifié : 2026-09-29.*
 
 ## 1. Pourquoi le mot Wero ne suffit pas
 
