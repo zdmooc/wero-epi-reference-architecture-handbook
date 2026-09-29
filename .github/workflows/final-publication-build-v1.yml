@@ -1,0 +1,215 @@
+name: final-publication-build-v1
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - .github/workflows/final-publication-build-v1.yml
+
+permissions:
+  contents: read
+
+env:
+  FREEZE_REF: freeze/v1.0-digital-final-2026-09-29
+  EXPECTED_FREEZE_SHA: 265363756c044fb34efac898dfb1e6e99a5a54b0
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout final frozen V1 source
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ env.FREEZE_REF }}
+          fetch-depth: 1
+
+      - name: Verify frozen commit
+        run: |
+          set -euo pipefail
+          ACTUAL_SHA="$(git rev-parse HEAD)"
+          echo "freeze_ref=$FREEZE_REF"
+          echo "actual_sha=$ACTUAL_SHA"
+          echo "expected_sha=$EXPECTED_FREEZE_SHA"
+          test "$ACTUAL_SHA" = "$EXPECTED_FREEZE_SHA"
+
+      - name: Setup Quarto + TinyTeX
+        uses: quarto-dev/quarto-actions/setup@v2
+        with:
+          tinytex: true
+
+      - name: Install publication QA utilities
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y poppler-utils unzip libxml2-utils
+
+      - name: Render final PDF
+        run: |
+          set -euo pipefail
+          rm -rf _book final-publication-artifacts
+          mkdir -p final-publication-artifacts
+          set -o pipefail
+          quarto render --to pdf 2>&1 | tee final-publication-artifacts/quarto-pdf.log
+          PDF="$(find _book -maxdepth 1 -type f -name '*.pdf' | head -n1)"
+          test -n "$PDF"
+          cp "$PDF" final-publication-artifacts/wero-epi-reference-architecture-handbook-v1.0.pdf
+
+      - name: QA final PDF
+        run: |
+          set -euo pipefail
+          PDF="final-publication-artifacts/wero-epi-reference-architecture-handbook-v1.0.pdf"
+          test -s "$PDF"
+          pdfinfo "$PDF" | tee final-publication-artifacts/pdfinfo.txt
+          pdftotext -layout "$PDF" final-publication-artifacts/book-pdf.txt
+
+          if grep -Eq '@fig-[0-9]{2}-[0-9]{3}|\?\?' final-publication-artifacts/book-pdf.txt; then
+            echo "Unresolved reference marker detected in PDF" >&2
+            exit 1
+          fi
+
+          OVERFULL=0
+          if grep -E 'Overfull \\hbox|Overfull \\vbox' final-publication-artifacts/quarto-pdf.log > final-publication-artifacts/pdf-overfull.txt; then
+            OVERFULL="$(wc -l < final-publication-artifacts/pdf-overfull.txt)"
+          else
+            : > final-publication-artifacts/pdf-overfull.txt
+          fi
+          test "$OVERFULL" -eq 0
+
+          PAGES="$(pdfinfo "$PDF" | awk '/^Pages:/ {print $2}')"
+          SIZE="$(stat -c%s "$PDF")"
+          test "$PAGES" -eq 448
+
+          {
+            echo "freeze_ref=$FREEZE_REF"
+            echo "freeze_sha=$EXPECTED_FREEZE_SHA"
+            echo "pdf_pages=$PAGES"
+            echo "pdf_bytes=$SIZE"
+            echo "pdf_overfull_boxes=$OVERFULL"
+            echo "pdf_unresolved_xrefs=0"
+          } | tee final-publication-artifacts/publication-summary.txt
+
+      - name: Render final EPUB
+        run: |
+          set -euo pipefail
+          set -o pipefail
+          quarto render --to epub 2>&1 | tee final-publication-artifacts/quarto-epub.log
+          EPUB="$(find _book -maxdepth 1 -type f -name '*.epub' | head -n1)"
+          test -n "$EPUB"
+          cp "$EPUB" final-publication-artifacts/wero-epi-reference-architecture-handbook-v1.0.epub
+
+      - name: QA final EPUB
+        run: |
+          set -euo pipefail
+          EPUB="final-publication-artifacts/wero-epi-reference-architecture-handbook-v1.0.epub"
+          test -s "$EPUB"
+          unzip -t "$EPUB" | tee final-publication-artifacts/epub-unzip-test.txt
+
+          rm -rf final-publication-artifacts/epub-unpacked
+          mkdir -p final-publication-artifacts/epub-unpacked
+          unzip -q "$EPUB" -d final-publication-artifacts/epub-unpacked
+
+          test "$(cat final-publication-artifacts/epub-unpacked/mimetype)" = "application/epub+zip"
+
+          python3 - <<'PY'
+          from pathlib import Path
+          from html.parser import HTMLParser
+          from urllib.parse import unquote
+          import re, sys, xml.etree.ElementTree as ET
+
+          root = Path("final-publication-artifacts/epub-unpacked")
+          htmls = list(root.rglob("*.xhtml")) + list(root.rglob("*.html"))
+          svgs = list(root.rglob("*.svg"))
+
+          unresolved = []
+          broken = []
+
+          class RefParser(HTMLParser):
+              def __init__(self):
+                  super().__init__()
+                  self.refs=[]
+              def handle_starttag(self, tag, attrs):
+                  d=dict(attrs)
+                  for key in ("src","href"):
+                      if key in d:
+                          self.refs.append(d[key])
+
+          for p in htmls:
+              text=p.read_text(encoding="utf-8", errors="ignore")
+              if re.search(r"@fig-[0-9]{2}-[0-9]{3}", text):
+                  unresolved.append(str(p))
+              parser=RefParser()
+              parser.feed(text)
+              for ref in parser.refs:
+                  ref=unquote(ref.split("#")[0].split("?")[0])
+                  if not ref or ref.startswith(("http://","https://","mailto:","data:")):
+                      continue
+                  target=(p.parent/ref).resolve()
+                  if not target.exists():
+                      broken.append((str(p),ref))
+
+          opf = root / "EPUB" / "content.opf"
+          if not opf.exists():
+              print("missing EPUB/content.opf", file=sys.stderr)
+              sys.exit(1)
+
+          ns={"opf":"http://www.idpf.org/2007/opf"}
+          tree=ET.parse(opf)
+          opf_root=tree.getroot()
+          manifest=opf_root.find("opf:manifest",ns)
+          missing_manifest=[]
+          if manifest is not None:
+              for item in manifest:
+                  href=item.attrib.get("href")
+                  if not href:
+                      continue
+                  target=(opf.parent/href).resolve()
+                  if not target.exists():
+                      missing_manifest.append(href)
+
+          print(f"epub_xhtml_files={len(htmls)}")
+          print(f"epub_svg_files={len(svgs)}")
+          print(f"epub_unresolved_xrefs={len(unresolved)}")
+          print(f"epub_broken_internal_refs={len(broken)}")
+          print(f"epub_missing_manifest_resources={len(missing_manifest)}")
+
+          if len(htmls) < 100 or len(svgs) < 36 or unresolved or broken or missing_manifest:
+              print("EPUB structural QA failed", file=sys.stderr)
+              if unresolved: print("UNRESOLVED", unresolved[:20], file=sys.stderr)
+              if broken: print("BROKEN", broken[:20], file=sys.stderr)
+              if missing_manifest: print("MISSING_MANIFEST", missing_manifest[:20], file=sys.stderr)
+              sys.exit(1)
+          PY
+
+          XHTML_COUNT="$(find final-publication-artifacts/epub-unpacked -type f \( -name '*.xhtml' -o -name '*.html' \) | wc -l)"
+          SVG_COUNT="$(find final-publication-artifacts/epub-unpacked -type f -name '*.svg' | wc -l)"
+          echo "epub_xhtml_files=$XHTML_COUNT" | tee -a final-publication-artifacts/publication-summary.txt
+          echo "epub_svg_files=$SVG_COUNT" | tee -a final-publication-artifacts/publication-summary.txt
+          echo "epub_unresolved_xrefs=0" | tee -a final-publication-artifacts/publication-summary.txt
+          echo "epub_broken_internal_refs=0" | tee -a final-publication-artifacts/publication-summary.txt
+          echo "epub_missing_manifest_resources=0" | tee -a final-publication-artifacts/publication-summary.txt
+
+      - name: Generate final checksums
+        run: |
+          cd final-publication-artifacts
+          sha256sum \
+            wero-epi-reference-architecture-handbook-v1.0.pdf \
+            wero-epi-reference-architecture-handbook-v1.0.epub \
+            > SHA256SUMS.txt
+          cat SHA256SUMS.txt
+
+      - name: Upload final V1 artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: wero-epi-handbook-v1.0-final
+          path: |
+            final-publication-artifacts/wero-epi-reference-architecture-handbook-v1.0.pdf
+            final-publication-artifacts/wero-epi-reference-architecture-handbook-v1.0.epub
+            final-publication-artifacts/SHA256SUMS.txt
+            final-publication-artifacts/publication-summary.txt
+            final-publication-artifacts/pdfinfo.txt
+            final-publication-artifacts/quarto-pdf.log
+            final-publication-artifacts/quarto-epub.log
+            final-publication-artifacts/epub-unzip-test.txt
+          retention-days: 90
+          if-no-files-found: error
