@@ -1,0 +1,54 @@
+%% title: End-to-end network reference
+%% view: network-path
+%% truth_level: REFERENCE_ARCHITECTURE
+%% last_verified: 2026-09-29
+%% sources: handbook reference architecture
+%% related_chapter: book/09-network/01-network-and-flow-reference.md
+%% visual_system: V1
+%% layout: hero-landscape-wide
+
+%%{init: {"theme":"base","flowchart":{"curve":"linear","nodeSpacing":28,"rankSpacing":45},"themeVariables":{"fontFamily":"Arial, sans-serif","fontSize":"15px","lineColor":"#475569","primaryTextColor":"#0F172A"}}}%%
+flowchart LR
+    subgraph EXT["External"]
+      U(["Customer / Merchant Device"]):::actor
+      NET["Internet / Mobile"]:::actor
+    end
+
+    subgraph EDGE["Edge"]
+      DNS["DNS"]:::security
+      DD["CDN / Anti-DDoS"]:::security
+      WAF["WAF"]:::security
+      LB["External Load Balancer"]:::security
+      ING["Ingress / Reverse Proxy"]:::security
+    end
+
+    subgraph APPZ["Application Zone"]
+      API["API Gateway"]:::business
+      APP["Application / Orchestration"]:::business
+    end
+
+    subgraph PAYZ["Payment Zone"]
+      PAY["Payment Services"]:::business
+      RG["SCT Inst / Rail Gateway"]:::scheme
+    end
+
+    subgraph DATAZ["Data Zone"]
+      DATA[("Ledger / Payment DB<br/>Reconciliation")]:::data
+    end
+
+    subgraph BANK["Banking Connectivity"]
+      BN["Dual secure connectivity<br/>PKI / mTLS / controlled routes"]:::security
+    end
+
+    CSM["External CSM / Settlement Infrastructure"]:::rail
+
+    U --> NET --> DNS --> DD --> WAF --> LB --> ING --> API --> APP --> PAY
+    PAY --> DATA
+    PAY --> RG --> BN --> CSM
+
+    classDef actor fill:#F8FAFC,stroke:#334155,color:#0F172A,stroke-width:2px;
+    classDef business fill:#DBEAFE,stroke:#1D4ED8,color:#0F172A,stroke-width:2px;
+    classDef scheme fill:#EDE9FE,stroke:#7C3AED,color:#0F172A,stroke-width:2px;
+    classDef rail fill:#CCFBF1,stroke:#0F766E,color:#0F172A,stroke-width:2px;
+    classDef data fill:#F1F5F9,stroke:#475569,color:#0F172A,stroke-width:2px;
+    classDef security fill:#FFE4E6,stroke:#BE123C,color:#0F172A,stroke-width:2px;

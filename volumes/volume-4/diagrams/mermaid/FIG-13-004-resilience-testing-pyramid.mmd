@@ -1,0 +1,27 @@
+%% title: Payment resilience testing ladder
+%% view: testing
+%% truth_level: REFERENCE_ARCHITECTURE
+%% last_verified: 2026-09-29
+%% visual_system: V1
+%% layout: secondary-portrait
+%% sources: DORA/TIBER context + handbook evidence model
+%% related_chapter: book/13-resilience/05-chaos-dora-testing-tlpt.md
+
+flowchart TB
+  U[Unit / component]
+  C[Contract / integration]
+  F[Failure injection]
+  L[Load + failure]
+  D[DR / site exercise]
+  CY[Cyber resilience exercise]
+  T[TLPT where applicable]
+  E[Business + financial evidence at every level]
+
+  U --> C --> F --> L --> D --> CY --> T
+  E -. validates .-> U
+  E -. validates .-> C
+  E -. validates .-> F
+  E -. validates .-> L
+  E -. validates .-> D
+  E -. validates .-> CY
+  E -. validates .-> T

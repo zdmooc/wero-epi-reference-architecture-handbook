@@ -1,0 +1,21 @@
+%% title: SCT Inst end-to-end scheme processing window
+%% view: timing
+%% truth_level: PUBLIC_VERIFIED
+%% last_verified: 2026-09-29
+%% visual_system: V1
+%% layout: secondary-landscape
+%% sources: EPC 2025 SCT Inst rulebook v1.1
+%% related_chapter: book/06-sct-inst/02-timing-timeout-and-reason-codes.md
+
+flowchart LR
+  T0[Time of Receipt<br/>Originator PSP]
+  O[Originator PSP processing]
+  C[CSM processing]
+  B[Beneficiary PSP processing]
+  F[Funds available<br/>Beneficiary account]
+
+  T0 --> O --> C --> B --> F
+
+  N["Scheme total maximum: 9 seconds<br/>Do not allocate invented fixed per-hop budgets"]
+  T0 -.-> N
+  N -.-> F

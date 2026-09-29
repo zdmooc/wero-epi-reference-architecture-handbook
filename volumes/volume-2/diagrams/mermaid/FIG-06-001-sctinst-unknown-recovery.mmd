@@ -1,0 +1,19 @@
+%% title: UNKNOWN recovery
+%% view: state
+%% truth_level: REFERENCE_ARCHITECTURE
+%% last_verified: 2026-09-29
+%% visual_system: V1
+%% layout: secondary-landscape
+%% sources: EPC status investigation capability + handbook recovery model
+%% related_chapter: book/06-sct-inst/02-timing-timeout-and-reason-codes.md
+
+stateDiagram-v2
+    [*] --> Submitted
+    Submitted --> Settled: authoritative positive result
+    Submitted --> Rejected: authoritative rejection
+    Submitted --> Unknown: response lost / ambiguous timeout
+    Unknown --> Investigating: inquiry / pacs.028 / reconciliation
+    Investigating --> Settled: external evidence confirms effect
+    Investigating --> Rejected: authoritative rejection
+    Investigating --> NotExecuted: authoritative evidence confirms no effect
+    Investigating --> Investigating: still unresolved

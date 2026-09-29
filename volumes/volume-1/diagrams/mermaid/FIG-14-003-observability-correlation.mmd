@@ -1,0 +1,26 @@
+%% title: Business and technical correlation
+%% view: observability
+%% truth_level: REFERENCE_ARCHITECTURE
+%% last_verified: 2026-09-29
+%% visual_system: V1
+%% layout: secondary-landscape
+%% related_chapter: book/14-operations/04-sli-slo-business-observability.md
+
+flowchart LR
+    REQ[Customer Request]
+    PID[paymentId / EndToEndId]
+    TRACE[traceId / correlationId]
+    ISO[ISO MsgId / TxId]
+    EVT[eventId]
+    SET[Settlement Reference]
+    CB[Callback ID]
+    REC[Reconciliation Record]
+
+    REQ --> PID
+    PID --> TRACE
+    PID --> ISO
+    PID --> EVT
+    ISO --> SET
+    EVT --> CB
+    SET --> REC
+    CB --> REC

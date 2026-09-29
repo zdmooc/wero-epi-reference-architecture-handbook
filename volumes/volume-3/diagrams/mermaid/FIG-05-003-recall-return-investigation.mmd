@@ -1,0 +1,21 @@
+%% title: SCT Inst recall, response and return message flow
+%% view: message-flow
+%% truth_level: PUBLIC_VERIFIED
+%% last_verified: 2026-09-29
+%% visual_system: V1
+%% layout: secondary-landscape
+%% sources: EPC SCT Inst Inter-PSP IG 2025 v1.0
+%% related_chapter: book/05-iso20022/04-rtransactions-and-investigations.md
+
+flowchart LR
+  P[Original SCT Inst payment]
+  C56[camt.056.001.08<br/>Recall / Request for Recall]
+  D{Beneficiary-side decision}
+  C29[camt.029.001.09<br/>Negative response]
+  P4[pacs.004.001.09<br/>Return / positive response]
+  P28[pacs.028.001.03<br/>Status inquiry]
+
+  P --> C56 --> D
+  D -->|refused| C29
+  D -->|accepted / return| P4
+  C56 -. status update needed .-> P28

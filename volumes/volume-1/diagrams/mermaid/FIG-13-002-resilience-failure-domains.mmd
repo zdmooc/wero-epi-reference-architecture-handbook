@@ -1,0 +1,21 @@
+%% title: Payment resilience failure domains
+%% view: resilience
+%% truth_level: REFERENCE_ARCHITECTURE
+%% last_verified: 2026-09-29
+%% visual_system: V1
+%% layout: secondary-portrait
+%% related_chapter: book/13-resilience/02-bia-critical-services-rto-rpo.md
+
+flowchart TB
+  B[Critical Business Service: Execute Instant Payment]
+  B --> A1[Channel / Device]
+  B --> A2[DNS / Network / LB]
+  B --> A3[IAM / PKI / HSM]
+  B --> A4[Application / Orchestrator]
+  B --> A5[Database / Ledger]
+  B --> A6[Kafka / MQ]
+  B --> A7[Fraud / VoP]
+  B --> A8[Payment Hub / Core]
+  B --> A9[CSM / Settlement]
+  B --> A10[Third Parties]
+  B --> A11[People / Process]

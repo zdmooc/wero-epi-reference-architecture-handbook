@@ -1,0 +1,61 @@
+%% title: Multi-zone payment platform reference
+%% view: physical
+%% truth_level: REFERENCE_ARCHITECTURE
+%% last_verified: 2026-09-29
+%% sources: handbook reference architecture
+%% related_chapter: book/11-infrastructure/05-multiaz-multisite-dr-patterns.md
+%% visual_system: V1
+%% layout: hero-landscape
+
+%%{init: {"theme":"base","flowchart":{"curve":"linear","nodeSpacing":28,"rankSpacing":45},"themeVariables":{"fontFamily":"Arial, sans-serif","fontSize":"15px","lineColor":"#475569","primaryTextColor":"#0F172A"}}}%%
+flowchart TB
+    EDGE["Global / Regional Edge"]:::experience
+
+    subgraph A["Site / Region A — active service"]
+      subgraph Z1["Zone 1"]
+        A1["App replicas"]:::business
+        D1[("Data replica")]:::data
+      end
+      subgraph Z2["Zone 2"]
+        A2["App replicas"]:::business
+        D2[("Data replica")]:::data
+      end
+      subgraph Z3["Zone 3"]
+        A3["App replicas"]:::business
+        D3[("Data replica")]:::data
+      end
+      Q["Writer authority / quorum<br/>fencing-aware"]:::operations
+      BC1["Banking Connectivity A"]:::security
+    end
+
+    subgraph B["Site / Region B — recovery capacity"]
+      DRAPP["Recovery app capacity"]:::business
+      DRD[("Recovery data replica")]:::data
+      BC2["Banking Connectivity B"]:::security
+    end
+
+    CSM["CSM / Settlement Infrastructure"]:::rail
+
+    EDGE --> A1
+    EDGE --> A2
+    EDGE --> A3
+    D1 <--> D2
+    D2 <--> D3
+    D1 --- Q
+    D2 --- Q
+    D3 --- Q
+    A1 --> BC1
+    A2 --> BC1
+    A3 --> BC1
+    BC1 --> CSM
+
+    D3 -. "controlled DR replication" .-> DRD
+    Q -. "promotion only after fencing" .-> DRAPP
+    DRAPP --> BC2 --> CSM
+
+    classDef experience fill:#E0F2FE,stroke:#0369A1,color:#0F172A,stroke-width:2px;
+    classDef business fill:#DBEAFE,stroke:#1D4ED8,color:#0F172A,stroke-width:2px;
+    classDef data fill:#F1F5F9,stroke:#475569,color:#0F172A,stroke-width:2px;
+    classDef security fill:#FFE4E6,stroke:#BE123C,color:#0F172A,stroke-width:2px;
+    classDef operations fill:#EEF2FF,stroke:#4338CA,color:#0F172A,stroke-width:2px;
+    classDef rail fill:#CCFBF1,stroke:#0F766E,color:#0F172A,stroke-width:2px;

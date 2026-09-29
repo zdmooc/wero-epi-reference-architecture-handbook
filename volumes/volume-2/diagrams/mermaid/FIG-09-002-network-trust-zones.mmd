@@ -1,0 +1,30 @@
+%% title: Network and trust zones
+%% view: network-zones
+%% truth_level: REFERENCE_ARCHITECTURE
+%% last_verified: 2026-09-29
+%% visual_system: V1
+%% layout: secondary-landscape
+%% related_chapter: book/09-network/03-internal-segmentation-east-west.md
+
+flowchart TB
+  U[Customer / Merchant]
+  DNS[DNS / CDN / Anti-DDoS]
+  WAF[WAF]
+  LB[External Load Balancer]
+  ING[Ingress / OpenShift Router]
+  GW[API Gateway]
+  IAM[IAM / SCA]
+  APP[Payment Orchestrator]
+  PH[Payment Hub]
+  RISK[Fraud / VoP / AML]
+  DB[(Ledger / Reconciliation DB)]
+  K[Kafka / Event Bus]
+  ISO[ISO 20022 / SCT Inst Gateway]
+  CSM[Banking Connectivity / CSM]
+  HSM[HSM / PKI]
+  U --> DNS --> WAF --> LB --> ING --> GW --> APP --> PH --> ISO --> CSM
+  APP --> IAM
+  APP --> RISK
+  APP --> DB
+  APP --> K
+  ISO --> HSM

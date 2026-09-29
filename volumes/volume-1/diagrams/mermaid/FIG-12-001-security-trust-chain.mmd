@@ -1,0 +1,26 @@
+%% title: Payment security trust chain
+%% view: security
+%% truth_level: REFERENCE_ARCHITECTURE
+%% last_verified: 2026-09-29
+%% visual_system: V1
+%% layout: secondary-landscape
+%% related_chapter: book/12-security/01-security-identity-fraud-vop.md
+
+flowchart LR
+    C[Customer]
+    DEV[Device]
+    IAM[Customer IAM / SCA]
+    API[API Gateway]
+    WI[Workload Identity]
+    RISK[Fraud / VoP / AML / Sanctions]
+    PAY[Payment Core]
+    PKI[PKI / Certificates]
+    HSM[HSM / Keys]
+    RAIL[Rail / Partner Identity]
+
+    C --> DEV --> IAM --> API --> WI --> PAY --> RAIL
+    PAY --> RISK
+    API --> PKI
+    WI --> PKI
+    PKI --> HSM
+    PAY --> HSM

@@ -1,0 +1,43 @@
+%% title: C2B Wero reference flow
+%% view: sequence
+%% truth_level: REFERENCE_ARCHITECTURE
+%% last_verified: 2026-09-29
+%% sources: handbook reference architecture; public Wero commerce context
+%% related_chapter: book/03-journeys/01-end-to-end-wero-journeys.md
+%% visual_system: V1
+%% layout: hero-landscape
+
+%%{init: {"theme":"base","themeVariables":{"fontFamily":"Arial, sans-serif","fontSize":"15px","actorBkg":"#E0F2FE","actorBorder":"#0369A1","actorTextColor":"#0F172A","signalColor":"#475569","signalTextColor":"#0F172A","noteBkgColor":"#FEF3C7","noteBorderColor":"#B45309","noteTextColor":"#0F172A"}}}%%
+sequenceDiagram
+    autonumber
+    participant M as Merchant
+    participant A as Acceptor PSP
+    participant W as Wero / EPI context
+    participant C as Consumer PSP
+    participant H as Payment Hub
+    participant R as SCT Inst / CSM
+    participant B as Beneficiary PSP
+
+    rect rgb(224,242,254)
+      M->>A: Create payment request
+      A->>W: Payment request / initiation context
+      W->>C: Customer authorization journey
+    end
+
+    rect rgb(237,233,254)
+      C->>H: Authorized payment intent
+      H->>R: Financial instruction
+      R->>B: Instant payment
+      B-->>R: Authoritative result
+      R-->>H: Financial status
+    end
+
+    rect rgb(220,252,231)
+      H-->>C: Financial result
+      C-->>W: Payment result
+      W-->>A: Coordination / status event
+      A-->>M: Signed webhook / status
+    end
+
+    Note over M,A: Merchant order state remains separate from financial state
+    Note over H,B: Timeout after possible effect → UNKNOWN + reconciliation, not blind retry

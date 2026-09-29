@@ -1,0 +1,30 @@
+%% title: Critical payment dependency map
+%% view: resilience
+%% truth_level: REFERENCE_ARCHITECTURE
+%% last_verified: 2026-09-29
+%% visual_system: V1
+%% layout: secondary-portrait
+%% related_chapter: book/13-resilience/02-bia-critical-services-rto-rpo.md
+
+flowchart TB
+    BS[Critical Business Service: Execute Instant Payment]
+    BP[Business Process]
+    APP[Applications]
+    DATA[Data / Ledger / Broker]
+    SEC[IAM / PKI / HSM]
+    NET[Network / DNS / Connectivity]
+    PLAT[Cloud / OpenShift / Kubernetes]
+    EXT[PSP / CSM / Third Parties]
+    EVID[Testing / Evidence / Runbooks]
+
+    BS --> BP --> APP
+    APP --> DATA
+    APP --> SEC
+    APP --> NET
+    APP --> PLAT
+    APP --> EXT
+    DATA --> EVID
+    SEC --> EVID
+    NET --> EVID
+    PLAT --> EVID
+    EXT --> EVID

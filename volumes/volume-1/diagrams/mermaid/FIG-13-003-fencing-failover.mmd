@@ -1,0 +1,16 @@
+%% title: Site failover with fencing
+%% view: resilience-sequence
+%% truth_level: REFERENCE_ARCHITECTURE
+%% last_verified: 2026-09-29
+%% visual_system: V1
+%% layout: secondary-landscape
+%% related_chapter: book/13-resilience/03-active-passive-active-active-fencing.md
+
+flowchart LR
+  DET[Detect Site A Failure] --> DEC[Declare Incident]
+  DEC --> F[Fence Site A Writes]
+  F --> P[Promote Site B Data]
+  P --> N[Enable App and Network]
+  N --> R[Route Traffic to Site B]
+  R --> V[Validate Financial Path]
+  V --> REC[Reconcile In-flight Payments]

@@ -1,0 +1,33 @@
+%% title: Layered payment architecture
+%% view: architecture-layers
+%% truth_level: REFERENCE_ARCHITECTURE
+%% last_verified: 2026-09-29
+%% sources: handbook editorial model
+%% related_chapter: book/01-foundations/01-layered-reading-of-wero-epi.md
+%% visual_system: V1
+%% layout: hero-portrait
+
+%%{init: {"theme":"base","flowchart":{"curve":"linear","nodeSpacing":30,"rankSpacing":35},"themeVariables":{"fontFamily":"Arial, sans-serif","fontSize":"16px","lineColor":"#475569","primaryTextColor":"#0F172A"}}}%%
+flowchart TB
+    A(["1 · Experience<br/>Wero / bank app / merchant checkout"]):::experience
+    B["2 · Business / Payment Product<br/>participants · responsibilities · journeys"]:::business
+    C["3 · Payment Scheme<br/>SCT Inst where applicable"]:::scheme
+    D["4 · Message Standard<br/>ISO 20022"]:::message
+    E["5 · Clearing / Routing<br/>CSM · reachability"]:::rail
+    F["6 · Settlement<br/>TIPS / RT1 settlement context"]:::settlement
+    G["7 · Liquidity<br/>accounts · positions · prefunding"]:::settlement
+    H["8 · Network / Connectivity<br/>Internet · banking connectivity · TLS / mTLS"]:::security
+    I["9 · Application / Data<br/>orchestration · fraud · ledger · reconciliation"]:::data
+    J["10 · Physical / Cloud Platform<br/>DC · cloud · Kubernetes/OpenShift · DB · Kafka"]:::platform
+
+    A --> B --> C --> D --> E --> F --> G --> H --> I --> J
+
+    classDef experience fill:#E0F2FE,stroke:#0369A1,color:#0F172A,stroke-width:2px;
+    classDef business fill:#DBEAFE,stroke:#1D4ED8,color:#0F172A,stroke-width:2px;
+    classDef scheme fill:#EDE9FE,stroke:#7C3AED,color:#0F172A,stroke-width:2px;
+    classDef message fill:#FEF3C7,stroke:#B45309,color:#0F172A,stroke-width:2px;
+    classDef rail fill:#CCFBF1,stroke:#0F766E,color:#0F172A,stroke-width:2px;
+    classDef settlement fill:#DCFCE7,stroke:#15803D,color:#0F172A,stroke-width:2px;
+    classDef security fill:#FFE4E6,stroke:#BE123C,color:#0F172A,stroke-width:2px;
+    classDef data fill:#F1F5F9,stroke:#475569,color:#0F172A,stroke-width:2px;
+    classDef platform fill:#F8FAFC,stroke:#334155,color:#0F172A,stroke-width:2px;

@@ -1,0 +1,15 @@
+%% title: Dual banking connectivity
+%% view: external-connectivity
+%% truth_level: REFERENCE_ARCHITECTURE
+%% last_verified: 2026-09-29
+%% visual_system: V1
+%% layout: secondary-landscape
+%% related_chapter: book/09-network/04-banking-connectivity-dual-links.md
+
+flowchart LR
+  APP[Rail Adapter] --> FW1[Firewall A]
+  APP --> FW2[Firewall B]
+  FW1 --> N1[Network Provider A]
+  FW2 --> N2[Network Provider B]
+  N1 --> CSM[CSM / Settlement Endpoint]
+  N2 --> CSM

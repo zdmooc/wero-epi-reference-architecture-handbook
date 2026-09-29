@@ -1,0 +1,31 @@
+%% title: E-commerce desktop reference sequence
+%% view: sequence
+%% truth_level: REFERENCE_ARCHITECTURE
+%% last_verified: 2026-09-29
+%% visual_system: V1
+%% layout: secondary-landscape
+%% sources: Wero public desktop journey + reference backend architecture
+%% related_chapter: book/03-journeys/03-ecommerce-desktop-mobile.md
+
+sequenceDiagram
+    actor C as Consumer
+    participant B as Browser
+    participant M as Merchant Backend
+    participant A as Acceptor PSP
+    participant W as Wero Context
+    participant APP as Wallet/Bank App
+    participant P as Consumer PSP
+    participant R as SCT Inst / Rail
+
+    C->>B: Choose Wero
+    B->>M: Checkout(orderId)
+    M->>A: Create payment request
+    A-->>M: paymentRequestId + QR context
+    M-->>B: Display QR
+    C->>APP: Scan QR
+    APP->>P: Authenticate / consent
+    P->>R: Submit financial payment
+    R-->>P: Authoritative result
+    P-->>A: Payment status
+    A-->>M: Signed callback / status
+    M-->>B: Render commercial outcome

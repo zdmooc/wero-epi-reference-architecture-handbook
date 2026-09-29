@@ -1,0 +1,16 @@
+%% title: End-to-end identifier correlation
+%% truth_level: REFERENCE_ARCHITECTURE
+%% last_verified: 2026-09-29
+%% visual_system: V1
+%% layout: secondary-landscape
+%% related_chapter: book/05-iso20022/02-business-application-header-and-identifiers.md
+flowchart LR
+  A[merchantOrderId] --> B[paymentRequestId]
+  B --> C[internalPaymentId]
+  C --> D[MsgId]
+  C --> E[InstrId]
+  C --> F[EndToEndId]
+  C --> G[TxId]
+  G --> H[Settlement Reference]
+  C --> I[eventId]
+  C --> J[correlationId / traceId]

@@ -1,0 +1,13 @@
+%% title: TIPS participant and account model
+%% truth_level: REFERENCE_ARCHITECTURE
+%% last_verified: 2026-09-29
+%% visual_system: V1
+%% layout: secondary-portrait
+%% related_chapter: book/07-rails/02-tips-service-model.md
+flowchart TB
+  PSP[Participant PSP] --> DCA[TIPS DCA]
+  IP[Instructing Party] --> DCA
+  RP[Reachable Party] --> PSP
+  DCA --> TIPS[TIPS]
+  TIPS --> DCA2[Beneficiary TIPS DCA]
+  DCA2 --> PSP2[Beneficiary Participant]

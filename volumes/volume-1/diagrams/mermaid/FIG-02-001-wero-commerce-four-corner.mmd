@@ -1,0 +1,23 @@
+%% title: Wero commerce four-corner reference view
+%% view: business-context
+%% truth_level: MIXED
+%% last_verified: 2026-09-29
+%% visual_system: V1
+%% layout: secondary-landscape
+%% sources: Wero merchant public model + handbook reference boundaries
+%% related_chapter: book/02-wero-epi/02-participant-responsibility-model.md
+
+flowchart LR
+    C[Consumer]
+    CPSP[Consumer PSP]
+    W[Wero / EPI ecosystem]
+    APSP[Acceptor PSP / Acquirer]
+    M[Merchant]
+    R[Instant payment processing / CSM / settlement]
+
+    C --> CPSP
+    CPSP --> W
+    W --> APSP
+    APSP --> M
+    CPSP -. financial execution .-> R
+    R -. beneficiary-side settlement/status .-> APSP

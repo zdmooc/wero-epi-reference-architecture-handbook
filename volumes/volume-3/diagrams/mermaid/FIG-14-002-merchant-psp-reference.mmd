@@ -1,0 +1,23 @@
+%% title: Merchant / Acceptor PSP reference
+%% view: application
+%% truth_level: REFERENCE_ARCHITECTURE
+%% last_verified: 2026-09-29
+%% visual_system: V1
+%% layout: secondary-landscape
+%% related_chapter: book/14-operations/03-psp-merchant-reference-architecture.md
+
+flowchart LR
+    C[Consumer]
+    UI[Merchant Web / App / POS]
+    MB[Merchant Backend]
+    A[Acceptor PSP / Acquirer]
+    W[Wero Payment Context]
+    CPSP[Consumer PSP]
+    R[Instant-payment processing]
+    ST[Status / Callback]
+    REC[Merchant Reconciliation]
+
+    C --> UI --> MB --> A --> W --> CPSP --> R
+    R --> ST --> A --> MB
+    MB --> REC
+    A --> REC

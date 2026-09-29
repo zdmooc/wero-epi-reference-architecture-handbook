@@ -1,0 +1,14 @@
+%% title: Multi-CSM routing
+%% truth_level: REFERENCE_ARCHITECTURE
+%% last_verified: 2026-09-29
+%% visual_system: V1
+%% layout: secondary-landscape
+%% related_chapter: book/07-rails/04-reachability-routing-and-multi-csm.md
+flowchart LR
+  P[Payment Hub] --> R[Routing Policy]
+  DIR[Reachability Directory] --> R
+  H[Rail Health] --> R
+  L[Liquidity Context] --> R
+  R --> T[TIPS Adapter]
+  R --> E[RT1 Adapter]
+  R --> O[Other CSM Adapter]

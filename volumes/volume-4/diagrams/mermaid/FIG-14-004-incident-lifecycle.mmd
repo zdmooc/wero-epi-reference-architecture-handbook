@@ -1,0 +1,16 @@
+%% title: Payment incident lifecycle
+%% truth_level: REFERENCE_ARCHITECTURE
+%% last_verified: 2026-09-29
+%% visual_system: V1
+%% layout: secondary-landscape
+%% related_chapter: book/14-operations/06-runbooks-incidents-postmortems.md
+flowchart LR
+  D[Detect] --> A[Acknowledge]
+  A --> C[Classify]
+  C --> CT[Contain]
+  CT --> R[Recover]
+  R --> RC[Reconcile]
+  RC --> COM[Communicate]
+  COM --> CL[Close]
+  CL --> PM[Postmortem]
+  PM --> REM[Remediate]
