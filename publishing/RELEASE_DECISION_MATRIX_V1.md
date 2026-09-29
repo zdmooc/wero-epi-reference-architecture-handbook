@@ -1,61 +1,56 @@
 # Final Release Decision Matrix — V1.0
 
 **Date:** 2026-09-29  
-**RC1 technical state:** PUBLICATION_RC1_PASS  
-**Digital V1.0 configuration:** DECIDED  
+**Technical state:** V1.0_FINAL_BUILD_PASS  
 **Public release:** NOT YET AUTHORIZED
 
-The manuscript has been reread end to end. The technical content remains frozen; the remaining work is a render-sensitive publication-front-matter pass followed by a final digital build.
-
-| Decision | V1.0 digital decision | Consequence |
+| Decision | V1.0 digital decision | State |
 |---|---|---|
-| Digital PDF | publish as final V1.0 after fresh build + QA | final filename without RC suffix |
-| EPUB | publish as final V1.0 after fresh build + QA | final filename without RC suffix |
-| Digital cover | Quarto title page approved | no standalone retail artwork required |
-| Print / retail cover | deferred | separate print/retail stream |
-| Back-cover copy | APPROVED | retained for future print/retail edition |
-| Publication note / imprint | inserted into front matter | triggers a fresh layout proof |
-| Publisher / imprint | Djamal Zidane — publication indépendante | written into metadata/front matter |
-| ISBN | not assigned for initial digital edition | reconsider for retail/print channels |
-| Digital distribution | GitHub Release | release asset target |
-| Price | no commercial price set for GitHub release | commercial decision deferred |
-| Print edition | deferred | does not block digital V1.0 |
-| Public GitHub Release | pending explicit authorization | no automatic publication |
-| Final V1.0 promotion | after final build + QA | creates the final digital publication state |
+| Digital PDF | final V1.0 | DONE |
+| EPUB | final V1.0 | DONE |
+| Digital cover | Quarto title page | DONE |
+| Publication note / imprint | rendered front matter | DONE |
+| Publisher / imprint | Djamal Zidane — publication indépendante | DONE |
+| ISBN | not assigned for initial digital edition | DONE |
+| Digital distribution target | GitHub Release | DECIDED |
+| Final immutable source | freeze branch + SHA | DONE |
+| Final PDF/EPUB QA | run 36593794049 | PASS |
+| Final checksums | SHA-256 | DONE |
+| Public GitHub Release | explicit user-controlled action | PENDING |
+| Print / retail edition | separate future stream | DEFERRED |
 
-## Decisions completed
+## Final technical gates
 
-- [x] digital cover treatment
-- [x] back-cover copy
-- [x] publication-note wording
-- [x] publisher/imprint identity
-- [x] ISBN handling for the initial digital edition
-- [x] digital distribution target
-- [x] separation of digital and print gates
+- [x] fresh Quarto layout proof after front-matter insertion
+- [x] final immutable publication ref
+- [x] final PDF V1.0 render + QA
+- [x] final EPUB V1.0 render + QA
+- [x] final SHA-256 checksums
+- [x] promotion to `V1.0 FINAL BUILD PASS`
 
-## Technical gates still required
+Final ref:
+`freeze/v1.0-digital-final-2026-09-29`
 
-- [ ] fresh Quarto layout proof after front-matter insertion
-- [ ] final immutable publication ref
-- [ ] final PDF V1.0 render + QA
-- [ ] final EPUB V1.0 render + QA
-- [ ] final SHA-256 checksums
-- [ ] promotion to `V1.0 FINAL`
+Final SHA:
+`705b13664d9c3783d3d05fae72269648c80bcee8`
 
-## Release action kept separate
+Final build:
+`36593794049`
+
+## Public release action
 
 - [ ] explicit authorization to create a public GitHub Release
 
-A successful build does not automatically publish the book.
+A successful final build does not automatically distribute the book.
 
 ## Separate print gate
 
-Only if a physical edition is later retained:
+If a physical edition is later retained:
 - choose trim, binding, paper and colour mode;
 - obtain printer cover template;
 - produce final wrap/spine artwork;
 - calculate spine width;
 - order and approve a physical proof;
-- decide retail ISBN/barcode/price/distribution.
+- decide print ISBN/barcode/price/distribution.
 
-These print decisions do not block the digital V1.0.
+These items do not block the completed digital V1.0.
