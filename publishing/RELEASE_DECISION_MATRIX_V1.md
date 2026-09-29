@@ -1,71 +1,61 @@
 # Final Release Decision Matrix — V1.0
 
 **Date:** 2026-09-29  
-**Current technical state:** PUBLICATION_RC1_PASS  
-**Public release:** NOT AUTHORIZED
+**RC1 technical state:** PUBLICATION_RC1_PASS  
+**Digital V1.0 configuration:** DECIDED  
+**Public release:** NOT YET AUTHORIZED
 
-The technical work is complete through RC1. The remaining items are publication decisions.
+The manuscript has been reread end to end. The technical content remains frozen; the remaining work is a render-sensitive publication-front-matter pass followed by a final digital build.
 
-| Decision | Current state | Options | Technical consequence |
-|---|---|---|---|
-| Digital PDF | RC1 PASS | release / hold | no manuscript reflow if unchanged |
-| EPUB | RC1 PASS | release / hold | secondary digital format |
-| Front cover | brief ready | approve design / request revision | final cover must be inserted before final build |
-| Back-cover copy | draft ready | approve / edit | affects print cover only |
-| Imprint/legal page | template ready | approve wording / legal review | insertion changes rendered front matter |
-| Trademark wording | editorial draft ready | approve after review / revise | imprint + possibly cover |
-| Publisher/imprint identity | TBD | author/self-published / publishing entity / other | metadata + imprint |
-| ISBN | TBD | assign / do not assign where channel allows | metadata + barcode/print distribution |
-| Print edition | TBD | none / colour paperback / colour hardback / other | requires physical proof |
-| Print trim | TBD | A4 / another large professional format | any trim change requires new layout proof |
-| Price | TBD | digital and/or print pricing | commercial metadata only unless printed on cover |
-| Distribution | TBD | direct / GitHub asset / website / retailer / print platform | release packaging |
-| Public GitHub Release | blocked | authorize / keep private | must be explicit |
-| Final V1.0 promotion | blocked | promote RC1 / continue RC cycle | creates final publication state |
+| Decision | V1.0 digital decision | Consequence |
+|---|---|---|
+| Digital PDF | publish as final V1.0 after fresh build + QA | final filename without RC suffix |
+| EPUB | publish as final V1.0 after fresh build + QA | final filename without RC suffix |
+| Digital cover | Quarto title page approved | no standalone retail artwork required |
+| Print / retail cover | deferred | separate print/retail stream |
+| Back-cover copy | APPROVED | retained for future print/retail edition |
+| Publication note / imprint | inserted into front matter | triggers a fresh layout proof |
+| Publisher / imprint | Djamal Zidane — publication indépendante | written into metadata/front matter |
+| ISBN | not assigned for initial digital edition | reconsider for retail/print channels |
+| Digital distribution | GitHub Release | release asset target |
+| Price | no commercial price set for GitHub release | commercial decision deferred |
+| Print edition | deferred | does not block digital V1.0 |
+| Public GitHub Release | pending explicit authorization | no automatic publication |
+| Final V1.0 promotion | after final build + QA | creates the final digital publication state |
 
-## Technical recommendation before any public release
+## Decisions completed
 
-### 1. Keep the approved interior frozen
+- [x] digital cover treatment
+- [x] back-cover copy
+- [x] publication-note wording
+- [x] publisher/imprint identity
+- [x] ISBN handling for the initial digital edition
+- [x] digital distribution target
+- [x] separation of digital and print gates
 
-Do not change technical chapters merely for release packaging.
+## Technical gates still required
 
-### 2. Treat A4 as the zero-reflow print-proof baseline
+- [ ] fresh Quarto layout proof after front-matter insertion
+- [ ] final immutable publication ref
+- [ ] final PDF V1.0 render + QA
+- [ ] final EPUB V1.0 render + QA
+- [ ] final SHA-256 checksums
+- [ ] promotion to `V1.0 FINAL`
 
-The approved proof and RC1 PDF are currently A4 and 446 pages. A physical A4 proof is the lowest-risk way to validate the current interior without reflow.
+## Release action kept separate
 
-If another trim size is selected, it becomes a new layout variant and must pass a new Quarto layout proof.
+- [ ] explicit authorization to create a public GitHub Release
 
-### 3. Digital-first is technically ready
+A successful build does not automatically publish the book.
 
-PDF RC1 and EPUB RC1 have already passed QA. Their public release remains blocked only by publication metadata/authorization, not by technical content.
+## Separate print gate
 
-### 4. Print remains a separate gate
+Only if a physical edition is later retained:
+- choose trim, binding, paper and colour mode;
+- obtain printer cover template;
+- produce final wrap/spine artwork;
+- calculate spine width;
+- order and approve a physical proof;
+- decide retail ISBN/barcode/price/distribution.
 
-A digital PASS does not validate:
-- gutter;
-- paper stock;
-- colour reproduction;
-- physical line weight;
-- spine width;
-- cover wrap;
-- binding.
-
-## Minimum decisions needed to promote RC1 to final digital V1.0
-
-- [ ] approve front-cover design
-- [ ] approve imprint/legal/trademark wording
-- [ ] decide publisher/imprint identity
-- [ ] decide ISBN handling for chosen distribution route
-- [ ] decide digital distribution channel(s)
-- [ ] explicitly approve `RC1 → V1.0 FINAL`
-- [ ] explicitly approve public release
-
-## Additional decisions needed for print
-
-- [ ] choose print format and binding
-- [ ] choose paper/interior colour mode
-- [ ] obtain printer cover template
-- [ ] calculate spine width
-- [ ] order physical proof
-- [ ] approve physical proof
-- [ ] decide print price/distribution
+These print decisions do not block the digital V1.0.
