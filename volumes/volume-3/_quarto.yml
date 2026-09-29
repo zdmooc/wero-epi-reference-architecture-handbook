@@ -20,12 +20,15 @@ book:
     - book/10-api-event-data/04-payment-ledger-data-model.md
     - book/10-api-event-data/05-saga-replay-dlq-and-compensation.md
     - book/10-api-event-data/06-consistency-concurrency-and-cap.md
+    - book/10-api-event-data/07-durable-payment-submission-pattern.md
     - book/11-infrastructure/01-infrastructure-cloud-platform.md
     - book/11-infrastructure/02-openshift-kubernetes-runtime-patterns.md
     - book/11-infrastructure/03-database-ha-backup-pitr.md
     - book/11-infrastructure/04-broker-ha-kafka-mq.md
     - book/11-infrastructure/05-multiaz-multisite-dr-patterns.md
     - book/11-infrastructure/06-gitops-release-and-supply-chain.md
+    - book/11-infrastructure/07-payment-workload-runtime-blueprint.md
+    - book/11-infrastructure/08-runtime-evidence-and-failure-tests.md
     - book/14-operations/02-bank-reference-architecture.md
     - book/14-operations/03-psp-merchant-reference-architecture.md
 
