@@ -1,6 +1,6 @@
 ---
 status: REVIEWED
-last_verified: 2026-09-28
+last_verified: 2026-09-29
 truth_level: REFERENCE_ARCHITECTURE
 primary_sources:
   - epc-sct-inst-2025-v1.1
@@ -12,6 +12,12 @@ related_internal_repos:
 ---
 
 # Reachability, routing et architecture multi-CSM
+
+La @fig-07-004 synthétise le modèle utilisé dans ce chapitre.
+
+![Routage multi-CSM — reachability, santé du rail et contexte de liquidité.](../../diagrams/svg/secondary/FIG-07-004-multicsm-routing.svg){#fig-07-004}
+
+*Statut : **REFERENCE_ARCHITECTURE** · Source(s) : Handbook reference architecture · Vérifié : 2026-09-29.*
 
 ## 1. La reachability précède le routing
 
