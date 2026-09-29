@@ -1,8 +1,8 @@
 # Final Release Readiness — V1.0
 
 **Date:** 2026-09-29  
-**State:** V1.0_FINAL_BUILD_PASS  
-**Public release:** NOT YET AUTHORIZED
+**State:** V1.0_PUBLISHED  
+**Public release:** PUBLISHED — `v1.0`
 
 ## Executive result
 
@@ -100,12 +100,20 @@ The front matter identifies the handbook as independent reference material and a
 
 No external legal review is represented as having occurred. Such a review remains advisable before a commercial retail/print edition or any materially different trademark/cover treatment.
 
-## Remaining publication action
+## Public release
 
-No public GitHub Release has been created.
+Published GitHub Release:
+- tag: `v1.0`;
+- release id: `399390644`;
+- published: `2026-09-29T17:50:50Z`;
+- target SHA: `705b13664d9c3783d3d05fae72269648c80bcee8`;
+- URL: `https://github.com/zdmooc/wero-epi-reference-architecture-handbook/releases/tag/v1.0`.
 
-This is intentional: a public release is the distribution act, distinct from completing and validating the book.
+Release assets:
+- `wero-epi-reference-architecture-handbook-v1.0.pdf`;
+- `wero-epi-reference-architecture-handbook-v1.0.epub`;
+- `SHA256SUMS.txt`.
 
 Current state:
 
-**V1.0 FINAL DIGITAL BUILD PASS — READY FOR EXPLICIT PUBLICATION**
+**V1.0 PUBLISHED**
