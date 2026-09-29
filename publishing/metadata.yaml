@@ -6,7 +6,7 @@ date: "2026-09-29"
 lang: "fr-FR"
 edition: "V1.0"
 release_candidate: null
-publication_status: "V1.0_FINAL_BUILD_PASS"
+publication_status: "V1.0_PUBLISHED"
 rights: "Copyright © 2026 Djamal Zidane. Tous droits réservés."
 description: "Ouvrage d'architecture de référence vivant 2026-2031."
 publisher: "Djamal Zidane"
@@ -18,7 +18,15 @@ distribution_channels:
   - "GitHub Release"
 cover_status: "DIGITAL_TITLE_PAGE_APPROVED_PRINT_RETAIL_ARTWORK_DEFERRED"
 print_format: "DEFERRED_SEPARATE_PRINT_GATE"
-public_release: false
+public_release: true
+
+release:
+  tag: "v1.0"
+  release_id: 399390644
+  release_url: "https://github.com/zdmooc/wero-epi-reference-architecture-handbook/releases/tag/v1.0"
+  published_at: "2026-09-29T17:50:50Z"
+  workflow_run: "36607803532"
+  target_sha: "705b13664d9c3783d3d05fae72269648c80bcee8"
 
 rc1_basis:
   source_freeze_ref: "freeze/v1.0-final-manuscript-2026-09-29"
