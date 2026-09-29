@@ -1,5 +1,32 @@
 # Changelog
 
+## 1.0.0-final-build — 2026-09-29
+
+### Final digital edition
+- reread all 87 technical chapters end to end;
+- revalidated critical volatile EPC/ECB/EBA CLEARING/EPI sources;
+- added the publication / independence / rights front matter;
+- aligned the title-page date to 29 September 2026;
+- fixed glossary table continuity;
+- extended layout-proof triggers to every rendered manuscript source family;
+- completed final layout proof run `36593144021`;
+- validated 88 rendered Markdown files, 36 figures, 99 HTML files and 448 A4 pages;
+- validated 0 unresolved xrefs, 0 missing images and 0 TeX overfull boxes;
+- froze final digital source at `freeze/v1.0-digital-final-2026-09-29`;
+- final source SHA: `705b13664d9c3783d3d05fae72269648c80bcee8`;
+- completed final publication build run `36593794049`;
+- generated `wero-epi-reference-architecture-handbook-v1.0.pdf`;
+- generated `wero-epi-reference-architecture-handbook-v1.0.epub`;
+- final PDF SHA-256: `df2f77e93e10c73edf9331063976a1892d1bacb12c94e61be64bd2ac7c508bb0`;
+- final EPUB SHA-256: `3cf31e01b332c8601327cef9744cdf08c847ae109ae4236331cbda5fb9ac0fd6`;
+- EPUB QA: 102 XHTML, 36 SVG, 0 unresolved xrefs, 0 broken internal refs, 0 missing manifest resources;
+- selected independent imprint `Djamal Zidane — publication indépendante`;
+- decided no ISBN for the initial digital edition;
+- selected GitHub Release as the target digital distribution channel;
+- separated the future print/retail proof and cover stream from digital V1.0;
+- reached **V1.0 FINAL DIGITAL BUILD PASS**;
+- no public GitHub Release created.
+
 ## 1.0.0-manuscript — 2026-09-29
 
 ### Content completed
