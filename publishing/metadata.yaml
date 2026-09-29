@@ -5,33 +5,43 @@ author: "Djamal Zidane"
 date: "2026-09-29"
 lang: "fr-FR"
 edition: "V1.0"
-release_candidate: "RC1"
-publication_status: "PUBLICATION_RC1_PASS"
-rights: "Copyright (c) 2026 Djamal Zidane. Manuscrit de référence."
+release_candidate: "FINALIZATION"
+publication_status: "DIGITAL_V1_FINALIZATION"
+rights: "Copyright © 2026 Djamal Zidane. Tous droits réservés."
 description: "Ouvrage d'architecture de référence vivant 2026-2031."
-source_freeze_ref: "freeze/v1.0-final-manuscript-2026-09-29"
-source_freeze_sha: "357399fc7bc5dbaf48ae06d3b7e207a47c70193c"
-publication_build_run: "36558924392"
-pdf:
-  filename: "wero-epi-reference-architecture-handbook-v1.0-rc1.pdf"
-  pages: 446
-  format: "A4"
-  sha256: "51a6ceee2bc51b33c833510a58ac8bbe8d1e83ea24000109c2ffe12a269c5e23"
-  qa: "PASS"
-epub:
-  filename: "wero-epi-reference-architecture-handbook-v1.0-rc1.epub"
-  xhtml_files: 101
-  svg_assets: 36
-  sha256: "aa4d61048820381bbcc219325bab43afa30dcb78e557e7c6fd725ecefe535331"
-  qa: "PASS"
-release_readiness: "DECISION_GATE"
-back_cover_copy_status: "APPROVED"
-trademark_notice_status: "EDITORIAL_DRAFT_READY_LEGAL_REVIEW_PENDING"
+publisher: "Djamal Zidane"
+imprint: "Djamal Zidane — publication indépendante"
+publication_note: "book/00-front-matter/01-publication-note.md"
 isbn: null
-publisher: null
-imprint: null
-distribution_channels: []
-print_format: null
-cover_status: "CONCEPT_APPROVED_ARTWORK_PENDING"
+isbn_status: "NOT_ASSIGNED_INITIAL_DIGITAL_EDITION"
+distribution_channels:
+  - "GitHub Release"
+cover_status: "DIGITAL_TITLE_PAGE_APPROVED_PRINT_RETAIL_ARTWORK_DEFERRED"
+print_format: "DEFERRED_SEPARATE_PRINT_GATE"
 public_release: false
+
+rc1_basis:
+  source_freeze_ref: "freeze/v1.0-final-manuscript-2026-09-29"
+  source_freeze_sha: "357399fc7bc5dbaf48ae06d3b7e207a47c70193c"
+  publication_build_run: "36558924392"
+  pdf:
+    filename: "wero-epi-reference-architecture-handbook-v1.0-rc1.pdf"
+    pages: 446
+    format: "A4"
+    sha256: "51a6ceee2bc51b33c833510a58ac8bbe8d1e83ea24000109c2ffe12a269c5e23"
+    qa: "PASS"
+  epub:
+    filename: "wero-epi-reference-architecture-handbook-v1.0-rc1.epub"
+    xhtml_files: 101
+    svg_assets: 36
+    sha256: "aa4d61048820381bbcc219325bab43afa30dcb78e557e7c6fd725ecefe535331"
+    qa: "PASS"
+
+final_build:
+  source_freeze_ref: null
+  source_freeze_sha: null
+  publication_build_run: null
+  pdf: null
+  epub: null
+  qa: "PENDING_AFTER_FRONT_MATTER_LAYOUT_PROOF"
 ---
