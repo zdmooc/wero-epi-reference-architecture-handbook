@@ -20,16 +20,20 @@ book:
     - book/13-resilience/04-degraded-modes-and-reconciliation-recovery.md
     - book/13-resilience/05-chaos-dora-testing-tlpt.md
     - book/13-resilience/06-third-party-exit-cyber-recovery.md
+    - book/13-resilience/07-resilience-architecture-decision-framework.md
+    - book/13-resilience/08-failover-failback-transaction-safety-runbook.md
     - book/14-operations/01-sre-observability-operations.md
     - book/14-operations/04-sli-slo-business-observability.md
     - book/14-operations/05-capacity-performance-load.md
     - book/14-operations/06-runbooks-incidents-postmortems.md
     - book/14-operations/07-operating-model-oncall-raci.md
     - book/14-operations/08-reconciliation-operations.md
+    - book/14-operations/09-payment-incident-command-model.md
     - book/16-testing/01-testing-and-evidence-strategy.md
     - book/16-testing/02-end-to-end-test-matrix.md
     - book/16-testing/03-claim-evidence-matrix.md
     - book/16-testing/04-companion-lab-evidence-map.md
+    - book/16-testing/05-resilience-evidence-chain.md
     - book/17-regulation/01-european-regulatory-map.md
 
 format:
